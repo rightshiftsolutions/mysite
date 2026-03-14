@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PowerFit Gym</title>
+
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <!-- font awasome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navbar start -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div data-item="Navbar" class="container">
+      <a class="navbar-brand" href="#home">
+        <i class="fas fa-dumbbell"></i>
+        <span data-bind="brand.text"></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a data-bind="HomeLink" class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a data-bind="AboutLink" class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a data-bind="ClassLink" class="nav-link" href="#classes">Classes</a>
+          </li>
+          <li class="nav-item">
+            <a data-bind="ProgramLink" class="nav-link" href="#programs">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a data-bind="GalleryLink" class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a data-bind="ContactUsLink" class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a data-bind="ShopNowLink" class="nav-link" href="shop.html">Shop-Now</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link cta-button text-white" id="joinBtn" onclick="toggleWhatsApp(); event.preventDefault();">Join Now</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end  -->
+
+  <!-- hero section started  -->
+  <section id="home" class="hero-section d-flex align-items-center justify-content-center">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline>
+        <source data-bind="banner.VideoSrc" src="" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container position-relative z-2">
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center hero-content">
+
+          <p data-bind="banner.Title" class="sub-headline fade-up delay-1">Train Smarter. Get Stronger.</p>
+
+          <h1 class="main-headline fade-up delay-2">
+            Transform Your <span class="text-primary">Body</span><br>
+            Transform Your <span class="text-outline">Life</span>
+          </h1>
+
+          <div class="cta-group fade-up delay-3 mt-4">
+            <a href="#programs" class="btn btn-primary btn-lg rounded-pill px-5 me-3 hover-lift">Join Now</a>
+            <a href="#classes" class="btn btn-outline-light btn-lg rounded-pill px-5 hover-lift">View Classes</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- hero section ended -->
+
+
+  <!-- ABOUT start  -->
+  <section id="about">
+    <!-- Background Pattern -->
+    <div class="grid-pattern"></div>
+
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <div class="section-subtitle">About Us</div>
+        <h2 class="section-title">
+          Transform Your <span class="highlight">Fitness Journey</span>
+        </h2>
+        <p data-bind="aboutUs.MainDesc" class="section-description">
+          Where dedication meets innovation. Join a community committed to achieving extraordinary results.
+        </p>
+      </div>
+
+      <!-- Main Content Row -->
+      <div class="row align-items-center g-5">
+        <!-- Image Column -->
+        <div class="col-lg-6">
+          <div class="about-image-container">
+            <div class="frame-decoration frame-decoration-1"></div>
+            <div class="frame-decoration frame-decoration-2"></div>
+            <div class="image-frame">
+              <img data-bind="aboutUs.Imagesrc" src="" alt="PowerFit Gym" class="img-fluid">
+            </div>
+            <div class="experience-badge">
+              <h3 data-bind="aboutUs.ExpNum"></h3>
+              <p data-bind="aboutUs.YearExperience"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="col-lg-6">
+          <div class="about-content">
+            <div class="tagline">
+              <i class="fas fa-dumbbell"></i>
+              <span data-bind="aboutUs.DescLeft">Your Fitness, Our Passion</span>
+            </div>
+
+            <h2 data-bind="aboutUs.TitleLeft"></h2>
+
+            <p data-bind="aboutUs.ParaLeft">
+
+            </p>
+
+            <!-- Stats -->
+            <div class="stats-container">
+              <div class="stat-card">
+                <h3 data-bind="aboutUs.ActiveMemberCount"></h3>
+                <p data-bind="aboutUs.ActiveMemberText"></p>
+              </div>
+              <div class="stat-card">
+                <h3 data-bind="aboutUs.ExpertTrainerCount"></h3>
+                <p data-bind="aboutUs.ExpertTrainerText"></p>
+              </div>
+              <div class="stat-card">
+                <h3 data-bind="aboutUs.ClassesCount"></h3>
+                <p data-bind="aboutUs.ClassText"></p>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ABOUT end  -->
+
+
+  <!-- CLASSES start  -->
+  <section id="classes">
+    <!-- Background Pattern -->
+    <div class="grid-pattern"></div>
+
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <div data-bind="classes.Mainheading" class="section-subtitle">Our Classes</div>
+        <h2 class="section-title">
+          Discover Our <span class="highlight">Classes</span>
+        </h2>
+        <p data-bind="classes.Maindesc" class="section-description">
+          Choose from our diverse range of fitness classes designed to challenge,
+          inspire, and transform your body and mind.
+        </p>
+      </div>
+
+      <!-- Classes Grid -->
+      <div data-collection="Classes" class="row g-4">
+
+        <!-- Yoga Card -->
+        <div data-item class="col-lg-3 col-md-6">
+          <div class="class-card fade-in-up">
+            <div class="card-image-container">
+              <img data-bind="Imagesrc" src="https://images.unsplash.com/photo-1540206577-1b9b6f48b1b7"
+                alt="Yoga Class">
+              <div class="image-overlay"></div>
+              <div class="category-badge">Popular</div>
+            </div>
+
+            <div class="class-card-body">
+              <div class="class-icon">
+                <i class="fas fa-spa"></i>
+              </div>
+              <h5 data-bind="Title"></h5>
+              <p data-bind="Description" class="class-description"></p>
+              <div class="class-info">
+                <div class="info-item">
+                  <i class="fas fa-clock"></i>
+                  <span data-bind="Duration">60 min</span>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-fire"></i>
+                  <span data-bind="level">Beginner</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Zumba Card -->
+        <div data-item class="col-lg-3 col-md-6">
+          <div class="class-card fade-in-up" style="transition-delay: 0.1s;">
+            <div class="card-image-container">
+              <img data-bind="Imagesrc" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b"
+                alt="Zumba Class">
+              <div class="image-overlay"></div>
+              <div class="category-badge">Trending</div>
+            </div>
+            <div class="class-card-body">
+              <div class="class-icon">
+                <i class="fas fa-music"></i>
+              </div>
+              <h5 data-bind="Title"></h5>
+              <p data-bind="Description" class="class-description"></p>
+              <div class="class-info">
+                <div class="info-item">
+                  <i class="fas fa-clock"></i>
+                  <span data-bind="Duration">45 min</span>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-fire"></i>
+                  <span data-bind="level">All Levels</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- CrossFit Card -->
+        <div data-item class="col-lg-3 col-md-6">
+          <div class="class-card fade-in-up" style="transition-delay: 0.2s;">
+            <div class="card-image-container">
+              <img data-bind="Imagesrc" src="https://images.unsplash.com/photo-1599058917212-d750089bc07b"
+                alt="CrossFit Class">
+              <div class="image-overlay"></div>
+              <div class="category-badge">Intense</div>
+            </div>
+            <div class="class-card-body">
+              <div class="class-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h5 data-bind="Title"></h5>
+              <p data-bind="Description" class="class-description">
+
+              </p>
+              <div class="class-info">
+                <div class="info-item">
+                  <i class="fas fa-clock"></i>
+                  <span data-bind="Duration">50 min</span>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-fire"></i>
+                  <span data-bind="level">Advanced</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Strength Card -->
+        <div data-item class="col-lg-3 col-md-6">
+          <div class="class-card fade-in-up" style="transition-delay: 0.3s;">
+            <div class="card-image-container">
+              <img data-bind="Imagesrc" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438"
+                alt="Strength Training">
+              <div class="image-overlay"></div>
+              <div class="category-badge">Core</div>
+            </div>
+            <div class="class-card-body">
+              <div class="class-icon">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <h5 data-bind="Title"></h5>
+              <p data-bind="Description" class="class-description"></p>
+              <div class="class-info">
+                <div class="info-item">
+                  <i class="fas fa-clock"></i>
+                  <span data-bind="Duration">55 min</span>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-fire"></i>
+                  <span data-bind="level">Intermediate</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- CLASSES end  -->
+
+
+  <!-- PROGRAMS start  -->
+  <section id="programs">
+    <div class="grid-pattern"></div>
+
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <div data-bind="program.Mainheading" class="section-subtitle">Our Programs</div>
+        <h2 class="section-title">Push Your <span class="highlight">Limits</span></h2>
+        <p data-bind="program.Maindesc" class="section-description">Choose a path that fits your goals. From beginners
+          to elite athletes, we have a
+          plan for you.</p>
+      </div>
+
+      <div data-collection="Programs" class="row g-4 justify-content-center">
+
+        <div data-item class="col-md-4">
+          <div class="program-card">
+            <div class="card-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h5 data-bind="LevelName"></h5>
+            <div data-bind="Duration" class="duration"></div>
+            <p data-bind="Description"></p>
+            <a data-bind="Learnmorebtn" href="#" class="btn-outline-modern">Learn More</a>
+          </div>
+        </div>
+
+        <div data-item class="col-md-4">
+          <div class="program-card featured">
+            <div data-bind="LevelName" class="popular-badge">Most Popular</div>
+            <div class="card-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <h5 data-bind="LevelName">Advanced</h5>
+            <div data-bind="Duration" class="duration"></div>
+            <p data-bind="Description">
+            </p>
+            <a data-bind="Learnmorebtn" href="#" class="btn-modern">Join Now</a>
+          </div>
+        </div>
+
+        <div data-item class="col-md-4">
+          <div class="program-card">
+            <div class="card-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <h5 data-bind="LevelName"></h5>
+            <div data-bind="Duration" class="duration"></div>
+            <p data-bind="Description"></p>
+            <a data-bind="Learnmorebtn" href="#" class="btn-outline-modern">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- PROGRAMS end  -->
+
+
+
+  <!-- TESTIMONIALS start  -->
+  <section id="testimonials">
+    <div class="grid-pattern"></div>
+
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <div data-bind="Title" class="section-subtitle">Testimonials</div>
+        <h2 class="section-title">What Our <span class="highlight">Community</span> Says</h2>
+      </div>
+
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div data-collection="Carousel" class="carousel-inner">
+
+          <div data-item class="carousel-item active">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p data-bind="Description" class="testimonial-text"></p>
+              <div class="client-info">
+                <div class="client-details">
+                  <strong data-bind="clientName"></strong>
+                  <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-item class="carousel-item">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p data-bind="Description" class="testimonial-text"></p>
+              <div class="client-info">
+                <div class="client-details">
+                  <strong data-bind="clientName"></strong>
+                  <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+  <!-- TESTIMONIALS end  -->
+
+
+
+  <!-- Trainer section  -->
+  <section id="trainers" data-section="TrainersSection">
+    <div class="grid-pattern"></div>
+
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <div data-bind="TrainersTitle" class="section-subtitle">Expert Coaches</div>
+        <h2 class="section-title">Meet Your
+          <span class="highlight">Mentors</span>
+        </h2>
+      </div>
+
+      <div data-collection="Trainers" class="row g-4">
+        <div data-item class="col-6 col-md-3 animate-image" style="transition-delay: 0.1s;">
+          <div class="trainer-card">
+            <img data-bind="TrainerImg" src="" alt="Trainer">
+            <div class="trainer-content">
+              <h4 data-bind="TrainerName"></h4>
+              <p data-bind="TrainerDesc"></p>
+            </div>
+            <div class="trainer-overlay"><i class="fas fa-plus"></i></div>
+          </div>
+        </div>
+
+        <div data-item class="col-6 col-md-3 animate-image" style="transition-delay: 0.3s;">
+          <div class="trainer-card">
+            <img data-bind="TrainerImg" src="" alt="Trainer">
+            <div class="trainer-content">
+              <h4 data-bind="TrainerName"></h4>
+              <p data-bind="TrainerDesc"></p>
+            </div>
+            <div class="trainer-overlay"><i class="fas fa-plus"></i></div>
+          </div>
+        </div>
+
+        <div data-item class="col-6 col-md-3 animate-image" style="transition-delay: 0.5s;">
+          <div class="trainer-card">
+            <img data-bind="TrainerImg" src="" alt="Trainer">
+            <div class="trainer-content">
+              <h4 data-bind="TrainerName"></h4>
+              <p data-bind="TrainerDesc"></p>
+            </div>
+            <div class="trainer-overlay"><i class="fas fa-plus"></i></div>
+          </div>
+        </div>
+
+        <div data-item class="col-6 col-md-3 animate-image" style="transition-delay: 0.7s;">
+          <div class="trainer-card">
+            <img data-bind="TrainerImg" src="https://images.unsplash.com/photo-1518310383802-640c2de311b2"
+              alt="Trainer">
+            <div class="trainer-content">
+              <h4 data-bind="TrainerName"></h4>
+              <p data-bind="TrainerDesc"></p>
+            </div>
+            <div class="trainer-overlay"><i class="fas fa-plus"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Trainer section  -->
+
+
+
+  <!-- GALLERY start  -->
+  <section id="gallery" data-section="GallerySection">
+    <div class="grid-pattern"></div>
+
+    <div class="container">
+
+      <div class="section-header text-center mb-5">
+        <div data-bind="GalleryTitle" class="section-subtitle">Our Gallery</div>
+        <h2 class="section-title">Experience the
+          <span class="highlight">Power</span>
+        </h2>
+      </div>
+
+      <div data-collection="Gallery" class="row g-4">
+
+        <div data-item class="col-6 col-md-3 animate-image" style="transition-delay: 0.1s;">
+          <div class="gallery-item">
+            <img data-bind="Imagesrc" src="" alt="Gym">
+            <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+          </div>
+        </div>
+        <div data-item class="col-6 col-md-3 animate-image" style="transition-delay: 0.3s;">
+          <div class="gallery-item">
+            <img data-bind="Imagesrc" src="" alt="Gym">
+            <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+          </div>
+        </div>
+        <div data-item class="col-6 col-md-3 animate-image" style="transition-delay: 0.5s;">
+          <div class="gallery-item">
+            <img data-bind="Imagesrc" src="" alt="Gym">
+            <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+          </div>
+        </div>
+        <div data-item class="col-6 col-md-3 animate-image" style="transition-delay: 0.7s;">
+          <div class="gallery-item">
+            <img data-bind="Imagesrc" src="" alt="Gym">
+            <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- GALLERY end  -->
+
+
+
+
+  <!-- header carousel started  -->
+  <div data-collection="HeaderCarousel" class="header-carousel owl-carousel overflow-hidden bg-dark">
+
+    <div data-item class="header-carousel-item hero-section">
+      <div class="hero-bg-half-1"></div>
+      <div class="carousel-caption">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+
+            <div class="col-lg-7 animated fadeInLeft">
+              <div class="text-sm-center text-md-start">
+                <h4 data-bind="Subtitle" class="text-primary text-uppercase fw-bold mb-4">Wellcome to our fitness Center
+                </h4>
+                <h1 data-bind="Sectiontitle" class="display-1 text-white mb-4">The best gym center is now in your city
+                </h1>
+                <p data-bind="Description" class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem
+                  Ipsum has been the industry's standard dummy...
+                </p>
+                <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                  <a data-bind="VideoLinkUrl" class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i
+                      class="fas fa-play-circle me-2"></i>
+                    <span data-bind="VideoLinkBtn">Watch Video</span>
+                  </a>
+                  <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#">
+                    <span data-bind="Learnmorebtn">Learn More</span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-item class="header-carousel-item hero-section">
+      <div class="hero-bg-half-2"></div>
+      <div class="carousel-caption">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-7 animated fadeInLeft">
+              <div class="text-sm-center text-md-start">
+                <h4 data-bind="Subtitle" class="text-primary text-uppercase fw-bold mb-4">Wellcome to our fitness Center
+                </h4>
+                <h1 data-bind="Sectiontitle" class="display-2 text-white mb-4">Stay healthy by exercising at the best
+                  gym center</h1>
+                <p data-bind="Description" class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem
+                  Ipsum has been the industry's standard dummy...
+                </p>
+                <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                  <a data-bind="VideoLinkUrl" class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i
+                      class="fas fa-play-circle me-2"></i>
+                    <span data-bind="VideoLinkBtn">Watch Video</span></a>
+                  <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#">
+                    <span data-bind="Learnmorebtn">Learn More</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- header carousel ended  -->
+
+
+
+  <!-- fitness goal started  -->
+  <div data-section="FitnessGoal" class="container-fluid goal py-5" id="fitness-goal">
+    <div class="grid-pattern"></div>
+
+    <div class="container py-5">
+      <div class="row align-items-center justify-content-between">
+
+        <div class="col-lg-5">
+          <div class="goal-content">
+            <div data-bind="FitnessTitle" class="section-subtitle">Fitness Goal</div>
+            <h2 data-bind="FitnessSubTitle" class="section-title mb-4">Complete your possibilities,
+              <span data-bind="FitnessDesc" class="highlight">Achieve Your Goals</span>
+            </h2>
+
+            <div data-collection="FitnessgoalLevel">
+
+              <div data-item class="goal-item d-flex p-4 goal-animate-left" style="transition-delay: 0.2s;">
+                <div class="d-flex me-4">
+                  <div class="icon-box">
+                    <i data-bind="LevelIcon" class="fas fa-dumbbell"></i>
+                  </div>
+                </div>
+                <div>
+                  <h4 data-bind="LevelTitle" class="text-white">Free Fitness Training</h4>
+                  <p data-bind="LevelDesc" class="text-white-50 mb-0">Experience professional coaching tailored to your
+                    body type and
+                    performance needs.</p>
+                </div>
+              </div>
+
+              <div data-item class="goal-item d-flex p-4 mb-4 goal-animate-left" style="transition-delay: 0.5s;">
+
+                <div class="d-flex me-4">
+                  <div class="icon-box">
+                    <i data-bind="LevelIcon" class="fas fa-heartbeat"></i>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 data-bind="LevelTitle" class="text-white">Cardio and Strength</h4>
+                  <p data-bind="LevelDesc" class="text-white-50 mb-0">Build a powerful heart and even more powerful
+                    muscles with our integrated
+                    circuit programs.</p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="goal-image-wrapper goal-animate-top">
+            <img data-bind="FitnessGoalImage" src="" class="img-fluid rounded-4 shadow-lg ms-auto d-block"
+              alt="Fitness Goal">
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- fitness goas ended  -->
+
+
+  <!-- Footer start -->
+
+  <footer data-item="Footer" class="container-fluid footer py-5" id="main-footer">
+    <div class="grid-pattern"></div>
+
+    <div class="container py-5">
+      <div class="row g-5">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="footer-item d-flex flex-column h-100">
+            <h2 class="fw-bold mb-3">
+              <span data-bind="brandname" class="highlight"></span>
+              <span data-bind="brandsubname" class="text-white"> </span>
+            </h2>
+            <p data-bind="branddesc" class="text-white-50 mb-4"></p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="footer-item">
+            <h4 data-bind="status" data-bind="GYMTime" class="footer-title"></h4>
+            <div class="hours-card">
+              <p class="d-flex justify-content-between">
+                <span data-bind="daystatus" data-bind=""></span>
+                <span data-bind="timestatus"></span>
+              </p>
+              <p class="d-flex justify-content-between">
+                <span data-bind="weekend"></span>
+                <span data-bind="weekendtime"></span>
+              </p>
+              <p class="d-flex justify-content-between text-highlight border-0">
+                <span data-bind="weekendstatus"></span>
+                <span data-bind="closed"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="footer-item">
+            <h4 data-bind="Locationstatus" class="footer-title"></h4>
+            <div class="d-flex flex-column contact-links">
+              <a href="#" class="d-flex align-items-center">
+                <i class="fas fa-map-marker-alt"></i>
+                <span data-bind="Location"></span>
+              </a>
+              <a href="#" class="d-flex align-items-center">
+                <i class="fas fa-phone-alt"></i>
+                <span data-bind="phnNum"></span>
+              </a>
+              <a href="#" class="d-flex align-items-center">
+                <i class="fas fa-envelope"></i>
+                <span data-bind="Email"></span>
+              </a>
+
+              <div class="footer-social d-flex mt-4">
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="footer-item">
+            <h4 data-bind="footergallery" class="footer-title">OUR GALLERY</h4>
+            <div class="row g-2">
+              <div data-bind="imagesrc1" class="col-4"><img src="" class="footer-img" alt="Gym">
+              </div>
+              <div data-bind="imagesrc2" class="col-4"><img src="" class="footer-img" alt="Gym">
+              </div>
+              <div data-bind="imagesrc3" class="col-4"><img src="" class="footer-img" alt="Gym">
+              </div>
+              <div data-bind="imagesrc4" class="col-4"><img src="" class="footer-img" alt="Gym">
+              </div>
+              <div data-bind="imagesrc5" class="col-4"><img src="" class="footer-img" alt="Gym">
+              </div>
+              <div data-bind="imagesrc6" class="col-4"><img src="" class="footer-img" alt="Gym">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Footer End -->
+
+  <!-- whatsapp  -->
+  <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20joining%20PowerFit%20Gym!" class="whatsapp-float"
+    onclick="toggleWhatsApp(); event.preventDefault();" 
+    target=" _blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip-text">Chat with us!</span>
+  </a>
+
+  <!-- whatsapp chat container  -->
+  <div class="whatsapp-chat-container">
+    <div class="whatsapp-chat-box" id="whatsappChat">
+      <div class="chat-header">
+        <div class="d-flex align-items-center">
+          <div class="rounded-circle bg-white p-2 me-2 d-flex justify-content-center align-items-center"
+            style="width: 40px; height: 40px;">
+            <i class="fas fa-dumbbell text-success"></i>
+          </div>
+          <div>
+            <p class="fw-bold mb-0 text-white">26 Fitness Club</p>
+            <small class="text-white-50"><i class="fas fa-circle text-success small"></i> Online</small>
+          </div>
+        </div>
+        <span onclick="toggleWhatsApp()" class="btn-close ms-auto"></span>
+      </div>
+      <div class="chat-body p-3" id="waChatBody">
+        <div class="message-received">
+          <p class="mb-0">Hello! 👋<br>Ready to start your fitness journey? How can we help you today?</p>
+          <small class="text-muted">Just now</small>
+        </div>
+      </div>
+      <div class="chat-footer p-2 border-top">
+        <div class="input-group">
+          <input type="text" id="waMessage" class="form-control border-0" placeholder="Type a message..."
+            onkeypress="handleWAKey(event)">
+          <button class="btn btn-success" onclick="sendWAMessage()">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
