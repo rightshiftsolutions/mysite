@@ -1,0 +1,153 @@
+{
+  "brand": {
+    "text": "26 Fitness CLub"
+  },
+ 
+  "banner": {
+    "VideoSrc": "assest/video/26herovideo.mp4",
+    "HeroBg": "assest/img/strength.png"
+  },
+
+  "aboutUs": {
+    "Imagesrc": "assest/img/26grpimg.jpeg",
+    "TitleLeft": "About 26 Fitness Club",
+    "ParaLeft": "We are a modern fitness center focused on strength, endurance, and total wellness. Our state-of-the-art facility combines cutting-edge equipment with expert guidance to help you achieve your fitness goals faster and safer.",
+    "ExpNum": "10+",
+    "YearExperience": "Years Experience",
+    "ActiveMemberCount": "5000+",
+    "ActiveMemberText": "Active Members",
+    "ExpertTrainerCount": "50+",
+    "ExpertTrainerText": "Expert Trainers",
+    "ClassesCount": "100+",
+    "ClassText": "Daily Classes"
+  },
+
+  "classes": [
+    {
+      "Imagesrc": "assest/img/yogacls.jpg",
+      "Title": "Yoga",
+      "Description": "Find balance and flexibility through mindful movements and breathing techniques."
+    },
+    {
+      "Imagesrc": "assest/img/zumbacls.png",
+      "Title": "Zumba",
+      "Description": "Dance your way to fitness with high-energy moves and infectious rhythms."
+    },
+    {
+      "Imagesrc": "assest/img/trans2.jpg",
+      "Title": "CrossFit",
+      "Description": "High-intensity functional movements for maximum strength and endurance gains."
+    },
+    {
+      "Imagesrc": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+      "Title": "Strength",
+      "Description": "Build muscle and power with progressive resistance training programs."
+    }
+  ],
+
+  "programs": [
+    {
+      "LevelName": "Beginner",
+      "Duration": "8 Weeks Program",
+      "Description": "Perfect for those just starting their fitness journey with foundational movements."
+    },
+    {
+      "LevelName": "Advanced",
+      "Duration": "12 Weeks Program",
+      "Description": "High-intensity training designed for seasoned athletes looking for a challenge."
+    },
+    {
+      "LevelName": "Transformation",
+      "Duration": "6 Months Program",
+      "Description": "A complete lifestyle overhaul focusing on nutrition, habit tracking, and strength."
+    }
+  ],
+
+  "carousel": [
+    {
+      "Description": "The environment here is electric. I've been to many gyms in Jaipur, but the expert guidance and state-of-the-art equipment at 26 fitness club are truly unmatched. Best gym experience ever!",
+      "clientName": "Rahul Sharma"
+    },
+    {
+      "Description": "Great trainers and a very supportive environment. They don't just give you a plan; they educate you on how to maintain a healthy lifestyle. Highly recommended for transformation!",
+      "clientName": "Neha Verma"
+    },
+    {
+      "Description": "The environment here is electric. I've been to many gyms in Jaipur, but the expert guidance and state-of-the-art equipment at 26 fitness club are truly unmatched. Best gym experience ever!",
+      "clientName": "Rahul Sharma"
+    },
+    {
+      "Description": "Great trainers and a very supportive environment. They don't just give you a plan; they educate you on how to maintain a healthy lifestyle. Highly recommended for transformation!",
+      "clientName": "Neha Verma"
+    }
+  ],
+
+   "trainers": [
+    {
+      "TrainerImg": "assest/img/trner.jpeg",
+      "TrainerName": "Alex Rivera",
+      "TrainerDesc": "Strength & Conditioning"
+    },
+    {
+      "TrainerImg": "assest/img/trner1.png",
+      "TrainerName": "Sarah Chen",
+      "TrainerDesc": "Yoga & Mobility Expert"
+    },
+    {
+      "TrainerImg": "assest/img/trner2.png",
+      "TrainerName": "Marcus Vane",
+      "TrainerDesc": "Bodybuilding Specialist"
+    },
+    {
+      "TrainerImg": "https://images.unsplash.com/photo-1518310383802-640c2de311b2",
+      "TrainerName": "Elena Frost",
+      "TrainerDesc": "HIIT & Cardio Pro"
+    }
+  ],
+
+  "gallery": [
+    { "Imagesrc": "assest/img/g1.webp" },
+    { "Imagesrc": "assest/img/g2.webp" },
+    { "Imagesrc": "assest/img/g3.webp" },
+    { "Imagesrc": "assest/img/g4.webp" }
+  ],
+
+  "fitnessGoal": {
+    "FitnessGoalImage": "assest/img/trner1.png"
+  },
+
+  "footer": {
+    "brand": {
+      "brandname": "26",
+      "brandsubname": "Fitness Club",
+      "branddesc": "Leading fitness destination in Jaipur. Join us to transform your body and mind."
+    },
+    "hours": {
+      "status": "OPENING HOURS",
+      "daystatus": "Mon - Fri:",
+      "timestatus": "6am - 10pm",
+      "weekend": "Saturday:",
+      "weekendtime": "8am - 8pm",
+      "weekendstatus": "Sunday:",
+      "closed": "Closed"
+    },
+    "contact": {
+      "Locationstatus": "LOCATION",
+      "Location": "Mansarovar, Jaipur",
+      "phnNum": "+919876543210",
+      "Email": "info@26fitnessclub.com"
+    },
+    "gallery": { 
+      "imagesrc1": "assest/img/g1.webp",
+      "imagesrc2": "assest/img/g2.webp",
+      "imagesrc3": "assest/img/g3.webp",
+      "imagesrc4": "assest/img/g4.webp",
+      "imagesrc5": "assest/img/g1.webp",
+      "imagesrc6": "assest/img/g2.webp"
+    }
+  
+}
+
+
+
+}
