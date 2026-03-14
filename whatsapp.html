@@ -1,0 +1,53 @@
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="whatsapp.css">
+ </head>
+ <body>
+
+     <a href="#" class="whatsapp-float" onclick="toggleWhatsApp(); event.preventDefault();">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip-text">Chat with us!</span>
+  </a>
+ 
+ 
+ 
+ <div class="whatsapp-chat-container">
+    <div class="whatsapp-chat-box" id="whatsappChat">
+      <div class="chat-header">
+        <div class="d-flex align-items-center">
+          <div class="rounded-circle bg-white p-2 me-2 d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
+            <i class="fas fa-dumbbell text-success"></i>
+          </div>
+          <div>
+            <p class="fw-bold mb-0 text-white">26 Fitness Club</p>
+            <small class="text-white-50"><i class="fas fa-circle text-success small"></i> Online</small>
+          </div>
+        </div>
+        <span onclick="toggleWhatsApp()" class="btn-close ms-auto"></span>
+      </div>
+      <div class="chat-body p-3" id="waChatBody">
+        <div class="message-received">
+          <p class="mb-0">Hello! 👋<br>Ready to start your fitness journey? How can we help you today?</p>
+          <small class="text-muted">Just now</small>
+        </div>
+      </div>
+      <div class="chat-footer p-2 border-top">
+        <div class="input-group">
+          <input type="text" id="waMessage" class="form-control border-0" placeholder="Type a message..." onkeypress="handleWAKey(event)">
+          <button class="btn btn-success" onclick="sendWAMessage()">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="whatsapp.js" ></script>
+ </body>
+ </html>
