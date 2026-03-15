@@ -230,8 +230,9 @@ function initPlugins() {
             grabCursor: true,
             spaceBetween: 30,
             breakpoints: {
-                640: { slidesPerView: 1 },
-                992: { slidesPerView: 2 },
+                320: { slidesPerView: 1, spaceBetween: 15 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 2, spaceBetween: 30 },
             },
             navigation: {
                 nextEl: ".video-next",
