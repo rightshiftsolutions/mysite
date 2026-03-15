@@ -516,7 +516,7 @@ header.masthead .section-heading {
 
 /* Responsive Styles for Mobile & Tablets */
 @media (max-width: 991px) {
-    .testimonialSwiper {
+    .testimonialSwiper, .videoSwiper {
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
