@@ -1,0 +1,300 @@
+{
+  "theme": {
+    "brandTextWhite": "PLAY ON HEALTH ",
+    "brandTextLight": "CLUB&",
+    "brandTextAccent": "GYM"
+  },
+  "contact": {
+    "phone": "+919414251385",
+    "whatsappNumber": "+9194142 51385",
+    "address": "55/152 Rajat path mansarovar jaipur # 9414251385, Jaipur, India, Rajasthan",
+    "mapLink": "https://www.google.com/maps/place/55%2F152,+Ward+27,+Rajat+Path,+Marg,+Mansarovar,+Jaipur,+Rajasthan+302020/@26.8653745,75.7588535,1017m/data=!3m2!1e3!4b1!4m6!3m5!1s0x396db5aa6edebdc9:0xea1044f661f2fad4!8m2!3d26.8653745!4d75.7614284!16s%2Fg%2F11h028vgd8?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D"
+  },
+  "social": {
+    "twitter": "#!",
+    "facebook": "#!",
+    "instagram": "#!"
+  },
+  "hero": {
+    "image": "images/hero_bg.png",
+    "titlePrefix": "Unleash Your",
+    "titleAccent": "Potential",
+    "subtitle": "Join the premium fitness experience. Certified trainers, state-of-the-art equipment, and a community that pushes you further."
+  },
+  "offers": {
+    "badgeText": "Limited Time",
+    "title": "Summer",
+    "titleAccent": "Shred",
+    "titleSuffix": "Offer",
+    "discount": "Get 3 Months ",
+    "discountAccent": "FREE",
+    "description": "Sign up for an annual Elite Membership today and get your first 3 months completely free, plus 2 complimentary personal training sessions.",
+    "whatsappMessage": "Hi! I'm interested in the Summer Shred Offer from 26fitnessClub."
+  },
+  "about": {
+    "image": "images/trainer.png",
+    "titlePrefix": "Elevate Your",
+    "titleAccent": "Training",
+    "description": "At PLAY ON HEALTH CLUB & GYM, we believe in pushing boundaries. Our premium facility offers everything you need to transform your body and mind in an aesthetic, mood-lit environment.",
+    "features": [
+      "Elite Certified Trainers",
+      "State-of-the-art Equipment",
+      "24/7 Premium Access",
+      "Nutrition & Recovery Center"
+    ]
+  },
+  "programs": [
+    {
+      "icon": "fas fa-dumbbell",
+      "title": "Strength Training",
+      "description": "Build muscle mass and increase your raw strength with our heavy lifting program."
+    },
+    {
+      "icon": "fas fa-fire",
+      "title": "CrossFit",
+      "description": "High-intensity functional movements designed to push your cardiovascular endurance."
+    },
+    {
+      "icon": "fas fa-user-ninja",
+      "title": "Personal Training",
+      "description": "1-on-1 coaching customized completely to your unique fitness goals."
+    },
+    {
+      "icon": "fas fa-yin-yang",
+      "title": "Yoga & Mobility",
+      "description": "Improve flexibility, balance, and mental focus with our expert-led yoga sessions."
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "title": "Cardio Fitness",
+      "description": "Optimized routines using modern cardio equipment to maximize calorie burn."
+    },
+    {
+      "icon": "fas fa-weight",
+      "title": "Weight Loss",
+      "description": "Structured programs integrating workout, nutrition, and recovery for effective results."
+    }
+  ],
+  "trainers": [
+    {
+      "image": "images/image copy 5.png",
+      "name": "Sumit kumawat",
+      "role": " Yoga & Mobility Coach",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/image copy 2.png",
+      "name": "Vijay Saini",
+      "role": "Head of Gym-CrossFit Specialist",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/image copy 3.png",
+      "name": "Aakash",
+      "role": "Strength Trainer",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Basic",
+      "price": "$29",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Standard Gym Access",
+          "included": true
+        },
+        {
+          "name": "Free Weights Area",
+          "included": true
+        },
+        {
+          "name": "Cardio Equipment",
+          "included": true
+        },
+        {
+          "name": "Group Classes",
+          "included": false
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Pro",
+      "price": "$59",
+      "period": "/mo",
+      "isPopular": true,
+      "features": [
+        {
+          "name": "24/7 Gym Access",
+          "included": true
+        },
+        {
+          "name": "All Equipment Access",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Free Recovery Shake",
+          "included": true
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Elite",
+      "price": "$99",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Premium 24/7 Access",
+          "included": true
+        },
+        {
+          "name": "VIP Locker Room",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Sauna & Spa Access",
+          "included": true
+        },
+        {
+          "name": "2x PT Sessions/mo",
+          "included": true
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "imageLarge": "images/image copy 11.png",
+      "imageThumb": "images/image copy 11.png",
+      "title": "Premium Weights",
+      "delay": 100
+    },
+    {
+      "imageLarge": "images/image copy 8.png",
+      "imageThumb": "images/image copy 8.png",
+      "title": "Cardio Zone",
+      "delay": 200
+    },
+    {
+      "imageLarge": "images/image copy 13.png",
+      "imageThumb": "images/image copy 13.png",
+      "title": "CrossFit Area",
+      "delay": 300
+    },
+    {
+      "imageLarge": "images/image copy 12.png",
+      "imageThumb": "images/image copy 12.png",
+      "title": "Yoga Studio",
+      "delay": 400
+    },
+    {
+      "imageLarge": "images/image copy 9.png",
+      "imageThumb": "images/image copy 9.png",
+      "title": "Personal Training",
+      "delay": 500
+    },
+    {
+      "imageLarge": "images/image copy 10.png",
+      "imageThumb": "images/image copy 10.png",
+      "title": "Locker Rooms",
+      "delay": 600
+    }
+  ],
+  "videoGallery": [
+    {
+      "videoSrc": "https://www.youtube.com/embed/eaRQF-7rqmE?si=DrtqG2k4-0T1wD4u",
+      "title": "Beast Mode: Full Body Workout",
+      "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/X1TuhAn6C-g?si=s5sJnsSIf0xLgQ7U",
+      "title": "Advanced HIIT Cardio",
+      "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/tCJEhXfH8mI",
+      "title": "Master the Deadlift",
+      "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/CBpItFjWzQ4",
+      "title": "10-Minute Core Crunch",
+      "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
+    }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "\"Ye gym mere liye sirf gym nahi hai.. Ye gym wo jagh hai jisne mujhe ek bache se professional bodybuilder, fir ek professional coach banaya... Jab bi apne guru ji ka nam sunta hu khud ko blessed manta hu.... Ye gym ek era ko ek decade ko apna contribution de chuka.. I feel so proud to be a part of play on gym.\"",
+      "image": "images/unnamed(4).webp",
+      "name": "team kannav",
+      "subtitle": "Lost 30 lbs, gained confidence"
+    },
+    {
+      "stars": 5,
+      "text": "\"I am very happy with my experience, and I highly recommend [ PLAY ON ] to anyone looking for a gym that offers great value, expert support, and an overall amazing fitness environment!",
+      "image": "images/testimonial_2.svg",
+      "name": "lokesh mushla",
+      "subtitle": "Strength Athlete"
+    },
+    {
+      "stars": 4.5,
+      "text": "\"Best gym, sunil sir is well trained and has been judged many body building competitions; coaches are good and crowd is also good, good for girls rather than other gyms who have useless trainersBest gym, sunil sir is well trained and has been judged many body building competitions; coaches are good and crowd is also good, good for girls rather than other gyms who have useless trainers\"",
+      "image": "images/testimonial_3.svg",
+      "name": "rupal",
+      "subtitle": "Yoga Enthusiast"
+    },
+    {
+      "stars": 5,
+      "text": "\"An absolutely fantastic gym . I really loved the secure , safe environment and of course the trainers are genuinely very supportive and great in their field. The gym is very well equipped. You should give it a try!!.\"",
+      "image": "images/testimonial_4.svg",
+      "name": "praveen gujjar",
+      "subtitle": "Personal Training Client"
+    }
+  ],
+  "footer": {
+    "description": "Premium fitness experience designed to transform your life.",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "#!"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "#!"
+      }
+    ],
+    "copyright": "© 2026 PLAY ON HEALTH CLUB & GYM. All Rights Reserved."
+  }
+}
