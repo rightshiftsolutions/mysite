@@ -1,0 +1,300 @@
+{
+  "theme": {
+    "brandTextWhite": "SJ ",
+    "brandTextLight": "FITNESS ",
+    "brandTextAccent": "GYM"
+  },
+  "contact": {
+    "phone": "+918824249083",
+    "whatsappNumber": "+918824249083",
+    "address": "2nd Floor, akshardham chauraha, B1/564A, Chitrakoot, Jaipur, Rajasthan 302021",
+    "mapLink": "https://www.google.com/maps/place/%E0%A4%8F%E0%A4%B8%E0%A4%9C%E0%A5%87+%E0%A4%AB%E0%A4%BF%E0%A4%9F%E0%A4%A8%E0%A5%87%E0%A4%B8+%E0%A4%9C%E0%A4%BF%E0%A4%AE,+%E0%A4%B5%E0%A5%88%E0%A4%B6%E0%A4%BE%E0%A4%B2%E0%A5%80+%E0%A4%A8%E0%A4%97%E0%A4%B0/@26.9045314,75.7530988,17z/data=!4m6!3m5!1s0x396db5bca0344373:0x8f244ba5ef75525f!8m2!3d26.9020344!4d75.7387053!16s%2Fg%2F11k4123gyh?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D"
+  },
+  "social": {
+    "twitter": "#!",
+    "facebook": "#!",
+    "instagram": "#!"
+  },
+  "hero": {
+    "image": "images/hero_png.png",
+    "titlePrefix": "Unleash Your",
+    "titleAccent": "Potential",
+    "subtitle": "Join the premium fitness experience. Certified trainers, state-of-the-art equipment, and a community that pushes you further."
+  },
+  "offers": {
+    "badgeText": "Limited Time",
+    "title": "Summer",
+    "titleAccent": "Shred",
+    "titleSuffix": "Offer",
+    "discount": "Get 3 Months ",
+    "discountAccent": "FREE",
+    "description": "Sign up for an annual Elite Membership today and get your first 3 months completely free, plus 2 complimentary personal training sessions.",
+    "whatsappMessage": "Hi! I'm interested in the Summer Shred Offer from 26fitnessClub."
+  },
+  "about": {
+    "image": "images/image copy 9.png",
+    "titlePrefix": "Elevate Your",
+    "titleAccent": "Training",
+    "description": "At QUANTAM FITNESS, we believe in pushing boundaries. Our premium facility offers everything you need to transform your body and mind in an aesthetic, mood-lit environment.",
+    "features": [
+      "Elite Certified Trainers",
+      "State-of-the-art Equipment",
+      "24/7 Premium Access",
+      "Nutrition & Recovery Center"
+    ]
+  },
+  "programs": [
+    {
+      "icon": "fas fa-dumbbell",
+      "title": "Strength Training",
+      "description": "Build muscle mass and increase your raw strength with our heavy lifting program."
+    },
+    {
+      "icon": "fas fa-fire",
+      "title": "CrossFit",
+      "description": "High-intensity functional movements designed to push your cardiovascular endurance."
+    },
+    {
+      "icon": "fas fa-user-ninja",
+      "title": "Personal Training",
+      "description": "1-on-1 coaching customized completely to your unique fitness goals."
+    },
+    {
+      "icon": "fas fa-yin-yang",
+      "title": "Yoga & Mobility",
+      "description": "Improve flexibility, balance, and mental focus with our expert-led yoga sessions."
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "title": "Cardio Fitness",
+      "description": "Optimized routines using modern cardio equipment to maximize calorie burn."
+    },
+    {
+      "icon": "fas fa-weight",
+      "title": "Weight Loss",
+      "description": "Structured programs integrating workout, nutrition, and recovery for effective results."
+    }
+  ],
+  "trainers": [
+    {
+      "image": "images/image copy 16.png",
+      "name": "PRIYANKA KUMARI",
+      "role": " Yoga & Mobility Coach",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/image copy 14.png",
+      "name": "Vijay Saini",
+      "role": "Head of Gym-CrossFit Specialist",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/image copy 15.png",
+      "name": "Aakash",
+      "role": "Strength Trainer",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Basic",
+      "price": "$29",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Standard Gym Access",
+          "included": true
+        },
+        {
+          "name": "Free Weights Area",
+          "included": true
+        },
+        {
+          "name": "Cardio Equipment",
+          "included": true
+        },
+        {
+          "name": "Group Classes",
+          "included": false
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Pro",
+      "price": "$59",
+      "period": "/mo",
+      "isPopular": true,
+      "features": [
+        {
+          "name": "24/7 Gym Access",
+          "included": true
+        },
+        {
+          "name": "All Equipment Access",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Free Recovery Shake",
+          "included": true
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Elite",
+      "price": "$99",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Premium 24/7 Access",
+          "included": true
+        },
+        {
+          "name": "VIP Locker Room",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Sauna & Spa Access",
+          "included": true
+        },
+        {
+          "name": "2x PT Sessions/mo",
+          "included": true
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "imageLarge": "images/image copy 17.png",
+      "imageThumb": "images/image copy 17.png",
+      "title": "Premium Weights",
+      "delay": 100
+    },
+    {
+      "imageLarge": "images/image copy 18.png",
+      "imageThumb": "images/image copy 18.png",
+      "title": "Cardio Zone",
+      "delay": 200
+    },
+    {
+      "imageLarge": "images/image copy 19.png",
+      "imageThumb": "images/image copy 19.png",
+      "title": "CrossFit Area",
+      "delay": 300
+    },
+    {
+      "imageLarge": "images/image copy 20.png",
+      "imageThumb": "images/image copy 20.png",
+      "title": "Yoga Studio",
+      "delay": 400
+    },
+    {
+      "imageLarge": "images/image copy 21.png",
+      "imageThumb": "images/IMAGE COPY 21.png",
+      "title": "Personal Training",
+      "delay": 500
+    },
+    {
+      "imageLarge": "images/image copy 22.PNG",
+      "imageThumb": "images/image copy 22.png",
+      "title": "Locker Rooms",
+      "delay": 600
+    }
+  ],
+  "videoGallery": [
+    {
+      "videoSrc": "https://www.youtube.com/embed/eaRQF-7rqmE?si=DrtqG2k4-0T1wD4u",
+      "title": "Beast Mode: Full Body Workout",
+      "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/X1TuhAn6C-g?si=s5sJnsSIf0xLgQ7U",
+      "title": "Advanced HIIT Cardio",
+      "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/tCJEhXfH8mI",
+      "title": "Master the Deadlift",
+      "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/CBpItFjWzQ4",
+      "title": "10-Minute Core Crunch",
+      "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
+    }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "\"I've been going to SJ FITNESS for a while now, and it's by far the best gym I've ever joined. The equipment is always clean and well-maintained, the staff is incredibly friendly and helpful, .\"",
+      "image": "images/testimonial_1.svg",
+      "name": "seedhe maut",
+      "subtitle": "Lost 30 lbs, gained confidence"
+    },
+    {
+      "stars": 5,
+      "text": "\"One of the best gym in jaipur trainers are professional and very supportive for beginners, personal training is highly recommended\"",
+      "image": "images/testimonial_2.svg",
+      "name": "hemendra shekhawat",
+      "subtitle": "Strength Athlete"
+    },
+    {
+      "stars": 4.5,
+      "text": "\"Best gym in mansarovar . Outstanding, fabulous environment n trainers . One of the best experience with Rinku Ma’am 🥰🤍.\"",
+      "image": "images/testimonial_3.svg",
+      "name": "vineet rawat",
+      "subtitle": "Yoga Enthusiast"
+    },
+    {
+      "stars": 5,
+      "text":"gym is equipped with all machines. Trainers are very supportive and also motivate you to shape yourself as best as possible.\"",
+      "image": "images/testimonial_4.svg",
+      "name": "lokesh verma",
+      "subtitle": "Personal Training Client"
+    }
+  ],
+  "footer": {
+    "description": "Premium fitness experience designed to transform your life.",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "#!"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "#!"
+      }
+    ],
+    "copyright": "© 2026 SJ FITNESS. All Rights Reserved."
+  }
+}
