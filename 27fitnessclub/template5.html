@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta selected="true" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="26fitnessClub - Premium fitness brand and gym. Certified trainers, modern equipment, and 24/7 access.">
+    <title>26fitnessClub | Future Fitness</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Lightbox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- FontAwesome Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- Theme Specific CSS (Cyberpunk Gym) -->
+    <link rel="stylesheet" href="css/theme5.css
+    ">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand text-uppercase d-flex align-items-center" href="#page-top">
+                <div class="logo-icon bg-transparent text-accent d-flex justify-content-center align-items-center me-3" style="width: 40px; height: 40px; border: 2px solid var(--accent-alt); clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">
+                    <i class="fas fa-bolt fs-5"></i>
+                </div>
+                <span class="fs-4 fw-light tracking-wider"><span id="nav-brand-white"></span><span id="nav-brand-light" class="text-secondary ms-1 me-1"></span><span id="nav-brand-accent" class="text-accent fw-bold"></span></span>
+            </a>
+            <button class="navbar-toggler border border-accent text-accent" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="border-radius: 0;">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0 text-uppercase fw-bold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#trainers">Trainers</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#pricing">Membership</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link px-4 text-dark bg-accent ms-lg-3 mt-3 mt-lg-0 fw-bold border border-accent" href="#offers" style="clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">OFFERS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header class="masthead position-relative" id="page-top" style="background-image: linear-gradient(rgba(11, 12, 16, 0.7), rgba(11, 12, 16, 0.9)), url('../images/hero_bg.png'); border-bottom: 2px solid var(--accent-color);">
+            <div class="container h-100 position-relative" style="z-index: 1;">
+                <div class="row h-100 align-items-center">
+                    <div class="col-lg-10" data-aos="fade-right" data-aos-duration="600">
+                        <div class="mb-4 text-accent" style="font-family: var(--font-accent);">// INITIALIZING WORKOUT PROTOCOL...</div>
+                        <h1 class="text-white section-heading mb-4" style="letter-spacing: 4px; line-height: 1.1;"><span id="hero-title-prefix"></span><br><span id="hero-title-accent" class="text-accent"></span></h1>
+                        <p id="hero-subtitle" class="text-secondary mb-5 fs-4" style="max-width: 700px;"></p>
+                        <div class="d-flex gap-4 flex-wrap mt-5">
+                            <a class="btn btn-accent px-5 py-3 fs-5" href="#pricing">JOIN THE FUTURE</a>
+                            <a class="btn btn-outline-accent px-5 py-3 fs-5" href="#programs">VIEW PROGRAMS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Special Offers Section -->
+        <section class="page-section border-bottom border-surface" id="offers">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10" data-aos="zoom-in" data-aos-duration="400">
+                        <div class="p-5 offers-card text-center bg-surface position-relative">
+                            
+                            <!-- Future Elements -->
+                            <div class="position-absolute text-accent opacity-25" style="top: 10px; left: 10px; font-family: var(--font-accent);">> PR0M0_ACT1V3</div>
+
+                            <!-- Content -->
+                            <div class="position-relative" style="z-index: 1;">
+                                <div id="offers-badge" class="d-inline-block text-dark bg-accent px-4 py-1 mb-4 text-uppercase fw-bold" style="clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);"></div>
+                                <h2 class="section-heading mb-3 text-white"><span id="offers-title"></span> <span id="offers-title-accent" class="text-accent"></span> <span id="offers-title-suffix"></span></h2>
+                                <h3 class="display-3 fw-bold text-white mb-4 py-3" style="text-shadow: 2px 2px 0px var(--accent-alt);"><span id="offers-discount"></span><span id="offers-discount-accent" class="text-accent"></span></h3>
+                                <p id="offers-description" class="fs-4 text-secondary mb-5"></p>
+                                
+                                <div class="d-flex justify-content-center gap-4 flex-wrap align-items-center mt-4">
+                                    <a id="offers-whatsapp-btn" href="#" target="_blank" class="btn btn-accent btn-xl px-5 py-3 text-uppercase fw-bold">
+                                        <i class="fab fa-whatsapp me-2"></i> CLAIM VIA WHATSAPP
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="page-section" id="about">
+            <div class="container container-fluid px-4 px-lg-5">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                        <div class="about-img-wrapper position-relative p-2 bg-surface">
+                            <div class="position-absolute w-100 h-100 bg-accent" style="top: 10px; left: -10px; z-index: 0; opacity: 0.1; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);"></div>
+                            <img id="about-image" src="" alt="About 26fitnessClub" class="img-fluid about-img w-100 position-relative" style="z-index: 1;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="mb-2 text-accent" style="font-family: var(--font-accent);">> GYM_CAPABILITIES.EXE</div>
+                        <h2 class="section-heading mb-5 text-white"><span id="about-title-prefix"></span> <br><span id="about-title-accent" class="text-accent"></span></h2>
+                        <p id="about-description" class="text-secondary mb-4 fs-5"></p>
+                        <ul id="about-features" class="list-unstyled feature-list text-white mb-5">
+                            <!-- Populated via JS -->
+                        </ul>
+                        <a href="#trainers" class="btn btn-outline-accent px-4 py-2 mt-2">MEET THE TEAM</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Programs -->
+        <section class="page-section bg-surface" id="programs" style="border-top: 1px solid var(--accent-alt); border-bottom: 1px solid var(--accent-alt);">
+            <div class="container">
+                <div class="text-center mb-5 pb-4" data-aos="fade-up">
+                    <span class="text-accent text-uppercase small d-block mb-3" style="font-family: var(--font-accent);">// AVAILABLE_TRAINING</span>
+                    <h2 class="section-heading text-white">TRAINING <span class="text-accent">PROGRAMS</span></h2>
+                </div>
+                <div class="row g-4 justify-content-center" id="programs-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trainers Section -->
+        <section class="page-section" id="trainers">
+            <div class="container container-fluid px-4 px-lg-5">
+                <div class="text-center mb-5 pb-4" data-aos="fade-up">
+                    <span class="text-accent text-uppercase small d-block mb-3" style="font-family: var(--font-accent);">// ELITE_STAFF</span>
+                    <h2 class="section-heading text-white">EXPERT <span class="text-accent">TRAINERS</span></h2>
+                </div>
+                <div class="row g-5" id="trainers-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Pricing -->
+        <section class="page-section bg-surface" id="pricing" style="border-top: 1px solid var(--surface-light); border-bottom: 1px solid var(--surface-light);">
+            <div class="container">
+                <div class="text-center mb-5 pb-4" data-aos="fade-up">
+                    <span class="text-accent text-uppercase small d-block mb-3" style="font-family: var(--font-accent);">// MEMBERSHIP_PLANS</span>
+                    <h2 class="section-heading text-white"><span class="text-accent">MEMBERSHIP</span> PLANS</h2>
+                </div>
+                <div class="row g-4 align-items-center justify-content-center" id="pricing-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="page-section" id="gallery">
+            <div class="container-fluid px-4 px-lg-5">
+                <div class="text-center mb-5 pb-4" data-aos="fade-up">
+                    <span class="text-accent text-uppercase small d-block mb-3" style="font-family: var(--font-accent);">// VISUAL_DATA</span>
+                    <h2 class="section-heading text-white">GYM <span class="text-accent">GALLERY</span></h2>
+                </div>
+                <div class="row g-3" id="gallery-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Gallery -->
+        <section class="page-section bg-surface" id="video-gallery" style="border-top: 2px solid var(--accent-color);">
+            <div class="container-fluid px-5">
+                <div class="text-center mb-5 pb-4" data-aos="fade-up">
+                    <span class="text-accent text-uppercase small d-block mb-3" style="font-family: var(--font-accent);">// ACTION_LOGS</span>
+                    <h2 class="section-heading text-white">TRAINING <span class="text-accent">VIDEOS</span></h2>
+                </div>
+                
+                <!-- Video Swiper Wrapper -->
+                <div class="position-relative">
+                    <div class="swiper videoSwiper pb-5" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper" id="video-gallery-container">
+                            <!-- Populated by JS -->
+                        </div>
+                        <div class="swiper-pagination position-static pt-4 video-pagination"></div>
+                    </div>
+                    
+                    <div class="swiper-button-next video-next btn-accent px-4 py-4" style="right: 0px; top: 40%;"></div>
+                    <div class="swiper-button-prev video-prev btn-accent px-4 py-4" style="left: 0px; top: 40%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="page-section" id="testimonials">
+            <div class="container-fluid px-5">
+                <div class="text-center mb-5 pb-4" data-aos="fade-up">
+                    <span class="text-accent text-uppercase small d-block mb-3" style="font-family: var(--font-accent);">// COMMUNITY_FEEDBACK</span>
+                    <h2 class="section-heading text-white">MEMBER <span class="text-accent">STORIES</span></h2>
+                </div>
+                <div class="position-relative">
+                    <div class="swiper testimonialSwiper pb-5" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper" id="testimonials-container">
+                            <!-- Populated by JS -->
+                        </div>
+                        <div class="swiper-pagination position-static pt-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="page-section bg-surface" id="contact" style="border-top: 2px solid var(--accent-alt);">
+            <div class="container container-fluid px-4 px-lg-5">
+                <div class="text-center mb-5 pb-4" data-aos="fade-up">
+                    <span class="text-accent text-uppercase small d-block mb-3" style="font-family: var(--font-accent);">// ESTABLISH_CONNECTION</span>
+                    <h2 class="section-heading text-white">GET IN <span class="text-accent">TOUCH</span></h2>
+                </div>
+                <div class="row justify-content-center mt-4">
+                    <div class="col-lg-12" data-aos="fade-up">
+                        <div class="d-flex flex-column flex-md-row bg-surface border border-accent offers-card overflow-hidden">
+                            
+                            <div class="col-md-6 p-5 border-end border-accent">
+                                <h4 class="mb-5 text-accent font-monospace">CONTACT INFO</h4>
+                                <div class="d-flex mb-5">
+                                    <i class="fas fa-map-marker-alt fs-3 text-alt me-4" style="color: var(--accent-alt);"></i>
+                                    <div>
+                                        <p id="contact-address" class="text-white mb-2 fs-5"></p>
+                                        <a id="contact-map-link" href="#" target="_blank" class="text-accent text-decoration-none small text-uppercase">
+                                            [ GET DIRECTIONS ]
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-phone-alt fs-3 text-alt me-4" style="color: var(--accent-alt);"></i>
+                                    <div>
+                                        <p id="contact-phone" class="text-white mb-0 fs-5"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 p-5 d-flex flex-column justify-content-center align-items-center text-center">
+                                <i class="fab fa-whatsapp fs-1 mb-4" style="color: var(--accent-alt); text-shadow: 0 0 10px var(--accent-alt-glow);"></i>
+                                <h4 class="mb-3 text-white">CHAT WITH US</h4>
+                                <p class="text-secondary mb-5 fs-5">Have questions about our memberships or programs? Chat with our team directly via WhatsApp for a quick response.</p>
+                                <a id="contact-whatsapp-btn" href="#" target="_blank" class="btn btn-outline-accent px-5 py-3 w-100 fs-5">
+                                    <i class="fab fa-whatsapp me-2"></i> OPEN WHATSAPP CHAT
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer py-5 mt-0 pb-4" style="background-color: var(--bg-color); border-top: 2px solid var(--accent-color);">
+        <div class="container-fluid px-4 px-lg-5 text-center text-lg-start">
+            <div class="row align-items-center justify-content-between mb-5">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-3">
+                        <i class="fas fa-dumbbell text-accent fs-4 me-3" style="transform: rotate(-45deg);"></i>
+                        <span class="fs-4 fw-bold text-white"><span id="footer-brand-white"></span><span id="footer-brand-light" class="text-accent ms-1 me-1"></span><span id="footer-brand-accent" class="text-white"></span></span>
+                    </div>
+                    <p id="footer-description" class="text-secondary"></p>
+                </div>
+                
+                <div class="col-lg-4 text-center">
+                    <p class="text-uppercase small text-accent mb-3" style="font-family: var(--font-accent);">// CONNECT</p>
+                    <a id="footer-social-twitter" class="btn btn-social mx-2 p-3 text-accent" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a id="footer-social-facebook" class="btn btn-social mx-2 p-3 text-accent" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a id="footer-social-instagram" class="btn btn-social mx-2 p-3 text-accent" href="#!"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+                    <div id="footer-links" class="d-inline-block text-secondary small me-3 fw-bold">
+                        <!-- Populated by JS -->
+                    </div>
+                    <a class="text-alt" style="color: var(--accent-alt);" href="editor.html" target="_blank" title="Admin Interface"><i class="fas fa-tools fs-5"></i></a>
+                </div>
+            </div>
+
+            <div class="row pt-4 mt-2" style="border-top: 1px dashed var(--accent-color);">
+                <div class="col-12 text-center">
+                    <small id="footer-copyright" class="text-accent" style="font-family: var(--font-accent);"></small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery (required for Lightbox) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
