@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Test Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #data-container {
+      margin-top: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      max-height: 500px;
+      overflow: auto;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>API JSON Viewer</h1>
+
+  <button onclick="fetchData()">Load Data</button>
+
+  <div id="data-container">Click button to load data...</div>
+
+  <script>
+    async function fetchData() {
+      const container = document.getElementById("data-container");
+      container.innerHTML = "Loading...";
+
+      try {
+        const response = await fetch("http://gymgurus.in/api/service/services", {
+          method: "GET",
+          credentials: "include" // remove if not needed
+        });
+
+        const data = await response.json();
+
+        // Show full JSON nicely formatted
+        container.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+
+      } catch (error) {
+        container.innerHTML = "❌ Error fetching data";
+        console.error("Fetch Error:", error);
+      }
+    }
+  </script>
+
+</body>
+</html>
