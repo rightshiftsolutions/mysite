@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gym API Test</title>
+</head>
+<body>
+
+<h2>Add Student</h2>
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+<button onclick="addStudent()">Add</button>
+
+<h2>Student List</h2>
+<button onclick="getStudents()">Load Students</button>
+<pre id="output">Click "Load Students" to fetch data...</pre>
+
+<script>
+// ✅ GET students
+function getStudents() {
+  fetch("https://api.gymgurus.in/students")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("output").textContent =
+        JSON.stringify(data, null, 2);
+    })
+    .catch(err => {
+      document.getElementById("output").textContent = "Error loading data";
+      console.error(err);
+    });
+}
+
+// ✅ POST new student
+function addStudent() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  if (!name || !email) {
+    alert("Please enter both name and email");
+    return;
+  }
+
+  fetch("https://api.gymgurus.in/students", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ name, email })
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert("Student added!");
+      getStudents(); // refresh list
+    })
+    .catch(err => {
+      alert("Error adding student");
+      console.error(err);
+    });
+}
+</script>
+
+</body>
+</html>
