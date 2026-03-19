@@ -5,16 +5,15 @@
 </head>
 <body>
 
-<h2>Student Data</h2>
+<h2>API Status</h2>
 
 <pre id="output">Loading...</pre>
 
 <script>
-fetch("https://api.gymgurus.in/students")
-  .then(res => res.json())
+fetch("https://api.gymgurus.in/")
+  .then(res => res.text()) // 👈 because API returns text
   .then(data => {
-    document.getElementById("output").textContent =
-      JSON.stringify(data, null, 2);
+    document.getElementById("output").textContent = data;
   })
   .catch(err => {
     document.getElementById("output").textContent = "Error loading data";
