@@ -5,20 +5,54 @@
 </head>
 <body>
 
-<h2>API Status</h2>
+<h2>Add Student</h2>
 
-<pre id="output">Loading...</pre>
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+<button onclick="addStudent()">Add</button>
+
+<h2>Students</h2>
+<button onclick="getStudents()">Load Students</button>
+
+<pre id="output">Click "Load Students"</pre>
 
 <script>
-fetch("https://api.gymgurus.in/")
-  .then(res => res.text()) // 👈 because API returns text
+// ✅ GET METHOD
+function getStudents() {
+  fetch("https://api.gymgurus.in/students")
+    .then(res => res.text()) // safe for JSON or error
+    .then(data => {
+      document.getElementById("output").textContent = data;
+    })
+    .catch(err => {
+      document.getElementById("output").textContent = "Error fetching data";
+      console.error(err);
+    });
+}
+
+// ✅ POST METHOD
+function addStudent() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  fetch("https://api.gymgurus.in/students", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ name, email })
+  })
+  .then(res => res.text()) // safe handling
   .then(data => {
-    document.getElementById("output").textContent = data;
+    alert("Student added!");
+    console.log(data);
+    getStudents(); // refresh list
   })
   .catch(err => {
-    document.getElementById("output").textContent = "Error loading data";
+    alert("Error adding student");
     console.error(err);
   });
+}
 </script>
 
 </body>
