@@ -1,0 +1,379 @@
+{
+  "theme": {
+    "brandTextWhite": "The Gym ",
+    "brandTextLight": " eagles",
+    "brandTextAccent": "(Gyn Near Raja park"
+  },
+  "contact": {
+    "phone": "094688 87279",
+    "whatsappNumber": "094688 87279",
+    "address": " hotel City home, 338-A, Gali No. 4, Gurunanakpura, Raja Park, Jaipur, Rajasthan 302004",
+    "mapLink": "https://www.google.com/maps/dir//The+Gym+Eagles+(Gym+Near+Raja+Park),+hotel+City+home,+338-A,+Gali+No.+4,+Gurunanakpura,+Raja+Park,+Jaipur,+Rajasthan+302004/@26.8600632,75.7560341,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x396db6946ef203a5:0x34c2ba0841603520!2m2!1d75.8260771!2d26.8939959?entry=ttu&g_ep=EgoyMDI2MDMxNy4wIKXMDSoASAFQAw%3D%3D"
+  },
+  "social": {
+    "twitter": "#!",
+    "facebook": "#!",
+    "instagram": "#!"
+  },
+  "hero": {
+    "titlePrefix": "Unleash Your",
+    "titleAccent": "Potential",
+    "subtitle": "Join the premium fitness experience. Certified trainers, state-of-the-art equipment, and a community that pushes you further."
+  },
+  "offers": {
+    "badgeText": "Limited Time",
+    "title": "Summer",
+    "titleAccent": "Shred",
+    "titleSuffix": "Offer",
+    "discount": "Get 3 Months ",
+    "discountAccent": "FREE",
+    "description": "Sign up for an annual Elite Membership today and get your first 3 months completely free, plus 2 complimentary personal training sessions.",
+    "whatsappMessage": "Hi! I'm interested in the Summer Shred Offer from 26fitnessClub."
+  },
+  "about": {
+    "image": "images/about_gym.png",
+    "titlePrefix": "Elevate Your",
+    "titleAccent": "Training",
+    "description": "At the gym eagles, we believe in pushing boundaries. Our premium facility offers everything you need to transform your body and mind in an aesthetic, mood-lit environment.",
+    "features": [
+      "Elite Certified Trainers",
+      "State-of-the-art Equipment",
+      "24/7 Premium Access",
+      "Nutrition & Recovery Center"
+    ]
+  },
+  "programs": [
+    {
+      "icon": "fas fa-dumbbell",
+      "title": "Strength Training",
+      "description": "Build muscle mass and increase your raw strength with our heavy lifting program."
+    },
+    {
+      "icon": "fas fa-fire",
+      "title": "CrossFit",
+      "description": "High-intensity functional movements designed to push your cardiovascular endurance."
+    },
+    {
+      "icon": "fas fa-user-ninja",
+      "title": "Personal Training",
+      "description": "1-on-1 coaching customized completely to your unique fitness goals."
+    },
+    {
+      "icon": "fas fa-yin-yang",
+      "title": "Yoga & Mobility",
+      "description": "Improve flexibility, balance, and mental focus with our expert-led yoga sessions."
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "title": "Cardio Fitness",
+      "description": "Optimized routines using modern cardio equipment to maximize calorie burn."
+    },
+    {
+      "icon": "fas fa-weight",
+      "title": "Weight Loss",
+      "description": "Structured programs integrating workout, nutrition, and recovery for effective results."
+    }
+  ],
+  "trainers": [
+    {
+      "image": "images/trainer_1.jpeg",
+      "name": "twinkle kumawat",
+      "role": " Yoga & Mobility Coach",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_2.png",
+      "name": "Vijay Saini",
+      "role": "Head of Gym-CrossFit Specialist",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_3.png",
+      "name": "Aakash",
+      "role": "Strength Trainer",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Basic",
+      "price": "$29",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Standard Gym Access",
+          "included": true
+        },
+        {
+          "name": "Free Weights Area",
+          "included": true
+        },
+        {
+          "name": "Cardio Equipment",
+          "included": true
+        },
+        {
+          "name": "Group Classes",
+          "included": false
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Pro",
+      "price": "$59",
+      "period": "/mo",
+      "isPopular": true,
+      "features": [
+        {
+          "name": "24/7 Gym Access",
+          "included": true
+        },
+        {
+          "name": "All Equipment Access",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Free Recovery Shake",
+          "included": true
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Elite",
+      "price": "$99",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Premium 24/7 Access",
+          "included": true
+        },
+        {
+          "name": "VIP Locker Room",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Sauna & Spa Access",
+          "included": true
+        },
+        {
+          "name": "2x PT Sessions/mo",
+          "included": true
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "imageLarge": "images/gallery_1.png",
+      "imageThumb": "images/gallery_1.png",
+      "title": "Premium Weights",
+      "delay": 100
+    },
+    {
+      "imageLarge": "images/gallery_2.png",
+      "imageThumb": "images/gallery_2.png",
+      "title": "Cardio Zone",
+      "delay": 200
+    },
+    {
+      "imageLarge": "images/gallery_3.png",
+      "imageThumb": "images/gallery_3.png",
+      "title": "CrossFit Area",
+      "delay": 300
+    },
+    {
+      "imageLarge": "images/gallery_4.png",
+      "imageThumb": "images/gallery_4.png",
+      "title": "Yoga Studio",
+      "delay": 400
+    },
+    {
+      "imageLarge": "images/gallery_5.png",
+      "imageThumb": "images/gallery_5.png",
+      "title": "Personal Training",
+      "delay": 500
+    },
+    {
+      "imageLarge": "images/gallery_6.png",
+      "imageThumb": "images/gallery_6.png",
+      "title": "Locker Rooms",
+      "delay": 600
+    }
+  ],
+  "videoGallery": [
+    {
+      "videoSrc": "https://www.youtube.com/embed/eaRQF-7rqmE?si=DrtqG2k4-0T1wD4u",
+      "title": "Beast Mode: Full Body Workout",
+      "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/X1TuhAn6C-g?si=s5sJnsSIf0xLgQ7U",
+      "title": "Advanced HIIT Cardio",
+      "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/tCJEhXfH8mI",
+      "title": "Master the Deadlift",
+      "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/CBpItFjWzQ4",
+      "title": "10-Minute Core Crunch",
+      "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
+    }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "\"The gym is best gym from my view and in this gym all equipment are available which i like most and its give me nice experience also . I take personal training and . I got what i want from gym . Nice gym in jaipur\"",
+      "image": "images/testimonial_1.svg",
+      "name": "kavita shingh",
+      "subtitle": "Lost 30 lbs, gained confidence"
+    },
+    {
+      "stars": 5,
+      "text": "\"There is Friendly Environment and Behaviour of Gym coach is so good they always suggest Right gastur and posture of Exercise....\"",
+      "image": "images/testimonial_2.svg",
+      "name": "rajesh mehata",
+      "subtitle": "Strength Athlete"
+    },
+    {
+      "stars": 4.5,
+      "text": "\"Best gym with latest Machines ! Staff is also good and trainers as well . Clean and well maintained Gym.\"",
+      "image": "images/testimonial_3.svg",
+      "name": "sammer sharma",
+      "subtitle": "Yoga Enthusiast"
+    },
+    {
+      "stars": 5,
+      "text": "\"recently joined the eagles gym and have had a great experience so far. The equipment is modern and well-maintained, and the space is always clean and organized. The trainers are helpful and professional, offering guidance when needed.\"",
+      "image": "images/testimonial_4.svg",
+      "name": "avinasha gurbani",
+      "subtitle": "Personal Training Client"
+    }
+  ],
+  "footer": {
+    "description": "Premium fitness experience designed to transform your life.",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "#!"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "#!"
+      }
+    ],
+    "copyright": "© 2023 The Gym Eagles. All Rights Reserved."
+  },
+
+  "gym": {
+    "name": "The Gym Eagles",
+    "phone": "9876543210",
+    "location": "28.6139,77.2090"
+  },
+
+  "shop": {
+    "whatsappNumber": "919205535096"
+  },
+
+  "products": [
+
+    {
+      "id": 1,
+      "productCode": "TS-MEN-001",
+      "name": "Men Cotton Gym T-Shirt",
+      "category": "men",
+      "material": "Cotton",
+      "price": 499,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/men_gym_t-shirt.png"
+    },
+
+    {
+      "id": 2,
+      "productCode": "TS-WOM-001",
+      "name": "Women Lycra Gym T-Shirt",
+      "category": "women",
+      "material": "Lycra",
+      "price": 599,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/women_gym_t-shirt.png"
+    },
+
+    {
+      "id": 3,
+      "productCode": "TS-UNI-001",
+      "name": "Unisex Linen Gym T-Shirt",
+      "category": "unisex",
+      "material": "Linen",
+      "price": 699,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/unisex_gym_t-shirt .png"
+    },
+
+    {
+      "id": 4,
+      "productCode": "TS-MEN-002",
+      "name": "Oversized Pump Cover T-Shirt",
+      "category": "men",
+      "material": "Heavy Cotton",
+      "price": 749,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Oversized_Pump_Cover_T-Shirt.png"
+    },
+
+    {
+      "id": 5,
+      "productCode": "TS-WOM-002",
+      "name": "Dry Fit Training T-Shirt",
+      "category": "women",
+      "material": "Polyester Dry Fit",
+      "price": 649,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Dry_Fit_Training_T-Shirt.png"
+    },
+
+    {
+      "id": 6,
+      "productCode": "TS-MEN-003",
+      "name": "Sleeveless Workout Tee",
+      "category": "men",
+      "material": "Breathable Blend",
+      "price": 549,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Sleeveless_Workout_Tee.png"
+    }
+
+  ]
+}
