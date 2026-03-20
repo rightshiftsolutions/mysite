@@ -1,0 +1,299 @@
+{
+  "theme": {
+    "brandTextWhite": "",
+    "brandTextLight": " ",
+    "brandTextAccent": " Gold Gym Club"
+  },
+  "contact": {
+    "phone": "+91 92055 35096",
+    "whatsappNumber": "+91 92055 35096",
+    "address": "S7,S8, upon, the SBI bank, 1, patrakar colony, Patrakar Colony, Swarn Path, Mansarovar Sector 4, Mansarovar, Jaipur, Rajasthan 302020",
+    "mapLink": "https://maps.app.goo.gl/ougzP7p6BKsVGZ9c6?g_st=aw"
+  },
+  "social": {
+    "twitter": "#!",
+    "facebook": "#!",
+    "instagram": "https://www.instagram.com/goldengymjaipur?igsh=cXdoeHc5eHJtZHMx"
+  },
+  "hero": {
+    "titlePrefix": "Unleash Your",
+    "titleAccent": "Potential",
+    "subtitle": "Join the premium fitness experience. Certified trainers, state-of-the-art equipment, and a community that pushes you further."
+  },
+  "offers": {
+    "badgeText": "Limited Time",
+    "title": "Summer",
+    "titleAccent": "Shred",
+    "titleSuffix": "Offer",
+    "discount": "Get 3 Months ",
+    "discountAccent": "FREE",
+    "description": "Sign up for an annual Elite Membership today and get your first 3 months completely free, plus 2 complimentary personal training sessions.",
+    "whatsappMessage": "Hi! I'm interested in the Summer Shred Offer from 26fitnessClub."
+  },
+  "about": {
+    "image": "images/about_gym.png",
+    "titlePrefix": "Elevate Your",
+    "titleAccent": "Training",
+    "description": "At 26fitnessClub, we believe in pushing boundaries. Our premium facility offers everything you need to transform your body and mind in an aesthetic, mood-lit environment.",
+    "features": [
+      "Elite Certified Trainers",
+      "State-of-the-art Equipment",
+      "24/7 Premium Access",
+      "Nutrition & Recovery Center"
+    ]
+  },
+  "programs": [
+    {
+      "icon": "fas fa-dumbbell",
+      "title": "Nutrition Consulting",
+      "description": "Nutrition consulting is a professional service where experts provide personalized dietary guidance and meal planning to help individuals reach specific health, weight loss, or performance goals."
+    },
+    {
+      "icon": "fas fa-fire",
+      "title": "Youth Sports",
+      "description": "Youth sports are organized athletic programs that provide children and adolescents the opportunity to develop physical skills, teamwork, and sportsmanship through competitive or recreational play."
+    },
+    {
+      "icon": "fas fa-user-ninja",
+      "title": "Cycling",
+      "description": "Cycling is a low-impact cardiovascular exercise that uses a bicycle to improve leg strength, endurance, and heart health through rhythmic pedaling"
+    },
+    {
+      "icon": "fas fa-yin-yang",
+      "title": "Zumba",
+      "description": "Zumba is a high-energy fitness program that blends Latin and international music with dance choreography for a total-body cardio workout that feels more like a party than exercise."
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "title": "Personal Training",
+      "description": "Personal training is a one-on-one fitness service where a certified professional designs tailored workout programs and provides real-time coaching to help you reach specific physical goals safely and efficiently."
+    },
+    {
+      "icon": "fas fa-weight",
+      "title": "Weight Training",
+      "description": "Weight training is a form of physical exercise using resistance, such as dumbbells, barbells, or machines, to contract muscles and build overall strength, bone density, and lean muscle mass."
+    }
+  ],
+  "trainers": [
+    {
+      "image": "images/trainer_1.jpeg",
+      "name": "ashutosh gautam",
+      "role": " Yoga & Mobility Coach",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_2.png",
+      "name": "deepti thakur",
+      "role": "Head of Gym-CrossFit Specialist",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_3.png",
+      "name": "Ayush",
+      "role": "Strength Trainer",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Basic",
+      "price": "$29",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Standard Gym Access",
+          "included": true
+        },
+        {
+          "name": "Free Weights Area",
+          "included": true
+        },
+        {
+          "name": "Cardio Equipment",
+          "included": true
+        },
+        {
+          "name": "Group Classes",
+          "included": false
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Pro",
+      "price": "$59",
+      "period": "/mo",
+      "isPopular": true,
+      "features": [
+        {
+          "name": "24/7 Gym Access",
+          "included": true
+        },
+        {
+          "name": "All Equipment Access",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Free Recovery Shake",
+          "included": true
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Elite",
+      "price": "$99",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Premium 24/7 Access",
+          "included": true
+        },
+        {
+          "name": "VIP Locker Room",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Sauna & Spa Access",
+          "included": true
+        },
+        {
+          "name": "2x PT Sessions/mo",
+          "included": true
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "imageLarge": "images/gallery_1.png",
+      "imageThumb": "images/gallery_1.png",
+      "title": "Premium Weights",
+      "delay": 100
+    },
+    {
+      "imageLarge": "images/gallery_2.png",
+      "imageThumb": "images/gallery_2.png",
+      "title": "Cardio Zone",
+      "delay": 200
+    },
+    {
+      "imageLarge": "images/gallery_3.png",
+      "imageThumb": "images/gallery_3.png",
+      "title": "CrossFit Area",
+      "delay": 300
+    },
+    {
+      "imageLarge": "images/gallery_4.png",
+      "imageThumb": "images/gallery_4.png",
+      "title": "Yoga Studio",
+      "delay": 400
+    },
+    {
+      "imageLarge": "images/gallery_5.png",
+      "imageThumb": "images/gallery_5.png",
+      "title": "Personal Training",
+      "delay": 500
+    },
+    {
+      "imageLarge": "images/gallery_6.png",
+      "imageThumb": "images/gallery_6.png",
+      "title": "Locker Rooms",
+      "delay": 600
+    }
+  ],
+  "videoGallery": [
+    {
+      "videoSrc": "https://www.youtube.com/embed/eaRQF-7rqmE?si=DrtqG2k4-0T1wD4u",
+      "title": "Beast Mode: Full Body Workout",
+      "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/X1TuhAn6C-g?si=s5sJnsSIf0xLgQ7U",
+      "title": "Advanced HIIT Cardio",
+      "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
+    },
+    {
+      "videoSrc": "https://youtu.be/m__vJ_Fqsy4?si=w9MchiObu4u2cQEP",
+      "title": "Master the Deadlift",
+      "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/CBpItFjWzQ4",
+      "title": "10-Minute Core Crunch",
+      "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
+    }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "Very nice gym the trainer where is just like your big brother best gym ever visited",
+      "image": "images/testimonial_1.svg",
+      "name": "Rajput Games",
+      "subtitle": "Lost 30 lbs, gained confidence"
+    },
+    {
+      "stars": 5,
+      "text": "Very nice gym the trainer where is just like your big brother best gym ever visited",
+      "image": "images/testimonial_2.svg",
+      "name": "Rajput Games",
+      "subtitle": "Strength Athlete"
+    },
+    {
+      "stars": 5,
+      "text": "Excellent machinery and trained by trainer. Helped loose 10kgs in 4 months. I look more presentable and look good in formal clothing. Thanks to Ashok bhaiya.",
+      "image": "images/testimonial_3.svg",
+      "name": "Bharat Sharma",
+      "subtitle": "Yoga Enthusiast"
+    },
+    {
+      "stars": 5,
+      "text": "This is very good gym and trainer is outstanding and i love this gym",
+      "image": "images/testimonial_4.svg",
+      "name": "Hanuman Choudhary",
+      "subtitle": "Personal Training Client"
+    }
+  ],
+  "footer": {
+    "description": "Premium fitness experience designed to transform your life.",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "#!"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "#!"
+      }
+    ],
+    "copyright": "© 2026 26fitnessClub. All Rights Reserved."
+  }
+}
