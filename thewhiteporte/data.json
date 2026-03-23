@@ -1,0 +1,379 @@
+{
+  "theme": {
+    "brandTextWhite": "",
+    "brandTextLight": "",
+    "brandTextAccent": "THE WHITE PORTE"
+  },
+  "contact": {
+    "phone": "+91 97992 27479 ",
+    "whatsappNumber": "97992 27479",
+    "address": "DELIGHT TOWER, B 23, Govind Marg, Gurunanakpura, Raja Park, Jaipur, Rajasthan 302004",
+    "mapLink": "https://maps.app.goo.gl/GD8AjGNgf1xuQVLaA"
+  },
+  "social": {
+    "twitter": "#!",
+    "facebook": "#!",
+    "instagram": "https://www.instagram.com/thewhiteporte?igsh=bmNjYXJxODNhdGFu"
+  },
+  "hero": {
+    "titlePrefix": "Unleash Your",
+    "titleAccent": "Potential",
+    "subtitle": "Join the premium fitness experience. Certified trainers, state-of-the-art equipment, and a community that pushes you further."
+  },
+  "offers": {
+    "badgeText": "Limited Time",
+    "title": "Summer",
+    "titleAccent": "Shred",
+    "titleSuffix": "Offer",
+    "discount": "Get 3 Months ",
+    "discountAccent": "FREE",
+    "description": "Sign up for an annual Elite Membership today and get your first 3 months completely free, plus 2 complimentary personal training sessions.",
+    "whatsappMessage": "Hi! I'm interested in the Summer Shred Offer from 26fitnessClub."
+  },
+  "about": {
+    "image": "images/about_gym.png",
+    "titlePrefix": "Elevate Your",
+    "titleAccent": "Training",
+    "description": "At 26fitnessClub, we believe in pushing boundaries. Our premium facility offers everything you need to transform your body and mind in an aesthetic, mood-lit environment.",
+    "features": [
+      "Elite Certified Trainers",
+      "State-of-the-art Equipment",
+      "24/7 Premium Access",
+      "Nutrition & Recovery Center"
+    ]
+  },
+  "programs": [
+    {
+      "icon": "fas fa-dumbbell",
+      "title": "Aerobics",
+      "description": "Aerobics is a high-energy cardio workout that combines rhythmic movements with upbeat music to improve heart health and stamina. By keeping your heart rate elevated, it effectively burns calories while boosting overall flexibility and coordination. It’s a fun, social way to stay fit that leaves you feeling energized and revitalized after every session."
+    },
+    {
+      "icon": "fas fa-fire",
+      "title": "CrossFit",
+      "description": "CrossFit is a high-intensity strength and conditioning program that blends elements of weightlifting, gymnastics, and cardio for a total body transformation. It focuses on functional movements—like squatting, pulling, and pushing—to build real-world power, speed, and endurance. Beyond the workout, it’s built on a supportive community that motivates you to push past your limits and achieve peak athletic performance."
+    },
+    {
+      "icon": "fas fa-user-ninja",
+      "title": "Personal Training",
+      "description": "Personal training offers a customized fitness roadmap designed specifically for your unique goals, body type, and current fitness level. With a dedicated trainer by your side, you receive expert technical guidance to ensure every movement is performed safely and with maximum efficiency. It provides the ultimate level of accountability and motivation, helping you stay consistent and break through plateaus to reach your peak potential."
+    },
+    {
+      "icon": "fas fa-yin-yang",
+      "title": "Cycling",
+      "description": "Cycling is a high-octane cardiovascular workout that builds incredible lower-body strength while being remarkably gentle on your joints. Whether you’re climbing virtual hills or sprinting to the beat, it effectively boosts your endurance and lung capacity in an immersive environment. The rhythmic pedaling and shared energy of a class create a powerful sense of focus and stress relief, leaving you feeling both exhausted and exhilarated."
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "title": "Yoga Classes",
+      "description": "Yoga classes offer a perfect blend of physical postures and breathwork designed to enhance flexibility, balance, and core strength. By focusing on the mind-body connection, it provides a powerful sanctuary for stress relief and mental clarity amidst a busy lifestyle. Whether you are seeking a vigorous flow or deep relaxation, it is a journey of self-discovery and holistic wellness that leaves you feeling centered."
+    },
+    {
+      "icon": "fas fa-weight",
+      "title": "Gym",
+      "description": "The gym is a powerhouse of strength and transformation, providing the professional equipment and space you need to sculpt your body and boost your health. From high-intensity cardio to heavy weightlifting, it offers a diverse range of training options to keep your routine effective and engaging. It’s more than just a place to sweat; it’s a disciplined environment where your consistency meets your goals to build a stronger, more confident you."
+    }
+  ],
+  "trainers": [
+    {
+      "image": "images/trainer_1.jpeg",
+      "name": "pooja",
+      "role": " Yoga & Mobility Coach",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_2.png",
+      "name": "kapil",
+      "role": "Head of Gym-CrossFit Specialist",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_3.png",
+      "name": "Aakash",
+      "role": "Strength Trainer",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Basic",
+      "price": "1000₹",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Standard Gym Access",
+          "included": true
+        },
+        {
+          "name": "Free Weights Area",
+          "included": true
+        },
+        {
+          "name": "Cardio Equipment",
+          "included": true
+        },
+        {
+          "name": "Group Classes",
+          "included": false
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Pro",
+      "price": "3000₹",
+      "period": "/mo",
+      "isPopular": true,
+      "features": [
+        {
+          "name": "24/7 Gym Access",
+          "included": true
+        },
+        {
+          "name": "All Equipment Access",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Free Recovery Shake",
+          "included": true
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Elite",
+      "price": "6000₹",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Premium 24/7 Access",
+          "included": true
+        },
+        {
+          "name": "VIP Locker Room",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Sauna & Spa Access",
+          "included": true
+        },
+        {
+          "name": "2x PT Sessions/mo",
+          "included": true
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "imageLarge": "images/gallery_1.png",
+      "imageThumb": "images/gallery_1.png",
+      "title": "Premium Weights",
+      "delay": 100
+    },
+    {
+      "imageLarge": "images/gallery_2.png",
+      "imageThumb": "images/gallery_2.png",
+      "title": "Cardio Zone",
+      "delay": 200
+    },
+    {
+      "imageLarge": "images/gallery_3.png",
+      "imageThumb": "images/gallery_3.png",
+      "title": "CrossFit Area",
+      "delay": 300
+    },
+    {
+      "imageLarge": "images/gallery_4.png",
+      "imageThumb": "images/gallery_4.png",
+      "title": "Yoga Studio",
+      "delay": 400
+    },
+    {
+      "imageLarge": "images/gallery_5.png",
+      "imageThumb": "images/gallery_5.png",
+      "title": "Personal Training",
+      "delay": 500
+    },
+    {
+      "imageLarge": "images/gallery_6.png",
+      "imageThumb": "images/gallery_6.png",
+      "title": "Locker Rooms",
+      "delay": 600
+    }
+  ],
+  "videoGallery": [
+    {
+      "videoSrc": "https://youtu.be/588-C4bEL28?si=wIv8eMWamuYYbBKA",
+      "title": "Beast Mode: Full Body Workout",
+      "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
+    },
+    {
+      "videoSrc": "https://youtu.be/yplP5cLuyf4?si=qXYtWk0b888gZNZE",
+      "title": "Advanced HIIT Cardio",
+      "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
+    },
+    {
+      "videoSrc": "https://youtu.be/ntr64W6ZWB0?si=fh2ioAcQRZAcKouv",
+      "title": "Master the Deadlift",
+      "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
+    },
+    {
+      "videoSrc": "https://youtu.be/dJlFmxiL11s?si=E_pVip4IOny5hrMa",
+      "title": "10-Minute Core Crunch",
+      "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
+    }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "Joined this studio a while ago and have been loving the experience so far. Being new to pilates, the instructors are really encouraging, with the pace being just right. Looking forward for every session! Great for both beginners and regulars!",
+      "image": "images/testimonial_1.svg",
+      "name": "Mahak Agarwal",
+      "subtitle": "Lost 30 lbs, gained confidence"
+    },
+    {
+      "stars": 5,
+      "text": "One of best yoga places came accross. Pooja is gem of person.. training is very professional and focused on requirements. As I was suffering from back issue from 4-6yrs.. they helped me recover. Please is neat and clean with all the facilities they teach zumba and all also. They plan monthly treks to nearby places it's a lovely experience. Love to be part of The white porte family.",
+      "image": "images/testimonial_2.svg",
+      "name": "vijaypal singh warya",
+      "subtitle": "Strength Athlete"
+    },
+    {
+      "stars": 5,
+      "text": "I was visiting Jaipur to see family and was lucky enough to participate in some of the dance classes taught by Kapil Sir. Kapil Sir brought energy, skill, and laughter into every class. He makes sure everyone feels welcome and the class is open to all skill levels. The music and studio environment was also on point. Pooja mam is also lovely and I would love to return to take her yoga classes. I highly recommend the white porte to anyone interested in dance, yoga, or general workouts!",
+      "image": "images/testimonial_3.svg",
+      "name": "Anisha Daga",
+      "subtitle": "Yoga Enthusiast"
+    },
+    {
+      "stars": 5,
+      "text": "My first Yoga teacher is the most amazing teacher you could ask for. She always monitors everyone and corrects them. The yoga she teaches isn't just plain yoga - she adopts a mix of activities like pilates and other exercises to make it more engaging every single day. They have the facility of providing yoga mats as well. The place is neat and clean and there isn't much rush in one class which makes it easier to practice in wider space.",
+      "image": "images/testimonial_4.svg",
+      "name": "van bac",
+      "subtitle": "Personal Training Client"
+    }
+  ],
+  "footer": {
+    "description": "Premium fitness experience designed to transform your life.",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "#!"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "#!"
+      }
+    ],
+    "copyright": "© 2026 26fitnessClub. All Rights Reserved."
+  },
+
+  "gym": {
+    "name": "THE WHITE PORTE",
+    "phone": "+91 97992 27479",
+    "location": "https://maps.app.goo.gl/GD8AjGNgf1xuQVLaA"
+  },
+
+  "shop": {
+    "whatsappNumber": "91 97992 27479"
+  },
+
+  "products": [
+
+    {
+      "id": 1,
+      "productCode": "TS-MEN-001",
+      "name": "Men Cotton Gym T-Shirt",
+      "category": "men",
+      "material": "Cotton",
+      "price": 499,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/men_gym_t-shirt.png"
+    },
+
+    {
+      "id": 2,
+      "productCode": "TS-WOM-001",
+      "name": "Women Lycra Gym T-Shirt",
+      "category": "women",
+      "material": "Lycra",
+      "price": 599,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/women_gym_t-shirt.png"
+    },
+
+    {
+      "id": 3,
+      "productCode": "TS-UNI-001",
+      "name": "Unisex Linen Gym T-Shirt",
+      "category": "unisex",
+      "material": "Linen",
+      "price": 699,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/unisex_gym_t-shirt .png"
+    },
+
+    {
+      "id": 4,
+      "productCode": "TS-MEN-002",
+      "name": "Oversized Pump Cover T-Shirt",
+      "category": "men",
+      "material": "Heavy Cotton",
+      "price": 749,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Oversized_Pump_Cover_T-Shirt.png"
+    },
+
+    {
+      "id": 5,
+      "productCode": "TS-WOM-002",
+      "name": "Dry Fit Training T-Shirt",
+      "category": "women",
+      "material": "Polyester Dry Fit",
+      "price": 649,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Dry_Fit_Training_T-Shirt.png"
+    },
+
+    {
+      "id": 6,
+      "productCode": "TS-MEN-003",
+      "name": "Sleeveless Workout Tee",
+      "category": "men",
+      "material": "Breathable Blend",
+      "price": 549,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Sleeveless_Workout_Tee.png"
+    }
+
+  ]
+}
