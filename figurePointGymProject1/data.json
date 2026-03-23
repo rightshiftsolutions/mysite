@@ -1,0 +1,299 @@
+{
+  "theme": {
+    "brandTextWhite": "",
+    "brandTextLight": " ",
+    "brandTextAccent": " FIGURE POINT GYM"
+  },
+  "contact": {
+    "phone": "+91 9587999960",
+    "whatsappNumber": "+91 9587999960",
+    "address": "Roop Villas UDB Building, A-11, 11-B-85, Usha Colony, Malviya Nagar, Jaipur, Rajasthan 302017",
+    "mapLink": "https://maps.app.goo.gl/KzUutJCw9tcQaRzD8?g_st=aw"
+  },
+  "social": {
+    "twitter": "#!",
+    "facebook": "#!",
+    "instagram": "#!"
+  },
+  "hero": {
+    "titlePrefix": "Unleash Your",
+    "titleAccent": "Potential",
+    "subtitle": "Join the premium fitness experience. Certified trainers, state-of-the-art equipment, and a community that pushes you further."
+  },
+  "offers": {
+    "badgeText": "Limited Time",
+    "title": "Summer",
+    "titleAccent": "Shred",
+    "titleSuffix": "Offer",
+    "discount": "Get 3 Months ",
+    "discountAccent": "FREE",
+    "description": "Sign up for an annual Elite Membership today and get your first 3 months completely free, plus 2 complimentary personal training sessions.",
+    "whatsappMessage": "Hi! I'm interested in the Summer Shred Offer from 26fitnessClub."
+  },
+  "about": {
+    "image": "images/about_gym.png",
+    "titlePrefix": "Elevate Your",
+    "titleAccent": "Training",
+    "description": "At 26fitnessClub, we believe in pushing boundaries. Our premium facility offers everything you need to transform your body and mind in an aesthetic, mood-lit environment.",
+    "features": [
+      "Elite Certified Trainers",
+      "State-of-the-art Equipment",
+      "24/7 Premium Access",
+      "Nutrition & Recovery Center"
+    ]
+  },
+  "programs": [
+    {
+      "icon": "fas fa-dumbbell",
+      "title": "Aerobics",
+      "description": "Aerobics is a rhythmic physical exercise that combines rhythmic aerobic movement with stretching and strength training routines, typically set to music, to improve cardiovascular fitness and flexibility."
+    },
+    {
+      "icon": "fas fa-fire",
+      "title": "CrossFit",
+      "description": "CrossFit is a high-intensity fitness regimen featuring constantly varied, functional movements—like lifting, sprinting, and rowing—performed at high intensity to build overall strength and conditioning."
+    },
+    {
+      "icon": "fas fa-user-ninja",
+      "title": "Zumba",
+      "description": "Zumba is a high-energy fitness program that blends Latin and international music with dance choreography for a total-body cardio workout that feels more like a party than exercise."
+    },
+    {
+      "icon": "fas fa-yin-yang",
+      "title": "Dance Fitness Classes",
+      "description": "Dance fitness is a high-energy workout that combines rhythmic movement and choreographed dance steps with cardiovascular exercise to burn calories while having fun"
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "title": "Yoga Classes",
+      "description": "Yoga is a holistic practice that integrates physical postures, breathing techniques, and meditation to enhance flexibility, mental clarity, and overall physical strength."
+    },
+    {
+      "icon": "fas fa-weight",
+      "title": "Pilates Classes",
+      "description": "Pilates is a low-impact exercise method that focuses on core strength, muscular balance, and precise movement to improve posture and flexibility."
+    }
+  ],
+  "trainers": [
+    {
+      "image": "images/trainer_1.jpeg",
+      "name": "akshay kumawat",
+      "role": " Yoga & Mobility Coach",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_2.png",
+      "name": "Vijaya Saini",
+      "role": "Head of Gym-CrossFit Specialist",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_3.png",
+      "name": "Aakash",
+      "role": "Strength Trainer",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Basic",
+      "price": "$29",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Standard Gym Access",
+          "included": true
+        },
+        {
+          "name": "Free Weights Area",
+          "included": true
+        },
+        {
+          "name": "Cardio Equipment",
+          "included": true
+        },
+        {
+          "name": "Group Classes",
+          "included": false
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Pro",
+      "price": "$59",
+      "period": "/mo",
+      "isPopular": true,
+      "features": [
+        {
+          "name": "24/7 Gym Access",
+          "included": true
+        },
+        {
+          "name": "All Equipment Access",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Free Recovery Shake",
+          "included": true
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Elite",
+      "price": "$99",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Premium 24/7 Access",
+          "included": true
+        },
+        {
+          "name": "VIP Locker Room",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Sauna & Spa Access",
+          "included": true
+        },
+        {
+          "name": "2x PT Sessions/mo",
+          "included": true
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "imageLarge": "images/gallery_1.png",
+      "imageThumb": "images/gallery_1.png",
+      "title": "Premium Weights",
+      "delay": 100
+    },
+    {
+      "imageLarge": "images/gallery_2.png",
+      "imageThumb": "images/gallery_2.png",
+      "title": "Cardio Zone",
+      "delay": 200
+    },
+    {
+      "imageLarge": "images/gallery_3.png",
+      "imageThumb": "images/gallery_3.png",
+      "title": "CrossFit Area",
+      "delay": 300
+    },
+    {
+      "imageLarge": "images/gallery_4.png",
+      "imageThumb": "images/gallery_4.png",
+      "title": "Yoga Studio",
+      "delay": 400
+    },
+    {
+      "imageLarge": "images/gallery_5.png",
+      "imageThumb": "images/gallery_5.png",
+      "title": "Personal Training",
+      "delay": 500
+    },
+    {
+      "imageLarge": "images/gallery_6.png",
+      "imageThumb": "images/gallery_6.png",
+      "title": "Locker Rooms",
+      "delay": 600
+    }
+  ],
+  "videoGallery": [
+    {
+      "videoSrc": "https://www.youtube.com/embed/eaRQF-7rqmE?si=DrtqG2k4-0T1wD4u",
+      "title": "Beast Mode: Full Body Workout",
+      "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/X1TuhAn6C-g?si=s5sJnsSIf0xLgQ7U",
+      "title": "Advanced HIIT Cardio",
+      "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
+    },
+    {
+      "videoSrc": "https://youtu.be/m__vJ_Fqsy4?si=w9MchiObu4u2cQEP",
+      "title": "Master the Deadlift",
+      "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/CBpItFjWzQ4",
+      "title": "10-Minute Core Crunch",
+      "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
+    }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "Bhot acha gym hai meri body sirf 8mnth achi khasi tayar ki ajay sir or Ravi sir ne thanks for spesal Ravi si",
+      "image": "images/testimonial_1.svg",
+      "name": "Rahul Palsaniya03",
+      "subtitle": "Lost 30 lbs, gained confidence"
+    },
+    {
+      "stars": 5,
+      "text": "Bhot acha gym hai meri body sirf 8mnth achi khasi tayar ki ajay sir or Ravi sir ne thanks for spesal Ravi sir",
+      "image": "images/testimonial_2.svg",
+      "name": "Rahul Palsaniya03",
+      "subtitle": "Strength Athlete"
+    },
+    {
+      "stars": 4.5,
+      "text": "Ek dam jhakhaaaaas gym maja a gya guru .ji work out karke or kabhi nhi dekha aisa fitness center I love the figure point",
+      "image": "images/testimonial_3.svg",
+      "name": "",
+      "subtitle": "luckychouhan84"
+    },
+    {
+      "stars": 5,
+      "text": "Really happy with this gym! The trainers have excellent techniques and guide properly during workouts. They’re very friendly, approachable, and motivating. As a female, I feel completely safe and comfortable here. Overall, a great gym with a positive and supportive environment",
+      "image": "images/testimonial_4.svg",
+      "name": "Pallavi Sharma",
+      "subtitle": "Personal Training Client"
+    }
+  ],
+  "footer": {
+    "description": "Premium fitness experience designed to transform your life.",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "#!"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "#!"
+      }
+    ],
+    "copyright": "© 2026 26fitnessClub. All Rights Reserved."
+  }
+}
