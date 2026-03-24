@@ -1,0 +1,380 @@
+{
+  "theme": {
+    "brandTextWhite": "OXYGEN ",
+    "brandTextLight": "GYM ",
+    "brandTextAccent": "SIKAR"
+  },
+  "contact": {
+    "phone": "+9170147 92446",
+    "whatsappNumber": "70147 92446",
+    "address": " Gorana Ki dhani, Shiv Nagar, near Allen Coaching Centre, Sikar, Rajasthan 332001",
+    "mapLink": "https://www.google.com/maps/place/Oxygen+Gym,+Sikar/@27.6295306,75.1718392,17z/data=!3m1!4b1!4m6!3m5!1s0x396cbb473447a23f:0xfe4fb31578f626ad!8m2!3d27.6295306!4d75.1744141!16s%2Fg%2F11svzqm888?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D"
+  },
+  "social": {
+    "twitter": "#!",
+    "facebook": "#!",
+    "instagram": "https://share.google/zx624OWASKpjmwHAH"
+  },
+  "hero": {
+    "image": "images/about_gym.png",
+    "titlePrefix": "Unleash Your",
+    "titleAccent": "Potential",
+    "subtitle": "Join the premium fitness experience. Certified trainers, state-of-the-art equipment, and a community that pushes you further."
+  },
+  "offers": {
+    "badgeText": "Limited Time",
+    "title": "Summer",
+    "titleAccent": "Shred",
+    "titleSuffix": "Offer",
+    "discount": "Get 3 Months ",
+    "discountAccent": "FREE",
+    "description": "Sign up for an annual Elite Membership today and get your first 3 months completely free, plus 2 complimentary personal training sessions.",
+    "whatsappMessage": "Hi! I'm interested in the Summer Shred Offer from oxygengym."
+  },
+  "about": {
+    "image": "images/about_gym.png",
+    "titlePrefix": "Elevate Your",
+    "titleAccent": "Training",
+    "description": "At oxygengym, we believe in pushing boundaries. Our premium facility offers everything you need to transform your body and mind in an aesthetic, mood-lit environment.",
+    "features": [
+      "Elite Certified Trainers",
+      "State-of-the-art Equipment",
+      "24/7 Premium Access",
+      "Nutrition & Recovery Center"
+    ]
+  },
+  "programs": [
+    {
+      "icon": "fas fa-dumbbell",
+      "title": "Strength Training",
+      "description": "Build muscle mass and increase your raw strength with our heavy lifting program."
+    },
+    {
+      "icon": "fas fa-fire",
+      "title": "CrossFit",
+      "description": "High-intensity functional movements designed to push your cardiovascular endurance."
+    },
+    {
+      "icon": "fas fa-user-ninja",
+      "title": "Personal Training",
+      "description": "1-on-1 coaching customized completely to your unique fitness goals."
+    },
+    {
+      "icon": "fas fa-yin-yang",
+      "title": "Yoga & Mobility",
+      "description": "Improve flexibility, balance, and mental focus with our expert-led yoga sessions."
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "title": "Cardio Fitness",
+      "description": "Optimized routines using modern cardio equipment to maximize calorie burn."
+    },
+    {
+      "icon": "fas fa-weight",
+      "title": "Weight Loss",
+      "description": "Structured programs integrating workout, nutrition, and recovery for effective results."
+    }
+  ],
+  "trainers": [
+    {
+      "image": "images/trainer_1.jpeg",
+      "name": "Amit",
+      "role": " Yoga & Mobility Coach",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_2.png",
+      "name": "Rohit Saini",
+      "role": "Head of Gym-CrossFit Specialist",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_3.png",
+      "name": "chaganlal",
+      "role": "Strength Trainer",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Basic",
+      "price": "$29",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Standard Gym Access",
+          "included": true
+        },
+        {
+          "name": "Free Weights Area",
+          "included": true
+        },
+        {
+          "name": "Cardio Equipment",
+          "included": true
+        },
+        {
+          "name": "Group Classes",
+          "included": false
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Pro",
+      "price": "$59",
+      "period": "/mo",
+      "isPopular": true,
+      "features": [
+        {
+          "name": "24/7 Gym Access",
+          "included": true
+        },
+        {
+          "name": "All Equipment Access",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Free Recovery Shake",
+          "included": true
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Elite",
+      "price": "$99",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Premium 24/7 Access",
+          "included": true
+        },
+        {
+          "name": "VIP Locker Room",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Sauna & Spa Access",
+          "included": true
+        },
+        {
+          "name": "2x PT Sessions/mo",
+          "included": true
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "imageLarge": "images/gallery_1.png",
+      "imageThumb": "images/gallery_1.png",
+      "title": "Premium Weights",
+      "delay": 100
+    },
+    {
+      "imageLarge": "images/gallery_2.png",
+      "imageThumb": "images/gallery_2.png",
+      "title": "Cardio Zone",
+      "delay": 200
+    },
+    {
+      "imageLarge": "images/gallery_3.png",
+      "imageThumb": "images/gallery_3.png",
+      "title": "CrossFit Area",
+      "delay": 300
+    },
+    {
+      "imageLarge": "images/gallery_4.png",
+      "imageThumb": "images/gallery_4.png",
+      "title": "Yoga Studio",
+      "delay": 400
+    },
+    {
+      "imageLarge": "images/gallery_5.png",
+      "imageThumb": "images/gallery_5.png",
+      "title": "Personal Training",
+      "delay": 500
+    },
+    {
+      "imageLarge": "images/gallery_6.png",
+      "imageThumb": "images/gallery_6.png",
+      "title": "Locker Rooms",
+      "delay": 600
+    }
+  ],
+  "videoGallery": [
+    {
+      "videoSrc": "https://www.youtube.com/embed/eaRQF-7rqmE?si=DrtqG2k4-0T1wD4u",
+      "title": "Beast Mode: Full Body Workout",
+      "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/X1TuhAn6C-g?si=s5sJnsSIf0xLgQ7U",
+      "title": "Advanced HIIT Cardio",
+      "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/tCJEhXfH8mI",
+      "title": "Master the Deadlift",
+      "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/CBpItFjWzQ4",
+      "title": "10-Minute Core Crunch",
+      "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
+    }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "\"Oxygen gym ..jis ke naam mai oxygen ho ossa achi chiz kya hi hogi .gym Mai koi kemi nhi ha .gym boht badiya ha gym ka mahol boht badiya ha sikar ki A1 gym ha maina yha. Aake apna body mai boht Change dekha ha thanku too oxygen gym or Amit bhaiya .\"",
+      "image": "images/testimonial_1.svg",
+      "name": "Aman",
+      "subtitle": "Lost 30 lbs, gained confidence"
+    },
+    {
+      "stars": 5,
+      "text": "\"I can't say enough good things about Oxygen Gym! From the moment I walked in, I was greeted with warmth and enthusiasm by the staff. The facilities are top-notch, with state-of-the-art equipment and spacious workout areas.................\"",
+      "image": "images/testimonial_2.svg",
+      "name": "Ravi Dhariwal",
+      "subtitle": "Strength Athlete"
+    },
+    {
+      "stars": 4.5,
+      "text": "\"Absolutely love working out at Oxygen Gym SikarThe staff is so welcoming, the trainers are experts in their field, and the classes are super fun.such a great way to push your limits! Highly recommended for anyone looking for a positive fitness environment.\"",
+      "image": "images/testimonial_3.svg",
+      "name": "VIP Uttam",
+      "subtitle": "Yoga Enthusiast"
+    },
+    {
+      "stars": 5,
+      "text": "\"Gym ki sari services best hain & sari machines available hain, fully equipped hai Premium location par aur kafi spacious hain to kisi din crowd jyada hoti hai tab bhi koi as such space ki dikat nhi aati.Owner Amit bhai gym me mahool bana ke rakhta hai\"",
+      "image": "images/testimonial_4.svg",
+      "name": "Abhishek Singh",
+      "subtitle": "Personal Training Client"
+    }
+  ],
+  "footer": {
+    "description": "Premium fitness experience designed to transform your life.",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "#!"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "#!"
+      }
+    ],
+    "copyright": "© 2026 oxygengym,. All Rights Reserved."
+  },
+
+  "gym": {
+    "name": "Oxygen Gym,",
+    "phone": "70147 92446",
+    "location": "28.6139,77.2090"
+  },
+
+  "shop": {
+    "whatsappNumber": "70147 92446"
+  },
+
+  "products": [
+
+    {
+      "id": 1,
+      "productCode": "TS-MEN-001",
+      "name": "Men Cotton Gym T-Shirt",
+      "category": "men",
+      "material": "Cotton",
+      "price": 499,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/men_gym_t-shirt.png"
+    },
+
+    {
+      "id": 2,
+      "productCode": "TS-WOM-001",
+      "name": "Women Lycra Gym T-Shirt",
+      "category": "women",
+      "material": "Lycra",
+      "price": 599,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/women_gym_t-shirt.png"
+    },
+
+    {
+      "id": 3,
+      "productCode": "TS-UNI-001",
+      "name": "Unisex Linen Gym T-Shirt",
+      "category": "unisex",
+      "material": "Linen",
+      "price": 699,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/unisex_gym_t-shirt .png"
+    },
+
+    {
+      "id": 4,
+      "productCode": "TS-MEN-002",
+      "name": "Oversized Pump Cover T-Shirt",
+      "category": "men",
+      "material": "Heavy Cotton",
+      "price": 749,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Oversized_Pump_Cover_T-Shirt.png"
+    },
+
+    {
+      "id": 5,
+      "productCode": "TS-WOM-002",
+      "name": "Dry Fit Training T-Shirt",
+      "category": "women",
+      "material": "Polyester Dry Fit",
+      "price": 649,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Dry_Fit_Training_T-Shirt.png"
+    },
+
+    {
+      "id": 6,
+      "productCode": "TS-MEN-003",
+      "name": "Sleeveless Workout Tee",
+      "category": "men",
+      "material": "Breathable Blend",
+      "price": 549,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Sleeveless_Workout_Tee.png"
+    }
+
+  ]
+}
