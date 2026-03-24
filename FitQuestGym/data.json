@@ -1,0 +1,379 @@
+{
+  "theme": {
+    "brandTextWhite": "FIT QUEST",
+    "brandTextLight": " GYM",
+    "brandTextAccent": " JAIPUR"
+  },
+  "contact": {
+    "phone": "+91 9205535096",
+    "whatsappNumber": "9205535096",
+    "address": "3rd floor, plot No 95, Sirsi Rd, Mangal Nagar, yojna, Prithviraj Nagar (B Sector), Jaipur, Rajasthan 302015",
+    "mapLink": "https://maps.app.goo.gl/fxhTTRV27YfVosMa8?g_st=aw"
+  },
+  "social": {
+    "twitter": "#!",
+    "facebook": "#!",
+    "instagram": "https://www.instagram.com/fitquest_jaipur?igsh=MWR5d3hobWZ1ZzZ5bw=="
+  },
+  "hero": {
+    "titlePrefix": "Unleash Your",
+    "titleAccent": "Potential",
+    "subtitle": "Join the premium fitness experience. Certified trainers, state-of-the-art equipment, and a community that pushes you further."
+  },
+  "offers": {
+    "badgeText": "Limited Time",
+    "title": "Summer",
+    "titleAccent": "Shred",
+    "titleSuffix": "Offer",
+    "discount": "Get 3 Months ",
+    "discountAccent": "FREE",
+    "description": "Sign up for an annual Elite Membership today and get your first 3 months completely free, plus 2 complimentary personal training sessions.",
+    "whatsappMessage": "Hi! I'm interested in the Summer Shred Offer from 26fitnessClub."
+  },
+  "about": {
+    "image": "images/about_gym.png",
+    "titlePrefix": "Elevate Your",
+    "titleAccent": "Training",
+    "description": "At 26fitnessClub, we believe in pushing boundaries. Our premium facility offers everything you need to transform your body and mind in an aesthetic, mood-lit environment.",
+    "features": [
+      "Elite Certified Trainers",
+      "State-of-the-art Equipment",
+      "24/7 Premium Access",
+      "Nutrition & Recovery Center"
+    ]
+  },
+  "programs": [
+    {
+      "icon": "fas fa-dumbbell",
+      "title": "Strength Training",
+      "description": "Build muscle mass and increase your raw strength with our heavy lifting program."
+    },
+    {
+      "icon": "fas fa-fire",
+      "title": "CrossFit",
+      "description": "High-intensity functional movements designed to push your cardiovascular endurance."
+    },
+    {
+      "icon": "fas fa-user-ninja",
+      "title": "Personal Training",
+      "description": "1-on-1 coaching customized completely to your unique fitness goals."
+    },
+    {
+      "icon": "fas fa-yin-yang",
+      "title": "Yoga & Mobility",
+      "description": "Improve flexibility, balance, and mental focus with our expert-led yoga sessions."
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "title": "Cardio Fitness",
+      "description": "Optimized routines using modern cardio equipment to maximize calorie burn."
+    },
+    {
+      "icon": "fas fa-weight",
+      "title": "Weight Loss",
+      "description": "Structured programs integrating workout, nutrition, and recovery for effective results."
+    }
+  ],
+  "trainers": [
+    {
+      "image": "images/trainer_1.jpeg",
+      "name": "twinkle kumawat",
+      "role": " Yoga & Mobility Coach",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_2.png",
+      "name": "Vijay Saini",
+      "role": "Head of Gym-CrossFit Specialist",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "image": "images/trainer_3.png",
+      "name": "Aakash",
+      "role": "Strength Trainer",
+      "social": {
+        "instagram": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Basic",
+      "price": "$29",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Standard Gym Access",
+          "included": true
+        },
+        {
+          "name": "Free Weights Area",
+          "included": true
+        },
+        {
+          "name": "Cardio Equipment",
+          "included": true
+        },
+        {
+          "name": "Group Classes",
+          "included": false
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Pro",
+      "price": "$59",
+      "period": "/mo",
+      "isPopular": true,
+      "features": [
+        {
+          "name": "24/7 Gym Access",
+          "included": true
+        },
+        {
+          "name": "All Equipment Access",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Free Recovery Shake",
+          "included": true
+        },
+        {
+          "name": "Personal Trainer",
+          "included": false
+        }
+      ]
+    },
+    {
+      "title": "Elite",
+      "price": "$99",
+      "period": "/mo",
+      "isPopular": false,
+      "features": [
+        {
+          "name": "Premium 24/7 Access",
+          "included": true
+        },
+        {
+          "name": "VIP Locker Room",
+          "included": true
+        },
+        {
+          "name": "Unlimited Group Classes",
+          "included": true
+        },
+        {
+          "name": "Sauna & Spa Access",
+          "included": true
+        },
+        {
+          "name": "2x PT Sessions/mo",
+          "included": true
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "imageLarge": "images/gallery_1.png",
+      "imageThumb": "images/gallery_1.png",
+      "title": "Premium Weights",
+      "delay": 100
+    },
+    {
+      "imageLarge": "images/gallery_2.png",
+      "imageThumb": "images/gallery_2.png",
+      "title": "Cardio Zone",
+      "delay": 200
+    },
+    {
+      "imageLarge": "images/gallery_3.png",
+      "imageThumb": "images/gallery_3.png",
+      "title": "CrossFit Area",
+      "delay": 300
+    },
+    {
+      "imageLarge": "images/gallery_4.png",
+      "imageThumb": "images/gallery_4.png",
+      "title": "Yoga Studio",
+      "delay": 400
+    },
+    {
+      "imageLarge": "images/gallery_5.png",
+      "imageThumb": "images/gallery_5.png",
+      "title": "Personal Training",
+      "delay": 500
+    },
+    {
+      "imageLarge": "images/gallery_6.png",
+      "imageThumb": "images/gallery_6.png",
+      "title": "Locker Rooms",
+      "delay": 600
+    }
+  ],
+  "videoGallery": [
+    {
+      "videoSrc": "https://www.youtube.com/embed/eaRQF-7rqmE?si=DrtqG2k4-0T1wD4u",
+      "title": "Beast Mode: Full Body Workout",
+      "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/X1TuhAn6C-g?si=s5sJnsSIf0xLgQ7U",
+      "title": "Advanced HIIT Cardio",
+      "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/tCJEhXfH8mI",
+      "title": "Master the Deadlift",
+      "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
+    },
+    {
+      "videoSrc": "https://www.youtube.com/embed/CBpItFjWzQ4",
+      "title": "10-Minute Core Crunch",
+      "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
+    }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "\"Joining 26fitnessClub was the best decision of my life. The trainers push you to be your absolute best, and the facilities are unmatched.\"",
+      "image": "images/testimonial_1.svg",
+      "name": "Alex Johnson",
+      "subtitle": "Lost 30 lbs, gained confidence"
+    },
+    {
+      "stars": 5,
+      "text": "\"The 24/7 access and premium equipment make this the only gym I'll ever need. The community vibe here is incredible.\"",
+      "image": "images/testimonial_2.svg",
+      "name": "Michael Smith",
+      "subtitle": "Strength Athlete"
+    },
+    {
+      "stars": 4.5,
+      "text": "\"I love the Yoga and Recovery center. It perfectly balances out my intense weekly routines. Highly recommend the Elite plan.\"",
+      "image": "images/testimonial_3.svg",
+      "name": "Jessica Davis",
+      "subtitle": "Yoga Enthusiast"
+    },
+    {
+      "stars": 5,
+      "text": "\"The personal training here completely changed my relationship with fitness. Marcus is an incredible coach holding me accountable every step.\"",
+      "image": "images/testimonial_4.svg",
+      "name": "Emily Rivera",
+      "subtitle": "Personal Training Client"
+    }
+  ],
+  "footer": {
+    "description": "Premium fitness experience designed to transform your life.",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "#!"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "#!"
+      }
+    ],
+    "copyright": "© 2026 26fitnessClub. All Rights Reserved."
+  },
+
+  "gym": {
+    "name": "26Fitness Club",
+    "phone": "9876543210",
+    "location": "28.6139,77.2090"
+  },
+
+  "shop": {
+    "whatsappNumber": "919205535096"
+  },
+
+  "products": [
+
+    {
+      "id": 1,
+      "productCode": "TS-MEN-001",
+      "name": "Men Cotton Gym T-Shirt",
+      "category": "men",
+      "material": "Cotton",
+      "price": 499,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/men_gym_t-shirt.png"
+    },
+
+    {
+      "id": 2,
+      "productCode": "TS-WOM-001",
+      "name": "Women Lycra Gym T-Shirt",
+      "category": "women",
+      "material": "Lycra",
+      "price": 599,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/women_gym_t-shirt.png"
+    },
+
+    {
+      "id": 3,
+      "productCode": "TS-UNI-001",
+      "name": "Unisex Linen Gym T-Shirt",
+      "category": "unisex",
+      "material": "Linen",
+      "price": 699,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/unisex_gym_t-shirt .png"
+    },
+
+    {
+      "id": 4,
+      "productCode": "TS-MEN-002",
+      "name": "Oversized Pump Cover T-Shirt",
+      "category": "men",
+      "material": "Heavy Cotton",
+      "price": 749,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Oversized_Pump_Cover_T-Shirt.png"
+    },
+
+    {
+      "id": 5,
+      "productCode": "TS-WOM-002",
+      "name": "Dry Fit Training T-Shirt",
+      "category": "women",
+      "material": "Polyester Dry Fit",
+      "price": 649,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Dry_Fit_Training_T-Shirt.png"
+    },
+
+    {
+      "id": 6,
+      "productCode": "TS-MEN-003",
+      "name": "Sleeveless Workout Tee",
+      "category": "men",
+      "material": "Breathable Blend",
+      "price": 549,
+      "sizes": ["XS","S","M","L","XL","XXL"],
+      "image": "images/Sleeveless_Workout_Tee.png"
+    }
+
+  ]
+}
