@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Whimsical Wonder — Professional wedding planner crafting unforgettable love stories. Full planning, décor, photography, catering & more." />
+  <title>Whimsical Wonder | Wedding Planner</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand d-flex flex-column lh-1" href="#home">
+        <span id="nav-brand-name" class="navbar-brand-text"></span>
+        <span id="nav-brand-sub"  class="navbar-brand-sub"></span>
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav gap-1" id="navLinks"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="position-relative d-flex align-items-center justify-content-center" style="min-height: 100vh; overflow: hidden;">
+    <div id="hero-carousel" class="carousel slide carousel-fade position-absolute w-100 h-100" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="4000" style="inset: 0; z-index: 0;">
+      <div class="carousel-indicators" id="hero-carousel-indicators"></div>
+      <div class="carousel-inner h-100" id="hero-carousel-inner"></div>
+    </div>
+    <div class="hero-overlay position-absolute w-100 h-100" style="inset: 0; z-index: 1;"></div>
+    
+    <div class="container position-relative text-center" style="z-index: 2;">
+      <h1 class="hero-headline text-white mb-4" style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">Crafting Memorable Weddings</h1>
+      <a href="#photo-gallery" class="btn btn-gold btn-lg" style="animation: fadeInUp 1s ease 0.4s both;">Explore Our Work</a>
+    </div>
+  </section>
+
+  <!-- ========== TRUST BANNER ========== -->
+  <section id="trust-banner" class="py-4 bg-white border-bottom" style="border-color: rgba(255,105,180,0.1) !important;">
+    <div class="container text-center">
+      <p class="text-uppercase small fw-bold text-muted mb-3" style="letter-spacing: 2px;" id="trust-title"></p>
+      <div class="row justify-content-center align-items-center g-4 opacity-75" id="trust-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section id="services">
+    <div class="container text-center">
+      <h2 class="section-title" id="services-title"></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle" id="services-subtitle"></p>
+      <p class="lead mx-auto mt-4 text-muted reveal" style="max-width: 900px; line-height: 1.8;" id="services-description"></p>
+      <div class="row g-4" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== PHOTO GALLERY ========== -->
+  <section id="photo-gallery">
+    <div class="container text-center">
+      <h2 class="section-title" id="photo-gallery-title"></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle" id="photo-gallery-subtitle"></p>
+      <div class="row g-3" id="photo-gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox-overlay" role="dialog" aria-modal="true">
+    <button id="lightbox-close" aria-label="Close lightbox">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="Gallery image" />
+    <p id="lightbox-caption"></p>
+  </div>
+
+  <!-- ========== VIDEO GALLERY ========== -->
+  <section id="video-gallery">
+    <div class="container text-center">
+      <h2 class="section-title" id="video-gallery-title"></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle" id="video-gallery-subtitle"></p>
+      <div id="video-gallery-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="video-gallery-grid"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#video-gallery-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#video-gallery-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT US ========== -->
+  <section id="about-us" class="py-5">
+    <div class="container text-center">
+      <h2 class="section-title" id="about-title"></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle" id="about-subtitle"></p>
+      <p class="lead mx-auto mt-4 text-muted reveal" style="max-width: 900px; line-height: 1.8;" id="about-description"></p>
+      <div class="row justify-content-center g-4 mt-5" id="about-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section id="testimonials">
+    <div class="container text-center">
+      <h2 class="section-title" id="testimonials-title"></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle" id="testimonials-subtitle"></p>
+      <div class="row g-4 justify-content-center" id="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== SOCIAL MEDIA ========== -->
+  <section id="social">
+    <div class="container text-center">
+      <h2 class="section-title" id="social-title"></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle" id="social-subtitle"></p>
+      <div class="row g-4 justify-content-center" id="social-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title" id="contact-title"></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" id="contact-subtitle"></p>
+      </div>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="contact-info-card h-100" id="contact-info-block"></div>
+        </div>
+        <div class="col-lg-7">
+          <div class="contact-form-card h-100" id="contact-form-block"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="section-title" id="faq-title"></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle" id="faq-subtitle"></p>
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 text-start">
+          <div class="accordion accordion-flush" id="faq-accordion"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <p class="footer-brand" id="footer-brand"></p>
+      <p class="footer-tagline" id="footer-tagline"></p>
+      <div class="footer-divider"></div>
+      <p id="footer-copy" class="mb-0"></p>
+    </div>
+  </footer>
+
+  <!-- ========== CHATBOT WIDGET ========== -->
+  <div class="chatbot-container">
+    <div id="chatbot-popup" class="chatbot-popup shadow-lg rounded-4 d-none mb-3 bg-white">
+      <div class="chatbot-header d-flex justify-content-between align-items-center p-3 text-white rounded-top-4" style="background: var(--dark);">
+        <h6 class="mb-0 fw-bold" style="font-family: 'Lato', sans-serif;"><i class="fa-solid fa-robot me-2"></i>Event Assistant</h6>
+        <button id="chatbot-close" class="btn-close btn-close-white" style="font-size: 0.8rem;"></button>
+      </div>
+      <div class="chatbot-body p-4 bg-white rounded-bottom-4">
+        <p class="small text-muted mb-3">Please provide a few details so we can assist you better via WhatsApp.</p>
+        <form id="chatbot-form">
+          <div class="mb-3">
+            <input type="text" id="cb-name" class="form-control form-control-sm" placeholder="Your Name" required>
+          </div>
+          <div class="mb-3">
+            <input type="tel" id="cb-phone" class="form-control form-control-sm" placeholder="Phone Number" required>
+          </div>
+          <div class="mb-3">
+            <select id="cb-event" class="form-select form-select-sm" required>
+              <option value="" disabled selected>Event Type</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Corporate Event">Corporate Event</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-gold btn-sm w-100 fw-bold rounded-pill text-uppercase mt-2 py-2" style="font-size: 0.8rem;">
+            Chat on WhatsApp <i class="fa-solid fa-paper-plane ms-1"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <button id="chatbot-toggle" class="btn shadow-lg rounded-pill px-3 px-md-4 py-2 d-flex align-items-center justify-content-center" style="background-color: #25D366; color: white;">
+      <i class="fa-brands fa-whatsapp fs-3 me-0 me-md-2"></i> 
+      <span class="fw-bold d-none d-md-inline" style="font-size: 1rem; letter-spacing: 0.5px;">Start my Wedding planning</span>
+    </button>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

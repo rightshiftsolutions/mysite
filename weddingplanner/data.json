@@ -1,0 +1,247 @@
+{
+  "brand": {
+    "name": "Whimsical Wonder",
+    "tagline": "Unforgettable Weddings, Birthdays & Events",
+    "logo": "images/hero-bg.png"
+  },
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "#home" },
+      { "label": "About Us", "href": "#about-us" },
+      { "label": "Services", "href": "#services" },
+      { "label": "Gallery", "href": "#photo-gallery" },
+      { "label": "Testimonials", "href": "#testimonials" },
+      { "label": "Contact", "href": "#contact" }
+    ]
+  },
+  "hero": {
+    "heroImages": [
+      { "src": "images/hero-slide1.jpg", "alt": "Elegant beachfront wedding" },
+      { "src": "images/hero-slide2.jpg", "alt": "Lavish ballroom celebration" },
+      { "src": "images/hero-slide3.jpg", "alt": "Outdoor garden reception" }
+    ],
+    "headline": "Your Dream Event,",
+    "headlineAccent": "Flawlessly Planned.",
+    "subheadline": "From magical weddings and vibrant birthday parties to grand corporate galas — we turn your vision into an unforgettable experience.",
+    "cta": {
+      "primary": { "text": "Plan My Celebration", "href": "#contact" },
+      "secondary": { "text": "Explore Our Work", "href": "#photo-gallery" }
+    },
+    "stats": [
+      { "number": "800+", "label": "Events Planned" },
+      { "number": "15+",  "label": "Years Experience" },
+      { "number": "99%",  "label": "Happy Clients" }
+    ]
+  },
+  "services": {
+    "sectionTitle": "What We Offer",
+    "sectionSubtitle": "Comprehensive planning services tailored to your dream celebration",
+    "description": "The team offers a wide range of services customized to meet the unique needs of each couple. Their offerings include:",
+    "items": [
+      {
+        "icon": "fa-solid fa-ring",
+        "title": "Complete Planning",
+        "description": "Complete wedding planning and decor services.",
+        "image": "images/service-wedding-planning.png"
+      },
+      {
+        "icon": "fa-solid fa-wand-magic-sparkles",
+        "title": "Internal Decor Team",
+        "description": "An internal decor team, with the option to hire external decorators.",
+        "image": "images/service-decoration.png"
+      },
+      {
+        "icon": "fa-solid fa-spa",
+        "title": "Stress-Free Prep",
+        "description": "Personalized and stress free planning, ensuring every detail is managed effectively.",
+        "image": "images/service-management.png"
+      },
+      {
+        "icon": "fa-solid fa-plane-departure",
+        "title": "Destination Weddings",
+        "description": "Expertise in destination weddings, providing seamless coordination between the couple’s base city and the venue.",
+        "image": "images/service-destination.png"
+      },
+      {
+        "icon": "fa-solid fa-lightbulb",
+        "title": "Innovative Design",
+        "description": "Budget-friendly solutions and innovative design to reflect the couple’s vision.",
+        "image": "images/service-photography.png"
+      }
+    ]
+  },
+  "photoGallery": {
+    "sectionTitle": "Our Work",
+    "sectionSubtitle": "A glimpse into the beautiful moments we've helped create",
+    "photos": [
+      { "src": "images/gallery-first-dance.png",   "alt": "First Dance",        "caption": "The First Dance" },
+      { "src": "images/gallery-table-decor.png",   "alt": "Table Décor",        "caption": "Elegant Table Décor" },
+      { "src": "images/gallery-bridal-bouquet.png","alt": "Bridal Bouquet",     "caption": "Bridal Bouquet" },
+      { "src": "images/gallery-venue-decor.png",   "alt": "Venue Decoration",   "caption": "Grand Venue Décor" },
+      { "src": "images/gallery-couple-garden.png", "alt": "Couple in Garden",   "caption": "Garden Romance" },
+      { "src": "images/gallery-reception.png",     "alt": "Wedding Reception",  "caption": "Dreamy Reception" },
+      { "src": "images/gallery-wedding-cake.png",  "alt": "Wedding Cake",       "caption": "Million-Dollar Cake" },
+      { "src": "images/gallery-first-dance.png",   "alt": "Ceremony Moment",    "caption": "Sacred Vows" },
+      { "src": "images/gallery-table-decor.png",   "alt": "Banquet Seating",    "caption": "Royal Banquet Setup" },
+      { "src": "images/gallery-bridal-bouquet.png","alt": "Floral Details",     "caption": "Spring Florals" },
+      { "src": "images/gallery-venue-decor.png",   "alt": "Aisle Decor",        "caption": "Walking the Aisle" },
+      { "src": "images/gallery-couple-garden.png", "alt": "Golden Hour",        "caption": "Golden Hour Kiss" },
+      { "src": "images/gallery-reception.png",     "alt": "After Party",        "caption": "Lights & Music" },
+      { "src": "images/gallery-wedding-cake.png",  "alt": "Dessert Table",      "caption": "Sweet Indulgence" },
+      { "src": "images/gallery-first-dance.png",   "alt": "Father Daughter",    "caption": "Emotional Dance" },
+      { "src": "images/gallery-table-decor.png",   "alt": "Centerpieces",       "caption": "Golden Centerpieces" },
+      { "src": "images/gallery-bridal-bouquet.png","alt": "Bridesmaids",        "caption": "Bridesmaid Bouquets" },
+      { "src": "images/gallery-venue-decor.png",   "alt": "Sunset Arch",        "caption": "Sunset Ceremony Arch" },
+      { "src": "images/gallery-couple-garden.png", "alt": "Nature Walk",        "caption": "Stroll in the Woods" },
+      { "src": "images/gallery-reception.png",     "alt": "Toast",              "caption": "Champagne Toast" },
+      { "src": "images/gallery-wedding-cake.png",  "alt": "Cake Cutting",       "caption": "Cutting the Cake" },
+      { "src": "images/gallery-first-dance.png",   "alt": "Celebration",        "caption": "Sparkler Exit" },
+      { "src": "images/gallery-table-decor.png",   "alt": "Glassware",          "caption": "Crystal Glassware" },
+      { "src": "images/gallery-bridal-bouquet.png","alt": "Groom Boutonniere",  "caption": "Classic Boutonniere" },
+      { "src": "images/gallery-venue-decor.png",   "alt": "Lighting",           "caption": "Fairy Lights Setup" },
+      { "src": "images/gallery-couple-garden.png", "alt": "First Look",         "caption": "The First Look" },
+      { "src": "images/gallery-reception.png",     "alt": "Dance Floor",        "caption": "Packed Dance Floor" },
+      { "src": "images/gallery-wedding-cake.png",  "alt": "Mini Desserts",      "caption": "Assorted Macarons" },
+      { "src": "images/gallery-first-dance.png",   "alt": "Candid Joy",         "caption": "Tears of Joy" },
+      { "src": "images/gallery-table-decor.png",   "alt": "Menu Cards",         "caption": "Custom Menus" },
+      { "src": "images/gallery-bridal-bouquet.png","alt": "Ring Exchange",      "caption": "With This Ring" },
+      { "src": "images/gallery-venue-decor.png",   "alt": "Grand Exit",         "caption": "The Getaway Car" }
+    ]
+  },
+  "videoGallery": {
+    "sectionTitle": "Wedding Highlights",
+    "sectionSubtitle": "Watch the love stories we've had the honour of telling",
+    "videos": [
+      {
+        "embedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "title": "Priya & Arjun — A Garden Wedding"
+      },
+      {
+        "embedUrl": "https://www.youtube.com/embed/3JZ_D3ELwOQ",
+        "title": "Sofia & James — Royal Palace Ceremony"
+      },
+      {
+        "embedUrl": "https://www.youtube.com/embed/L_jWHffIx5E",
+        "title": "Meera & Rahul — Beachside Celebration"
+      },
+      {
+        "embedUrl": "https://www.youtube.com/embed/fJ9rUzIMcZQ",
+        "title": "Emily & Lucas — Countryside Manor Affair"
+      }
+    ]
+  },
+  "aboutUs": {
+    "sectionTitle": "About Whimsical Wonder",
+    "sectionSubtitle": "We are passionate about dreams, details, and celebrations.",
+    "description": "Whimsical Wonder is a wedding planning company located in Udaipur, founded in 2021. They specialize in making wedding dreams come true, guiding couples through every step of the planning process from coordination to execution. Known for their dedication to excellence and attention to detail, Whimsical Wonder is committed to making each wedding not just an event, but a cherished memory for couples and their families. Whether it’s a grand celebration or an intimate gathering, they bring creativity and professionalism to every aspect of the planning process.<br><br><strong>Destination Expertise:</strong> The team has experience in organizing weddings across various key cities, including: Jaipur, Sawai Madhopur, Jaisalmer, Vadodara, Pushkar, Ajmer, and Alwar.",
+    "founders": [
+      {
+        "name": "Priya Sharma",
+        "title": "Co-Founder & Creative Director",
+        "photo": "images/founder-priya.jpg",
+        "bio": "Priya leads design with a focus on unforgettable luxury experiences."
+      },
+      {
+        "name": "Arjun Desai",
+        "title": "Co-Founder & Operations Lead",
+        "photo": "images/founder-arjun.jpg",
+        "bio": "Arjun ensures every wedding is executed with precision and personal care."
+      }
+    ]
+  },
+  "trustBanner": {
+    "title": "Featured In & Awarded By",
+    "logos": [
+      { "name": "Vogue Weddings", "icon": "fa-brands fa-vimeo-v" },
+      { "name": "The Knot", "icon": "fa-solid fa-gem" },
+      { "name": "WeddingWire", "icon": "fa-solid fa-award" },
+      { "name": "Harper's Bazaar", "icon": "fa-brands fa-hacker-news" }
+    ]
+  },
+  "testimonials": {
+    "sectionTitle": "Our Clients’ Reviews & Experiences",
+    "sectionSubtitle": "Hear from the couples who trusted us with their biggest day",
+    "reviews": [
+      {
+        "name": "Sarah & Michael",
+        "date": "December 2025",
+        "text": "Choosing Whimsical Wonder was the best decision we made for our wedding. They made the entire planning process completely stress-free. Every detail was executed flawlessly, from the stunning floral arrangements to the seamless timeline.",
+        "rating": 5
+      },
+      {
+        "name": "Priya & Rohan",
+        "date": "October 2025",
+        "text": "We wanted a fusion of modern elegance and traditional elements, and they delivered beyond our wildest dreams. The decor was breathtaking, and our guests are still talking about the catering!",
+        "rating": 5
+      },
+      {
+        "name": "Emily & James",
+        "date": "August 2025",
+        "text": "Absolutely incredible team! We had a destination wedding with many logistical challenges, but they handled everything with such professionalism and grace. They turned our vision into reality.",
+        "rating": 5
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "FAQ about Whimsical Wonder",
+    "sectionSubtitle": "Everything you need to know about our services",
+    "questions": [
+      {
+        "q": "How Whimsical Wonder style is different from other wedding planners?",
+        "a": "Their style USP is personalized service, stress-free planning, exclusive vendor partnerships, innovative design and trends, budget-friendly solutions, destination wedding expertise, cultural and thematic specialization, comprehensive planning packages."
+      },
+      {
+        "q": "What is their policy on decor?",
+        "a": "Inhouse & outside decorators"
+      },
+      {
+        "q": "What is Whimsical Wonder's cancellation policy (if user initiates cancellation)?",
+        "a": "No Refund Offered"
+      },
+      {
+        "q": "What is Whimsical Wonder's cancellation policy (when Whimsical Wonder initaites the cancellation)?",
+        "a": "Full Refund Offered"
+      },
+      {
+        "q": "In which year did Whimsical Wonder start planning weddings?",
+        "a": "2021"
+      },
+      {
+        "q": "How much does Whimsical Wonder charge for planning a 3 day wedding?",
+        "a": "200,000 on average for a 3 day wedding planning"
+      }
+    ]
+  },
+  "social": {
+    "sectionTitle": "Follow Our Journey",
+    "sectionSubtitle": "Stay inspired with daily wedding stories, tips, and behind-the-scenes moments",
+    "platforms": [
+      { "platform": "Instagram",  "url": "https://instagram.com",  "icon": "fa-brands fa-instagram",  "handle": "@whimsicalwonder" },
+      { "platform": "Facebook",   "url": "https://facebook.com",   "icon": "fa-brands fa-facebook",   "handle": "Whimsical Wonder" },
+      { "platform": "Pinterest",  "url": "https://pinterest.com",  "icon": "fa-brands fa-pinterest",  "handle": "WhimsicalWonderWed" },
+      { "platform": "YouTube",    "url": "https://youtube.com",    "icon": "fa-brands fa-youtube",    "handle": "Whimsical Wonder TV" },
+      { "platform": "Twitter / X","url": "https://twitter.com",   "icon": "fa-brands fa-x-twitter",  "handle": "@whimsical_wed" },
+      { "platform": "WhatsApp",   "url": "https://wa.me/919876543210","icon": "fa-brands fa-whatsapp","handle": "+91 98765 43210" }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Let's Plan Together",
+    "sectionSubtitle": "Ready to begin your love story? Reach out and we'll craft your perfect day.",
+    "phone": "+91 98765 43210",
+    "email": "hello@whimsicalwonder.in",
+    "address": "12 Rose Garden Lane, Connaught Place, New Delhi – 110001",
+    "hours": "Mon – Sat: 10 AM – 7 PM",
+    "formLabels": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "weddingDate": "Planned Event Date",
+      "message": "Tell us about your dream celebration",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Whimsical Wonder. All rights reserved.",
+    "tagline": "Making every celebration unforgettable."
+  }
+}
