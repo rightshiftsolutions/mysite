@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Category | The Ethnic Co.</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Css/Style.css" />
+    <link rel="stylesheet" href="./Css/whatsapp-checkout.css" />
+    <link rel="stylesheet" href="./Css/chatbot.css" />
+    <link rel="stylesheet" href="./Css/search.css" />
+    
+  </head>
+  <body>
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <div class="top-bar">
+      Complimentary Custom Tailoring on all Sherwanis • Limited Time Offer
+    </div>
+
+    <header>
+      <div class="container nav-container">
+        <div class="logo" onclick="window.location.href = './home.html'">
+          THE ETHNIC CO.
+        </div>
+
+        <ul class="nav-links" id="nav-menu">
+          <li class="nav-link" onclick="window.location.href = './home.html'">
+            Home
+          </li>
+          <li class="nav-link dropdown-parent">
+            <span
+              class="dropdown-trigger"
+              onclick="window.location.href = './Categories.html'"
+              >Categories</span
+            >
+            <div class="dropdown-menu">
+              <a href="category.html?category=Sherwanis" class="dropdown-item"
+                >Sherwani</a
+              >
+              <a href="category.html?category=Kurtas" class="dropdown-item"
+                >Kurta</a
+              >
+              <a
+                href="category.html?category=Indo Western"
+                class="dropdown-item"
+                >Indo Western</a
+              >
+              <a href="category.html?category=Jodhpuri" class="dropdown-item"
+                >Jodhpuri Set</a
+              >
+              <a
+                href="category.html?category=Kurta Jacket"
+                class="dropdown-item"
+                >Kurta Jacket</a
+              >
+            </div>
+          </li>
+          <li
+            class="nav-link"
+            onclick="window.location.href = './New_Arrival.html'"
+          >
+            New Arrivals
+          </li>
+          <li
+            class="nav-link"
+            onclick="window.location.href = './Occasion.html'"
+          >
+            Occasions
+          </li>
+          <li class="nav-link" onclick="window.location.href = './Sale.html'">
+            Sale
+          </li>
+          <li
+            class="nav-link"
+            onclick="window.location.href = './Accessories.html'"
+          >
+            Accessories
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-btn" onclick="toggleSearch()" aria-label="Search">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search products..."
+          />
+          <div id="search-results" class="search-results"></div>
+          <button
+            class="icon-btn"
+            onclick="toggleCart()"
+            aria-label="Shopping Cart"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+          <button
+            class="icon-btn hamburger"
+            id="hamburger"
+            onclick="toggleMenu()"
+            aria-label="Menu"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main style="padding-top: 60px">
+      <div class="category-banner">
+        <div style="text-align: center">
+          <h1
+            id="category-title"
+            style="font-size: 3rem; margin-bottom: 0.5rem"
+          >
+            Category
+          </h1>
+          <p
+            id="category-subtitle"
+            style="font-size: 1.2rem; font-style: italic"
+          >
+            Explore our collection
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="home.html">Home</a> >
+          <a href="Categories.html">Categories</a> >
+          <span id="breadcrumb-category">Category</span>
+        </nav>
+
+        <div class="filter-sort-bar">
+          <div class="filter-group">
+            <button class="filter-btn active" onclick="filterByTag('all')">
+              All
+            </button>
+            <button class="filter-btn" onclick="filterByTag('New')">
+              New Arrivals
+            </button>
+            <button class="filter-btn" onclick="filterByTag('Sale')">
+              On Sale
+            </button>
+            <button class="filter-btn" onclick="filterByTag('Trending')">
+              Trending
+            </button>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: center">
+            <span class="product-count" id="product-count">0 Products</span>
+            <select
+              class="sort-select"
+              onchange="sortProducts(this.value)"
+              aria-label="Sort products"
+            >
+              <option value="default">Sort By</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="product-grid" id="product-list"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo footer-logo-spacing">THE ETHNIC CO.</div>
+            <p class="footer-text">
+              A tribute to Indian heritage, tailored for the discerning global
+              man. Our garments are stories woven in silk.
+            </p>
+
+            <div class="footer-social">
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  /></svg
+              ></a>
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  /></svg
+              ></a>
+              <a href="#" class="social-icon" aria-label="Pinterest"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title">COLLECTIONS</h4>
+            <ul class="footer-links">
+              <li><a href="sherwani.html">Wedding Wear</a></li>
+              <li><a href="kurta.html">Evening Kurtas</a></li>
+              <li><a href="indo-western.html">Indo Western</a></li>
+              <li><a href="jodhpuri.html">Festive Edit</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">OUR WORLD</h4>
+            <ul class="footer-links">
+              <li><a href="#">Our Heritage</a></li>
+              <li><a href="#">Bespoke Process</a></li>
+              <li><a href="#">Store Locator</a></li>
+              <li><a href="#">Journal</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">CONCIERGE</h4>
+            <a href="mailto:concierge@theethnicco.com" class="footer-contact"
+              >concierge@theethnicco.com</a
+            >
+            <a href="tel:+911800ETHNICCO" class="footer-contact-phone"
+              >+91 1800-ETHNIC-CO</a
+            >
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            © 2026 THE ETHNIC CO. GLOBAL. ALL RIGHTS RESERVED.
+          </div>
+          <div class="footer-links-bottom">
+            <a href="#">PRIVACY</a>
+            <a href="#">TERMS</a>
+            <a href="#">SHIPPING</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>
+          🛍️ Shopping Bag
+          <span class="cart-count-badge" id="cart-count-header">0</span>
+        </h3>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+      </div>
+
+      <div class="cart-items" id="cart-items">
+        <div class="empty-bag">
+          <div class="empty-bag-icon">🛍️</div>
+          <p>Your shopping bag is empty</p>
+          <button class="continue-shopping-btn" onclick="toggleCart()">
+            Continue Shopping
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-footer" id="cart-footer" style="display: none">
+        <!-- Promo Code -->
+        <div class="promo-section">
+          <input
+            type="text"
+            id="promo-code"
+            class="promo-input"
+            placeholder="Enter promo code"
+          />
+          <button class="apply-promo-btn" onclick="applyPromo()">Apply</button>
+        </div>
+
+        <!-- Price Summary -->
+        <div class="cart-summary">
+          <div class="cart-summary-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">₹0</span>
+          </div>
+          <div
+            class="cart-summary-row discount-row"
+            id="discount-row"
+            style="display: none"
+          >
+            <span>Discount</span>
+            <span id="cart-discount" class="discount-amount">-₹0</span>
+          </div>
+          <div class="cart-summary-row">
+            <span>Delivery</span>
+            <span id="cart-delivery">FREE</span>
+          </div>
+        </div>
+
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total">₹0</span>
+        </div>
+
+        <!-- Delivery Info -->
+        <div class="delivery-info">
+          <span class="delivery-icon">🚚</span>
+          <span>Estimated delivery: <strong id="delivery-date"></strong></span>
+        </div>
+
+        <!-- Trust Badges -->
+
+        <button class="checkout-btn" onclick="checkout()">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+     <script src="./Javascript/category.js"></script>
+    <script>
+      // Get category from URL
+      function getCategoryFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("category");
+      }
+
+      // All products data
+      const allProducts = [
+        {
+          id: 1,
+          name: "White Silk Sherwani",
+          price: "₹45,000",
+          category: "Sherwanis",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/baby_blue_silk_sherwani_set_in_zar/elegant_pristine_white_silk_sherwani_set_with_intricate_embroidery_work_-sg217040_4.jpg",
+        },
+        {
+          id: 2,
+          name: "Navy Blue Sherwani",
+          price: "₹48,500",
+          category: "Sherwanis",
+          tag: "Trending",
+          rating: 0,
+          img: "assests/img/project_image's/baby_blue_silk_sherwani_set_in_zar/beige_paisely_printed_sherwani_with_resham_work-sg228278_5_151ec061-e966-443d-97b3-8c69792e6302.jpg",
+        },
+        {
+          id: 3,
+          name: "Beige Silk Sherwani",
+          price: "₹42,000",
+          category: "Sherwanis",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/baby_blue_silk_sherwani_set_in_zar/black_hand_work_sherwani_suit_with_dupatta-sg252352_5.jpg",
+        },
+        {
+          id: 4,
+          name: "Black Velvet Sherwani",
+          price: "₹52,000",
+          category: "Sherwanis",
+          tag: "Sale",
+          rating: 0,
+          img: "assests/img/project_image's/baby_blue_silk_sherwani_set_in_zar/black_velvet_sherwani_and_kurta_set_with_kashmiri_work-sg264199_2.jpg",
+        },
+        {
+          id: 5,
+          name: "Green Embroidered Kurta",
+          price: "₹6,400",
+          category: "Kurtas",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/embroidered_jacket_kurta_set/green_embroidered_jacket_kurta_set_in_linen_satin-sg278256_3 - Copy.jpg",
+        },
+        {
+          id: 6,
+          name: "Navy Blue Kurta Jacket",
+          price: "₹7,800",
+          category: "Kurtas",
+          tag: "Trending",
+          rating: 0,
+          img: "assests/img/project_image's/embroidered_jacket_kurta_set/navy_blue_linen_zardosi_embroidered_jacket_kurta_set-sg272976_2 - Copy.jpg",
+        },
+        {
+          id: 7,
+          name: "Pink Embroidered Kurta",
+          price: "₹6,200",
+          category: "Kurtas",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/embroidered_jacket_kurta_set/pink_hand_embroidered_jacket_and_kurta_set_in_linen-sg273040_2.jpg",
+        },
+        {
+          id: 8,
+          name: "Off White Kurta Jacket",
+          price: "₹7,200",
+          category: "Kurtas",
+          tag: "Sale",
+          rating: 0,
+          img: "assests/img/project_image's/embroidered_jacket_kurta_set/off_white_floral_hand_embroidered_kurta_jacket_set-sg273072_8.jpg",
+        },
+        {
+          id: 9,
+          name: "Peach Silk Indo Western",
+          price: "₹18,500",
+          category: "Indo Western",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/indori_western/peach_silk_indowestern_set_with_hand_work_for_men-sg252327_2_7aad6fcb-676a-4760-8cf0-3c40bacaf825.jpg",
+        },
+        {
+          id: 10,
+          name: "Navy Blue Indo Western",
+          price: "₹20,000",
+          category: "Indo Western",
+          tag: "Trending",
+          rating: 0,
+          img: "assests/img/project_image's/indori_western/navy_blue_indowestern-sg171432_1.jpg",
+        },
+        {
+          id: 11,
+          name: "Elegant Blue Indo Western",
+          price: "₹22,000",
+          category: "Indo Western",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/indori_western/elegant_blue_groom_s_indowestern-sg204282_3.jpg",
+        },
+        {
+          id: 12,
+          name: "Purple Indo Western",
+          price: "₹19,500",
+          category: "Indo Western",
+          tag: "Sale",
+          rating: 0,
+          img: "assests/img/project_image's/indori_western/stylish_purple_indowestern_for_men-sg195788_2.jpg",
+        },
+        {
+          id: 13,
+          name: "Off White Jodhpuri",
+          price: "₹24,000",
+          category: "Jodhpuri",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/jodhpuri_set/off_white_silk_blend_jodhpuri_set_with_textured_detail-sg258810_1.jpg",
+        },
+        {
+          id: 14,
+          name: "Embroidered Jodhpuri",
+          price: "₹26,000",
+          category: "Jodhpuri",
+          tag: "Trending",
+          rating: 0,
+          img: "assests/img/project_image's/jodhpuri_set/off-white-embroidered-jodhpuri-and-pant-set-sg369524-2_7f4954b9-8ee7-414a-ad3d-0f927e3ec38a.jpg",
+        },
+        {
+          id: 15,
+          name: "Pink Jodhpuri Set",
+          price: "₹25,500",
+          category: "Jodhpuri",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/jodhpuri_set/pink-button-front-jodhpuri-and-pant-set-sg369532-1_ee584e81-6ebe-4446-94f2-b73c42b4bd43.jpg",
+        },
+        {
+          id: 16,
+          name: "Green Kurta Jacket Set",
+          price: "₹8,200",
+          category: "Kurta Jacket",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/kurta-jacket/green_embroidered_jacket_kurta_set_in_linen_satin-sg278256_1.jpg",
+        },
+        {
+          id: 17,
+          name: "Purple Resham Kurta Jacket",
+          price: "₹9,500",
+          category: "Kurta Jacket",
+          tag: "Trending",
+          rating: 0,
+          img: "assests/img/project_image's/kurta-jacket/purple_resham_work_kurta_jacket_set-sg278264_1 (1).jpg",
+        },
+        {
+          id: 18,
+          name: "Navy Blue Sherwani Set",
+          price: "₹28,000",
+          category: "Kurta Jacket",
+          tag: "New",
+          rating: 0,
+          img: "assests/img/project_image's/kurta-jacket/navy_blue_sherwani_set_in_silk-sg258794_2.jpg",
+        },
+      ];
+
+      let currentCategory = "";
+      let currentTag = "all";
+      let displayedProducts = [];
+
+      // Filter by tag
+      function filterByTag(tag) {
+        currentTag = tag;
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+        loadCategoryProducts();
+      }
+
+      // Sort products
+      function sortProducts(sortBy) {
+        if (sortBy === "default") {
+          loadCategoryProducts();
+          return;
+        }
+        let sorted = [...displayedProducts];
+        if (sortBy === "price-low") {
+          sorted.sort(
+            (a, b) =>
+              parseFloat(a.price.replace(/[^0-9]/g, "")) -
+              parseFloat(b.price.replace(/[^0-9]/g, "")),
+          );
+        } else if (sortBy === "price-high") {
+          sorted.sort(
+            (a, b) =>
+              parseFloat(b.price.replace(/[^0-9]/g, "")) -
+              parseFloat(a.price.replace(/[^0-9]/g, "")),
+          );
+        } else if (sortBy === "name") {
+          sorted.sort((a, b) => a.name.localeCompare(b.name));
+        }
+        renderProducts(sorted);
+      }
+
+      // Load category products
+      function loadCategoryProducts() {
+        currentCategory = getCategoryFromURL();
+
+        if (!currentCategory) {
+          window.location.href = "Categories.html";
+          return;
+        }
+
+        // Update page title and headings
+        document.getElementById("page-title").textContent =
+          `${currentCategory} Collection | The Ethnic Co.`;
+        document.getElementById("category-title").textContent =
+          `${currentCategory} Collection`;
+        document.getElementById("breadcrumb-category").textContent =
+          currentCategory;
+
+        // Filter products by category
+        let filtered = allProducts.filter(
+          (p) => p.category === currentCategory,
+        );
+
+        // Apply tag filter
+        if (currentTag !== "all") {
+          filtered = filtered.filter((p) => p.tag === currentTag);
+        }
+
+        displayedProducts = filtered;
+        renderProducts(filtered);
+      }
+
+      // Render products
+      function renderProducts(products) {
+        const list = document.getElementById("product-list");
+        const countEl = document.getElementById("product-count");
+
+        countEl.textContent = `${products.length} Products`;
+        list.innerHTML = "";
+
+        if (products.length === 0) {
+          list.innerHTML =
+            '<div style="grid-column: 1/-1; text-align: center; padding: 5rem; color: #888;">No products found.</div>';
+          return;
+        }
+
+        products.forEach((product) => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+          card.style.cursor = "pointer";
+
+          // Generate deterministic rating & review count per product
+          const rating =
+            product.rating || 3.2 + ((product.id * 37 + 11) % 18) / 10;
+          const reviewCount =
+            product.reviewCount ||
+            Math.floor(40 + ((product.id * 53 + 7) % 460));
+
+          card.innerHTML = `
+                    <div class="product-img-wrapper">
+                        <img src="${product.img}" alt="${product.name}" class="product-img">
+                        ${product.tag ? `<span class="product-tag">${product.tag}</span>` : ""}
+                        <div class="quick-add">Add to Bag</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-details">
+                            <h4 class="product-name">${product.name}</h4>
+                            <p class="product-cat">${product.category}</p>
+                            ${generateStarRating(rating, reviewCount)}
+                            <p class="product-price">${product.price}</p>
+                        </div>
+                    </div>
+                `;
+
+          card.onclick = function (e) {
+            if (!e.target.classList.contains("quick-add")) {
+              window.location.href = "product-detail.html?id=" + product.id;
+            }
+          };
+
+          const quickAddBtn = card.querySelector(".quick-add");
+          if (quickAddBtn) {
+            quickAddBtn.onclick = function (e) {
+              e.stopPropagation();
+              if (typeof addToCart === "function") addToCart(e, product.id);
+            };
+          }
+
+          list.appendChild(card);
+        });
+      }
+
+      // Initialize on page load
+      window.onload = () => {
+        if (typeof loadBagFromStorage === "function") loadBagFromStorage();
+        loadCategoryProducts();
+      };
+    </script>
+   
+    <script src="./Javascript/whatsapp-checkout.js"></script>
+    <script src="./Javascript/chatbot.js"></script>
+    <script src="./Javascript/search.js"></script>
+    <script src="./Javascript/search-data.js" ></script>
+  </body>
+</html>

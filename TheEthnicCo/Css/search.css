@@ -1,0 +1,317 @@
+/* ============================================================
+   THE ETHNIC CO. — Smart Search Styles
+   Theme: Brown #511d00 · Gold #c5a059 · Cream #f8ecd7
+   ============================================================ */
+
+/* ── Clear button ─────────────────────────────────────────── */
+#search-clear-btn {
+  position: absolute;
+  /* sits just inside the right edge of the expanded input */
+  right: 38px; /* roughly where the cart icon starts */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: rgba(81, 29, 0, 0.15);
+  color: #511d00;
+  border-radius: 50%;
+  font-size: 10px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10003;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+#search-clear-btn:hover {
+  background: #511d00;
+  color: #f8ecd7;
+}
+
+/* ── Dropdown container ───────────────────────────────────── */
+#search-results {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 420px;
+  max-height: 520px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 6px rgba(81, 29, 0, 0.04),
+    0 12px 40px rgba(81, 29, 0, 0.18);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s;
+  z-index: 10002;
+  scroll-behavior: smooth;
+}
+
+#search-results.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+#search-results::-webkit-scrollbar {
+  width: 5px;
+}
+#search-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+#search-results::-webkit-scrollbar-thumb {
+  background: rgba(81, 29, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* ── Section title ────────────────────────────────────────── */
+.src-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #8b6f47;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: rgba(197, 160, 89, 0.06);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* ── Clear history button inside section title ────────────── */
+.src-clear-history {
+  background: none;
+  border: none;
+  color: #c5a059;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.src-clear-history:hover {
+  background: rgba(197, 160, 89, 0.15);
+}
+
+/* ── Chips (history + trending) ───────────────────────────── */
+.src-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px 12px;
+}
+
+.src-chips-sm {
+  padding: 8px 14px 10px;
+}
+
+.src-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #511d00;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.src-chip:hover {
+  background: #511d00;
+  color: #f8ecd7;
+  border-color: #511d00;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(81, 29, 0, 0.2);
+}
+
+.src-chip-icon {
+  font-size: 11px;
+}
+
+/* ── Result item ──────────────────────────────────────────── */
+.src-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border-bottom: 1px solid rgba(81, 29, 0, 0.05);
+  position: relative;
+}
+
+.src-item:last-child {
+  border-bottom: none;
+}
+
+.src-item:hover,
+.src-item.src-selected {
+  background: rgba(197, 160, 89, 0.08);
+}
+
+.src-item.src-selected {
+  background: rgba(197, 160, 89, 0.14);
+}
+
+/* ── Product image ────────────────────────────────────────── */
+.src-img {
+  width: 52px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f0e8d8;
+  flex-shrink: 0;
+  border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+/* ── Product info ─────────────────────────────────────────── */
+.src-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.src-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #511d00;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Playfair Display", serif;
+}
+
+.src-name mark {
+  background: rgba(197, 160, 89, 0.35);
+  color: #511d00;
+  padding: 0 2px;
+  border-radius: 2px;
+  font-style: normal;
+}
+
+.src-cat {
+  font-size: 11px;
+  color: #8b6f47;
+  margin-bottom: 3px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.src-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #511d00;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ── Arrow icon ───────────────────────────────────────────── */
+.src-arrow {
+  color: rgba(81, 29, 0, 0.25);
+  flex-shrink: 0;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.src-item:hover .src-arrow,
+.src-item.src-selected .src-arrow {
+  color: #c5a059;
+  transform: translateX(2px);
+}
+
+/* ── No results ───────────────────────────────────────────── */
+.src-no-results {
+  padding: 32px 20px 24px;
+  text-align: center;
+  color: #8b6f47;
+  font-family: "Montserrat", sans-serif;
+}
+
+.src-no-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+
+.src-no-results p {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #511d00;
+}
+
+.src-no-results strong {
+  color: #511d00;
+}
+
+.src-no-sub {
+  font-size: 11px;
+  color: #8b6f47;
+  margin-bottom: 10px;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  #search-results {
+    width: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  #search-results {
+    width: calc(100vw - 24px);
+    right: -8px;
+    max-height: 70vh;
+    border-radius: 12px;
+  }
+
+  .search-clear-btn {
+    right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #search-results {
+    width: calc(100vw - 16px);
+    right: -4px;
+  }
+
+  .src-img {
+    width: 44px;
+    height: 54px;
+  }
+
+  .src-name {
+    font-size: 12px;
+  }
+
+  .src-price {
+    font-size: 12px;
+  }
+}
+
+/* ── Search input active state (override) ─────────────────── */
+.search-input.active {
+  padding-right: 2rem; /* room for clear btn */
+}
