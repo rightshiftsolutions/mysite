@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Member | FitAdmin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-deep: #0f172a;
+            --sidebar-bg: #1e293b;
+            --accent-blue: #3b82f6;
+            --text-bright: #ffffff;
+            --text-dim: #94a3b8;
+            --glass-bg: rgba(30, 41, 59, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --input-bg: rgba(15, 23, 42, 0.8);
+            --sidebar-width: 260px;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-bright);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* --- Global Styles --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--sidebar-bg);
+            height: 100vh;
+            position: fixed;
+            padding: 2rem 1.2rem;
+            border-right: 1px solid var(--glass-border);
+        }
+
+        .main-panel {
+            margin-left: var(--sidebar-width);
+            padding: 2rem;
+        }
+
+        .top-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        /* --- Form Styling --- */
+        .glass-form-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-label {
+            color: var(--text-bright) !important;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-group-text {
+            background: var(--input-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--accent-blue);
+            border-right: none;
+        }
+
+        .form-control,
+        .form-select {
+            background: var(--input-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-bright) !important;
+            padding: 12px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background: var(--input-bg);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+            color: #fff;
+        }
+
+        .form-control::placeholder {
+            color: var(--text-dim);
+        }
+
+        /* --- Buttons --- */
+        .btn-update {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .btn-update:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-cancel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-dim);
+            padding: 12px 30px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        /* Nav menu style */
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="global-loader" class="hidden">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <div class="wrapper">
+        <nav class="sidebar">
+            <div class="logo-container">
+                <h3 class="text-white"><i class="fas fa-dumbbell text-primary"></i> FitAdmin</h3>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="profile.html" class="nav-link"><i class="fas fa-building"></i> Gym Profile</a></li>
+                <li><a href="events.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a href="pendingMembers.html" class="nav-link"><i class="fas fa-user-clock"></i> Pending</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-panel">
+            <nav class="top-navbar">
+                <div class="d-flex align-items-center">
+                    <a href="dashboard.html" class="btn btn-sm btn-cancel me-3" style="padding: 8px 12px;"><i
+                            class="fas fa-arrow-left"></i></a>
+                    <h4 class="m-0 fw-bold">Edit Member <span class="text-primary small ms-2">Profile Details</span>
+                    </h4>
+                </div>
+                <button class="btn btn-outline-danger btn-sm rounded-pill px-3" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout
+                </button>
+            </nav>
+
+            <div class="content">
+                <div class="glass-form-card">
+                    <h5 class="mb-4 text-primary fw-bold"><i class="fas fa-user-edit me-2"></i>Member Information</h5>
+                    <form id="editMemberForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Full Name</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" id="name" class="form-control" required
+                                        placeholder="Member Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Membership Plan</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-clipboard-list"></i></span>
+                                    <select id="plan_id" class="form-select" required>
+                                        <option value="" disabled>Loading plans...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Subscription Fees (₹)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-indian-rupee-sign"></i></span>
+                                    <input type="number" id="fees" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Date of Birth</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
+                                    <input type="date" id="dob" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Anniversary</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-heart"></i></span>
+                                    <input type="date" id="anniversary" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Date of Joining</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-calendar-check"></i></span>
+                                    <input type="date" id="date_of_joining" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Last Payment Date</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-history"></i></span>
+                                    <input type="date" id="date_of_last_payment" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <a href="dashboard.html" class="btn btn-cancel">Discard Changes</a>
+                            <button type="submit" class="btn btn-update">
+                                <i class="fas fa-save me-2"></i>Update Member Profile
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        checkAuth();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const memberId = urlParams.get('id');
+
+        if (!memberId) {
+            showAlert("Invalid member ID", "danger");
+            setTimeout(() => window.location.href = "dashboard.html", 2000);
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return "";
+            const d = new Date(dateStr);
+            if (isNaN(d)) return "";
+            return d.getFullYear() + "-" +
+                String(d.getMonth() + 1).padStart(2, '0') + "-" +
+                String(d.getDate()).padStart(2, '0');
+        }
+
+        async function initPage() {
+            const planSelect = document.getElementById('plan_id');
+            const plansRes = await apiRequest("/plan/getPlans");
+
+            if (plansRes && plansRes.status === 200) {
+                const plans = plansRes.data.data || plansRes.data;
+                planSelect.innerHTML = '<option value="">Select Plan</option>';
+                if (plans && plans.length > 0) {
+                    plans.forEach(p => {
+                        const opt = document.createElement('option');
+                        opt.value = p._id || p.id;
+                        opt.textContent = `${p.name}`;
+                        planSelect.appendChild(opt);
+                    });
+                }
+            }
+
+            const memRes = await apiRequest(`/member/getOne/${memberId}`);
+            if (memRes && memRes.status === 200) {
+                const m = memRes.data.member || memRes.data.data || memRes.data;
+                document.getElementById('name').value = m.name || "";
+                document.getElementById('fees').value = m.fees || "";
+                document.getElementById('dob').value = formatDate(m.dob);
+                document.getElementById('anniversary').value = formatDate(m.anniversary);
+                document.getElementById('date_of_joining').value = formatDate(m.date_of_joining);
+                document.getElementById('date_of_last_payment').value = formatDate(m.date_of_last_payment);
+
+                if (m.plan_id) planSelect.value = m.plan_id;
+                else if (m.plan && m.plan._id) planSelect.value = m.plan._id;
+                else if (m.plan) planSelect.value = m.plan;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initPage();
+            document.getElementById('editMemberForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const body = {
+                    plan_id: document.getElementById("plan_id").value,
+                    name: document.getElementById("name").value,
+                    fees: Number(document.getElementById("fees").value) || 0,
+                    dob: document.getElementById("dob").value,
+                    anniversary: document.getElementById("anniversary").value,
+                    date_of_joining: document.getElementById("date_of_joining").value,
+                    date_of_last_payment: document.getElementById("date_of_last_payment").value
+                };
+
+                const res = await apiRequest(`/member/update/${memberId}`, "PUT", body);
+                if (res && (res.status === 200 || res.status === 201)) {
+                    showAlert("Profile Updated Successfully", "success");
+                    setTimeout(() => window.location.href = "dashboard.html", 1500);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

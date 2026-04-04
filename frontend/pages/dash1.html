@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Dashboard - Gym Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .filter-tab {
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #6c757d;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter-tab:hover {
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .filter-tab.active-tab {
+            background: #0d6efd;
+            color: white;
+            box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
+        }
+
+        .member-details {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            display: none;
+            border-left: 4px solid #0d6efd;
+        }
+
+        /* Plan and Even cards styling from original files */
+        .event-card {
+            transition: transform 0.2s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-icon-birthday {
+            color: #fd7e14;
+            background: #ffe8d6;
+        }
+
+        .event-icon-anniversary {
+            color: #e83e8c;
+            background: #fccce5;
+        }
+
+        .event-icon-default {
+            color: #0d6efd;
+            background: #cfe2ff;
+        }
+
+        /* Hide sidebar on tablet/mobile if we only use tabs, or keep it */
+        /* Will keep original layout */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .view-section.active-section {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sidebar removed, force main panel full width */
+        .sidebar {
+            display: none !important;
+        }
+
+        .main-panel {
+            margin-left: 0 !important;
+            width: 100% !important;
+        }
+
+        .wrapper {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="global-loader" class="hidden">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <div class="wrapper">
+
+        <!-- Main Content -->
+        <div class="main-panel">
+            <nav class="top-navbar">
+                <div class="d-flex align-items-center">
+                    <h3 class="m-0 me-3 fw-bold"><i class="fas fa-dumbbell text-primary"></i> FitAdmin</h3>
+                    <h4 class="m-0 fw-bold text-muted border-start ps-3" id="navTitle">Members Dashboard</h4>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center" style="cursor: pointer;" onclick="switchView('profile')" title="View Gym Profile">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
+                            style="width: 35px; height: 35px;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="fw-medium text-dark" id="gymNameDisplay">Admin</span>
+                    </div>
+                    <button class="btn btn-outline-danger btn-sm rounded-pill px-3" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt me-1"></i> Logout
+                    </button>
+                </div>
+            </nav>
+
+            <div class="content" id="main-content">
+
+                <!-- Quick Actions -->
+                <div class="d-flex flex-wrap gap-2 mb-4" id="quickActions">
+                    <button class="btn btn-success" onclick="goTo('createMember.html')"><i class="fas fa-plus me-1"></i>
+                        New Member</button>
+                </div>
+
+                <div class="dashboard-card flex-column align-items-stretch">
+
+                    <!-- Tabs -->
+                    <div class="filter-tabs">
+                        <div class="filter-tab active-tab" onclick="switchView('active')" id="tab-active">
+                            Active <span class="badge bg-light text-dark ms-1 rounded-pill" id="count-active">0</span>
+                        </div>
+                        <div class="filter-tab" onclick="switchView('pending')" id="tab-pending">
+                            Pending <span class="badge bg-light text-dark ms-1 rounded-pill" id="count-pending">0</span>
+                        </div>
+                        <div class="filter-tab" onclick="switchView('inactive')" id="tab-inactive">
+                            Inactive <span class="badge bg-light text-dark ms-1 rounded-pill"
+                                id="count-inactive">0</span>
+                        </div>
+                        <div class="filter-tab" onclick="switchView('events')" id="tab-events">Events</div>
+                        <div class="filter-tab" onclick="switchView('plans')" id="tab-plans">Plans</div>
+                    </div>
+
+                    <!-- Members Section (Active, Pending, Inactive) -->
+                    <div id="membersSection" class="view-section active-section">
+                        <div id="memberList" class="mt-2">
+                            <!-- Members will be loaded here dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Plans Section -->
+                    <div id="plansSection" class="view-section">
+                        <div class="row">
+
+                            <!-- CREATE PLAN -->
+                            <div class="col-lg-4 mb-4">
+                                <div class="dashboard-card border h-100 flex-column align-items-stretch shadow-none">
+
+                                    <h5 class="fw-bold mb-4 border-bottom pb-3">
+                                        <i class="fas fa-plus-circle text-primary me-2"></i>Create New Plan
+                                    </h5>
+
+                                    <!-- ✅ FIXED FORM -->
+                                    <form id="createPlanForm">
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Duration (Months)</label>
+                                            <input type="number" id="planName" class="form-control" required placeholder="e.g. 3">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Price (₹)</label>
+                                            <input type="number" id="planPrice" class="form-control" required placeholder="e.g. 1500">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Description</label>
+                                            <textarea id="planDescription" class="form-control" rows="3"
+                                                placeholder="Gym + Trainer + Diet"></textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-success w-100 py-2">
+                                            <i class="fas fa-save me-2"></i>Create Plan
+                                        </button>
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+                            <!-- PLAN LIST -->
+                            <div class="col-lg-8 mb-4">
+                                <div class="dashboard-card border h-100 flex-column align-items-stretch shadow-none">
+
+                                    <h5 class="fw-bold mb-4 border-bottom pb-3">
+                                        <i class="fas fa-list text-primary me-2"></i>Active Plans
+                                    </h5>
+
+                                    <div class="row g-3" id="plansContainer"></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                                    <!-- Events Section -->
+                                    <div id="eventsSection" class="view-section">
+                                        <div
+                                            class="dashboard-card border border-top border-info border-4 mb-4 shadow-none">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="mb-1 fw-bold" id="monthTitle">Loading Events...</h5>
+                                                    <p class="text-muted mb-0" id="eventsSubtitle">Checking records...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="eventsGrid">
+                                            <!-- Events load here -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Profile Section -->
+                                    <div id="profileSection" class="view-section">
+                                        <div class="form-container px-0 shadow-none">
+                                            <h5 class="mb-4">Gym Information</h5>
+                                            <form id="profileForm">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label fw-medium">Gym Name</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-building"></i></span>
+                                                            <input type="text" id="profile_name" class="form-control"
+                                                                required placeholder="Loading...">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label fw-medium">Owner Name</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-user-tie"></i></span>
+                                                            <input type="text" id="profile_owner_name"
+                                                                class="form-control" placeholder="Loading...">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label fw-medium">Email Address</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-envelope"></i></span>
+                                                            <input type="email" id="profile_email" class="form-control"
+                                                                required placeholder="Loading...">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label fw-medium">Phone Number</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-phone"></i></span>
+                                                            <input type="text" id="profile_phone" class="form-control"
+                                                                required placeholder="Loading...">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mb-4">
+                                                        <label class="form-label fw-medium">Gym Address</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-map-marker-alt"></i></span>
+                                                            <textarea id="profile_address" class="form-control" rows="2"
+                                                                placeholder="Loading..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-end mt-2">
+                                                    <button type="submit" class="btn btn-primary px-4"><i
+                                                            class="fas fa-save me-2"></i>Update Profile</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                    <!-- Bootstrap & Custom JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                    <script src="../js/script.js"></script>
+                    <script>
+                        checkAuth();
+
+                        // Single state
+                        let currentView = "active";
+                        const counts = { active: 0, pending: 0, inactive: 0 };
+
+                        // Initialize display name
+                        function initGymName() {
+                            const gymData = localStorage.getItem("gym");
+                            if (gymData) {
+                                try {
+                                    const gym = JSON.parse(gymData);
+                                    document.getElementById('gymNameDisplay').textContent = gym.name || gym.username || "Admin";
+                                } catch (e) { }
+                            } else {
+                                apiRequest("/gym/profile").then(res => {
+                                    if (res && res.status === 200 && res.data.gym) {
+                                        document.getElementById('gymNameDisplay').textContent = res.data.gym.name;
+                                        localStorage.setItem("gym", JSON.stringify(res.data.gym));
+                                    }
+                                });
+                            }
+                        }
+
+                        // Fetch counts for tabs
+                        async function updateCounts() {
+                            try {
+                                const [actRes, pndRes, inactRes] = await Promise.all([
+                                    apiRequest("/member/getAllMembers").catch(() => null),
+                                    apiRequest("/member/pending").catch(() => null),
+                                    apiRequest("/member/inactive").catch(() => null)
+                                ]);
+
+                                if (actRes && actRes.status === 200) {
+                                    const am = actRes.data.members || actRes.data.data || actRes.data || [];
+                                    counts.active = am.length || 0;
+                                    document.getElementById('count-active').textContent = counts.active;
+                                }
+                                if (pndRes && pndRes.status === 200) {
+                                    const pm = pndRes.data.members || pndRes.data.data || pndRes.data || [];
+                                    counts.pending = pm.length || 0;
+                                    document.getElementById('count-pending').textContent = counts.pending;
+                                }
+                                if (inactRes && inactRes.status === 200) {
+                                    const im = inactRes.data.members || inactRes.data.data || inactRes.data || [];
+                                    counts.inactive = im.length || 0;
+                                    document.getElementById('count-inactive').textContent = counts.inactive;
+                                }
+                            } catch (e) {
+                                console.error("Failed to load counts", e);
+                            }
+                        }
+
+                        // Switch SPA View
+                        function switchView(viewName) {
+                            currentView = viewName;
+
+                            // 1. Update Tabs Highlight
+                            document.querySelectorAll(".filter-tab").forEach(t => t.classList.remove("active-tab"));
+                            const activeTab = document.getElementById(`tab-${viewName}`);
+                            if (activeTab) activeTab.classList.add("active-tab");
+
+                            // 2. Hide all view sections
+                            document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active-section"));
+
+                            // 3. Setup Navigation / Quick Actions
+                            const navTitle = document.getElementById('navTitle');
+                            const quickActions = document.getElementById('quickActions');
+
+                            if (["active", "pending", "inactive"].includes(viewName)) {
+                                document.getElementById('membersSection').classList.add("active-section");
+                                navTitle.textContent = "Members Dashboard";
+                                quickActions.style.display = "flex";
+                                loadMembers(viewName);
+                            } else if (viewName === "plans") {
+                                document.getElementById('plansSection').classList.add("active-section");
+                                navTitle.textContent = "Membership Plans";
+                                quickActions.style.display = "none";
+                                loadPlans();
+                            } else if (viewName === "events") {
+                                document.getElementById('eventsSection').classList.add("active-section");
+                                navTitle.textContent = "Monthly Events";
+                                quickActions.style.display = "none";
+                                loadEvents();
+                            } else if (viewName === "profile") {
+                                document.getElementById('profileSection').classList.add("active-section");
+                                navTitle.textContent = "Gym Profile";
+                                quickActions.style.display = "none";
+                                loadProfile();
+                            }
+                        }
+
+                        function goTo(page) {
+                            window.location.href = page;
+                        }
+
+                        function formatDate(dateStr) {
+                            if (!dateStr) return "N/A";
+
+                            // Agar already ISO format hai
+                            const d = new Date(dateStr);
+
+                            if (isNaN(d.getTime())) {
+                                return "N/A"; // invalid date handle
+                            }
+
+                            return d.getFullYear() + "-" +
+                                String(d.getMonth() + 1).padStart(2, '0') + "-" +
+                                String(d.getDate()).padStart(2, '0');
+                        }
+
+                        // ======================= MEMBERS LOGIC =======================
+                        function getApiUrlForMembers(type) {
+                            if (type === "active") return "/member/getAllMembers";
+                            if (type === "pending") return "/member/pending";
+                            if (type === "inactive") return "/member/inactive";
+                        }
+
+                        async function loadMembers(type) {
+                            const container = document.getElementById("memberList");
+                            container.innerHTML = '<div class="text-center py-5"><div class="spinner-border text-primary" role="status"></div></div>';
+
+                            try {
+                                const res = await apiRequest(getApiUrlForMembers(type));
+                                container.innerHTML = "";
+
+                                let members = [];
+                                if (res && res.status === 200) {
+                                    members = res.data.members || res.data.data || res.data;
+                                }
+
+                                if (!Array.isArray(members) || members.length === 0) {
+                                    container.innerHTML = `<div class="text-center py-5 text-muted"><i class="fas fa-users fs-1 mb-3 opacity-50"></i><h5>No members found</h5></div>`;
+                                    return;
+                                }
+
+                                members.forEach(m => {
+                                    let badgeClass = "bg-success";
+                                    if (m.status === "pending") badgeClass = "bg-warning text-dark";
+                                    if (m.status === "inactive") badgeClass = "bg-danger";
+
+                                    const planName = m.plan_name || (m.plan && m.plan.name) || m.plan_id || "N/A";
+
+                                    let actions = `<button class="btn btn-warning btn-sm" onclick="edit('${m._id || m.id}')"><i class="fas fa-edit"></i> Edit</button>`;
+
+                                    // Logic: Deactivate button ONLY in Pending members section
+                                    if (type === "pending") {
+                                        actions += `<button class="btn btn-success btn-sm ms-2" onclick="activateMember('${m._id || m.id}')"><i class="fas fa-check"></i> Activate</button>`;
+                                        actions += `<button class="btn btn-danger btn-sm ms-2" onclick="deactivateMember('${m._id || m.id}')"><i class="fas fa-ban"></i> Deactivate</button>`;
+                                    } else if (type === "inactive") {
+                                        actions += `<button class="btn btn-success btn-sm ms-2" onclick="activateMember('${m._id || m.id}')"><i class="fas fa-check"></i> Activate</button>`;
+                                    }
+                                    // For active, we hide deactivate per requirement: Remove "Deactivate" from Active.
+
+                                    container.innerHTML += `
+                        <div class="card mb-3 border-0 shadow-sm">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-light rounded-circle p-2 me-3 text-secondary">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <strong class="fs-5">${m.name}</strong>
+                                </div>
+                                <div>
+                                    <span class="badge ${badgeClass} me-3 text-capitalize">${m.status || type}</span>
+                                    <button class="btn btn-sm btn-outline-primary" onclick="toggleDetails('${m._id || m.id}')">
+                                        <i class="fas fa-chevron-down"></i> Details
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="details-${m._id || m.id}" class="member-details mx-3 mb-3">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted small">Plan</p>
+                                        <p class="fw-medium">${planName}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted small">Fees</p>
+                                        <p class="fw-medium">$${m.fees || 0}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted small">Joining Date</p>
+                                        <p class="fw-medium">${formatDate(m.date_of_joining || m.createdAt)}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted small">Last Payment</p>
+                                        <p class="fw-medium">${formatDate(m.date_of_last_payment)}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    ${actions}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                                });
+
+                            } catch (error) {
+                                console.error(error);
+                                container.innerHTML = `<div class="alert alert-danger">Error loading members</div>`;
+                            }
+                        }
+
+                        function toggleDetails(id) {
+                            const el = document.getElementById("details-" + id);
+                            if (el.style.display === "block") {
+                                el.style.display = "none";
+                            } else {
+                                el.style.display = "block";
+                            }
+                        }
+
+                        function edit(id) {
+                            window.location.href = `editMember.html?id=${id}`;
+                        }
+
+                        async function activateMember(id) {
+                            if (confirm("Activate this member?")) {
+                                const res = await apiRequest(`/member/activate/${id}`, "PATCH");
+                                if (res && (res.status === 200 || res.status === 201)) {
+                                    showAlert("Member activated", "success");
+                                    updateCounts();
+                                    loadMembers(currentView);
+                                } else {
+                                    showAlert("Failed to activate", "danger");
+                                }
+                            }
+                        }
+
+                        async function deactivateMember(id) {
+                            if (confirm("Deactivate this member?")) {
+                                const res = await apiRequest(`/member/deactivate/${id}`, "PUT");
+                                if (res && (res.status === 200 || res.status === 201)) {
+                                    showAlert("Member deactivated", "success");
+                                    updateCounts();
+                                    loadMembers(currentView);
+                                } else {
+                                    showAlert("Failed to deactivate", "danger");
+                                }
+                            }
+                        }
+
+                        // ======================= PLANS LOGIC =======================
+                        checkAuth();
+
+                        // ======================= LOAD PLANS =======================
+                        async function loadPlans() {
+                            const container = document.getElementById('plansContainer');
+
+                            container.innerHTML = `
+        <div class="col-12 text-center py-5">
+            <div class="spinner-border text-primary"></div>
+        </div>
+    `;
+
+                            const res = await apiRequest("/plan/getPlans");
+
+                            if (res && res.status === 200) {
+
+                                const plans = res.data.data || res.data;
+
+                                if (plans && plans.length > 0) {
+
+                                    container.innerHTML = '';
+
+                                    plans.forEach(p => {
+                                        const div = document.createElement('div');
+                                        div.className = 'col-md-6 col-lg-4 mb-3';
+
+                                        div.innerHTML = `
+                    <div class="card h-100 border-0 shadow-sm bg-light">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title fw-bold">${p.name}</h5>
+
+                            <p class="text-success fw-bold mb-1">
+                                ₹ ${p.price}
+                            </p>
+
+                            <p class="text-muted small mb-2">
+                                ${p.description || "No description"}
+                            </p>
+
+                            <p class="text-muted small">
+                                ID: ${p.id}
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer text-end bg-transparent border-0">
+                            <button class="btn btn-sm btn-outline-danger"
+                                onclick="deletePlan('${p.id}')">
+                                Delete
+                            </button>
+                        </div>
+
+                    </div>
+                `;
+
+                                        container.appendChild(div);
+                                    });
+
+                                } else {
+                                    container.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <h6 class="text-muted">No plans found</h6>
+                </div>
+            `;
+                                }
+
+                            } else {
+                                container.innerHTML = `<div class="text-danger text-center">Failed to load plans</div>`;
+                            }
+                        }
+
+
+                        // ======================= DELETE PLAN =======================
+                        async function deletePlan(id) {
+                            if (!confirm("Delete this plan?")) return;
+
+                            const res = await apiRequest(`/plan/delete/${id}`, "DELETE");
+
+                            if (res && res.status === 200) {
+                                showAlert("Deleted successfully", "success");
+                                loadPlans();
+                            } else {
+                                showAlert(res?.data?.message || "Cannot delete (members exist)", "danger");
+                            }
+                        }
+
+
+                        // ======================= CREATE PLAN =======================
+                        document.getElementById('createPlanForm').addEventListener('submit', async (e) => {
+                            e.preventDefault();
+
+                            const name = document.getElementById('planName').value;
+                            const price = document.getElementById('planPrice').value;
+                            const description = document.getElementById('planDescription').value;
+
+                            const body = { name, price, description };
+
+                            const res = await apiRequest("/plan/create", "POST", body);
+
+                            if (res && (res.status === 201 || res.status === 200)) {
+                                showAlert("Plan created successfully!", "success");
+                                e.target.reset();
+                                loadPlans();
+                            } else {
+                                showAlert(res?.data?.message || "Failed to create plan", "danger");
+                            }
+                        });
+
+
+                        // ======================= EVENTS LOGIC =======================
+                        async function loadEvents() {
+                            const container = document.getElementById("eventsGrid");
+                            container.innerHTML = '<div class="col-12 text-center py-5"><div class="spinner-border text-info" role="status"></div></div>';
+
+                            try {
+                                const res = await apiRequest("/member/monthly-events");
+
+                                if (res && res.status === 200) {
+                                    const data = res.data;
+                                    document.getElementById("monthTitle").innerHTML = `<i class="fas fa-calendar-check text-info me-2"></i>Events for ${data.month || "Current Month"}`;
+                                    document.getElementById("eventsSubtitle").textContent = `Total Upcoming Events: ${data.count || 0}`;
+
+                                    const events = data.events || [];
+
+                                    if (events.length === 0) {
+                                        container.innerHTML = `
+                            <div class="col-12 text-center py-5">
+                                <i class="fas fa-glass-cheers fs-1 text-muted opacity-25 mb-3"></i>
+                                <h5 class="text-muted">No events this month</h5>
+                                <p class="text-muted small">Check back later for upcoming birthdays or anniversaries.</p>
+                            </div>
+                        `;
+                                        return;
+                                    }
+
+                                    container.innerHTML = "";
+                                    events.forEach(ev => {
+                                        let iconClass = "fas fa-star";
+                                        let bgClass = "event-icon-default";
+                                        let titleText = ev.type || "Event";
+
+                                        if (ev.type && ev.type.toLowerCase().includes("birthday")) {
+                                            iconClass = "fas fa-birthday-cake";
+                                            bgClass = "event-icon-birthday";
+                                            titleText = "Birthday";
+                                        } else if (ev.type && ev.type.toLowerCase().includes("anniversary")) {
+                                            iconClass = "fas fa-glass-cheers";
+                                            bgClass = "event-icon-anniversary";
+                                            titleText = "Anniversary";
+                                        }
+
+                                        container.innerHTML += `
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card event-card h-100 border-0 shadow-sm">
+                                    <div class="card-body text-center p-4">
+                                        <div class="d-inline-flex justify-content-center align-items-center rounded-circle mb-3 ${bgClass}" style="width: 70px; height: 70px;">
+                                            <i class="${iconClass} fs-2"></i>
+                                        </div>
+                                        <h5 class="fw-bold mb-1">${ev.name}</h5>
+                                        <p class="text-muted small mb-2"><i class="fas fa-calendar-day me-1"></i> ${ev.date ? new Date(ev.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Pending'}</p>
+                                        <span class="badge bg-light text-dark border border-secondary fw-semibold px-3 py-2 rounded-pill mt-2 text-capitalize">
+                                            ${titleText}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                                    });
+                                } else {
+                                    document.getElementById("monthTitle").textContent = "Failed to load events";
+                                    document.getElementById("eventsSubtitle").textContent = "Ensure the server is running.";
+                                    container.innerHTML = `<div class="col-12 text-center py-4 text-danger"><i class="fas fa-exclamation-triangle me-2"></i>Could not load events data.</div>`;
+                                }
+
+                            } catch (error) {
+                                console.error(error);
+                                container.innerHTML = `<div class="col-12 text-center py-4 text-danger">Error loading events.</div>`;
+                            }
+                        }
+
+                        // ======================= PROFILE LOGIC =======================
+                        async function loadProfile() {
+                            const res = await apiRequest("/gym/profile");
+
+                            if (res && res.status === 200) {
+                                const gym = res.data.gym || res.data;
+
+                                document.getElementById('profile_name').value = gym.name || "";
+                                document.getElementById('profile_owner_name').value = gym.owner_name || "";
+                                document.getElementById('profile_email').value = gym.email || "";
+                                document.getElementById('profile_phone').value = gym.phone || "";
+                                document.getElementById('profile_address').value = gym.address || "";
+
+                                document.getElementById('gymNameDisplay').textContent = gym.name || "Admin";
+
+                                localStorage.setItem("gym", JSON.stringify(gym));
+                            } else {
+                                showAlert("Failed to load profile data", "danger");
+                            }
+                        }
+
+                        document.getElementById('profileForm').addEventListener('submit', async (e) => {
+                            e.preventDefault();
+                            const body = {
+                                name: document.getElementById('profile_name').value,
+                                owner_name: document.getElementById('profile_owner_name').value,
+                                email: document.getElementById('profile_email').value,
+                                phone: document.getElementById('profile_phone').value,
+                                address: document.getElementById('profile_address').value
+                            };
+
+                            const res = await apiRequest("/gym/update", "PUT", body);
+
+                            if (res && (res.status === 200 || res.status === 201)) {
+                                showAlert("Profile updated successfully!", "success");
+                                document.getElementById('gymNameDisplay').textContent = body.name;
+
+                                let cachedGym = JSON.parse(localStorage.getItem("gym") || "{}");
+                                cachedGym = { ...cachedGym, ...body };
+                                localStorage.setItem("gym", JSON.stringify(cachedGym));
+
+                            } else {
+                                showAlert(res?.data?.message || "Failed to update profile", "danger");
+                            }
+                        });
+
+
+
+                        // INITIALIZATION
+                        document.addEventListener("DOMContentLoaded", () => {
+                            initGymName();
+                            updateCounts();
+                            switchView('active');
+                        });
+
+                    </script>
+</body>
+
+</html>
