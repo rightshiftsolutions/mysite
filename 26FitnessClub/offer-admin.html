@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26fitnessClub - Offer Designer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS (Admin Specific) -->
+    <style>
+        :root {
+            --accent-color: #39ff14;
+            --accent-glow: rgba(57, 255, 20, 0.4);
+            --bg-dark: #0a0a0a;
+            --bg-surface: #1a1a1a;
+            --text-muted: #888;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            padding-bottom: 2rem;
+        }
+
+        .navbar {
+            background-color: var(--bg-surface) !important;
+            border-bottom: 1px solid #333;
+        }
+
+        .card {
+            background-color: var(--bg-surface);
+            border: 1px solid #333;
+            border-radius: 12px;
+            color: #fff;
+        }
+
+        .form-control, .form-select {
+            background-color: #222;
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #2a2a2a;
+            border-color: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+            border: none;
+            color: #000;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-accent:hover {
+            background-color: #32e610;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--accent-glow);
+        }
+
+        .preview-container {
+            position: sticky;
+            top: 100px;
+        }
+
+        /* Site Mockup */
+        .site-mockup {
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(10, 10, 10, 1) 100%);
+            border-radius: 15px;
+            padding: 40px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #mock-offer-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-color);
+            border-radius: 15px;
+            padding: 40px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mock-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 5px 25px;
+            font-weight: bold;
+            transform: rotate(45deg) translate(25px, -15px);
+            font-size: 0.8rem;
+        }
+
+        .text-accent {
+            color: var(--accent-color);
+        }
+
+        .cracker-blast {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            opacity: 0.2;
+            filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5 shadow">
+        <div class="container">
+            <a class="navbar-brand text-uppercase fw-bolder d-flex align-items-center" href="index.html">
+                <div class="logo-icon bg-accent text-dark rounded-circle d-flex justify-content-center align-items-center me-2" style="width: 40px; height: 40px; background-color: var(--accent-color);">
+                    <i class="fas fa-dumbbell fs-5" style="transform: rotate(-45deg); color: #000;"></i>
+                </div>
+                <span>Offer <span class="text-accent">Designer</span></span>
+            </a>
+            <div class="ms-auto">
+                <a href="index.html" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-arrow-left me-1"></i> Back to Site
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!-- Designer Controls -->
+            <div class="col-lg-6">
+                <div class="card p-4 shadow-lg mb-4">
+                    <h4 class="mb-4">
+                        <i class="fas fa-magic text-accent me-2"></i> Design New Offer
+                    </h4>
+                    
+                    <!-- Festival Presets -->
+                    <div class="mb-4 p-3 bg-dark rounded border border-secondary border-opacity-25">
+                        <label class="form-label text-accent fw-bold"><i class="fas fa-calendar-alt me-1"></i> Quick Presets (Festivals)</label>
+                        <select id="preset-select" class="form-select">
+                            <option value="">Select a Festival Preset...</option>
+                            <option value="diwali">Diwali Special</option>
+                            <option value="holi">Holi Celebration</option>
+                            <option value="garba">Garba (Navratri) Special</option>
+                            <option value="couple">Couple Offer</option>
+                            <option value="referral">Member Get Member (Referral)</option>
+                            <option value="student">Student Discount</option>
+                            <option value="corporate">Corporate Wellness</option>
+                            <option value="anniversary">Anniversary Sale</option>
+                            <option value="newyear">New Year Resolution</option>
+                            <option value="christmas">Christmas Gift</option>
+                            <option value="id">Eid Mubarak</option>
+                            <option value="independence">Independence Day</option>
+                            <option value="summer">Summer Shred</option>
+                        </select>
+                    </div>
+
+                    <form id="offer-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Badge Text</label>
+                                <input type="text" id="badgeText" class="form-control" placeholder="e.g. Limited Time">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Title Prefix</label>
+                                <input type="text" id="title" class="form-control" placeholder="e.g. Diwali">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Title Accent</label>
+                                <input type="text" id="titleAccent" class="form-control" placeholder="e.g. Festival">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Title Suffix</label>
+                                <input type="text" id="titleSuffix" class="form-control" placeholder="e.g. Offer">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Discount Text</label>
+                                <input type="text" id="discount" class="form-control" placeholder="e.g. Get 50% ">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Discount Accent</label>
+                                <input type="text" id="discountAccent" class="form-control" placeholder="e.g. OFF">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Description</label>
+                                <textarea id="description" class="form-control" rows="3" placeholder="Describe the offer details..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">WhatsApp Reply Message</label>
+                                <input type="text" id="whatsappMessage" class="form-control" placeholder="Hi! I am interested in...">
+                            </div>
+                        </div>
+
+                        <div class="mt-5 d-grid gap-2">
+                            <button type="button" id="btn-whatsapp" class="btn btn-success py-3" style="background-color: #25D366; border: none; font-weight: 700; color: #fff;">
+                                <i class="fab fa-whatsapp me-2"></i> Submit Offer Change Request on WhatsApp
+                            </button>
+                            <p class="text-muted small mt-2 text-center">
+                                <i class="fas fa-info-circle me-1"></i> Submitting this will send your design directly to 9205535096.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Live Preview -->
+            <div class="col-lg-6">
+                <div class="preview-container">
+                    <h5 class="mb-3 text-muted text-uppercase tracking-wider">Live Site Preview</h5>
+                    <div class="site-mockup">
+                        <div id="mock-offer-card">
+                            <div class="cracker-blast" style="top: 10%; left: 10%;"></div>
+                            <div class="cracker-blast" style="bottom: 10%; right: 10%;"></div>
+                            
+                            <div id="prev-badge" class="mock-badge">Limited Time</div>
+                            <h2 class="mb-3">
+                                <span id="prev-title">Summer</span> 
+                                <span id="prev-titleAccent" class="text-accent">Shred</span> 
+                                <span id="prev-titleSuffix">Offer</span>
+                            </h2>
+                            <h3 class="display-4 fw-bold mb-4">
+                                <span id="prev-discount">Get 3 Months </span>
+                                <span id="prev-discountAccent" class="text-accent">FREE</span>
+                            </h3>
+                            <p id="prev-description" class="fs-5 text-secondary mb-5">Sign up for an annual Elite Membership today and get your first 3 months completely free.</p>
+                            
+                            <button class="btn btn-accent btn-lg px-5 py-3 rounded-pill disabled" style="opacity: 0.9;">
+                                <i class="fab fa-whatsapp me-2"></i> Claim via WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 pt-4 pb-4 border-top border-secondary border-opacity-25 text-center text-muted small">
+        <div class="container">
+            &copy; 2026 26fitnessClub. All Rights Reserved. | <span class="text-accent">Powered by RightShift Solutions</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/offer-admin.js"></script>
+</body>
+</html>

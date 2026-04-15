@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26fitnessClub - Data Administrator</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --accent-color: #39ff14;
+            --accent-glow: rgba(57, 255, 20, 0.4);
+            --bg-dark: #0a0a0a;
+            --bg-surface: #1a1a1a;
+            --text-muted: #888;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            padding-bottom: 5rem;
+        }
+
+        .navbar {
+            background-color: var(--bg-surface) !important;
+            border-bottom: 1px solid #333;
+        }
+
+        .card {
+            background-color: var(--bg-surface);
+            border: 1px solid #333;
+            border-radius: 12px;
+        }
+
+        .nav-pills .nav-link {
+            color: #888;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: 700;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .nav-pills .nav-link:hover:not(.active) {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+
+        .form-label {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-control, .form-select {
+            background-color: #222;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 0.75rem;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #2a2a2a;
+            border-color: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .section-header {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+            border: none;
+            color: #000;
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-accent:hover {
+            background-color: #32e610;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--accent-glow);
+        }
+
+        .dynamic-item {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+
+        .btn-remove {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #ff4444;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+        }
+
+        .sticky-actions {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-surface);
+            padding: 1.5rem;
+            border-top: 1px solid #333;
+            z-index: 1000;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+        }
+
+        .text-accent {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5 shadow sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-uppercase fw-bolder d-flex align-items-center" href="index.html">
+                <div class="logo-icon bg-accent text-dark rounded-circle d-flex justify-content-center align-items-center me-2" style="width: 40px; height: 40px; background-color: var(--accent-color);">
+                    <i class="fas fa-hammer fs-5" style="color: #000;"></i>
+                </div>
+                <span>Data <span class="text-accent">Administrator</span></span>
+            </a>
+            <div class="ms-auto d-flex gap-2">
+                <button type="button" id="btn-load" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-sync-alt me-1"></i> Load Current Data
+                </button>
+                <a href="index.html" class="btn btn-outline-accent btn-sm">
+                    <i class="fas fa-eye me-1"></i> View Site
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <div class="col-lg-3 mb-4">
+                <div class="card p-3 shadow sticky-top" style="top: 100px;">
+                    <div class="nav flex-column nav-pills" id="adminTabs" role="tablist">
+                        <button class="nav-link active" id="tab-branding" data-bs-toggle="pill" data-bs-target="#sec-branding" type="button">
+                            <i class="fas fa-palette me-2"></i> Branding & Theme
+                        </button>
+                        <button class="nav-link" id="tab-contact" data-bs-toggle="pill" data-bs-target="#sec-contact" type="button">
+                            <i class="fas fa-address-card me-2"></i> Contact & Social
+                        </button>
+                        <button class="nav-link" id="tab-hero" data-bs-toggle="pill" data-bs-target="#sec-hero" type="button">
+                            <i class="fas fa-rocket me-2"></i> Hero & Offers
+                        </button>
+                        <button class="nav-link" id="tab-about" data-bs-toggle="pill" data-bs-target="#sec-about" type="button">
+                            <i class="fas fa-info-circle me-2"></i> About & Programs
+                        </button>
+                        <button class="nav-link" id="tab-pricing" data-bs-toggle="pill" data-bs-target="#sec-pricing" type="button">
+                            <i class="fas fa-tags me-2"></i> Membership & Pricing
+                        </button>
+                        <button class="nav-link" id="tab-team" data-bs-toggle="pill" data-bs-target="#sec-team" type="button">
+                            <i class="fas fa-user-friends me-2"></i> Team & Testimonials
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="col-lg-9">
+                <form id="adminForm">
+                    <div class="tab-content" id="adminTabsContent">
+                        
+                        <!-- Section: Branding -->
+                        <div class="tab-pane fade show active" id="sec-branding">
+                            <div class="card p-4 shadow-lg mb-4">
+                                <div class="section-header">
+                                    <h3>Branding & Theme</h3>
+                                    <p class="text-muted mb-0">Manage your logo text and core identity.</p>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label">Main Logo Part (White)</label>
+                                        <input type="text" id="theme-brandTextWhite" class="form-control" placeholder="e.g. 26">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Middle Part (Light)</label>
+                                        <input type="text" id="theme-brandTextLight" class="form-control" placeholder="e.g. fitness">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Accent Part (Green)</label>
+                                        <input type="text" id="theme-brandTextAccent" class="form-control" placeholder="e.g. Club">
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <div class="p-3 bg-dark rounded border border-secondary border-opacity-25 text-center">
+                                            <span class="fs-4 fw-bolder text-uppercase">
+                                                <span id="preview-logo-white" class="text-white">26</span>
+                                                <span id="preview-logo-light" class="text-light fw-light">fitness</span>
+                                                <span id="preview-logo-accent" class="text-accent">Club</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Contact & Social -->
+                        <div class="tab-pane fade" id="sec-contact">
+                            <div class="card p-4 shadow-lg mb-4">
+                                <div class="section-header">
+                                    <h3>Contact Information</h3>
+                                    <p class="text-muted mb-0">How members reach you.</p>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="text" id="contact-phone" class="form-control" placeholder="+91 98765 43210">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">WhatsApp Number (For leads)</label>
+                                        <input type="text" id="contact-whatsappNumber" class="form-control" placeholder="919205535096">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Address</label>
+                                        <input type="text" id="contact-address" class="form-control" placeholder="Full gym address">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Google Maps Link</label>
+                                        <input type="text" id="contact-mapLink" class="form-control" placeholder="https://maps.google.com/...">
+                                    </div>
+                                </div>
+
+                                <div class="section-header mt-5">
+                                    <h3>Social Media</h3>
+                                    <p class="text-muted mb-0">Links to your community profiles.</p>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-lg-3 col-md-6">
+                                        <label class="form-label"><i class="fab fa-instagram me-1"></i> Instagram</label>
+                                        <input type="text" id="social-instagram" class="form-control" placeholder="https://www.instagram.com/yourbrand">
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <label class="form-label"><i class="fab fa-facebook me-1"></i> Facebook</label>
+                                        <input type="text" id="social-facebook" class="form-control" placeholder="https://www.facebook.com/yourbrand">
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <label class="form-label"><i class="fab fa-twitter me-1"></i> Twitter / X</label>
+                                        <input type="text" id="social-twitter" class="form-control" placeholder="https://x.com/yourbrand">
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <label class="form-label"><i class="fab fa-youtube me-1"></i> YouTube Channel</label>
+                                        <input type="text" id="social-youtube" class="form-control" placeholder="https://www.youtube.com/@yourchannel">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Hero & Offers -->
+                        <div class="tab-pane fade" id="sec-hero">
+                            <div class="card p-4 shadow-lg mb-4">
+                                <div class="section-header">
+                                    <h3>Hero Section (Landing)</h3>
+                                    <p class="text-muted mb-0">The first thing visitors see.</p>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Title Prefix</label>
+                                        <input type="text" id="hero-titlePrefix" class="form-control" placeholder="Unleash Your">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Title Accent</label>
+                                        <input type="text" id="hero-titleAccent" class="form-control" placeholder="Potential">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Subtitle</label>
+                                        <textarea id="hero-subtitle" class="form-control" rows="2"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="section-header mt-5">
+                                    <h3>Default Special Offer</h3>
+                                    <p class="text-muted mb-0">Core promotional content.</p>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Badge Text</label>
+                                        <input type="text" id="offers-badgeText" class="form-control" placeholder="Limited Time">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Title</label>
+                                        <input type="text" id="offers-title" class="form-control" placeholder="Summer">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Title Accent</label>
+                                        <input type="text" id="offers-titleAccent" class="form-control" placeholder="Shred">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Title Suffix</label>
+                                        <input type="text" id="offers-titleSuffix" class="form-control" placeholder="Offer">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Discount Text</label>
+                                        <input type="text" id="offers-discount" class="form-control" placeholder="Get 3 Months ">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Discount Accent</label>
+                                        <input type="text" id="offers-discountAccent" class="form-control" placeholder="FREE">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Description</label>
+                                        <textarea id="offers-description" class="form-control" rows="2"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">WhatsApp Lead Message</label>
+                                        <input type="text" id="offers-whatsappMessage" class="form-control" placeholder="Hi! I am interested in...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: About & Programs -->
+                        <div class="tab-pane fade" id="sec-about">
+                            <div class="card p-4 shadow-lg mb-4">
+                                <div class="section-header">
+                                    <h3>About Section</h3>
+                                    <p class="text-muted mb-0">Tell your story.</p>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Title Prefix</label>
+                                        <input type="text" id="about-titlePrefix" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Title Accent</label>
+                                        <input type="text" id="about-titleAccent" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Main Description</label>
+                                        <textarea id="about-description" class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Key Features (One per line)</label>
+                                        <textarea id="about-features" class="form-control" rows="4" placeholder="Elite Trainers&#10;Modern Equipment"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="section-header mt-5 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h3>Training Programs</h3>
+                                        <p class="text-muted mb-0">Your core gym services.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-accent" onclick="addProgram()">
+                                        <i class="fas fa-plus me-1"></i> Add Program
+                                    </button>
+                                </div>
+                                <div id="container-programs">
+                                    <!-- Dynamic Programs -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Pricing -->
+                        <div class="tab-pane fade" id="sec-pricing">
+                            <div class="card p-4 shadow-lg mb-4">
+                                <div class="section-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h3>Membership Plans</h3>
+                                        <p class="text-muted mb-0">Pricing and tiers.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-accent" onclick="addPricing()">
+                                        <i class="fas fa-plus me-1"></i> Add Plan
+                                    </button>
+                                </div>
+                                <div id="container-pricing">
+                                    <!-- Dynamic Pricing Cards -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Team & Testimonials -->
+                        <div class="tab-pane fade" id="sec-team">
+                            <div class="card p-4 shadow-lg mb-4">
+                                <div class="section-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h3>Expert Trainers</h3>
+                                        <p class="text-muted mb-0">The faces of the gym.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-accent" onclick="addTrainer()">
+                                        <i class="fas fa-plus me-1"></i> Add Trainer
+                                    </button>
+                                </div>
+                                <div id="container-trainers">
+                                    <!-- Dynamic Trainers -->
+                                </div>
+
+                                <div class="section-header mt-5 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h3>Member Testimonials</h3>
+                                        <p class="text-muted mb-0">Social proof from satisfied clients.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-accent" onclick="addTestimonial()">
+                                        <i class="fas fa-plus me-1"></i> Add Testimonial
+                                    </button>
+                                </div>
+                                <div id="container-testimonials">
+                                    <!-- Dynamic Testimonials -->
+                                </div>
+                            </div>
+
+                            <div class="card p-4 shadow-lg mb-4">
+                                <div class="section-header">
+                                    <h3>Footer & Copyright</h3>
+                                    <p class="text-muted mb-0">Legal and branding details.</p>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="form-label">Footer Description</label>
+                                        <textarea id="footer-description" class="form-control" rows="2"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Copyright Text</label>
+                                        <input type="text" id="footer-copyright" class="form-control" placeholder="© 2026 ...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Actions -->
+    <div class="sticky-actions">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="text-muted small d-none d-md-block">
+                <i class="fas fa-info-circle me-1"></i> All changes are processed locally. No data is sent to a server.
+            </div>
+            <div class="d-flex gap-3">
+                <button type="button" id="btn-download" class="btn btn-accent btn-lg shadow-lg">
+                    <i class="fas fa-file-download me-2"></i> Generate & Download data.json
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates for Dynamic Sections -->
+    <template id="tmpl-program">
+        <div class="dynamic-item program-item">
+            <button type="button" class="btn-remove" onclick="removeThis(this)"><i class="fas fa-times-circle"></i></button>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Program Icon (FA Class)</label>
+                    <input type="text" class="form-control p-icon" placeholder="fas fa-dumbbell">
+                </div>
+                <div class="col-md-8">
+                    <label class="form-label">Program Title</label>
+                    <input type="text" class="form-control p-title" placeholder="e.g. Strength Training">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control p-desc" rows="2"></textarea>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-pricing">
+        <div class="dynamic-item pricing-item">
+            <button type="button" class="btn-remove" onclick="removeThis(this)"><i class="fas fa-times-circle"></i></button>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Plan Title</label>
+                    <input type="text" class="form-control pr-title" placeholder="Basic / Pro / Elite">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Price</label>
+                    <input type="text" class="form-control pr-price" placeholder="Rs. 999">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Period</label>
+                    <input type="text" class="form-control pr-period" placeholder="/mo">
+                </div>
+                <div class="col-md-12">
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input pr-popular" type="checkbox">
+                        <label class="form-check-label text-accent fw-bold" style="font-size: 0.8rem;">MARK AS POPULAR</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Features (Comma Separated)</label>
+                    <textarea class="form-control pr-features" rows="3" placeholder="Sample: Standard Gym Access, Free Weights Area, Cardio Equipment"></textarea>
+                    <div class="form-text text-muted small mt-1">Separate each feature with a comma.</div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-trainer">
+        <div class="dynamic-item trainer-item">
+            <button type="button" class="btn-remove" onclick="removeThis(this)"><i class="fas fa-times-circle"></i></button>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Trainer Name</label>
+                    <input type="text" class="form-control t-name">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Role / Specialization</label>
+                    <input type="text" class="form-control t-role">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-testimonial">
+        <div class="dynamic-item testimonial-item">
+            <button type="button" class="btn-remove" onclick="removeThis(this)"><i class="fas fa-times-circle"></i></button>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Member Name</label>
+                    <input type="text" class="form-control test-name">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Subtitle (Outcome)</label>
+                    <input type="text" class="form-control test-subtitle" placeholder="Lost 10kg ...">
+                </div>
+                <div class="col-md-12">
+                    <label class="form-label">Stars (1-5)</label>
+                    <input type="number" class="form-control test-stars" value="5" min="1" max="5">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Review Text</label>
+                    <textarea class="form-control test-text" rows="2"></textarea>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Footer -->
+    <footer class="mt-5 pt-4 pb-4 border-top border-secondary border-opacity-25 text-center text-muted small mb-5">
+        <div class="container">
+            &copy; 2026 26fitnessClub. All Rights Reserved. | <span class="text-accent">Powered by RightShift Solutions</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data-admin.js"></script>
+</body>
+</html>
