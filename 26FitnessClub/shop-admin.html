@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26fitnessClub - Shop Admin</title>
+    <link rel="stylesheet" href="css/local-fonts.css">
+<link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/theme1.css">
+
+    <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+
+    <style>
+        :root {
+            --accent-color: #39ff14;
+            --accent-glow: rgba(57, 255, 20, 0.22);
+            --bg-dark: #050505;
+            --bg-surface: rgba(18, 18, 18, 0.92);
+            --bg-soft: rgba(255, 255, 255, 0.04);
+            --text-muted: #98a2b3;
+            --border-soft: rgba(57, 255, 20, 0.14);
+            --border-strong: rgba(57, 255, 20, 0.28);
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, rgba(57, 255, 20, 0.10), transparent 30%),
+                radial-gradient(circle at top right, rgba(57, 255, 20, 0.08), transparent 24%),
+                linear-gradient(180deg, #030303 0%, #090909 100%);
+            color: #fff;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            padding-bottom: 2rem;
+        }
+
+        .admin-navbar {
+            background: rgba(10, 10, 10, 0.92) !important;
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(57, 255, 20, 0.10);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            letter-spacing: 0.02em;
+        }
+
+        .text-accent {
+            color: var(--accent-color) !important;
+        }
+
+        .admin-shell {
+            padding: 2rem 0 3rem;
+        }
+
+        .admin-surface {
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+                var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 24px;
+            box-shadow:
+                0 24px 54px rgba(0, 0, 0, 0.38),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        }
+
+        .hero-card,
+        .admin-panel {
+            padding: 1.5rem;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-strong);
+            background: rgba(57, 255, 20, 0.08);
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.9rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.1rem);
+            font-weight: 900;
+            line-height: 1.03;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-copy {
+            color: #d2d7e1;
+            max-width: 720px;
+            margin-bottom: 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+
+        .stat-card {
+            border-radius: 18px;
+            border: 1px solid rgba(57, 255, 20, 0.12);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-card span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-card strong {
+            font-size: 1.1rem;
+            font-weight: 800;
+            word-break: break-word;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(57, 255, 20, 0.10);
+            border: 1px solid rgba(57, 255, 20, 0.18);
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .section-title p,
+        .text-muted-soft,
+        .footer-note {
+            color: var(--text-muted);
+        }
+
+        .form-label {
+            color: #eef2f7;
+            font-weight: 600;
+        }
+
+        .form-control,
+        .form-select {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border-radius: 14px;
+            min-height: 48px;
+        }
+
+        textarea.form-control {
+            min-height: 110px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background-color: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 0 0 0.2rem rgba(57, 255, 20, 0.12);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.40);
+        }
+
+        .helper-card {
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0.95rem 1rem;
+            color: #d8dee8;
+        }
+
+        .helper-card.warning {
+            border-color: rgba(255, 193, 7, 0.25);
+            background: rgba(255, 193, 7, 0.08);
+            color: #ffe7a6;
+        }
+
+        .thumbnail-strip {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .thumbnail-card {
+            width: 88px;
+            text-align: center;
+        }
+
+        .thumbnail-card img {
+            width: 88px;
+            height: 88px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid rgba(57, 255, 20, 0.18);
+            display: block;
+            margin-bottom: 0.45rem;
+            background: #111;
+        }
+
+        .thumbnail-card span {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            word-break: break-word;
+            line-height: 1.25;
+        }
+
+        .more-fields {
+            margin-top: 1rem;
+            border-radius: 18px;
+            border: 1px solid rgba(57, 255, 20, 0.12);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.9rem 1rem 0.2rem;
+        }
+
+        .more-fields summary {
+            cursor: pointer;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            list-style: none;
+        }
+
+        .more-fields summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .more-fields summary::after {
+            content: ' +';
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+
+        .more-fields[open] summary::after {
+            content: ' -';
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            border: none;
+            color: #000;
+            font-weight: 800;
+            border-radius: 14px;
+            min-height: 48px;
+        }
+
+        .btn-accent:hover {
+            background: #32e610;
+            color: #000;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px var(--accent-glow);
+        }
+
+        .btn-soft {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            color: #fff;
+            border-radius: 14px;
+            min-height: 48px;
+        }
+
+        .btn-soft:hover {
+            background: rgba(255, 255, 255, 0.10);
+            color: #fff;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            border: none;
+            color: #041b08;
+            font-weight: 800;
+            border-radius: 14px;
+            min-height: 50px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1fbe59;
+            color: #041b08;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.25);
+        }
+
+        .pending-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .pending-card {
+            position: relative;
+            display: grid;
+            grid-template-columns: 86px 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(57, 255, 20, 0.12);
+        }
+
+        .pending-image {
+            width: 86px;
+            height: 86px;
+            object-fit: cover;
+            border-radius: 16px;
+            background: #111;
+            border: 1px solid rgba(57, 255, 20, 0.16);
+        }
+
+        .pending-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+
+        .pending-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .meta-pill,
+        .option-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            border-radius: 999px;
+            padding: 0.32rem 0.7rem;
+            font-size: 0.78rem;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: rgba(255, 255, 255, 0.04);
+            color: #e6ebf2;
+        }
+
+        .option-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: 0.6rem;
+        }
+
+        .pending-description {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 0;
+        }
+
+        .remove-pending {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+
+        .remove-pending:hover {
+            background: rgba(255, 87, 87, 0.16);
+            color: #fff;
+        }
+
+        .empty-state {
+            border-radius: 18px;
+            border: 1px dashed rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.35rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .char-counter {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .pending-card {
+                grid-template-columns: 1fr;
+            }
+
+            .pending-image {
+                width: 100%;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg admin-navbar navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="text-white">26</span><span class="text-light">fitness</span><span class="text-accent">Club</span>
+            </a>
+
+            <div class="d-flex align-items-center gap-2">
+                <a href="shop.html" class="btn btn-soft btn-sm">
+                    <i class="fas fa-store me-2"></i>Open Shop
+                </a>
+                <a href="index.html" class="btn btn-accent btn-sm">
+                    <i class="fas fa-arrow-left me-2"></i>Back Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="admin-shell">
+        <div class="container">
+            <section class="admin-surface hero-card mb-4">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-8">
+                        <div class="eyebrow">
+                            <i class="fas fa-bag-shopping"></i>
+                            Simple Shop Admin
+                        </div>
+                        <h1 class="hero-title">Add products in a very simple way</h1>
+                        <p class="hero-copy">
+                            This works for protein powder, shoes, apparel, accessories, bottles and more.
+                            The request sent to WhatsApp includes <strong>only newly added products</strong> and their images,
+                            not the old products already present in <code>shop.json</code>.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <span>Existing Products</span>
+                                <strong id="existingProductCount">0</strong>
+                            </div>
+                            <div class="stat-card">
+                                <span>New In Request</span>
+                                <strong id="pendingProductCount">0</strong>
+                            </div>
+                            <div class="stat-card">
+                                <span>WhatsApp</span>
+                                <strong id="whatsappTarget">Missing</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="loadState" class="helper-card mt-3">
+                    Loading <code>shop.json</code>...
+                </div>
+            </section>
+
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <section class="admin-surface admin-panel">
+                        <div class="section-title">
+                            <span class="section-icon"><i class="fas fa-plus"></i></span>
+                            <div>
+                                <h5 class="mb-1">Add New Product</h5>
+                                <p class="mb-0 text-muted-soft">Fill only the basic details. Open “Optional details” only when needed.</p>
+                            </div>
+                        </div>
+
+                        <form id="shopAdminForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="productName" class="form-label">Product Name</label>
+                                    <input type="text" class="form-control" id="productName" placeholder="Whey Protein Isolate" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="productCategory" class="form-label">Category</label>
+                                    <input type="text" class="form-control" id="productCategory" list="categoryOptions" placeholder="supplements / shoes / apparel" required>
+                                    <datalist id="categoryOptions"></datalist>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="productType" class="form-label">Product Type</label>
+                                    <input type="text" class="form-control" id="productType" list="typeOptions" placeholder="protein powder / training shoes / hoodie">
+                                    <datalist id="typeOptions"></datalist>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="productPrice" class="form-label">Price</label>
+                                    <input type="number" min="0" step="0.01" class="form-control" id="productPrice" placeholder="2499" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="optionLabel" class="form-label">Option Label</label>
+                                    <input type="text" class="form-control" id="optionLabel" placeholder="Size / Pack / Flavor">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="productOptions" class="form-label">Options</label>
+                                    <input type="text" class="form-control" id="productOptions" placeholder="S, M, L or 1kg, 2kg">
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="productDescription" class="form-label">Short Description</label>
+                                    <textarea class="form-control" id="productDescription" placeholder="Short product description for the shop page"></textarea>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="productImageUrl" class="form-label">Image Relative Path</label>
+                                    <input type="text" class="form-control" id="productImageUrl" placeholder="images/protein-powder.jpg">
+                                    <div class="form-text text-muted">Use a relative path only. Example: <code>images/protein-powder.jpg</code></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="productImages" class="form-label">Image Files For WhatsApp</label>
+                                    <input type="file" class="form-control" id="productImages" accept="image/*" multiple>
+                                    <div class="form-text text-muted">These files are not embedded in JSON. Their relative paths go into JSON, and the image files can be shared or attached in WhatsApp.</div>
+                                </div>
+                            </div>
+
+                            <div id="imageThumbnailStrip" class="thumbnail-strip"></div>
+
+                            <details class="more-fields">
+                                <summary>Optional details</summary>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="productCode" class="form-label">Product Code</label>
+                                        <input type="text" class="form-control" id="productCode" placeholder="PRO-SUP-007">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="productBrand" class="form-label">Brand</label>
+                                        <input type="text" class="form-control" id="productBrand" placeholder="26fitnessClub">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="productMaterial" class="form-label">Material / Composition</label>
+                                        <input type="text" class="form-control" id="productMaterial" placeholder="Whey isolate / Mesh / Cotton">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="productBadge" class="form-label">Badge</label>
+                                        <input type="text" class="form-control" id="productBadge" placeholder="Best Seller / New / Limited">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="productHighlights" class="form-label">Highlights</label>
+                                        <input type="text" class="form-control" id="productHighlights" placeholder="Chocolate, Fast absorption, 24g protein">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="productSpecs" class="form-label">Extra Details</label>
+                                        <textarea class="form-control" id="productSpecs" placeholder="Flavor: Chocolate&#10;Net Weight: 1kg&#10;Gender: Unisex"></textarea>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <div class="d-flex flex-wrap gap-2 mt-4">
+                                <button type="button" id="addProductButton" class="btn btn-accent px-4">
+                                    <i class="fas fa-plus me-2"></i>Add Product
+                                </button>
+                                <button type="button" id="resetDraftButton" class="btn btn-soft px-4">
+                                    <i class="fas fa-rotate-left me-2"></i>Clear Form
+                                </button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+                <div class="col-lg-5">
+                    <section class="admin-surface admin-panel">
+                        <div class="section-title">
+                            <span class="section-icon"><i class="fas fa-list-check"></i></span>
+                            <div>
+                                <h5 class="mb-1">New Products In This Request</h5>
+                                <p class="mb-0 text-muted-soft">These are the only products that will be sent in the JSON request.</p>
+                            </div>
+                        </div>
+
+                        <div id="pendingProductsContainer" class="pending-list"></div>
+                    </section>
+
+                    <section class="admin-surface admin-panel mt-4">
+                        <div class="helper-card mb-3">
+                            <i class="fas fa-circle-info me-2"></i>
+                            Admin will not see the JSON on screen. WhatsApp and download both use a request file that contains only the newly added products. Product JSON stores only relative image paths.
+                        </div>
+
+                        <div id="messageWarning" class="helper-card warning d-none mb-3">
+                            <i class="fas fa-triangle-exclamation me-2"></i>
+                            This JSON is getting large. If the full text does not fit in the WhatsApp link, it will be copied to clipboard and you can paste it manually after WhatsApp opens.
+                        </div>
+
+                        <div class="char-counter mb-3" id="messageCounter">
+                            JSON size: <strong>0</strong> characters
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="button" id="submitWhatsappButton" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp me-2"></i>Submit Request On WhatsApp
+                            </button>
+                            <button type="button" id="downloadJsonButton" class="btn btn-soft">
+                                <i class="fas fa-download me-2"></i>Download New Products JSON
+                            </button>
+                        </div>
+
+                        <p class="footer-note mt-3 mb-0">
+                            Existing products from <code>shop.json</code> are not included in this request.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-5 pt-4 pb-4 border-top border-secondary border-opacity-25 text-center text-muted small">
+        <div class="container">
+            &copy; 2026 26fitnessClub. All Rights Reserved. | <span class="text-accent">Powered by RightShift Solutions</span>
+        </div>
+    </footer>
+
+    <script src="js/shop-admin.js"></script>
+</body>
+</html>

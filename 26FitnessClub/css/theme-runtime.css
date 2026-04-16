@@ -1,0 +1,138 @@
+/* Runtime theme presets driven from data.json via js/site-config.js */
+html[data-site-preset] {
+    --font-main: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --transition-speed: 0.3s;
+}
+
+html[data-site-preset="obsidian-gold"] {
+    --bg-color: #050608;
+    --surface-color: rgba(18, 20, 26, 0.86);
+    --surface-light: rgba(29, 33, 42, 0.95);
+    --surface-strong: #10131a;
+    --text-primary: #f8f5ee;
+    --text-secondary: #9aa3b6;
+    --accent-color: #d9b873;
+    --accent-highlight: #f2dfb2;
+    --accent-highlight-soft: #f0deaf;
+    --accent-contrast: #10131a;
+    --accent-rgb: 217, 184, 115;
+    --secondary-rgb: 83, 193, 255;
+    --offer-tone: #f3cb76;
+    --offer-rgb: 243, 203, 118;
+    --accent-glow: rgba(217, 184, 115, 0.28);
+    color-scheme: dark;
+}
+
+html[data-site-preset="arctic-silver"] {
+    --bg-color: #060a12;
+    --surface-color: rgba(14, 22, 34, 0.88);
+    --surface-light: rgba(24, 36, 52, 0.95);
+    --surface-strong: #0f1724;
+    --text-primary: #edf4ff;
+    --text-secondary: #9fb0c8;
+    --accent-color: #cbd9f6;
+    --accent-highlight: #f7fbff;
+    --accent-highlight-soft: #e3edff;
+    --accent-contrast: #0f1724;
+    --accent-rgb: 203, 217, 246;
+    --secondary-rgb: 109, 171, 255;
+    --offer-tone: #b9d0ff;
+    --offer-rgb: 185, 208, 255;
+    --accent-glow: rgba(203, 217, 246, 0.28);
+    color-scheme: dark;
+}
+
+html[data-site-preset="emerald-elite"] {
+    --bg-color: #06100c;
+    --surface-color: rgba(11, 22, 18, 0.88);
+    --surface-light: rgba(18, 33, 28, 0.95);
+    --surface-strong: #0d1a15;
+    --text-primary: #eefcf6;
+    --text-secondary: #92b8a9;
+    --accent-color: #58d5a4;
+    --accent-highlight: #d8fff0;
+    --accent-highlight-soft: #b8f8dd;
+    --accent-contrast: #0d1a15;
+    --accent-rgb: 88, 213, 164;
+    --secondary-rgb: 97, 255, 211;
+    --offer-tone: #7af1c5;
+    --offer-rgb: 122, 241, 197;
+    --accent-glow: rgba(88, 213, 164, 0.28);
+    color-scheme: dark;
+}
+
+html[data-site-preset="electric-cyan"] {
+    --bg-color: #040c10;
+    --surface-color: rgba(10, 21, 27, 0.88);
+    --surface-light: rgba(16, 31, 40, 0.95);
+    --surface-strong: #0b171d;
+    --text-primary: #effcff;
+    --text-secondary: #8cb4bf;
+    --accent-color: #5cdcff;
+    --accent-highlight: #d8f8ff;
+    --accent-highlight-soft: #b9efff;
+    --accent-contrast: #0b171d;
+    --accent-rgb: 92, 220, 255;
+    --secondary-rgb: 0, 255, 198;
+    --offer-tone: #90f5ff;
+    --offer-rgb: 144, 245, 255;
+    --accent-glow: rgba(92, 220, 255, 0.28);
+    color-scheme: dark;
+}
+
+html[data-site-preset="crimson-luxe"] {
+    --bg-color: #12070a;
+    --surface-color: rgba(28, 14, 18, 0.88);
+    --surface-light: rgba(40, 20, 25, 0.95);
+    --surface-strong: #1a1014;
+    --text-primary: #fff2f5;
+    --text-secondary: #c4a0aa;
+    --accent-color: #ff7a97;
+    --accent-highlight: #ffe2ea;
+    --accent-highlight-soft: #ffc5d2;
+    --accent-contrast: #1a1014;
+    --accent-rgb: 255, 122, 151;
+    --secondary-rgb: 255, 167, 91;
+    --offer-tone: #ffb27f;
+    --offer-rgb: 255, 178, 127;
+    --accent-glow: rgba(255, 122, 151, 0.28);
+    color-scheme: dark;
+}
+
+html[data-site-preset="royal-amethyst"] {
+    --bg-color: #090712;
+    --surface-color: rgba(18, 15, 32, 0.88);
+    --surface-light: rgba(28, 24, 48, 0.95);
+    --surface-strong: #151127;
+    --text-primary: #f6f1ff;
+    --text-secondary: #a79fca;
+    --accent-color: #b18aff;
+    --accent-highlight: #efe3ff;
+    --accent-highlight-soft: #d8c1ff;
+    --accent-contrast: #151127;
+    --accent-rgb: 177, 138, 255;
+    --secondary-rgb: 116, 181, 255;
+    --offer-tone: #d6b0ff;
+    --offer-rgb: 214, 176, 255;
+    --accent-glow: rgba(177, 138, 255, 0.28);
+    color-scheme: dark;
+}
+
+html[data-site-preset="sunset-ember"] {
+    --bg-color: #130907;
+    --surface-color: rgba(32, 17, 12, 0.88);
+    --surface-light: rgba(42, 25, 18, 0.95);
+    --surface-strong: #21130f;
+    --text-primary: #fff5ef;
+    --text-secondary: #c7a694;
+    --accent-color: #ff9a57;
+    --accent-highlight: #ffe5d6;
+    --accent-highlight-soft: #ffd1b1;
+    --accent-contrast: #21130f;
+    --accent-rgb: 255, 154, 87;
+    --secondary-rgb: 255, 97, 145;
+    --offer-tone: #ffc27d;
+    --offer-rgb: 255, 194, 125;
+    --accent-glow: rgba(255, 154, 87, 0.28);
+    color-scheme: dark;
+}

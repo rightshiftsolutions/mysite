@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>26fitnessClub - Website Editor</title>
+    <link rel="stylesheet" href="css/local-fonts.css">
+<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            background-color: #0a0a0a !important;
+        }
+        .accent-text {
+            color: #39ff14;
+        }
+        #jsoneditor {
+            min-height: 500px;
+        }
+        .json-textarea {
+            width: 100%;
+            min-height: calc(100vh - 200px);
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 16px 18px;
+            font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+            resize: vertical;
+            background: #fff;
+            color: #111827;
+            tab-size: 2;
+        }
+        .json-textarea:focus {
+            outline: 2px solid rgba(57,255,20,0.35);
+            border-color: #39ff14;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 shadow">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand text-uppercase fw-bolder d-flex align-items-center" href="index.html">
+                <i class="fas fa-hammer fs-5 me-2 accent-text"></i>
+                <span>Website <span class="accent-text">Data Editor</span></span>
+            </a>
+            <div class="d-flex gap-2">
+                <a href="index.html" class="btn btn-outline-light btn-sm" target="_blank">
+                    <i class="fas fa-external-link-alt me-1"></i> View Website
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid px-4 mb-5">
+        <div class="row mb-3 align-items-center">
+            <div class="col-md-6">
+                <h4 class="mb-1">Edit Site Content</h4>
+                <p class="text-muted small mb-0">Modify the raw JSON below to update your website data. Note: Images must be existing URLs or local file paths (for example, <code>images/hero.jpg</code>).</p>
+            </div>
+            <div class="col-md-6 text-md-end mt-3 mt-md-0 d-flex justify-content-md-end gap-2">
+                <button id="btnReload" class="btn btn-secondary">
+                    <i class="fas fa-sync-alt me-1"></i> Reload Original
+                </button>
+                <button id="btnDownload" class="btn fw-bold" style="background-color: #39ff14; color: #000;">
+                    <i class="fas fa-download me-1"></i> Download new data.json
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div id="alertPlaceholder"></div>
+                <!-- JSON Editor Container -->
+                <div id="jsoneditor"></div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card bg-white border-0 shadow-sm">
+                    <div class="card-body py-4">
+                        <h5 class="card-title text-dark"><i class="fas fa-info-circle text-primary me-2"></i>How to apply these changes</h5>
+                        <ol class="mb-0 text-secondary">
+                            <li>Edit your text, links, or arrays in the editor above.</li>
+                            <li>Click the <strong>"Download new data.json"</strong> button.</li>
+                            <li>Locate the downloaded file (usually in your Downloads folder).</li>
+                            <li>Move and replace the downloaded <code>data.json</code> into the root folder of this website project.</li>
+                            <li>Refresh the website to see your new content!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 pt-4 pb-4 border-top text-center text-muted small">
+        <div class="container">
+            &copy; 2026 26fitnessClub. All Rights Reserved. | <span class="text-primary fw-bold">Powered by RightShift Solutions</span>
+        </div>
+    </footer>
+<script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<!-- Editor Logic -->
+    <script src="js/editor.js"></script>
+</body>
+</html>

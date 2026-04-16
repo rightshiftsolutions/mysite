@@ -1,0 +1,278 @@
+{
+  "pageTitle": "Gym Shop | 26fitnessClub",
+  "branding": {
+    "brandTextWhite": "27",
+    "brandTextLight": "fitness",
+    "brandTextAccent": "Club",
+    "homeUrl": "index.html",
+    "backUrl": "index.html",
+    "backLabel": "Back"
+  },
+  "hero": {
+    "badge": "Official Merchandise & More",
+    "titleWhite": "Gym",
+    "titleAccent": "Shop",
+    "subtitle": "Apparel, shoes, supplements and accessories — all managed from shop.json."
+  },
+  "categories": [
+    {
+      "value": "all",
+      "label": "All"
+    }
+  ],
+  "shop": {
+    "currencySymbol": "Rs.",
+    "whatsappNumber": "919205535096",
+    "phone": "+91 98765 43210",
+    "address": "123 Premium Blvd, Fitness City, Delhi 110001",
+    "mapLink": "https://maps.google.com/?q=28.6139,77.2090",
+    "cartTitle": "Your Cart",
+    "cartButtonLabel": "Cart",
+    "placeOrderLabel": "Place Order",
+    "namePlaceholder": "Name",
+    "phonePlaceholder": "Phone Number",
+    "emptyCartText": "Your cart is empty.",
+    "emptyCategoryText": "No products found in this category yet.",
+    "loadErrorText": "Unable to load products. Open the site with a local server to use the shop.",
+    "orderIntro": "Hi, I want to order these products:",
+    "requireCartMessage": "Please add at least one product to your cart first.",
+    "requireCustomerMessage": "Please enter your name and phone number in the cart.",
+    "whatsappMissingMessage": "WhatsApp number is not configured.",
+    "totalLabel": "Total",
+    "sizeLabel": "Size",
+    "priceLabel": "Price",
+    "removeLabel": "Remove",
+    "categoryLabel": "Category",
+    "materialLabel": "Material",
+    "sizesLabel": "Sizes",
+    "addToCartLabel": "Add to Cart",
+    "fallbackProductName": "Gym Product",
+    "optionLabel": "Option",
+    "typeLabel": "Type",
+    "brandLabel": "Brand",
+    "detailsLabel": "Details",
+    "highlightsLabel": "Highlights"
+  },
+  "footer": {
+    "copyright": "© 2026 26fitnessClub. All Rights Reserved.",
+    "poweredBy": "Powered by RightShift Solutions"
+  },
+  "products": [
+    {
+      "id": 1,
+      "productCode": "TS-MEN-001",
+      "name": "Men Cotton Gym T-Shirt",
+      "category": "men",
+      "material": "Cotton",
+      "price": 499,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "image": "images/men_gym_t-shirt.png",
+      "type": "T-Shirt",
+      "brand": "26fitnessClub",
+      "badge": "Merch",
+      "optionLabel": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Soft cotton tee built for daily training and casual wear.",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Cotton"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "productCode": "TS-WOM-001",
+      "name": "Women Lycra Gym T-Shirt",
+      "category": "women",
+      "material": "Lycra",
+      "price": 599,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "image": "images/women_gym_t-shirt.png",
+      "type": "T-Shirt",
+      "brand": "26fitnessClub",
+      "badge": "Merch",
+      "optionLabel": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Flexible training tee with a flattering fit and stretch comfort.",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Lycra"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "productCode": "TS-UNI-001",
+      "name": "Unisex Linen Gym T-Shirt",
+      "category": "unisex",
+      "material": "Linen",
+      "price": 699,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "image": "images/unisex_gym_t-shirt .png",
+      "type": "T-Shirt",
+      "brand": "26fitnessClub",
+      "badge": "Merch",
+      "optionLabel": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Balanced everyday gym tee designed for shared styling and all-day comfort.",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Linen"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "productCode": "TS-MEN-002",
+      "name": "Oversized Pump Cover T-Shirt",
+      "category": "men",
+      "material": "Heavy Cotton",
+      "price": 749,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "image": "images/Oversized_Pump_Cover_T-Shirt.png",
+      "type": "T-Shirt",
+      "brand": "26fitnessClub",
+      "badge": "Merch",
+      "optionLabel": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Relaxed oversized pump cover with premium heavy-cotton feel.",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Heavy Cotton"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "productCode": "TS-WOM-002",
+      "name": "Dry Fit Training T-Shirt",
+      "category": "women",
+      "material": "Polyester Dry Fit",
+      "price": 649,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "image": "images/Dry_Fit_Training_T-Shirt.png",
+      "type": "T-Shirt",
+      "brand": "26fitnessClub",
+      "badge": "Merch",
+      "optionLabel": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Sweat-ready dry fit tee designed for active sessions.",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Polyester Dry Fit"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "productCode": "TS-MEN-003",
+      "name": "Sleeveless Workout Tee",
+      "category": "men",
+      "material": "Breathable Blend",
+      "price": 549,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "image": "images/Sleeveless_Workout_Tee.png",
+      "type": "T-Shirt",
+      "brand": "26fitnessClub",
+      "badge": "Merch",
+      "optionLabel": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Sleeveless training essential with breathable comfort.",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Breathable Blend"
+        }
+      ]
+    }
+  ]
+}
