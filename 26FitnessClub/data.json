@@ -10,21 +10,21 @@
       "royal-amethyst",
       "sunset-ember"
     ],
-    "brandTextWhite": "27",
+    "brandTextWhite": "26",
     "brandTextLight": "fitness",
     "brandTextAccent": "Club"
   },
   "contact": {
-    "phone": "+91 98765 43210",
-    "whatsappNumber": "919205535096",
-    "address": "123 Premium Blvd, Fitness City, Delhi 110001",
-    "mapLink": "https://maps.google.com/?q=28.6139,77.2090"
+    "phone": "+91 9887566773",
+    "whatsappNumber": "919887566773",
+    "address": "1-A, Sumer Nagar Ext, G-Block, Manyawas, Mansarovar, Jaipur, Rajasthan 302020",
+    "mapLink": "https://www.google.com/maps/place/26+Fitness+Club/@26.8634972,75.7394156,17z/data=!4m15!1m8!3m7!1s0x396db5b78e9e583f:0xd1d6ad6451a85813!2s26+Fitness+Club!8m2!3d26.8634972!4d75.7394156!10e1!16s%2Fg%2F11kpzqr8hb!3m5!1s0x396db5b78e9e583f:0xd1d6ad6451a85813!8m2!3d26.8634972!4d75.7394156!16s%2Fg%2F11kpzqr8hb?entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D"
   },
   "social": {
-    "twitter": "#!",
-    "youtube": "#!",
+    "twitter": "https://x.com/Sumitchatu99702",
+    "youtube": "https://www.youtube.com/@RightShiftsolutions",
     "facebook": "#!",
-    "instagram": "#!"
+    "instagram": "https://www.instagram.com/_26_fitness_club_/"
   },
   "hero": {
     "titlePrefix": "Unleash Your",
@@ -120,7 +120,7 @@
   "pricing": [
     {
       "title": "Basic",
-      "price": "Rs. 29",
+      "price": "Rs. 1500",
       "period": "/mo",
       "isPopular": false,
       "features": [
@@ -148,7 +148,7 @@
     },
     {
       "title": "Pro",
-      "price": "Rs. 59",
+      "price": "Rs. 2500",
       "period": "/mo",
       "isPopular": true,
       "features": [
@@ -176,7 +176,7 @@
     },
     {
       "title": "Elite",
-      "price": "Rs. 99",
+      "price": "Rs. 3999",
       "period": "/mo",
       "isPopular": false,
       "features": [
@@ -243,22 +243,22 @@
   ],
   "videoGallery": [
     {
-      "videoSrc": "https://www.youtube.com/embed/eaRQF-7rqmE?si=DrtqG2k4-0T1wD4u",
+      "videoSrc": "https://youtu.be/GsPvopOOyBs?si=wsTdghdfqclpfjNy",
       "title": "Beast Mode: Full Body Workout",
       "description": "Follow along with Elite Trainer Marcus for a high-intensity full body smash session."
     },
     {
-      "videoSrc": "https://www.youtube.com/embed/X1TuhAn6C-g?si=s5sJnsSIf0xLgQ7U",
+      "videoSrc": "https://youtu.be/uNN62f55EV0?si=HgQRfnmEw03TLez-",
       "title": "Advanced HIIT Cardio",
       "description": "Burn maximum calories in minimum time with this intense 20-minute guided cardio routine."
     },
     {
-      "videoSrc": "https://www.youtube.com/embed/tCJEhXfH8mI",
+      "videoSrc": "https://youtu.be/4-zjQvTDnbw?si=yPfW4ND3JWat53Sk",
       "title": "Master the Deadlift",
       "description": "Learn the perfect form to prevent injury and lift heavier in this detailed tutorial."
     },
     {
-      "videoSrc": "https://www.youtube.com/embed/CBpItFjWzQ4",
+      "videoSrc": "https://youtu.be/wIynl3at0Rs?si=Wgn6VAdEqnvBcI_u",
       "title": "10-Minute Core Crunch",
       "description": "A quick, equipment-free core routine you can do anywhere to build functional strength."
     }
@@ -309,8 +309,8 @@
   },
   "gym": {
     "name": "26 Fitness Club",
-    "phone": "9876543210",
-    "location": "28.6139,77.2090"
+    "phone": "9887566773",
+    "location": "26.8546,75.7425"
   },
   "shopDataFile": "shop.json"
 }
