@@ -1,1 +1,10 @@
-{"badgeText":"COUPLE OFFER","title":"Train Together","titleAccent":"Stay","titleSuffix":"Fit","discount":"FLAT 30%","discountAccent":"FOR TWO","description":"Special discount for couples. Work out together and save more!","message":""}
+{
+  "badgeText": "Special Couple-offer",
+  "title": "Train Together",
+  "titleAccent": "Stay",
+  "titleSuffix": "Fit",
+  "discount": "FLAT 30%",
+  "discountAccent": "FOR TWO",
+  "description": "Special discount for couples. Work out together and save more!",
+  "message": ""
+}
