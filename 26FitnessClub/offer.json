@@ -1,6 +1,10 @@
 {
-  "badgeText": "SUMMER DEALS",
-  "title": "Get Ready for the",
-  "discount": "3 MONTHS +",
-  "description": "Buy 3 months and get 1 month extra free. Beat the heat with us!"
+  "badgeText": "",
+  "title": "",
+  "titleAccent": "",
+  "titleSuffix": "",
+  "discount": "",
+  "discountAccent": "",
+  "description": "",
+  "message": ""
 }
