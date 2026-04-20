@@ -288,6 +288,21 @@
       "image": "images/new.png",
       "type": "T-Shirt",
       "brand": "26fitnessClub"
+    },
+    {
+      "id": 8,
+      "productCode": "TS-NEW-002",
+      "name": "New Gym T-Shirt",
+      "category": "men",
+      "price": 599,
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "image": "images/new.png",
+      "type": "T-Shirt",
+      "brand": "26fitnessClub"
     }
   ]
 }
