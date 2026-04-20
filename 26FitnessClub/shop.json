@@ -273,6 +273,21 @@
           "value": "Breathable Blend"
         }
       ]
+    },
+    {
+      "id": 7,
+      "productCode": "TS-NEW-001",
+      "name": "New Gym T-Shirt",
+      "category": "men",
+      "price": 599,
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "image": "images/new.png",
+      "type": "T-Shirt",
+      "brand": "26fitnessClub"
     }
   ]
 }
