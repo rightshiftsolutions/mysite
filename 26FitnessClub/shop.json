@@ -273,7 +273,25 @@
           "value": "Breathable Blend"
         }
       ]
+    },
+    {
+      "id": 7,
+      "requestType": "add_products",
+      "targetFile": "shop.json",
+      "generatedAt": "2026-04-21T09:56:02.928729",
+      "totalNewProducts": 1,
+      "newProducts": [
+        {
+          "id": 1776745562928,
+          "name": "t shirt",
+          "category": "women",
+          "type": "sbisb",
+          "price": 200,
+          "productCode": "PRO-GEN-928",
+          "description": "sondo",
+          "image": "images/AbhayID.jpeg"
+        }
+      ]
     }
-   
   ]
 }
