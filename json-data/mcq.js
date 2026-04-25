@@ -1,7 +1,7 @@
 const mcqs = [
   {
-    "tenant_id": 1,
-    "course_id": 201,
+    "tenant_id": 2,
+    "course_id": 202,
     "topic_id": 1,
     "unit_id": 1,
     "games": [
@@ -67,7 +67,7 @@ const mcqs = [
     ]
   },
   {
-    "tenant_id": 1,
+    "tenant_id": 2,
     "course_id": 202,
     "module_name": "Dart Basics",
     "topic_title": "Variables",
