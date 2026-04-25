@@ -36,7 +36,7 @@ const data = [
   },
   {
     "id": 202,
-    "tech": "Flutter Development",
+    "tech": "Flutter-Development",
     "icon": "bi-phone",
     "modules": [
       {
