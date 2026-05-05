@@ -3,26 +3,26 @@
   "questions": [
     {
       "no": 1,
-      "question": "What will be the output of the following code?",
+      "question": "What will be the output of the following JavaScript code?",
       "options": [
         {
           "id": "A",
-          "text": "True"
+          "text": "true"
         },
         {
           "id": "B",
-          "text": "False"
+          "text": "false"
         },
         {
           "id": "C",
-          "text": "Error"
+          "text": "undefined"
         },
         {
           "id": "D",
-          "text": "undefined"
+          "text": "null"
         }
       ],
-      "correctAnswer": "A"
+      "correctAnswer": "B"
     },
     {
       "no": 2,
@@ -48,5 +48,5 @@
       "correctAnswer": "A"
     }
   ],
-  "answerKeyString": "1A2A"
+  "answerKeyString": "1B2A"
 }
