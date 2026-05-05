@@ -1,0 +1,49 @@
+{
+  "title": "C# Basics Challenge",
+  "questions": [
+    {
+      "no": 1,
+      "question": "Which keyword is used to define a class in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "class"
+        },
+        {
+          "id": "B",
+          "text": "structonly"
+        },
+        {
+          "id": "C",
+          "text": "define"
+        },
+        {
+          "id": "D",
+          "text": "module"
+        }
+      ]
+    },
+    {
+      "no": 2,
+      "question": "Which method is the usual entry point of a C# console application?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Start"
+        },
+        {
+          "id": "B",
+          "text": "Run"
+        },
+        {
+          "id": "C",
+          "text": "Main"
+        },
+        {
+          "id": "D",
+          "text": "Init"
+        }
+      ]
+    }
+  ]
+}
