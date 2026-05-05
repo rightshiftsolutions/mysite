@@ -49,26 +49,26 @@
     },
     {
       "no": 3,
-      "question": "What is the primary language used for building Flutter apps?",
+      "question": "What is Flutter?",
       "options": [
         {
           "id": "A",
-          "text": "Java"
+          "text": "A web development framework"
         },
         {
           "id": "B",
-          "text": "Kotlin"
+          "text": "A mobile app development framework"
         },
         {
           "id": "C",
-          "text": "Dart"
+          "text": "A game development framework"
         },
         {
           "id": "D",
-          "text": "C++"
+          "text": "A desktop application development framework"
         }
       ],
-      "correctAnswer": "C"
+      "correctAnswer": "B"
     },
     {
       "no": 4,
@@ -117,5 +117,5 @@
       "correctAnswer": "B"
     }
   ],
-  "answerKeyString": "1B2B3C4A5B"
+  "answerKeyString": "1B2B3B4A5B"
 }
