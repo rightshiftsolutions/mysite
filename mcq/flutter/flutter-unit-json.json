@@ -7,19 +7,19 @@
       "options": [
         {
           "id": "A",
-          "text": "A framework for building web applications"
+          "text": "A web framework"
         },
         {
           "id": "B",
-          "text": "A framework for building mobile applications"
+          "text": "A mobile app development framework"
         },
         {
           "id": "C",
-          "text": "A programming language"
+          "text": "A game engine"
         },
         {
           "id": "D",
-          "text": "A game development engine"
+          "text": "A server-side language"
         }
       ],
       "correctAnswer": "B"
