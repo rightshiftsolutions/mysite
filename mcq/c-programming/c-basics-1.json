@@ -1,0 +1,71 @@
+{
+  "title": "C Basics",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Programming Language"
+        },
+        {
+          "id": "B",
+          "text": "OS"
+        },
+        {
+          "id": "C",
+          "text": "Browser"
+        },
+        {
+          "id": "D",
+          "text": "Database"
+        }
+      ]
+    },
+    {
+      "no": 2,
+      "question": "Which symbol is used for comments?",
+      "options": [
+        {
+          "id": "A",
+          "text": "//"
+        },
+        {
+          "id": "B",
+          "text": "##"
+        },
+        {
+          "id": "C",
+          "text": "/* */"
+        },
+        {
+          "id": "D",
+          "text": "--"
+        }
+      ]
+    },
+    {
+      "no": 3,
+      "question": "Which function is entry point?",
+      "options": [
+        {
+          "id": "A",
+          "text": "start()"
+        },
+        {
+          "id": "B",
+          "text": "main()"
+        },
+        {
+          "id": "C",
+          "text": "init()"
+        },
+        {
+          "id": "D",
+          "text": "run()"
+        }
+      ]
+    }
+  ]
+}
