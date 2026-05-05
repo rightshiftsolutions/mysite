@@ -1,0 +1,52 @@
+{
+  "title": "javascript Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What will be the output of the following code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        },
+        {
+          "id": "C",
+          "text": "Error"
+        },
+        {
+          "id": "D",
+          "text": "undefined"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "Which of the following is a type of conditional statement in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "If-else"
+        },
+        {
+          "id": "B",
+          "text": "Switch"
+        },
+        {
+          "id": "C",
+          "text": "for loop"
+        },
+        {
+          "id": "D",
+          "text": "while loop"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1A2A"
+}
