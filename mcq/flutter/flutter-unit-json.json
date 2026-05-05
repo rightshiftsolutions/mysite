@@ -7,11 +7,11 @@
       "options": [
         {
           "id": "A",
-          "text": "A web development framework"
+          "text": "A web framework"
         },
         {
           "id": "B",
-          "text": "A mobile app development framework"
+          "text": "A mobile app framework"
         },
         {
           "id": "C",
@@ -19,7 +19,7 @@
         },
         {
           "id": "D",
-          "text": "A machine learning framework"
+          "text": "A desktop application framework"
         }
       ],
       "correctAnswer": "B"
