@@ -26,26 +26,26 @@
     },
     {
       "no": 2,
-      "question": "Who created Flutter?",
+      "question": "What is a Flutter?",
       "options": [
         {
           "id": "A",
-          "text": "Google"
+          "text": "A UI framework for web development"
         },
         {
           "id": "B",
-          "text": "Microsoft"
+          "text": "A UI framework for mobile and desktop application development"
         },
         {
           "id": "C",
-          "text": "Apple"
+          "text": "A game engine for Android and iOS"
         },
         {
           "id": "D",
-          "text": "Facebook"
+          "text": "A script language for backend development"
         }
       ],
-      "correctAnswer": "A"
+      "correctAnswer": "B"
     },
     {
       "no": 3,
@@ -117,5 +117,5 @@
       "correctAnswer": "B"
     }
   ],
-  "answerKeyString": "1B2A3C4A5B"
+  "answerKeyString": "1B2B3C4A5B"
 }
