@@ -7,7 +7,7 @@
       "options": [
         {
           "id": "A",
-          "text": "A web framework"
+          "text": "A web development framework"
         },
         {
           "id": "B",
@@ -15,11 +15,11 @@
         },
         {
           "id": "C",
-          "text": "A game engine"
+          "text": "A game development engine"
         },
         {
           "id": "D",
-          "text": "A server-side language"
+          "text": "A machine learning framework"
         }
       ],
       "correctAnswer": "B"
