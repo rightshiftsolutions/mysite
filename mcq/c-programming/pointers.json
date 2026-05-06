@@ -3,26 +3,26 @@
   "questions": [
     {
       "no": 1,
-      "question": "What is the output of the following code?",
+      "question": "What is the purpose of the pointer arithmetic operators ++ and --?",
       "options": [
         {
           "id": "A",
-          "text": "Hello, World!"
+          "text": "To declare a pointer variable"
         },
         {
           "id": "B",
-          "text": "Segmentation fault"
+          "text": "To increment/decrement the value stored at the memory location pointed to by the pointer"
         },
         {
           "id": "C",
-          "text": "Compiler error"
+          "text": "To get the memory address of a variable"
         },
         {
           "id": "D",
-          "text": "Runtime error"
+          "text": "To assign a value to a pointer"
         }
       ],
-      "correctAnswer": "A"
+      "correctAnswer": "B"
     },
     {
       "no": 2,
@@ -232,5 +232,5 @@
       "correctAnswer": "C"
     }
   ],
-  "answerKeyString": "1A2A3C4C5B6B7C8C9D10C"
+  "answerKeyString": "1B2A3C4C5B6B7C8C9D10C"
 }
