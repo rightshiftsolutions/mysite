@@ -3,26 +3,26 @@
   "questions": [
     {
       "no": 1,
-      "question": "What is the purpose of a pointer in C?",
+      "question": "What is the output of the following code?",
       "options": [
         {
           "id": "A",
-          "text": "To store multiple values"
+          "text": "Hello, World!"
         },
         {
           "id": "B",
-          "text": "To store a single value"
+          "text": "Segmentation fault"
         },
         {
           "id": "C",
-          "text": "To store the memory address of a variable"
+          "text": "Compiler error"
         },
         {
           "id": "D",
-          "text": "To store a function"
+          "text": "Runtime error"
         }
       ],
-      "correctAnswer": "C"
+      "correctAnswer": "A"
     },
     {
       "no": 2,
@@ -232,5 +232,5 @@
       "correctAnswer": "C"
     }
   ],
-  "answerKeyString": "1C2A3C4C5B6B7C8C9D10C"
+  "answerKeyString": "1A2A3C4C5B6B7C8C9D10C"
 }
