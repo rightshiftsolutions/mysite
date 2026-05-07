@@ -1,0 +1,52 @@
+{
+  "title": "C# Programming Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A Java-based programming language"
+        },
+        {
+          "id": "B",
+          "text": "A statically-typed object-oriented programming language"
+        },
+        {
+          "id": "C",
+          "text": "A dynamically-typed scripting language"
+        },
+        {
+          "id": "D",
+          "text": "A framework for Java"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the primary purpose of the using directive in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To import namespaces"
+        },
+        {
+          "id": "B",
+          "text": "To create a new class"
+        },
+        {
+          "id": "C",
+          "text": "To define a method"
+        },
+        {
+          "id": "D",
+          "text": "To create a constructor"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2A"
+}
