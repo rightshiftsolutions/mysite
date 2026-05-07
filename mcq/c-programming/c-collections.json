@@ -1,0 +1,236 @@
+{
+  "title": "C# Programming Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of the Dictionary in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a collection of key-value pairs"
+        },
+        {
+          "id": "B",
+          "text": "To store a list of items in a specific order"
+        },
+        {
+          "id": "C",
+          "text": "To store a collection of unique items"
+        },
+        {
+          "id": "D",
+          "text": "To store a collection of objects"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the difference between List<T> and ArrayList in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "List<T> is type-safe and ArrayList is not"
+        },
+        {
+          "id": "B",
+          "text": "List<T> is faster than ArrayList"
+        },
+        {
+          "id": "C",
+          "text": "List<T> is a generic and ArrayList is non-generic"
+        },
+        {
+          "id": "D",
+          "text": "ArrayList is faster than List<T>"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of the HashSet in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a collection of unique items"
+        },
+        {
+          "id": "B",
+          "text": "To store a collection of key-value pairs"
+        },
+        {
+          "id": "C",
+          "text": "To store a list of items in a specific order"
+        },
+        {
+          "id": "D",
+          "text": "To store a collection of objects"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is the difference between Queue and Stack in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Queue follows LIFO and Stack follows FIFO"
+        },
+        {
+          "id": "B",
+          "text": "Queue follows FIFO and Stack follows LIFO"
+        },
+        {
+          "id": "C",
+          "text": "Queue is a generic and Stack is non-generic"
+        },
+        {
+          "id": "D",
+          "text": "Stack is faster than Queue"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the LinkedList in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a collection of key-value pairs"
+        },
+        {
+          "id": "B",
+          "text": "To store a list of items in a specific order"
+        },
+        {
+          "id": "C",
+          "text": "To store a collection of unique items"
+        },
+        {
+          "id": "D",
+          "text": "To store a collection of objects in a doubly linked list"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 6,
+      "question": "What is the difference between SortedList and SortedDictionary in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "SortedList is a generic and SortedDictionary is non-generic"
+        },
+        {
+          "id": "B",
+          "text": "SortedList stores key-value pairs and SortedDictionary stores only keys"
+        },
+        {
+          "id": "C",
+          "text": "SortedList is faster than SortedDictionary"
+        },
+        {
+          "id": "D",
+          "text": "SortedList is implemented as a binary search tree and SortedDictionary is implemented as a red-black tree"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 7,
+      "question": "What is the purpose of the ObservableCollection in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a collection of key-value pairs"
+        },
+        {
+          "id": "B",
+          "text": "To store a list of items in a specific order"
+        },
+        {
+          "id": "C",
+          "text": "To store a collection of unique items"
+        },
+        {
+          "id": "D",
+          "text": "To provide change notifications to the UI layer"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 8,
+      "question": "What is the difference between ConcurrentBag and ConcurrentQueue in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "ConcurrentBag is thread-safe and ConcurrentQueue is not"
+        },
+        {
+          "id": "B",
+          "text": "ConcurrentQueue is thread-safe and ConcurrentBag is not"
+        },
+        {
+          "id": "C",
+          "text": "ConcurrentBag is a generic and ConcurrentQueue is non-generic"
+        },
+        {
+          "id": "D",
+          "text": "ConcurrentQueue is faster than ConcurrentBag"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the ConcurrentDictionary in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a collection of key-value pairs"
+        },
+        {
+          "id": "B",
+          "text": "To store a list of items in a specific order"
+        },
+        {
+          "id": "C",
+          "text": "To store a collection of unique items"
+        },
+        {
+          "id": "D",
+          "text": "To provide a thread-safe dictionary"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 10,
+      "question": "What is the difference between LinkedList<T> and LinkedList in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "LinkedList<T> is generic and LinkedList is non-generic"
+        },
+        {
+          "id": "B",
+          "text": "LinkedList<T> is a doubly linked list and LinkedList is a singly linked list"
+        },
+        {
+          "id": "C",
+          "text": "LinkedList<T> is faster than LinkedList"
+        },
+        {
+          "id": "D",
+          "text": "LinkedList is a generic and LinkedList<T> is non-generic"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1A2C3A4B5D6D7D8B9D10B"
+}
