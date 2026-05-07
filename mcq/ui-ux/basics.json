@@ -1,0 +1,52 @@
+{
+  "title": "ui/ux Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary goal of wireframing in the UI/UX design process?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a visually appealing design"
+        },
+        {
+          "id": "B",
+          "text": "To test the usability of a product"
+        },
+        {
+          "id": "C",
+          "text": "To define the functionality and layout of a product"
+        },
+        {
+          "id": "D",
+          "text": "To create a prototype of a product"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 2,
+      "question": "What is the term for the process of creating a visual representation of a digital product?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Design"
+        },
+        {
+          "id": "B",
+          "text": "Prototyping"
+        },
+        {
+          "id": "C",
+          "text": "Wireframing"
+        },
+        {
+          "id": "D",
+          "text": "User Research"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1C2C"
+}
