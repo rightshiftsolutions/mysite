@@ -1,0 +1,236 @@
+{
+  "title": "React Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is React?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A JavaScript framework"
+        },
+        {
+          "id": "B",
+          "text": "A JavaScript library"
+        },
+        {
+          "id": "C",
+          "text": "A JavaScript engine"
+        },
+        {
+          "id": "D",
+          "text": "A programming language"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the main purpose of React?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create complex backend logic"
+        },
+        {
+          "id": "B",
+          "text": "To create reusable UI components"
+        },
+        {
+          "id": "C",
+          "text": "To handle server-side rendering"
+        },
+        {
+          "id": "D",
+          "text": "To manage state and routes"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is JSX?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A JavaScript framework"
+        },
+        {
+          "id": "B",
+          "text": "A syntax extension for JavaScript"
+        },
+        {
+          "id": "C",
+          "text": "A library for handling routing"
+        },
+        {
+          "id": "D",
+          "text": "A tool for code optimization"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the Virtual DOM in React?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A physical representation of the UI"
+        },
+        {
+          "id": "B",
+          "text": "A lightweight in-memory representation of the UI"
+        },
+        {
+          "id": "C",
+          "text": "A library for handling events"
+        },
+        {
+          "id": "D",
+          "text": "A tool for debugging"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the 'useState' hook in React?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To manage state changes"
+        },
+        {
+          "id": "B",
+          "text": "To handle events"
+        },
+        {
+          "id": "C",
+          "text": "To handle routing"
+        },
+        {
+          "id": "D",
+          "text": "To manage props"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "What is the difference between 'props' and 'state'?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Props are mutable, state is immutable"
+        },
+        {
+          "id": "B",
+          "text": "Props are immutable, state is mutable"
+        },
+        {
+          "id": "C",
+          "text": "Props are used for server-side rendering, state is used for client-side rendering"
+        },
+        {
+          "id": "D",
+          "text": "Props are used for rendering, state is used for updating"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the purpose of the 'map' function in React?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create new components"
+        },
+        {
+          "id": "B",
+          "text": "To render arrays of components"
+        },
+        {
+          "id": "C",
+          "text": "To handle events"
+        },
+        {
+          "id": "D",
+          "text": "To manage state"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 8,
+      "question": "What is the purpose of the 'key' prop in React?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To identify components"
+        },
+        {
+          "id": "B",
+          "text": "To render components in a specific order"
+        },
+        {
+          "id": "C",
+          "text": "To handle events"
+        },
+        {
+          "id": "D",
+          "text": "To manage state"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the 'componentDidMount' method in React?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To handle events"
+        },
+        {
+          "id": "B",
+          "text": "To render components"
+        },
+        {
+          "id": "C",
+          "text": "To manage state"
+        },
+        {
+          "id": "D",
+          "text": "To run code after the component has been rendered"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the 'import' statement in React?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To export modules"
+        },
+        {
+          "id": "B",
+          "text": "To import modules"
+        },
+        {
+          "id": "C",
+          "text": "To handle events"
+        },
+        {
+          "id": "D",
+          "text": "To manage state"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B2B3B4B5A6B7B8A9D10B"
+}
