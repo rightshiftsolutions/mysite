@@ -1,0 +1,236 @@
+{
+  "title": "C# Programming Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the base class for all exceptions in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Exception"
+        },
+        {
+          "id": "B",
+          "text": "Error"
+        },
+        {
+          "id": "C",
+          "text": "Throwable"
+        },
+        {
+          "id": "D",
+          "text": "SystemException"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of try-catch block in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To throw an exception"
+        },
+        {
+          "id": "B",
+          "text": "To catch and handle an exception"
+        },
+        {
+          "id": "C",
+          "text": "To define a custom exception"
+        },
+        {
+          "id": "D",
+          "text": "To return an error message"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "Which of the following is a type of exception that is derived from the Exception class?",
+      "options": [
+        {
+          "id": "A",
+          "text": "DivideByZeroException"
+        },
+        {
+          "id": "B",
+          "text": "ArgumentException"
+        },
+        {
+          "id": "C",
+          "text": "IOException"
+        },
+        {
+          "id": "D",
+          "text": "All of the above"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 4,
+      "question": "What happens when an exception is unhandled in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The program terminates"
+        },
+        {
+          "id": "B",
+          "text": "The exception is caught and handled"
+        },
+        {
+          "id": "C",
+          "text": "The exception is propagated to the calling method"
+        },
+        {
+          "id": "D",
+          "text": "The program enters an infinite loop"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "How do you specify a custom exception message in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Using the 'throw' keyword"
+        },
+        {
+          "id": "B",
+          "text": "Using the 'try-catch' block"
+        },
+        {
+          "id": "C",
+          "text": "Using the 'throw' keyword with a parameter"
+        },
+        {
+          "id": "D",
+          "text": "Using the 'Console.WriteLine' method"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of the Finally block in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To catch and handle an exception"
+        },
+        {
+          "id": "B",
+          "text": "To release system resources"
+        },
+        {
+          "id": "C",
+          "text": "To specify a custom exception message"
+        },
+        {
+          "id": "D",
+          "text": "To exit the program"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the difference between checked and unchecked exceptions in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Checked exceptions are thrown at compile time, unchecked exceptions are thrown at runtime"
+        },
+        {
+          "id": "B",
+          "text": "Checked exceptions are caught and handled, unchecked exceptions are propagated to the calling method"
+        },
+        {
+          "id": "C",
+          "text": "Checked exceptions are always programmer errors, unchecked exceptions are always runtime errors"
+        },
+        {
+          "id": "D",
+          "text": "Checked exceptions are always runtime errors, unchecked exceptions are always programmer errors"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is the 'try' block in a try-catch block used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To catch and handle an exception"
+        },
+        {
+          "id": "B",
+          "text": "To specify a custom exception message"
+        },
+        {
+          "id": "C",
+          "text": "To define a custom exception"
+        },
+        {
+          "id": "D",
+          "text": "To execute a block of code that might throw an exception"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 9,
+      "question": "Which of the following is a base class for all exceptions that can be thrown by the common language runtime (CLR)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Exception"
+        },
+        {
+          "id": "B",
+          "text": "SystemException"
+        },
+        {
+          "id": "C",
+          "text": "RuntimeException"
+        },
+        {
+          "id": "D",
+          "text": "All of the above"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the 'throw' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To catch and handle an exception"
+        },
+        {
+          "id": "B",
+          "text": "To throw a custom exception"
+        },
+        {
+          "id": "C",
+          "text": "To specify a custom exception message"
+        },
+        {
+          "id": "D",
+          "text": "To rethrow an exception"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1A2B3D4A5C6B7A8D9D10B"
+}
