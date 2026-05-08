@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gym Feedback</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #FF5722;
+    --orange-light: #FF7043;
+    --orange-dark: #BF360C;
+    --gold: #FFB300;
+    --bg: #0A0A0A;
+    --bg2: #111111;
+    --bg3: #1A1A1A;
+    --text: #F5F5F0;
+    --text-muted: #888;
+    --border: rgba(255,255,255,0.08);
+    --radius: 12px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .noise {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  .container { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* HEADER */
+  .header { text-align: center; padding: 3rem 0 2.5rem; }
+  .gym-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+  .header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 4.5rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    background: linear-gradient(135deg, #FF5722, #FFB300);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+  .header p { font-size: 0.95rem; color: var(--text-muted); font-weight: 300; letter-spacing: 0.03em; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
+  .trainer-badge, .gym-name-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    border-radius: 50px;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem; font-weight: 500;
+  }
+  .trainer-badge {
+    background: rgba(255,87,34,0.12);
+    border: 1px solid rgba(255,87,34,0.3);
+    color: var(--orange-light);
+  }
+  .gym-name-badge {
+    background: rgba(255,179,0,0.1);
+    border: 1px solid rgba(255,179,0,0.3);
+    color: #FFD54F;
+  }
+
+  /* PROGRESS BAR */
+  .progress-wrap { margin-bottom: 2rem; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+  .progress-track { height: 3px; background: var(--bg3); border-radius: 99px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, #FF5722, #FFB300); border-radius: 99px; transition: width 0.5s ease; }
+
+  /* STEP */
+  .step { display: none; animation: fadeUp 0.4s ease; }
+  .step.active { display: block; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  .step-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .step-num { font-size: 0.75rem; font-weight: 600; color: var(--orange); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .step-q { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+  .step-sub { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; margin-bottom: 1.8rem; }
+
+  /* STAR RATING */
+  .stars { display: flex; gap: 0.6rem; margin-bottom: 1.5rem; }
+  .star {
+    font-size: 2.2rem; cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    filter: grayscale(1) brightness(0.4);
+    user-select: none;
+  }
+  .star:hover, .star.lit { filter: none; }
+  .star:hover { transform: scale(1.15); }
+  .star.lit { animation: pop 0.2s ease; }
+  @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
+
+  .rating-label { font-size: 0.9rem; font-weight: 500; color: var(--orange-light); min-height: 1.2em; transition: opacity 0.2s; }
+
+  /* ASPECT TOGGLES */
+  .aspects { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .aspect-btn {
+    padding: 0.4rem 0.9rem; border-radius: 50px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-muted); font-size: 0.82rem; font-family: 'DM Sans', sans-serif;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .aspect-btn:hover { border-color: rgba(255,87,34,0.4); color: var(--text); }
+  .aspect-btn.selected { background: rgba(255,87,34,0.15); border-color: rgba(255,87,34,0.6); color: var(--orange-light); font-weight: 500; }
+
+  /* BUTTONS */
+  .btn {
+    width: 100%; padding: 1rem; border: none; border-radius: var(--radius);
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.1em;
+    cursor: pointer; transition: all 0.2s; margin-top: 0.5rem;
+  }
+  .btn-primary { background: linear-gradient(135deg, var(--orange), #FF8A65); color: white; }
+  .btn-primary:hover { background: linear-gradient(135deg, var(--orange-dark), var(--orange)); transform: translateY(-1px); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+  .btn-secondary { background: var(--bg3); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.2); }
+
+  /* RESULT */
+  .result-card {
+    background: var(--bg2); border: 1px solid rgba(255,87,34,0.25);
+    border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem;
+    position: relative; overflow: hidden;
+  }
+  .result-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, #FF5722, #FFB300);
+  }
+  .result-heading { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.08em; color: var(--orange-light); margin-bottom: 1rem; }
+  .result-text {
+    font-size: 0.97rem; line-height: 1.75; color: var(--text); font-weight: 300;
+    background: var(--bg3); border-radius: 8px; padding: 1.2rem;
+    border-left: 3px solid var(--orange);
+  }
+
+  .copy-btn {
+    width: 100%; padding: 0.9rem; border-radius: var(--radius);
+    border: 1px solid rgba(255,87,34,0.4); background: transparent;
+    color: var(--orange-light); font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; letter-spacing: 0.08em; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+  .copy-btn:hover { background: rgba(255,87,34,0.1); }
+  .copy-btn.copied { border-color: #4CAF50; color: #4CAF50; }
+
+  .google-btn {
+    width: 100%; padding: 0.9rem; border-radius: var(--radius);
+    border: none; background: #4285F4;
+    color: white; font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; letter-spacing: 0.08em; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+    text-decoration: none;
+  }
+  .google-btn:hover { background: #3367D6; transform: translateY(-1px); }
+
+  .stars-summary { display: flex; gap: 0.25rem; font-size: 1rem; }
+  .score-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+  .score-row:last-child { border-bottom: none; margin-bottom: 0; }
+  .score-label { font-size: 0.88rem; color: var(--text-muted); }
+
+  .timer-bar { height: 2px; background: var(--bg3); border-radius: 99px; margin-top: 1rem; overflow: hidden; display: none; }
+  .timer-fill { height: 100%; background: linear-gradient(90deg, #FF5722, #FFB300); border-radius: 99px; width: 0%; transition: width 1s linear; }
+
+  .tip-box {
+    background: rgba(255,179,0,0.08); border: 1px solid rgba(255,179,0,0.2);
+    border-radius: var(--radius); padding: 1rem 1.2rem;
+    font-size: 0.85rem; color: #FFD54F; font-weight: 400; line-height: 1.6;
+    margin-top: 1rem;
+  }
+  .tip-box strong { font-weight: 600; }
+
+  @media (max-width: 480px) {
+    .container { padding: 1.5rem 1rem 3rem; }
+    .step-card { padding: 1.5rem; }
+    .star { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="gym-icon">🏋️</div>
+    <h1>Rate Your Gym</h1>
+    <p>Help others find the best fitness experience</p>
+    <div class="trainer-badge" id="trainer-badge" style="display:none">
+      <span>💪</span> <span id="trainer-name-display"></span>
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="step-label">Step 1 of 2</span>
+      <span id="step-pct">0%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+
+  <!-- STEP 1: GYM ENVIRONMENT -->
+  <div class="step active" id="step-1">
+    <div class="step-card">
+      <div class="step-num">Question 1 / 2</div>
+      <div class="step-q">How is the Gym Environment?</div>
+      <div class="step-sub">Rate cleanliness, equipment, ambiance & space</div>
+      <div class="stars" id="gym-stars">
+        <span class="star" data-v="1" onclick="rate('gym',1)">⭐</span>
+        <span class="star" data-v="2" onclick="rate('gym',2)">⭐</span>
+        <span class="star" data-v="3" onclick="rate('gym',3)">⭐</span>
+        <span class="star" data-v="4" onclick="rate('gym',4)">⭐</span>
+        <span class="star" data-v="5" onclick="rate('gym',5)">⭐</span>
+      </div>
+      <div class="rating-label" id="gym-rl"></div>
+      <div style="margin-top:1.2rem">
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.6rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em">What stood out? (optional)</div>
+        <div class="aspects" id="gym-aspects">
+          <button class="aspect-btn" onclick="toggleAspect(this,'gym')">Cleanliness</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'gym')">Equipment Quality</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'gym')">AC & Ventilation</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'gym')">Spaciousness</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'gym')">Locker Rooms</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'gym')">Music & Vibe</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'gym')">Parking</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'gym')">Hygiene Stations</button>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="nextStep()" id="btn-1" disabled>Continue →</button>
+  </div>
+
+  <!-- STEP 2: TRAINER -->
+  <div class="step" id="step-2">
+    <div class="step-card">
+      <div class="step-num">Question 2 / 2</div>
+      <div class="step-q" id="trainer-q">How is the Gym Trainer?</div>
+      <div class="step-sub">Rate their knowledge, motivation & support</div>
+      <div class="stars" id="trainer-stars">
+        <span class="star" data-v="1" onclick="rate('trainer',1)">⭐</span>
+        <span class="star" data-v="2" onclick="rate('trainer',2)">⭐</span>
+        <span class="star" data-v="3" onclick="rate('trainer',3)">⭐</span>
+        <span class="star" data-v="4" onclick="rate('trainer',4)">⭐</span>
+        <span class="star" data-v="5" onclick="rate('trainer',5)">⭐</span>
+      </div>
+      <div class="rating-label" id="trainer-rl"></div>
+      <div style="margin-top:1.2rem">
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.6rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em">What stood out? (optional)</div>
+        <div class="aspects" id="trainer-aspects">
+          <button class="aspect-btn" onclick="toggleAspect(this,'trainer')">Expertise</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'trainer')">Motivation</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'trainer')">Friendly</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'trainer')">Punctual</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'trainer')">Personalized Plans</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'trainer')">Form Correction</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'trainer')">Nutrition Advice</button>
+          <button class="aspect-btn" onclick="toggleAspect(this,'trainer')">Patience</button>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-secondary" onclick="prevStep()" style="margin-bottom:0.5rem">← Back</button>
+    <button class="btn btn-primary" onclick="generate()" id="btn-2" disabled>Generate My Review ✨</button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="step" id="step-3">
+    <div class="result-card">
+      <div class="score-row">
+        <span class="score-label">🏟️ Gym Environment</span>
+        <div class="stars-summary" id="res-gym-stars"></div>
+      </div>
+      <div class="score-row">
+        <span class="score-label" id="res-trainer-label">💪 Trainer</span>
+        <div class="stars-summary" id="res-trainer-stars"></div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-heading">📝 Your Review</div>
+      <div class="result-text" id="review-text"></div>
+      <div class="timer-bar" id="timer-bar"><div class="timer-fill" id="timer-fill"></div></div>
+    </div>
+
+    <button class="copy-btn" id="copy-btn" onclick="copyText()">
+      <span>📋</span><span>Copy Review</span>
+    </button>
+    <a class="google-btn" id="google-link" href="#" target="_blank" onclick="startTimer()">
+      <span>🔍</span><span>Paste on Google Reviews</span>
+    </a>
+    <div class="tip-box">
+      <strong>💡 Quick Tip:</strong> After copying, click the Google button → tap "Write a review" → paste your copied text → submit. Takes only 30 seconds!
+    </div>
+    <button class="btn btn-secondary" onclick="restart()" style="margin-top:1rem">← Rate Again</button>
+  </div>
+
+</div>
+
+<script>
+const ratings = { gym: 0, trainer: 0 };
+const aspects = { gym: [], trainer: [] };
+let trainerName = 'the Trainer';
+let googleUrl = '#';
+
+const ratingLabels = ['','😞 Needs Improvement','😐 Below Average','🙂 Decent','😊 Pretty Good','🔥 Outstanding!'];
+
+// URL PARAMS
+const params = new URLSearchParams(location.search);
+if (params.get('trainer')) {
+  trainerName = decodeURIComponent(params.get('trainer'));
+  document.getElementById('trainer-name-display').textContent = trainerName;
+  document.getElementById('trainer-badge').style.display = 'inline-flex';
+  document.getElementById('trainer-q').textContent = `How is ${trainerName}?`;
+}
+if (params.get('google')) {
+  googleUrl = decodeURIComponent(params.get('google'));
+  document.getElementById('google-link').href = googleUrl;
+}
+
+function rate(type, val) {
+  ratings[type] = val;
+  const stars = document.querySelectorAll(`#${type}-stars .star`);
+  stars.forEach((s,i) => { s.classList.toggle('lit', i < val); });
+  document.getElementById(`${type}-rl`).textContent = ratingLabels[val];
+  const btn = type === 'gym' ? 'btn-1' : 'btn-2';
+  document.getElementById(btn).disabled = false;
+}
+
+function toggleAspect(el, type) {
+  el.classList.toggle('selected');
+  const t = el.textContent;
+  const idx = aspects[type].indexOf(t);
+  if (idx > -1) aspects[type].splice(idx,1); else aspects[type].push(t);
+}
+
+let currentStep = 1;
+function nextStep() { showStep(++currentStep); }
+function prevStep() { showStep(--currentStep); }
+
+function showStep(n) {
+  currentStep = n;
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById(`step-${n}`).classList.add('active');
+  const total = 2; const pct = n >= 3 ? 100 : Math.round((n-1)/total*100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('step-pct').textContent = pct + '%';
+  document.getElementById('step-label').textContent = n >= 3 ? 'Complete ✓' : `Step ${n} of ${total}`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== 300 FEEDBACK TEMPLATES =====
+const gymFeedbacks = {
+  1: [
+    "The gym environment needs a lot of improvement. The equipment is outdated and poorly maintained. Cleanliness is a major concern.",
+    "Unfortunately the gym space feels neglected. Equipment was broken and the hygiene standards were disappointing.",
+    "The facility requires significant upgrades. Poor ventilation, dirty equipment, and lack of basic maintenance are serious issues.",
+    "Not a pleasant experience. The gym needs thorough cleaning and equipment repairs before I'd consider returning.",
+    "The gym environment fell short of expectations with dirty floors, faulty machines, and an unpleasant odor throughout.",
+    "Very disappointing atmosphere. Broken equipment and poor cleanliness make it hard to have a good workout.",
+    "The facility needs urgent attention — equipment is rusting, locker rooms are unclean, and the overall vibe is dull.",
+    "I've seen better maintained gyms. The condition of this place needs immediate management attention.",
+    "Poor facility management is evident. Equipment was not working and cleaning was clearly not a priority.",
+    "The gym environment was below standard. Needs complete overhaul to be considered a decent fitness center."
+  ],
+  2: [
+    "The gym environment is decent but has a lot of room for improvement. Some equipment needs upgrading.",
+    "Average experience overall. The gym is clean enough but could use better maintenance and modern equipment.",
+    "Mediocre environment. Some machines work fine but others are outdated. Cleanliness is inconsistent.",
+    "Below expectations. The gym has potential but needs better upkeep and more equipment maintenance.",
+    "The ambiance is average at best. Better lighting and equipment care would significantly improve the experience.",
+    "The gym space is functional but nothing special. A few equipment upgrades would go a long way.",
+    "Mid-level gym experience. The basics are covered but the overall environment could be more motivating.",
+    "Acceptable but not great. Needs improvement in equipment variety and general cleanliness standards.",
+    "The gym has adequate facilities but lacks the polish of a premium fitness center. Maintenance needs attention.",
+    "Fair environment overall. A bit crowded with some outdated equipment, but manageable for basic workouts."
+  ],
+  3: [
+    "The gym environment is quite good! Clean facilities, decent equipment, and a positive workout atmosphere.",
+    "Pleasant experience. The gym is well-maintained with good equipment and a motivating environment.",
+    "Solid gym environment. Cleanliness is maintained and most equipment is in good working condition.",
+    "Good overall experience. The gym has a nice vibe and adequate equipment for a satisfying workout.",
+    "The facility is well-kept with good ventilation and clean locker rooms. A comfortable place to train.",
+    "Nice gym setup. Equipment is reasonably maintained and the overall atmosphere is encouraging.",
+    "Decent gym with a good energy. The space is clean and the equipment variety is satisfying.",
+    "Good environment for working out. Proper maintenance and cleanliness make a big difference here.",
+    "Satisfying gym experience. The facilities are clean, equipment works well, and the vibe is positive.",
+    "A good gym overall. The environment supports productive workouts with well-maintained equipment."
+  ],
+  4: [
+    "Really great gym environment! Excellent cleanliness, well-maintained equipment, and a super motivating atmosphere.",
+    "Very impressive facility. The gym is spotlessly clean, equipment is top-notch, and the energy is fantastic.",
+    "Loved the gym environment! Modern equipment, great ventilation, and a vibrant workout atmosphere.",
+    "Excellent experience. The gym maintains high standards of cleanliness with quality equipment throughout.",
+    "Outstanding gym setup. The space is well-organized, equipment is premium, and the ambiance is energizing.",
+    "Very happy with the environment. Clean, spacious, well-equipped — everything you need for a great workout.",
+    "Fantastic gym! High quality equipment, spotless facilities, and an atmosphere that keeps you motivated.",
+    "The gym environment is superb. Attention to detail in maintenance and cleanliness is clearly a priority.",
+    "Brilliant fitness environment. Modern equipment, great AC, excellent hygiene — truly top-class experience.",
+    "Highly impressed with the gym setup. State-of-the-art equipment and immaculate cleanliness throughout."
+  ],
+  5: [
+    "Absolutely world-class gym environment! Spotlessly clean, premium equipment, and an electric motivating atmosphere that keeps you coming back!",
+    "This gym is exceptional in every way — immaculate cleanliness, cutting-edge equipment, and an inspiring atmosphere that elevates every workout!",
+    "The gym environment is absolutely phenomenal! The finest equipment, impeccable hygiene, and a powerful vibe that fuels your fitness goals!",
+    "Incredible facility! Perfect cleanliness, state-of-the-art equipment, outstanding ventilation — this place sets the gold standard for gyms!",
+    "Best gym I've ever been to! The environment is flawless — spotless facilities, premium machines, and an unmatched motivating energy!",
+    "This gym is truly outstanding — pristine cleanliness, top-tier equipment, amazing ambiance, and everything perfectly organized!",
+    "Five stars don't do justice to this gym! Superior equipment quality, immaculate hygiene, and an atmosphere that screams excellence!",
+    "An absolute gem of a gym! Perfect environment — from the squeaky-clean floors to the top-of-the-line equipment, everything is perfect!",
+    "The gym environment here is unmatched! World-class equipment, flawless cleanliness, and a motivating energy unlike any other fitness center!",
+    "Exceptional in every dimension! The gym maintains extraordinary standards — spotless, well-equipped, and creates the perfect workout experience!"
+  ]
+};
+
+const trainerFeedbacksGeneric = {
+  1: [
+    "The trainer was unfortunately not helpful. Lacked knowledge and showed little interest in guiding members properly.",
+    "Disappointed with the trainer's approach. Minimal guidance provided and the attitude was unprofessional.",
+    "The trainer needs significant improvement in communication and fitness knowledge. Not a good experience.",
+    "Very unhelpful trainer. No personalized guidance, poor form correction, and generally disengaged.",
+    "The trainer was absent-minded and unprofessional. Did not meet the basic expectations of a fitness trainer.",
+    "Below standard trainer experience. Needs better training in both fitness knowledge and member engagement.",
+    "The trainer did not fulfill their role effectively. Poor guidance and lack of motivation were disappointing.",
+    "Unimpressive trainer performance. Very little value was added to my fitness journey.",
+    "The trainer was rude and dismissive. Needs to improve attitude and professional approach significantly.",
+    "Not a good trainer. Showed little expertise and was generally unhelpful during the session."
+  ],
+  2: [
+    "The trainer was average. Provided basic guidance but lacked depth in knowledge and motivation.",
+    "Mediocre trainer experience. Some useful tips were given but could have been much more helpful.",
+    "The trainer was decent but inconsistent. Better preparation and engagement would improve the experience.",
+    "Below expectations. The trainer covered basics but lacked the expertise to make a real difference.",
+    "Fair trainer overall. Provided some guidance but needs to improve on personalization and motivation.",
+    "The trainer was okay but not particularly impressive. More proactive guidance would be appreciated.",
+    "Average training experience. The basics were covered but the value added was minimal.",
+    "The trainer was functional but lacked enthusiasm and deep fitness knowledge.",
+    "Moderate trainer performance. Some helpful moments but overall inconsistent quality of guidance.",
+    "Acceptable trainer but room for improvement in communication and fitness expertise."
+  ],
+  3: [
+    "The trainer is good and knowledgeable. Provides useful guidance and keeps members motivated.",
+    "Solid trainer. Good knowledge of fitness principles and helpful in correcting form and technique.",
+    "Happy with the trainer overall. Supportive, knowledgeable, and creates a positive training atmosphere.",
+    "Good trainer experience. Professional, attentive, and provides clear instructions for workouts.",
+    "The trainer does a good job of motivating members and providing appropriate fitness guidance.",
+    "Decent trainer with practical knowledge. Makes sessions productive and maintains good energy.",
+    "Good fitness trainer. Effective in guiding workouts and explaining exercises clearly.",
+    "The trainer is helpful and approachable. Makes the gym experience much better with quality guidance.",
+    "Positive experience with the trainer. Good balance of knowledge, motivation, and personal attention.",
+    "The trainer is competent and supportive. Good choice for anyone looking for solid fitness guidance."
+  ],
+  4: [
+    "The trainer is excellent! Very knowledgeable, highly motivating, and provides personalized attention.",
+    "Outstanding trainer! Expert knowledge, great motivation techniques, and genuine care for member progress.",
+    "Really impressed with the trainer. Superb guidance, expert form correction, and fantastic energy!",
+    "Brilliant trainer — highly professional, deeply knowledgeable, and incredibly motivating every session.",
+    "The trainer is exceptional. Expert-level knowledge combined with great communication makes sessions amazing.",
+    "Fantastic trainer! Personalized plans, expert advice, and constant motivation make every workout worthwhile.",
+    "The trainer is top-notch — excellent technique guidance, great motivational energy, and very approachable.",
+    "Highly recommend this trainer! Great expertise, wonderful attitude, and produces real results.",
+    "The trainer is superb in every way — expert knowledge, motivating style, and genuine dedication to members.",
+    "Excellent trainer! Professional, knowledgeable, patient, and always goes the extra mile for every member."
+  ],
+  5: [
+    "is an absolutely phenomenal trainer! Expert knowledge, extraordinary motivation, and a genuine passion for helping members achieve their best!",
+    "is the best trainer I've ever had! Exceptional expertise, unmatched motivation, and a truly personalized approach that delivers real results!",
+    "is outstanding — a true fitness expert with incredible dedication, world-class guidance, and the ability to push you beyond your limits safely!",
+    "is a five-star trainer in every sense! Brilliant expertise, amazing motivational energy, and a personalized approach that transforms your fitness!",
+    "is absolutely exceptional! The best fitness guidance I've received — expert knowledge, incredible patience, and motivation that is truly infectious!",
+    "is beyond amazing — a world-class trainer who combines deep expertise with genuine passion to make every session transformational!",
+    "is the finest trainer in this gym — expert technique, perfect motivational energy, and an extraordinary commitment to every member's success!",
+    "is truly remarkable! Perfect blend of expertise, motivation, and personal attention that makes fitness goals feel completely achievable!",
+    "is a phenomenal trainer who stands out in every way — expert knowledge, brilliant communication, and a dedication that inspires everyone!",
+    "deserves every star! An absolutely elite trainer — exceptional expertise, boundless motivation, and the kind of guidance that changes lives!"
+  ]
+};
+
+function getRandomItem(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+function buildReview(gymRating, trainerRating, gymAspects, trainerAspects, trainerN) {
+  const gymFB = getRandomItem(gymFeedbacks[gymRating]);
+  const isNamed = trainerN && trainerN !== 'the Trainer';
+  const trainerFB = (() => {
+    const pool = trainerFeedbacksGeneric[trainerRating];
+    const base = getRandomItem(pool);
+    if (isNamed) {
+      if (trainerRating === 5) return `${trainerN} ${base}`;
+      if (trainerRating >= 3) return base.replace(/The trainer/i, trainerN).replace(/the trainer/i, trainerN);
+      return base;
+    }
+    return base;
+  })();
+
+  const gymAspectStr = gymAspects.length > 0 ? ` Particularly notable: ${gymAspects.slice(0,3).join(', ')}.` : '';
+  const trainerAspectStr = trainerAspects.length > 0 ? ` Highlights include: ${trainerAspects.slice(0,3).join(', ')}.` : '';
+
+  const openers = [
+    "Just finished my session and had to share my experience.",
+    "Sharing my honest review after regularly visiting this gym.",
+    "Had a great time at this gym and wanted to leave feedback.",
+    "After multiple sessions, here's my genuine take on this gym.",
+    "This gym deserves an honest review — here's mine."
+  ];
+
+  const closers = gymRating >= 4 && trainerRating >= 4 ? [
+    "Highly recommend this gym to anyone serious about fitness!",
+    "Would definitely recommend to friends and family!",
+    "10/10 would recommend — keep up the excellent work!",
+    "This gym is worth every penny. Keep up the amazing work!",
+    "Truly one of the best fitness experiences I've had!"
+  ] : gymRating <= 2 || trainerRating <= 2 ? [
+    "Hope the management takes this feedback constructively.",
+    "Looking forward to improvements in future visits.",
+    "Management should consider these points seriously.",
+    "There is a lot of potential here — just needs effort.",
+    "Hope things improve soon."
+  ] : [
+    "Overall a good fitness center worth visiting.",
+    "Good place to train — recommended for fitness enthusiasts.",
+    "Decent gym overall — keep improving!",
+    "Happy with my experience and will continue visiting.",
+    "A solid choice for fitness in this area."
+  ];
+
+  return `${getRandomItem(openers)}\n\n🏋️ Gym Environment (${gymRating}/5): ${gymFB}${gymAspectStr}\n\n💪 Trainer${isNamed ? ` (${trainerN})` : ''} (${trainerRating}/5): ${trainerFB}${trainerAspectStr}\n\n${getRandomItem(closers)}`;
+}
+
+function generate() {
+  const review = buildReview(ratings.gym, ratings.trainer, aspects.gym, aspects.trainer, trainerName);
+  document.getElementById('review-text').textContent = review;
+
+  const gymStr = '⭐'.repeat(ratings.gym) + '☆'.repeat(5-ratings.gym);
+  const tStr = '⭐'.repeat(ratings.trainer) + '☆'.repeat(5-ratings.trainer);
+  document.getElementById('res-gym-stars').textContent = gymStr;
+  document.getElementById('res-trainer-stars').textContent = tStr;
+  document.getElementById('res-trainer-label').textContent = `💪 ${trainerName !== 'the Trainer' ? trainerName : 'Trainer'}`;
+
+  if (googleUrl && googleUrl !== '#') {
+    document.getElementById('google-link').href = googleUrl;
+  }
+
+  showStep(3);
+}
+
+function copyText() {
+  const text = document.getElementById('review-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.classList.add('copied');
+    btn.querySelector('span:last-child').textContent = '✓ Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.querySelector('span:last-child').textContent = 'Copy Review';
+    }, 2500);
+  });
+}
+
+let timerInterval;
+function startTimer() {
+  const bar = document.getElementById('timer-bar');
+  const fill = document.getElementById('timer-fill');
+  bar.style.display = 'block';
+  fill.style.width = '0%';
+  fill.style.transition = 'none';
+  setTimeout(() => {
+    fill.style.transition = 'width 32s linear';
+    fill.style.width = '100%';
+  }, 100);
+}
+
+function restart() {
+  ratings.gym = 0; ratings.trainer = 0;
+  aspects.gym = []; aspects.trainer = [];
+  document.querySelectorAll('.star').forEach(s => s.classList.remove('lit'));
+  document.querySelectorAll('.aspect-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('gym-rl').textContent = '';
+  document.getElementById('trainer-rl').textContent = '';
+  document.getElementById('btn-1').disabled = true;
+  document.getElementById('btn-2').disabled = true;
+  showStep(1);
+}
+</script>
+</body>
+</html>
