@@ -1,0 +1,52 @@
+{
+  "title": "Kotlin Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is Kotlin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A Java-based programming language"
+        },
+        {
+          "id": "B",
+          "text": "A statically typed programming language"
+        },
+        {
+          "id": "C",
+          "text": "A dynamically typed programming language"
+        },
+        {
+          "id": "D",
+          "text": "A scripting language"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the primary use of the 'let' keyword in Kotlin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To declare a variable"
+        },
+        {
+          "id": "B",
+          "text": "To safely navigate a nullable object"
+        },
+        {
+          "id": "C",
+          "text": "To specify the return type of a function"
+        },
+        {
+          "id": "D",
+          "text": "To throw an exception"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B2B"
+}
