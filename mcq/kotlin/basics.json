@@ -1,0 +1,52 @@
+{
+  "title": "Kotlin Basics",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of a variable in Kotlin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a constant value"
+        },
+        {
+          "id": "B",
+          "text": "To store a mutable value"
+        },
+        {
+          "id": "C",
+          "text": "To store a function"
+        },
+        {
+          "id": "D",
+          "text": "To store a class"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the correct syntax to declare a variable in Kotlin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "var x = 5"
+        },
+        {
+          "id": "B",
+          "text": "val x = 5"
+        },
+        {
+          "id": "C",
+          "text": "var x: Int = 5"
+        },
+        {
+          "id": "D",
+          "text": "val x: Int = 5"
+        }
+      ],
+      "correctAnswer": "D"
+    }
+  ],
+  "answerKeyString": "1B2D"
+}
