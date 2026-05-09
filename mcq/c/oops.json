@@ -1,0 +1,75 @@
+{
+  "title": "C++ Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of a constructor in C++?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To initialize object members"
+        },
+        {
+          "id": "B",
+          "text": "To destroy an object"
+        },
+        {
+          "id": "C",
+          "text": "To check if an object is null"
+        },
+        {
+          "id": "D",
+          "text": "To access an object's members"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the term for a class that can be inherited from?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Abstract class"
+        },
+        {
+          "id": "B",
+          "text": "Interface"
+        },
+        {
+          "id": "C",
+          "text": "Concrete class"
+        },
+        {
+          "id": "D",
+          "text": "Base class"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 3,
+      "question": "Which of the following is an example of a C++ operator overloading?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Overriding a method"
+        },
+        {
+          "id": "B",
+          "text": "Creating a new variable"
+        },
+        {
+          "id": "C",
+          "text": "Providing multiple implementations for the same operator"
+        },
+        {
+          "id": "D",
+          "text": "Inheriting a method from a base class"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1A2D3C"
+}
