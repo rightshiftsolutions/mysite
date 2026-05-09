@@ -3,53 +3,30 @@
   "questions": [
     {
       "no": 1,
-      "question": "What is the term for an application that can run on multiple platforms such as Android, iOS, and web?",
+      "question": "What is the term used to describe the development of a single application that can run on multiple platforms?",
       "options": [
         {
           "id": "A",
-          "text": "Native application"
+          "text": "Cross-platform development"
         },
         {
           "id": "B",
-          "text": "Cross-platform application"
+          "text": "Native development"
         },
         {
           "id": "C",
-          "text": "Hybrid application"
+          "text": "Hybrid development"
         },
         {
           "id": "D",
-          "text": "Web application"
+          "text": "Web development"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "A"
     },
     {
       "no": 2,
-      "question": "What is the primary purpose of the Scaffold widget in Flutter?",
-      "options": [
-        {
-          "id": "A",
-          "text": "To handle user input"
-        },
-        {
-          "id": "B",
-          "text": "To display a material design layout"
-        },
-        {
-          "id": "C",
-          "text": "To handle navigation between screens"
-        },
-        {
-          "id": "D",
-          "text": "To manage state changes"
-        }
-      ],
-      "correctAnswer": "B"
-    },
-    {
-      "no": 3,
-      "question": "What is the name of the programming language used to develop Flutter applications?",
+      "question": "What is the name of the programming language used for developing Flutter applications?",
       "options": [
         {
           "id": "A",
@@ -71,166 +48,189 @@
       "correctAnswer": "C"
     },
     {
-      "no": 4,
-      "question": "Which of the following is a feature of a cross-platform application?",
+      "no": 3,
+      "question": "What is the term used to describe a widget that does not change over time?",
       "options": [
         {
           "id": "A",
-          "text": "It can only be deployed on Android"
+          "text": "Stateful widget"
         },
         {
           "id": "B",
-          "text": "It can be deployed on multiple platforms"
+          "text": "Stateless widget"
         },
         {
           "id": "C",
-          "text": "It requires a separate codebase for each platform"
+          "text": "Functional widget"
         },
         {
           "id": "D",
-          "text": "It is a native application"
+          "text": "Class widget"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the name of the widget used to display text in a Flutter application?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Image widget"
+        },
+        {
+          "id": "B",
+          "text": "Text widget"
+        },
+        {
+          "id": "C",
+          "text": "Icon widget"
+        },
+        {
+          "id": "D",
+          "text": "Button widget"
         }
       ],
       "correctAnswer": "B"
     },
     {
       "no": 5,
-      "question": "What is the difference between a stateless widget and a stateful widget?",
+      "question": "What is the term used to describe a widget that contains other widgets?",
       "options": [
         {
           "id": "A",
-          "text": "A stateless widget can have state, while a stateful widget cannot"
+          "text": "Container widget"
         },
         {
           "id": "B",
-          "text": "A stateless widget cannot have state, while a stateful widget can"
+          "text": "Layout widget"
         },
         {
           "id": "C",
-          "text": "Both stateless and stateful widgets can have state"
+          "text": "Composite widget"
         },
         {
           "id": "D",
-          "text": "Stateless widgets are more efficient than stateful widgets"
+          "text": "Primitive widget"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 6,
+      "question": "What is the name of the widget used to display an image in a Flutter application?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Text widget"
+        },
+        {
+          "id": "B",
+          "text": "Image widget"
+        },
+        {
+          "id": "C",
+          "text": "Icon widget"
+        },
+        {
+          "id": "D",
+          "text": "Button widget"
         }
       ],
       "correctAnswer": "B"
     },
     {
-      "no": 6,
-      "question": "What is the name of the widget that is used to display an image in Flutter?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Image"
-        },
-        {
-          "id": "B",
-          "text": "IconButton"
-        },
-        {
-          "id": "C",
-          "text": "Text"
-        },
-        {
-          "id": "D",
-          "text": "AppBar"
-        }
-      ],
-      "correctAnswer": "A"
-    },
-    {
       "no": 7,
-      "question": "What is the purpose of the runApp function in Flutter?",
+      "question": "What is the term used to describe a widget that can change over time?",
       "options": [
         {
           "id": "A",
-          "text": "To create a new instance of a widget"
+          "text": "Stateless widget"
         },
         {
           "id": "B",
-          "text": "To start the Flutter app"
+          "text": "Stateful widget"
         },
         {
           "id": "C",
-          "text": "To display a material design layout"
+          "text": "Functional widget"
         },
         {
           "id": "D",
-          "text": "To manage state changes"
+          "text": "Class widget"
         }
       ],
       "correctAnswer": "B"
     },
     {
       "no": 8,
-      "question": "Which of the following is an advantage of using the Flutter framework?",
+      "question": "What is the name of the widget used to display a button in a Flutter application?",
       "options": [
         {
           "id": "A",
-          "text": "It is only suitable for Android development"
+          "text": "Text widget"
         },
         {
           "id": "B",
-          "text": "It is open-source and free to use"
+          "text": "Image widget"
         },
         {
           "id": "C",
-          "text": "It is a native framework"
+          "text": "Icon widget"
         },
         {
           "id": "D",
-          "text": "It is slower than native frameworks"
+          "text": "Button widget"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "D"
     },
     {
       "no": 9,
-      "question": "What is the name of the Dart feature that allows you to define a reusable block of code?",
+      "question": "What is the term used to describe a widget that is used to display the title of an application?",
       "options": [
         {
           "id": "A",
-          "text": "Function"
+          "text": "AppBar widget"
         },
         {
           "id": "B",
-          "text": "Class"
+          "text": "Scaffold widget"
         },
         {
           "id": "C",
-          "text": "Operator"
+          "text": "Text widget"
         },
         {
           "id": "D",
-          "text": "Variable"
+          "text": "Image widget"
         }
       ],
       "correctAnswer": "A"
     },
     {
       "no": 10,
-      "question": "What is the purpose of the setState function in Flutter?",
+      "question": "What is the name of the widget used to display a basic layout in a Flutter application?",
       "options": [
         {
           "id": "A",
-          "text": "To update the UI"
+          "text": "Text widget"
         },
         {
           "id": "B",
-          "text": "To manage state changes"
+          "text": "Image widget"
         },
         {
           "id": "C",
-          "text": "To handle user input"
+          "text": "Icon widget"
         },
         {
           "id": "D",
-          "text": "To display a material design layout"
+          "text": "Scaffold widget"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "D"
     }
   ],
-  "answerKeyString": "1B2B3C4B5B6A7B8B9A10B"
+  "answerKeyString": "1A2C3B4B5C6B7B8D9A10D"
 }
