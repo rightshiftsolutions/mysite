@@ -1,0 +1,236 @@
+{
+  "title": "Flutter Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of setState() in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To update the UI"
+        },
+        {
+          "id": "B",
+          "text": "To manage application state"
+        },
+        {
+          "id": "C",
+          "text": "To handle user input"
+        },
+        {
+          "id": "D",
+          "text": "To navigate between screens"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the difference between local state and app state in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Local state is stored in memory, while app state is stored in storage"
+        },
+        {
+          "id": "B",
+          "text": "Local state is stored in storage, while app state is stored in memory"
+        },
+        {
+          "id": "C",
+          "text": "Local state is used for navigation, while app state is used for data storage"
+        },
+        {
+          "id": "D",
+          "text": "Local state is used for data storage, while app state is used for navigation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is the Provider package used for in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "For navigation between screens"
+        },
+        {
+          "id": "B",
+          "text": "For simple state management"
+        },
+        {
+          "id": "C",
+          "text": "For handling user input"
+        },
+        {
+          "id": "D",
+          "text": "For storing app state"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of Navigator in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To manage application state"
+        },
+        {
+          "id": "B",
+          "text": "To navigate between screens"
+        },
+        {
+          "id": "C",
+          "text": "To handle user input"
+        },
+        {
+          "id": "D",
+          "text": "To update the UI"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "How do you pass data between routes in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Using a global variable"
+        },
+        {
+          "id": "B",
+          "text": "Using a constructor"
+        },
+        {
+          "id": "C",
+          "text": "Using a named route"
+        },
+        {
+          "id": "D",
+          "text": "Using a callback function"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of named routes in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To manage application state"
+        },
+        {
+          "id": "B",
+          "text": "To navigate between screens"
+        },
+        {
+          "id": "C",
+          "text": "To handle user input"
+        },
+        {
+          "id": "D",
+          "text": "To pass data between routes"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the primary difference between local state and app state in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Local state is stored in memory, while app state is stored in storage"
+        },
+        {
+          "id": "B",
+          "text": "Local state is used for navigation, while app state is used for data storage"
+        },
+        {
+          "id": "C",
+          "text": "Local state is used for data storage, while app state is used for navigation"
+        },
+        {
+          "id": "D",
+          "text": "Local state is used for user input, while app state is used for UI updates"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is the purpose of setState() in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To update the UI"
+        },
+        {
+          "id": "B",
+          "text": "To manage application state"
+        },
+        {
+          "id": "C",
+          "text": "To handle user input"
+        },
+        {
+          "id": "D",
+          "text": "To navigate between screens"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 9,
+      "question": "What is the Provider package used for in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "For navigation between screens"
+        },
+        {
+          "id": "B",
+          "text": "For simple state management"
+        },
+        {
+          "id": "C",
+          "text": "For handling user input"
+        },
+        {
+          "id": "D",
+          "text": "For storing app state"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 10,
+      "question": "How do you navigate between screens in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Using a global variable"
+        },
+        {
+          "id": "B",
+          "text": "Using a constructor"
+        },
+        {
+          "id": "C",
+          "text": "Using a named route"
+        },
+        {
+          "id": "D",
+          "text": "Using a callback function"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1A2A3B4B5C6B7A8A9B10C"
+}
