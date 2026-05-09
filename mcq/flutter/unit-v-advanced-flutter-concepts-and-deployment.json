@@ -1,0 +1,236 @@
+{
+  "title": "Flutter Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What does the 'async' keyword do in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It creates a new thread"
+        },
+        {
+          "id": "B",
+          "text": "It marks a function to run asynchronously"
+        },
+        {
+          "id": "C",
+          "text": "It starts a new process"
+        },
+        {
+          "id": "D",
+          "text": "It is used for error handling"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of the 'await' keyword in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To call a function from a different thread"
+        },
+        {
+          "id": "B",
+          "text": "To pause the execution of the current function until the awaited task is completed"
+        },
+        {
+          "id": "C",
+          "text": "To create a new timer"
+        },
+        {
+          "id": "D",
+          "text": "To cancel an ongoing operation"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the difference between the 'Future' and 'Stream' in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Future represents a one-time asynchronous operation, while Stream represents a continuous flow of data"
+        },
+        {
+          "id": "B",
+          "text": "Future represents a continuous flow of data, while Stream represents a one-time asynchronous operation"
+        },
+        {
+          "id": "C",
+          "text": "Future is used for file operations, while Stream is used for network operations"
+        },
+        {
+          "id": "D",
+          "text": "Future is used for network operations, while Stream is used for file operations"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "How do you validate a form in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Using a 'Form' widget and its built-in validation"
+        },
+        {
+          "id": "B",
+          "text": "Using the 'TextEditingController' to check for empty fields"
+        },
+        {
+          "id": "C",
+          "text": "Using a third-party package"
+        },
+        {
+          "id": "D",
+          "text": "Using a custom validation class"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the 'pubspec.yaml' file in a Flutter project?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To define dependencies and their versions"
+        },
+        {
+          "id": "B",
+          "text": "To define the project's architecture"
+        },
+        {
+          "id": "C",
+          "text": "To configure the project's build settings"
+        },
+        {
+          "id": "D",
+          "text": "To create a new package"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "How do you add a package from pub.dev to a Flutter project?",
+      "options": [
+        {
+          "id": "A",
+          "text": "By adding the package name to the 'pubspec.yaml' file"
+        },
+        {
+          "id": "B",
+          "text": "By running the 'flutter add package' command in the terminal"
+        },
+        {
+          "id": "C",
+          "text": "By importing the package directly in the Dart file"
+        },
+        {
+          "id": "D",
+          "text": "By creating a new package"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 7,
+      "question": "What is Firebase and what is its primary use case in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Firebase is a backend service that provides authentication and data storage for Flutter apps"
+        },
+        {
+          "id": "B",
+          "text": "Firebase is a package that provides UI components for Flutter apps"
+        },
+        {
+          "id": "C",
+          "text": "Firebase is a plugin that provides analytics for Flutter apps"
+        },
+        {
+          "id": "D",
+          "text": "Firebase is a tool for testing Flutter apps"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "How do you set up Firebase Authentication in a Flutter project?",
+      "options": [
+        {
+          "id": "A",
+          "text": "By adding the Firebase SDK to the project and configuring the Firebase console"
+        },
+        {
+          "id": "B",
+          "text": "By creating a new Firebase project and linking it to the Flutter project"
+        },
+        {
+          "id": "C",
+          "text": "By using the 'firebase_auth' package"
+        },
+        {
+          "id": "D",
+          "text": "By using the 'google_sign_in' package"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of Cloud Firestore in Firebase?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store and retrieve data in a Flutter app"
+        },
+        {
+          "id": "B",
+          "text": "To authenticate users in a Flutter app"
+        },
+        {
+          "id": "C",
+          "text": "To send push notifications to Flutter users"
+        },
+        {
+          "id": "D",
+          "text": "To monitor analytics for a Flutter app"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 10,
+      "question": "How do you prepare a Flutter app for deployment to the Google Play Store?",
+      "options": [
+        {
+          "id": "A",
+          "text": "By creating a new APK file using the 'flutter build apk' command"
+        },
+        {
+          "id": "B",
+          "text": "By creating a new bundle file using the 'flutter build bundle' command"
+        },
+        {
+          "id": "C",
+          "text": "By creating a new Android Studio project and importing the Flutter project"
+        },
+        {
+          "id": "D",
+          "text": "By using the 'flutter deploy' command"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2B3A4A5A6A7A8A9A10A"
+}
