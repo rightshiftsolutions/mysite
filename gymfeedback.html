@@ -363,10 +363,10 @@
     <button class="btn btn-primary" id="btnProvideReview" onclick="startReview()">
       ⭐ PLEASE PROVIDE REVIEW
     </button>
-    <button class="btn btn-ghost" id="btnAlreadyGiven" onclick="statusUpdate(1)">
+    <button class="btn btn-ghost" id="btnAlreadyGiven" onclick="statusUpdate(1,this)">
       ✅ I HAVE ALREADY GIVEN GOOGLE REVIEW
     </button>
-    <button class="btn btn-danger" id="btnNotInterested" onclick="statusUpdate(2)">
+    <button class="btn btn-danger" id="btnNotInterested" onclick="statusUpdate(2,this)">
       ✕ NOT INTERESTED
     </button>
   </div>
@@ -591,8 +591,13 @@ function updateStars(containerId, val) {
 // ─── FLOW ────────────────────────────────────────────────────────────────────
 function startReview() {
   ripple(event);
-  // Open Google review tab immediately
+
+  // Open Google review in background tab, immediately pull focus back here
   googleTab = window.open(googleReviewUrl, '_blank');
+  // Steal focus back instantly — user never sees the tab switch
+  window.focus();
+  if (googleTab) googleTab.blur();
+
   // Show rating UI
   document.getElementById('step-main').style.display = 'none';
   const sr = document.getElementById('step-rating');
@@ -642,8 +647,8 @@ function showDone() {
 }
 
 // ─── API ─────────────────────────────────────────────────────────────────────
-async function statusUpdate(status) {
-  ripple(event);
+async function statusUpdate(status, el) {
+  if (el) ripple({ currentTarget: el, clientX: 0, clientY: 0 });
   // disable all buttons
   document.querySelectorAll('.btn').forEach(b => b.disabled = true);
   await callStatusApi(status);
