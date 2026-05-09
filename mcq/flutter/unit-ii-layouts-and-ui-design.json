@@ -1,0 +1,236 @@
+{
+  "title": "Flutter Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of the Row and Column widgets in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a stack of widgets"
+        },
+        {
+          "id": "B",
+          "text": "To arrange widgets horizontally or vertically"
+        },
+        {
+          "id": "C",
+          "text": "To handle user input"
+        },
+        {
+          "id": "D",
+          "text": "To create a list of widgets"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the main difference between Expanded and Flexible in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Flexible is used for horizontal and vertical layouts"
+        },
+        {
+          "id": "B",
+          "text": "Expanded is used for horizontal and vertical layouts"
+        },
+        {
+          "id": "C",
+          "text": "Expanded is used for horizontal layout and Flexible for vertical layout"
+        },
+        {
+          "id": "D",
+          "text": "Flexible is used for horizontal layout and Expanded for vertical layout"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of the Container widget in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a stack of widgets"
+        },
+        {
+          "id": "B",
+          "text": "To arrange widgets horizontally or vertically"
+        },
+        {
+          "id": "C",
+          "text": "To decorate and style widgets"
+        },
+        {
+          "id": "D",
+          "text": "To handle user input"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the Padding widget in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a stack of widgets"
+        },
+        {
+          "id": "B",
+          "text": "To arrange widgets horizontally or vertically"
+        },
+        {
+          "id": "C",
+          "text": "To add space between widgets"
+        },
+        {
+          "id": "D",
+          "text": "To handle user input"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the Center widget in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a stack of widgets"
+        },
+        {
+          "id": "B",
+          "text": "To arrange widgets horizontally or vertically"
+        },
+        {
+          "id": "C",
+          "text": "To center a widget in its parent"
+        },
+        {
+          "id": "D",
+          "text": "To handle user input"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of the Stack widget in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To arrange widgets horizontally or vertically"
+        },
+        {
+          "id": "B",
+          "text": "To create a stack of widgets"
+        },
+        {
+          "id": "C",
+          "text": "To handle user input"
+        },
+        {
+          "id": "D",
+          "text": "To decorate and style widgets"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is Material Design in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A design language developed by Google"
+        },
+        {
+          "id": "B",
+          "text": "A layout manager for Flutter"
+        },
+        {
+          "id": "C",
+          "text": "A UI framework for Flutter"
+        },
+        {
+          "id": "D",
+          "text": "A programming language for Flutter"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is the purpose of the ListView and GridView widgets in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a stack of widgets"
+        },
+        {
+          "id": "B",
+          "text": "To arrange widgets horizontally or vertically"
+        },
+        {
+          "id": "C",
+          "text": "To create scrollable lists of widgets"
+        },
+        {
+          "id": "D",
+          "text": "To handle user input"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 9,
+      "question": "How can you customize the appearance of a widget in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "By using the Container widget"
+        },
+        {
+          "id": "B",
+          "text": "By using properties and themes"
+        },
+        {
+          "id": "C",
+          "text": "By using the Padding widget"
+        },
+        {
+          "id": "D",
+          "text": "By using the Center widget"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the TextField widget in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a stack of widgets"
+        },
+        {
+          "id": "B",
+          "text": "To arrange widgets horizontally or vertically"
+        },
+        {
+          "id": "C",
+          "text": "To handle user input"
+        },
+        {
+          "id": "D",
+          "text": "To create a list of widgets"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1B2D3C4C5C6B7A8C9B10C"
+}
