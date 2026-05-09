@@ -1,0 +1,236 @@
+{
+  "title": "Flutter Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary use of Shared Preferences in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "For complex data storage"
+        },
+        {
+          "id": "B",
+          "text": "For simple key-value pairs"
+        },
+        {
+          "id": "C",
+          "text": "For storing large amounts of data"
+        },
+        {
+          "id": "D",
+          "text": "For storing structured data"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "Which package is used to consume RESTful APIs in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "http"
+        },
+        {
+          "id": "B",
+          "text": "https"
+        },
+        {
+          "id": "C",
+          "text": "dart:io"
+        },
+        {
+          "id": "D",
+          "text": "flutter:network"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of parsing JSON data into Dart objects?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store data locally"
+        },
+        {
+          "id": "B",
+          "text": "To send data over the network"
+        },
+        {
+          "id": "C",
+          "text": "To convert JSON data into a usable format"
+        },
+        {
+          "id": "D",
+          "text": "To compress data"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "How do you handle network requests asynchronously in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Synchronously"
+        },
+        {
+          "id": "B",
+          "text": "Asynchronously"
+        },
+        {
+          "id": "C",
+          "text": "Using a synchronous API"
+        },
+        {
+          "id": "D",
+          "text": "Using a blocking API"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the primary use of SQLite database in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "For simple key-value pairs"
+        },
+        {
+          "id": "B",
+          "text": "For structured data"
+        },
+        {
+          "id": "C",
+          "text": "For storing large amounts of data"
+        },
+        {
+          "id": "D",
+          "text": "For storing complex data"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of displaying data fetched from APIs in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store data locally"
+        },
+        {
+          "id": "B",
+          "text": "To send data over the network"
+        },
+        {
+          "id": "C",
+          "text": "To display data to the user"
+        },
+        {
+          "id": "D",
+          "text": "To compress data"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 7,
+      "question": "Which of the following is a local data storage option in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "http"
+        },
+        {
+          "id": "B",
+          "text": "SQLite"
+        },
+        {
+          "id": "C",
+          "text": "Shared Preferences"
+        },
+        {
+          "id": "D",
+          "text": "JSON"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 8,
+      "question": "What is the purpose of using the http package in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store data locally"
+        },
+        {
+          "id": "B",
+          "text": "To send data over the network"
+        },
+        {
+          "id": "C",
+          "text": "To consume RESTful APIs"
+        },
+        {
+          "id": "D",
+          "text": "To compress data"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 9,
+      "question": "How do you handle errors when consuming RESTful APIs in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "By using try-catch blocks"
+        },
+        {
+          "id": "B",
+          "text": "By using synchronous APIs"
+        },
+        {
+          "id": "C",
+          "text": "By using asynchronous APIs"
+        },
+        {
+          "id": "D",
+          "text": "By ignoring errors"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 10,
+      "question": "What is the primary use of JSON parsing in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store data locally"
+        },
+        {
+          "id": "B",
+          "text": "To send data over the network"
+        },
+        {
+          "id": "C",
+          "text": "To convert JSON data into a usable format"
+        },
+        {
+          "id": "D",
+          "text": "To compress data"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1B2A3C4B5B6C7C8C9A10C"
+}
