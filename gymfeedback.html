@@ -449,7 +449,8 @@ const trainerName  = params.get('trainerName')   || 'Rahul';
 const memberName   = params.get('memberName')    || 'Member';
 const gymId        = params.get('gymId')         || '0';
 const memberId     = params.get('memberId')      || '0';
-const googleReviewUrl = params.get('googleReviewUrl') || 'https://search.google.com/local/writereview';
+const googleReviewUrl = params.get("googleReviewUrl") || "https://search.google.com/local/writereview";
+const authToken       = params.get("authToken")       || "";
 
 // ─── INIT DISPLAY ───────────────────────────────────────────────────────────
 document.getElementById('gymNameDisplay').textContent = gymName;
@@ -647,9 +648,32 @@ function showDone() {
 }
 
 // ─── API ─────────────────────────────────────────────────────────────────────
+
+// Auth headers used in every request
+function authHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    ...(authToken ? { 'Authorization': `Bearer ${authToken}` } : {})
+  };
+}
+
+// Step 1: GET current social status to preserve existing values
+async function fetchCurrentStatus() {
+  const res = await fetch(
+    `https://www.api.gymgurus.in/member/social-media`,
+    { headers: authHeaders() }
+  );
+  if (!res.ok) throw new Error(`GET failed: ${res.status}`);
+  const json = await res.json();
+  // API returns data array — find current member
+  const member = Array.isArray(json.data)
+    ? json.data.find(m => String(m.id) === String(memberId)) || json.data[0]
+    : json.data;
+  return member;
+}
+
 async function statusUpdate(status, el) {
   if (el) ripple({ currentTarget: el, clientX: 0, clientY: 0 });
-  // disable all buttons
   document.querySelectorAll('.btn').forEach(b => b.disabled = true);
   await callStatusApi(status);
   showDone();
@@ -658,23 +682,42 @@ async function statusUpdate(status, el) {
 async function callStatusApi(status) {
   const overlay = document.getElementById('overlay');
   const overlayText = document.getElementById('overlay-text');
-  overlayText.textContent = status === 1 ? 'Saving your review...' : 'Updating status...';
   overlay.classList.add('show');
+
   try {
-    await fetch('https://www.api.gymgurus.in/member/update-social-status', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        memberId, gymId,
-        insta:0, youtube:0, whatsapp:0,
-        googleReview: status,
-        telegram:0, linkdin:0
-      })
-    });
-  } catch(e) { /* silent fail */ }
+    // Step 1: GET existing values
+    overlayText.textContent = 'Fetching current status...';
+    const current = await fetchCurrentStatus();
+
+    // Step 2: PUT with only googleReview changed, all others preserved
+    overlayText.textContent = status === 1 ? 'Saving your review...' : 'Updating status...';
+    const body = {
+      memberId : Number(memberId),
+      gymId    : Number(gymId),
+      insta        : current.insta        ?? 0,
+      youtube      : current.youtube      ?? 0,
+      whatsapp     : current.whatsapp     ?? 0,
+      googleReview : status,                    // ← only this changes
+      telegram     : current.telegram     ?? 0,
+      linkdin      : current.linkdin      ?? 0,
+    };
+
+    const putRes = await fetch(
+      'https://www.api.gymgurus.in/member/update-social-status',
+      { method: 'PUT', headers: authHeaders(), body: JSON.stringify(body) }
+    );
+    if (!putRes.ok) throw new Error(`PUT failed: ${putRes.status}`);
+
+    if (status === 1) showToast('✅ Thank you for your review!');
+    if (status === 2) showToast('Noted! Maybe next time 😊');
+
+  } catch(e) {
+    console.error('API error:', e);
+    showToast('⚠️ Could not update status. Please try again.');
+    document.querySelectorAll('.btn').forEach(b => b.disabled = false);
+  }
+
   overlay.classList.remove('show');
-  if (status === 1) showToast('✅ Thank you for your review!');
-  if (status === 2) showToast('Noted! Maybe next time 😊');
 }
 
 // ─── UTILS ───────────────────────────────────────────────────────────────────
