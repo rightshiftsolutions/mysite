@@ -130,6 +130,18 @@
   .btn-secondary { background: var(--bg3); color: var(--text); border: 1px solid var(--border); }
   .btn-secondary:hover { border-color: rgba(255,255,255,0.2); }
 
+  .button-row {
+    display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  .btn-status {
+    flex: 1 1 45%; min-width: 140px;
+    background: rgba(255,255,255,0.06); color: var(--text);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .btn-status:hover { border-color: rgba(255,87,34,0.35); color: var(--orange-light); }
+  .btn-center { flex: 1 1 100%; min-width: 180px; }
+
   /* RESULT */
   .result-card {
     background: var(--bg2); border: 1px solid rgba(255,87,34,0.25);
@@ -271,8 +283,13 @@
         </div>
       </div>
     </div>
+    <div class="button-row">
+      <button class="btn btn-status" onclick="setGoogleReviewStatus(1)">Google Review Done</button>
+      <button class="btn btn-primary btn-center" onclick="generate()" id="btn-2" disabled>Generate My Review ✨</button>
+      <button class="btn btn-status" onclick="setGoogleReviewStatus(2)">Not Intrested</button>
+    </div>
+    <div id="status-message" style="color: #FFD54F; font-size: 0.92rem; text-align: center; margin-bottom: 0.5rem;"></div>
     <button class="btn btn-secondary" onclick="prevStep()" style="margin-bottom:0.5rem">← Back</button>
-    <button class="btn btn-primary" onclick="generate()" id="btn-2" disabled>Generate My Review ✨</button>
   </div>
 
   <!-- RESULT -->
@@ -313,6 +330,8 @@ const ratings = { gym: 0, trainer: 0 };
 const aspects = { gym: [], trainer: [] };
 let trainerName = 'the Trainer';
 let googleUrl = '#';
+let gymId = null;
+let memberId = null;
 
 const ratingLabels = ['','😞 Needs Improvement','😐 Below Average','🙂 Decent','😊 Pretty Good','🔥 Outstanding!'];
 
@@ -327,6 +346,54 @@ if (params.get('trainer')) {
 if (params.get('google')) {
   googleUrl = decodeURIComponent(params.get('google'));
   document.getElementById('google-link').href = googleUrl;
+}
+if (params.get('gymid')) {
+  gymId = Number(params.get('gymid')) || null;
+}
+if (params.get('memberid')) {
+  memberId = Number(params.get('memberid')) || null;
+}
+
+function setStatusMessage(message, isError = false) {
+  const msgEl = document.getElementById('status-message');
+  msgEl.textContent = message;
+  msgEl.style.color = isError ? '#F06292' : '#A5D6A7';
+}
+
+async function updateGoogleReviewStatus(value) {
+  if (!gymId || !memberId) {
+    setStatusMessage('Missing gymId or memberId in URL parameters.', true);
+    return;
+  }
+
+  const payload = {
+    memberId,
+    gymId,
+    insta: 1,
+    youtube: 0,
+    whatsapp: 1,
+    googleReview: value,
+    telegram: 0,
+    linkdin: 1
+  };
+
+  try {
+    setStatusMessage('Updating review status...');
+    const resp = await fetch('https://www.api.gymgurus.in/member/update-social-status', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.message || 'Unable to update status');
+    setStatusMessage(value === 1 ? 'Google review status set to Done.' : 'Google review status set to Not Interested.');
+  } catch (err) {
+    setStatusMessage(`Error: ${err.message}`, true);
+  }
+}
+
+function setGoogleReviewStatus(value) {
+  updateGoogleReviewStatus(value);
 }
 
 function rate(type, val) {
