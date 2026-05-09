@@ -1,0 +1,236 @@
+{
+  "title": "Flutter Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the term for an application that can run on multiple platforms such as Android, iOS, and web?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Native application"
+        },
+        {
+          "id": "B",
+          "text": "Cross-platform application"
+        },
+        {
+          "id": "C",
+          "text": "Hybrid application"
+        },
+        {
+          "id": "D",
+          "text": "Web application"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the primary purpose of the Scaffold widget in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To handle user input"
+        },
+        {
+          "id": "B",
+          "text": "To display a material design layout"
+        },
+        {
+          "id": "C",
+          "text": "To handle navigation between screens"
+        },
+        {
+          "id": "D",
+          "text": "To manage state changes"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the name of the programming language used to develop Flutter applications?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Java"
+        },
+        {
+          "id": "B",
+          "text": "Kotlin"
+        },
+        {
+          "id": "C",
+          "text": "Dart"
+        },
+        {
+          "id": "D",
+          "text": "Python"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "Which of the following is a feature of a cross-platform application?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It can only be deployed on Android"
+        },
+        {
+          "id": "B",
+          "text": "It can be deployed on multiple platforms"
+        },
+        {
+          "id": "C",
+          "text": "It requires a separate codebase for each platform"
+        },
+        {
+          "id": "D",
+          "text": "It is a native application"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the difference between a stateless widget and a stateful widget?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A stateless widget can have state, while a stateful widget cannot"
+        },
+        {
+          "id": "B",
+          "text": "A stateless widget cannot have state, while a stateful widget can"
+        },
+        {
+          "id": "C",
+          "text": "Both stateless and stateful widgets can have state"
+        },
+        {
+          "id": "D",
+          "text": "Stateless widgets are more efficient than stateful widgets"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 6,
+      "question": "What is the name of the widget that is used to display an image in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Image"
+        },
+        {
+          "id": "B",
+          "text": "IconButton"
+        },
+        {
+          "id": "C",
+          "text": "Text"
+        },
+        {
+          "id": "D",
+          "text": "AppBar"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 7,
+      "question": "What is the purpose of the runApp function in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new instance of a widget"
+        },
+        {
+          "id": "B",
+          "text": "To start the Flutter app"
+        },
+        {
+          "id": "C",
+          "text": "To display a material design layout"
+        },
+        {
+          "id": "D",
+          "text": "To manage state changes"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 8,
+      "question": "Which of the following is an advantage of using the Flutter framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is only suitable for Android development"
+        },
+        {
+          "id": "B",
+          "text": "It is open-source and free to use"
+        },
+        {
+          "id": "C",
+          "text": "It is a native framework"
+        },
+        {
+          "id": "D",
+          "text": "It is slower than native frameworks"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 9,
+      "question": "What is the name of the Dart feature that allows you to define a reusable block of code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Function"
+        },
+        {
+          "id": "B",
+          "text": "Class"
+        },
+        {
+          "id": "C",
+          "text": "Operator"
+        },
+        {
+          "id": "D",
+          "text": "Variable"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the setState function in Flutter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To update the UI"
+        },
+        {
+          "id": "B",
+          "text": "To manage state changes"
+        },
+        {
+          "id": "C",
+          "text": "To handle user input"
+        },
+        {
+          "id": "D",
+          "text": "To display a material design layout"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B2B3C4B5B6A7B8B9A10B"
+}
