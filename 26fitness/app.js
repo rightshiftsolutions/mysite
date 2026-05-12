@@ -1,1 +1,0 @@
-console.log("Digital Card Loaded");
