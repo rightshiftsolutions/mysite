@@ -213,52 +213,27 @@ function getLevel(xpValue) {
 
 function addXP(amount, label = '') {
   xp += amount;
-  updateXPDisplay();
+  // XP display elements removed — no DOM update needed
   if (label) showFeedbackToast(`+${amount} XP ${label}`, 'xp');
 }
 
 function updateXPDisplay() {
-  document.getElementById('xpDisplay').textContent = xp;
-  const level = getLevel(xp);
-  const levelIndex = LEVELS.indexOf(level);
-  const nextLevel = LEVELS[levelIndex + 1];
-
-  document.getElementById('levelLabel').textContent = `LEVEL ${levelIndex + 1} · ${level.name}`;
-
-  let pct = 0;
-  if (nextLevel) {
-    pct = Math.min(100, Math.round(((xp - level.min) / (nextLevel.min - level.min)) * 100));
-  } else {
-    pct = 100; // max level
-  }
-  document.getElementById('levelBarInner').style.width = `${pct}%`;
-  document.getElementById('levelXpText').textContent = nextLevel
-    ? `${xp} / ${nextLevel.min} XP`
-    : `${xp} XP · MAX`;
+  // XP/level bar elements removed from UI — no-op
 }
 
 // ── Streak System ──────────────────────────────────────────
 function incrementStreak() {
   streak++;
   if (streak > maxStreak) maxStreak = streak;
-  updateStreakDisplay();
-
-  if (streak >= 2) {
-    const badge = document.getElementById('streakBadge');
-    badge.classList.add('on-fire');
-    const msg = STREAK_MESSAGES[Math.min(streak, STREAK_MESSAGES.length - 1)];
-    if (msg) showFeedbackToast(msg, 'xp');
-  }
+  // streak badge removed — no-op display update
 }
 
 function resetStreak() {
   streak = 0;
-  document.getElementById('streakBadge').classList.remove('on-fire');
-  updateStreakDisplay();
 }
 
 function updateStreakDisplay() {
-  document.getElementById('streakCount').textContent = streak;
+  // streak badge removed — no-op
 }
 
 // ── Encouragement Cycling ──────────────────────────────────
@@ -416,8 +391,12 @@ async function loadMcq() {
 // ── Intro Screen ───────────────────────────────────────────
 function renderIntro() {
   const ui = getGameUiConfig(currentGame.gameType);
-  document.getElementById('timerBox').textContent       = ui.timerSeconds ? `${Math.floor(ui.timerSeconds/60)}:00` : '∞';
+  const timerLabel = ui.timerSeconds ? `${Math.floor(ui.timerSeconds/60)}:00` : '∞';
+  document.getElementById('timerBox').textContent       = timerLabel;
   document.getElementById('questionCounter').textContent = `${questions.length} Qs`;
+  // Pre-fill the new RF timer text too
+  const rfTxt = document.getElementById('rfTimerText');
+  if (rfTxt) rfTxt.textContent = timerLabel;
 
   document.getElementById('introCard').innerHTML = `
     <div class="intro-hero">
@@ -469,9 +448,15 @@ function beginGame() {
 
   timerSeconds = ui.timerSeconds || 0;
 
+  // Task 3: Show ShadowMind-style sticky timer for timed games (Rapid Fire)
+  const rfTimerWrap = document.getElementById('rfTimerWrap');
   if (timerSeconds > 0) {
+    if (rfTimerWrap) rfTimerWrap.classList.remove('hidden');
+    document.body.classList.add('rf-timer-active');  // hides legacy corner pill
     startTimer();
   } else {
+    if (rfTimerWrap) rfTimerWrap.classList.add('hidden');
+    document.body.classList.remove('rf-timer-active');
     document.getElementById('timerBox').textContent = '∞';
   }
 
@@ -490,6 +475,10 @@ function startTimer() {
     if (timerSeconds <= 10 && timerSeconds > 0) {
       document.getElementById('timerBox').classList.add('warning');
     }
+    // Under 5 seconds: urgent pulse (task 4)
+    if (timerSeconds <= 5 && timerSeconds > 0) {
+      document.getElementById('timerBox').classList.add('urgent');
+    }
     if (timerSeconds <= 0) {
       clearInterval(timerInterval);
       submitGame(true);
@@ -500,7 +489,36 @@ function startTimer() {
 function updateTimerBox() {
   const m = Math.floor(timerSeconds / 60);
   const s = timerSeconds % 60;
-  document.getElementById('timerBox').textContent = `${m}:${String(s).padStart(2, '0')}`;
+  const timeStr = `${m}:${String(s).padStart(2, '0')}`;
+
+  // ── Legacy corner pill (kept; hidden via CSS when RF timer is active) ──
+  const legacyEl = document.getElementById('timerBox');
+  if (legacyEl) legacyEl.textContent = timeStr;
+
+  // ── New ShadowMind-style sticky RF timer ──
+  const rfText = document.getElementById('rfTimerText');
+  const rfPill = document.getElementById('rfTimerPill');
+  const rfBar  = document.getElementById('rfTimerBarFill');
+  if (!rfText || !rfPill || !rfBar) return;
+
+  rfText.textContent = timeStr;
+
+  // Bar fill — percentage of total game time remaining
+  const totalSec = currentGame?.timerSeconds || 300;
+  const pct = Math.max(0, (timerSeconds / totalSec) * 100);
+  rfBar.style.width = pct + '%';
+
+  // State classes
+  rfPill.classList.remove('rf-warning', 'rf-urgent');
+  rfBar.classList.remove('rf-warning', 'rf-urgent');
+
+  if (timerSeconds <= 10) {
+    rfPill.classList.add('rf-urgent');
+    rfBar.classList.add('rf-urgent');
+  } else if (timerSeconds <= 30) {
+    rfPill.classList.add('rf-warning');
+    rfBar.classList.add('rf-warning');
+  }
 }
 
 // ── Render Question ────────────────────────────────────────
@@ -574,7 +592,7 @@ function jumpToQuestion(index) {
 }
 
 // ── Select Answer ──────────────────────────────────────────
-// UPDATED CODE – saves answer, then schedules auto-advance
+// FIXED: single render cycle — update DOM in place, then advance
 function selectAnswer(questionNo, optionId) {
   if (gameSubmitted) return;
 
@@ -584,16 +602,47 @@ function selectAnswer(questionNo, optionId) {
     autoNextTimeout = null;
   }
 
-  playSound('click');
+  const prevAnswer = selectedAnswers[questionNo];
   selectedAnswers[questionNo] = optionId;
-  renderQuestion();
 
-  // Random natural-feeling delay between 800–1200ms
-  const delay = 800 + Math.floor(Math.random() * 400);
+  playSound('click');
 
+  // Update option card states in-place to avoid a full re-render (fixes flicker)
+  const optionCards = document.querySelectorAll('.option-card');
+  optionCards.forEach(card => {
+    const onclickAttr = card.getAttribute('onclick') || '';
+    const match = onclickAttr.match(/selectAnswer\('[^']*',\s*'([^']+)'\)/);
+    if (match) {
+      if (match[1] === optionId) {
+        card.classList.add('selected');
+      } else {
+        card.classList.remove('selected');
+      }
+    }
+  });
+
+  // Update the answered pills count label without full re-render
+  const answeredCount = Object.keys(selectedAnswers).length;
+  const countEl = document.querySelector('[style*="font-size:0.85rem"]');
+  if (countEl) countEl.textContent = `✅ ${answeredCount} / ${questions.length}`;
+
+  renderAnsweredPills();
+
+  // Auto-advance after short delay — only one render will happen when next question loads
+  const delay = 700 + Math.floor(Math.random() * 300);
   autoNextTimeout = setTimeout(() => {
     autoNextTimeout = null;
-    nextQuestion();          // existing logic handles last-question submit prompt
+    if (currentIndex < questions.length - 1) {
+      currentIndex++;
+      renderQuestion();
+    } else {
+      // Last question — prompt submit
+      const answered = Object.keys(selectedAnswers).length;
+      const skipped  = questions.length - answered;
+      if (confirm(`Submit game now?\n✅ Answered: ${answered}\n⏭️ Skipped: ${skipped}`)) {
+        submitGame(false);
+      }
+    }
   }, delay);
 }
 
@@ -714,6 +763,10 @@ function renderResult(data) {
   document.getElementById('resultSection').classList.remove('hidden');
   document.getElementById('questionCounter').textContent = '🏁 Done';
   document.getElementById('timerBox').textContent        = '✅';
+  // Task 3: Hide floating RF timer on result screen
+  const rfW = document.getElementById('rfTimerWrap');
+  if (rfW) rfW.classList.add('hidden');
+  document.body.classList.remove('rf-timer-active');
 
   // Performance label
   const perfLevel = pct >= 90 ? '🏆 MASTER'
@@ -752,9 +805,7 @@ function renderResult(data) {
       <div class="result-summary-bar">
         🏅 Total Score: <strong>${student.totalScore ?? '–'}</strong> &nbsp;|&nbsp;
         📝 Tests Completed: <strong>${student.testsCompleted ?? '–'}</strong> &nbsp;|&nbsp;
-        🥇 Rank: <strong>${student.rank ? '#' + student.rank : '–'}</strong><br>
-        ⚡ XP Earned this game: <strong>${xp}</strong> &nbsp;|&nbsp;
-        🔥 Best Streak: <strong>${maxStreak}</strong>
+        🥇 Rank: <strong>${student.rank ? '#' + student.rank : '–'}</strong>
       </div>
 
       ${reviewHtml}

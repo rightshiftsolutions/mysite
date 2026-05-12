@@ -213,7 +213,7 @@ html, body { height: 100%; font-family: 'Rajdhani', sans-serif; background: var(
 /* Timer */
 .timer-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; max-width: 560px; }
 .timer-bar-bg {
-  width: 100%; height: 6px; background: rgba(255,255,255,0.1);
+  width: 100%; height: 8px; background: rgba(255,255,255,0.1);
   border-radius: 10px; overflow: hidden;
 }
 .timer-bar {
@@ -223,12 +223,15 @@ html, body { height: 100%; font-family: 'Rajdhani', sans-serif; background: var(
   box-shadow: 0 0 10px var(--cyan);
 }
 .timer-bar.urgent { background: linear-gradient(90deg, var(--wrong), #ff8800); box-shadow: 0 0 10px var(--wrong); }
+.timer-bar.warning { background: linear-gradient(90deg, #ffcc00, #ff9900); box-shadow: 0 0 8px #ffcc00; transition: background 0.5s; }
 .timer-text {
-  font-family: 'Orbitron', sans-serif; font-size: 0.85rem;
-  color: var(--cyan); letter-spacing: 0.1em;
+  font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700;
+  color: var(--cyan); letter-spacing: 0.12em;
+  text-shadow: 0 0 12px rgba(0,245,255,0.6);
 }
-.timer-text.urgent { color: var(--wrong); animation: urgentPulse 0.5s ease-in-out infinite alternate; }
-@keyframes urgentPulse { to { opacity: 0.5; } }
+.timer-text.warning { color: #ffcc00; text-shadow: 0 0 12px rgba(255,204,0,0.7); }
+.timer-text.urgent { color: var(--wrong); text-shadow: 0 0 14px rgba(255,34,85,0.8); animation: urgentPulse 0.5s ease-in-out infinite alternate; }
+@keyframes urgentPulse { to { opacity: 0.55; transform: scale(1.06); } }
 
 /* Question box */
 .question-box {
@@ -941,15 +944,17 @@ function updatePrizeLadder() {
 }
 
 /* ===== TIMER ===== */
+const SHADOWMIND_TIMER_DURATION = 60; // seconds per question
+
 function startTimer() {
   clearInterval(state.timerInterval);
-  state.timerVal = 30;
+  state.timerVal = SHADOWMIND_TIMER_DURATION;
   updateTimerUI();
   state.timerInterval = setInterval(()=>{
     state.timerVal--;
     updateTimerUI();
     if(state.timerVal <= 5) playUrgent();
-    else if(state.timerVal % 5 === 0) playTick();
+    else if(state.timerVal % 10 === 0) playTick();
     if(state.timerVal <= 0) {
       clearInterval(state.timerInterval);
       timeUp();
@@ -960,15 +965,37 @@ function startTimer() {
 function updateTimerUI() {
   const bar = document.getElementById('timer-bar');
   const txt = document.getElementById('timer-text');
-  const pct = (state.timerVal / 30) * 100;
+  const pct = Math.max(0, (state.timerVal / SHADOWMIND_TIMER_DURATION) * 100);
   bar.style.width = pct + '%';
-  txt.textContent = state.timerVal + 's';
-  const urgent = state.timerVal <= 8;
-  bar.classList.toggle('urgent', urgent);
-  txt.classList.toggle('urgent', urgent);
+  // Show MM:SS for 60s
+  const m = Math.floor(state.timerVal / 60);
+  const s = state.timerVal % 60;
+  txt.textContent = m > 0 ? `${m}:${String(s).padStart(2,'0')}` : `${s}s`;
+  const urgent  = state.timerVal <= 10;
+  const warning = state.timerVal <= 20 && !urgent;
+  bar.classList.toggle('urgent',  urgent);
+  bar.classList.toggle('warning', warning);
+  txt.classList.toggle('urgent',  urgent);
+  txt.classList.toggle('warning', warning);
 }
 
 function stopTimer() { clearInterval(state.timerInterval); }
+
+// Resume timer from exact paused value — used after lifeline interactions
+function resumeTimer() {
+  if (state.answering || state.timerVal <= 0) return;
+  clearInterval(state.timerInterval);
+  state.timerInterval = setInterval(()=>{
+    state.timerVal--;
+    updateTimerUI();
+    if(state.timerVal <= 5) playUrgent();
+    else if(state.timerVal % 10 === 0) playTick();
+    if(state.timerVal <= 0) {
+      clearInterval(state.timerInterval);
+      timeUp();
+    }
+  }, 1000);
+}
 
 function timeUp() {
   if(state.answering) return;
@@ -1091,6 +1118,9 @@ function use5050() {
   document.getElementById('ll-5050').classList.add('used');
   showToast('⚡ 50:50 — Two wrong answers eliminated!');
 
+  // Task 6: Pause timer while lifeline action resolves
+  stopTimer();
+
   const q = questions[state.currentQ];
   const wrong = [];
   const correctOptionIndex =
@@ -1105,6 +1135,11 @@ function use5050() {
     document.getElementById('ans-'+i).classList.add('eliminated');
     document.getElementById('ans-'+i).disabled = true;
   });
+
+  // Resume timer after lifeline animation (400ms)
+  setTimeout(() => {
+    if (!state.answering) resumeTimer();
+  }, 400);
 }
 
 function useAudiencePoll() {
@@ -1113,6 +1148,9 @@ function useAudiencePoll() {
   state.llPoll = true;
   document.getElementById('ll-poll').classList.add('used');
   showToast('📊 Audience is voting...');
+
+  // Task 6: Pause timer while poll is showing
+  stopTimer();
 
   const q = questions[state.currentQ];
   // Generate fake poll percentages biased toward correct answer
@@ -1136,6 +1174,11 @@ function useAudiencePoll() {
       document.getElementById('pp-'+i).textContent = pcts[i]+'%';
     }, 300 + i*100);
   }
+
+  // Resume timer after poll results shown (3 seconds to read)
+  setTimeout(() => {
+    if (!state.answering) resumeTimer();
+  }, 3200);
 }
 
 function useSkip() {
@@ -1510,7 +1553,7 @@ scoreEl.innerHTML = `
     "
     onclick="goToDashboard()"
   >
-    ↩ MAIN MENU
+    ↩ Dashboard
   </button>
 `;
 

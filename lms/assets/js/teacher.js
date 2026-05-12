@@ -59,7 +59,7 @@ function escapeHtml(str) {
 // ─────────────────────────────────────────────────────────────
 //  GAME MANAGEMENT (existing functionality preserved)
 // ─────────────────────────────────────────────────────────────
-function showNeonToast(message, type = 'success', duration = 3500) {
+function showNeonToast(message, type = 'success', duration = 2500) {
   const container = document.getElementById('neonToastContainer');
   if (!container) {
     // Fallback to legacy alert if toast container not in page
@@ -562,6 +562,9 @@ function onSpinComplete(winnerIndex) {
   // Update compact controls bar
   showControlWho(selectedStudent);
 
+  // Task 1: Fetch & display real-time score immediately after selection
+  fetchAndRefreshStudentScore(selectedStudent);
+
   // Flash wheel rim
   flashWheel();
 
@@ -582,7 +585,12 @@ function showBlast(student) {
   if (!overlay) return;
 
   document.getElementById('blastName').textContent  = student.name;
-  document.getElementById('blastScore').textContent = student.totalScore ?? 0;
+  // Show cached score immediately; fetchAndRefreshStudentScore will update this
+  const cachedScore = student.totalScore;
+  const blastScoreEl = document.getElementById('blastScore');
+  if (blastScoreEl) {
+    blastScoreEl.textContent = (typeof cachedScore === 'number') ? cachedScore : '…';
+  }
 
   // FIXED OVERLAY ISSUE: clear settled state on each new spin
   overlay.classList.remove('hidden', 'blast-exit', 'blast-visible', 'blast-enter', 'blast-settled');
@@ -631,6 +639,26 @@ function showControlWho(student) {
   if (scoreEl) scoreEl.textContent = `${student.totalScore ?? 0} pts`;
 }
 
+/**
+ * Task 1 — Fetch the student's real-time score from the backend
+ * and immediately update every score display element.
+ * Called automatically after the spinner selects a student.
+ */
+async function fetchAndRefreshStudentScore(student) {
+  if (!student || !student.id) return;
+  try {
+    const result = await apiFetch(`/api/student/${student.id}/points`);
+    if (result && typeof result.totalScore === 'number') {
+      student.totalScore = result.totalScore;
+      const idx = students.findIndex(s => s.id === student.id);
+      if (idx !== -1) students[idx].totalScore = result.totalScore;
+      updateSelectedScore(result.totalScore);
+    }
+  } catch (_) {
+    // Fallback: students-array value already shown; silently ignore
+  }
+}
+
 function flashWheel() {
   const wrap = document.querySelector('.wheel-canvas-wrap');
   if (!wrap) return;
@@ -644,6 +672,35 @@ function flashWheel() {
 
 function showIdlePanel() {
   // Kept for backward compatibility — no-op in new layout
+}
+
+// Task 2: Reset selected student state with fade-out animation
+function resetSelectedStudent() {
+  const strip = document.getElementById('controlSelectedStrip');
+  if (strip) {
+    strip.style.transition = 'opacity 0.4s ease';
+    strip.style.opacity = '0';
+    setTimeout(() => {
+      strip.style.opacity = '';
+      strip.style.transition = '';
+      const nameEl  = document.getElementById('controlWhoName');
+      const scoreEl = document.getElementById('controlWhoScore');
+      if (nameEl)  nameEl.textContent  = '—';
+      if (scoreEl) scoreEl.textContent = '';
+    }, 420);
+  }
+
+  // Also hide blast overlay if still showing
+  const overlay = document.getElementById('blastOverlay');
+  if (overlay && !overlay.classList.contains('hidden')) {
+    overlay.classList.add('blast-exit');
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+      overlay.classList.remove('blast-exit');
+    }, 420);
+  }
+
+  selectedStudent = null;
 }
 
 function showSelectedPanel(student) {
@@ -705,6 +762,11 @@ async function updatePoints(action) {
 
     // Mini confetti on add
     if (action === 'add') launchMiniConfetti();
+
+    // Task 2: Fade-out and reset selected student state after points applied
+    setTimeout(() => {
+      resetSelectedStudent();
+    }, 1800);
 
   } catch (error) {
     showScoringMessage(`❌ Failed: ${error.message}`, 'error');
