@@ -13,18 +13,15 @@
 }
 
 :root {
-  /* Dark ocean palette */
   --bg-scene:       #0c1520;
   --card-bg:        rgba(16, 24, 36, 0.82);
   --card-surface:   rgba(22, 32, 48, 0.75);
   --card-inner:     rgba(28, 40, 58, 0.70);
 
-  /* Glass borders */
   --border-glass:     rgba(255, 255, 255, 0.10);
   --border-glass-md:  rgba(255, 255, 255, 0.15);
   --border-glass-lg:  rgba(255, 255, 255, 0.20);
 
-  /* Gold system */
   --gold-100:         #f9e9b8;
   --gold-200:         #f0d080;
   --gold-300:         #d4a843;
@@ -34,13 +31,11 @@
   --gold-border:      rgba(212, 168, 67, 0.40);
   --gold-border-soft: rgba(212, 168, 67, 0.22);
 
-  /* Text */
   --text-primary:   #f2ede5;
   --text-secondary: rgba(242, 237, 229, 0.60);
   --text-faint:     rgba(242, 237, 229, 0.35);
   --text-gold:      var(--gold-200);
 
-  /* Shadows */
   --shadow-card:    0 24px 80px rgba(0,0,0,0.60), 0 8px 24px rgba(0,0,0,0.40);
   --shadow-inner:   inset 0 1px 0 rgba(255,255,255,0.08);
   --shadow-gold:    0 6px 28px rgba(212,168,67,0.38), 0 2px 8px rgba(212,168,67,0.20);
@@ -48,14 +43,12 @@
   --shadow-sm:      0 4px 16px rgba(0,0,0,0.35);
   --shadow-xs:      0 2px 8px rgba(0,0,0,0.30);
 
-  /* Shape */
   --radius-xl:    22px;
   --radius-lg:    16px;
   --radius-md:    12px;
   --radius-sm:    8px;
   --radius-full:  999px;
 
-  /* Fonts */
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
 
@@ -67,6 +60,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -75,6 +69,7 @@ body {
   font-family: var(--font-body);
   color: var(--text-primary);
   min-height: 100vh;
+  overflow-x: hidden;
   background-color: var(--bg-scene);
   background-image:
     url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop');
@@ -105,10 +100,11 @@ body::before {
 .app-wrapper {
   position: relative;
   z-index: 1;
-  max-width: 420px;
+  width: min(100%, 420px);
   margin: 0 auto;
   padding: 20px 16px 100px;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 /* ============================================================
@@ -157,7 +153,7 @@ body::before {
 }
 
 /* ============================================================
-   PROFILE CARD — large outer card
+   PROFILE CARD
    ============================================================ */
 .profile-card {
   background: var(--card-bg) !important;
@@ -171,10 +167,11 @@ body::before {
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
   animation: fadeUp 0.55s var(--ease) both;
 }
 
-/* Gold top rim line */
 .profile-card::before {
   content: '';
   position: absolute;
@@ -190,7 +187,6 @@ body::before {
   opacity: 0.85;
 }
 
-/* Radial top glow */
 .profile-card::after {
   content: '';
   position: absolute;
@@ -216,6 +212,7 @@ body::before {
   align-items: center;
   gap: 4px;
   flex: 1;
+  min-width: 0;
 }
 
 .stat-num {
@@ -246,7 +243,6 @@ body::before {
   margin: 0 auto;
 }
 
-/* Rotating gold conic ring */
 .avatar-wrap::before {
   content: '';
   position: absolute;
@@ -265,7 +261,6 @@ body::before {
   animation: rotateSlow 10s linear infinite;
 }
 
-/* Clean gap ring */
 .avatar-wrap::after {
   content: '';
   position: absolute;
@@ -342,7 +337,7 @@ body::before {
 }
 
 /* ============================================================
-   SOCIAL BUTTONS — 2×2 grid matching reference
+   SOCIAL BUTTONS
    ============================================================ */
 .social-row {
   display: flex;
@@ -351,6 +346,7 @@ body::before {
   justify-content: center;
   gap: 10px;
   margin-bottom: 22px;
+  flex-wrap: wrap;
 }
 
 .social-btn {
@@ -371,6 +367,7 @@ body::before {
   transition: all var(--transition);
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .social-btn::before {
@@ -437,7 +434,7 @@ body::before {
 }
 
 /* ============================================================
-   SECTION LABEL — bold white style from reference
+   SECTION LABEL
    ============================================================ */
 .section-label {
   font-family: var(--font-body);
@@ -468,6 +465,8 @@ body::before {
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .content-card::before {
@@ -516,7 +515,7 @@ body::before {
   box-shadow: 0 0 26px var(--gold-glow), var(--shadow-inner);
 }
 
-.card-text { flex: 1; }
+.card-text { flex: 1; min-width: 0; }
 
 .card-title {
   font-family: var(--font-body);
@@ -525,15 +524,6 @@ body::before {
   color: var(--text-primary);
   line-height: 1.35;
   letter-spacing: 0.01em;
-}
-
-.service-card::after {
-  display: none;
-}
-
-.service-card:hover::after {
-  color: var(--gold-300);
-  transform: translateX(4px);
 }
 
 /* ============================================================
@@ -585,6 +575,7 @@ body::before {
   padding-bottom: 6px;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 
 .gallery-scroll::-webkit-scrollbar { display: none; }
@@ -601,6 +592,7 @@ body::before {
   border: 1px solid var(--border-glass);
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  scroll-snap-align: start;
 }
 
 .gallery-item:hover {
@@ -640,7 +632,7 @@ body::before {
 }
 
 /* ============================================================
-   SAVE CONTACT — gold pill CTA
+   SAVE CONTACT
    ============================================================ */
 .save-contact-btn {
   display: flex;
@@ -669,9 +661,9 @@ body::before {
   transition: transform var(--transition), box-shadow var(--transition);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Shimmer sweep */
 .save-contact-btn::before {
   content: '';
   position: absolute;
@@ -682,7 +674,6 @@ body::before {
   animation: btnShimmer 3.5s ease 1.2s infinite;
 }
 
-/* Top highlight */
 .save-contact-btn::after {
   content: '';
   position: absolute;
@@ -733,25 +724,177 @@ body::before {
 .content-card:nth-child(4) { animation-delay: 0.24s; }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — Mobile & Tablets
+   Sirf card aur uske andar ka content resize hoga.
+   Background, overlay — kuch nahi badlega.
    ============================================================ */
-@media (max-width: 360px) {
-  .app-wrapper { padding: 16px 12px 90px; }
+
+/* ── Small tablets: 481px – 768px ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .app-wrapper {
+    padding: 28px 20px 100px;
+  }
+
+  .profile-card {
+    padding: 26px 20px 24px;
+  }
+
+  .avatar-wrap {
+    width: 108px;
+    height: 108px;
+  }
 
   .gallery-item {
-    min-width: 90px;
-    width: 90px;
-    height: 112px;
+    min-width: 105px;
+    width: 105px;
+    height: 128px;
+  }
+}
+
+/* ── Mobile: max 480px ── */
+@media (max-width: 480px) {
+
+  .app-wrapper {
+    padding: 16px 12px 80px;
+  }
+
+  .profile-card {
+    padding: 22px 14px 24px;
+    border-radius: var(--radius-xl);
   }
 
   .avatar-wrap {
     width: 96px;
     height: 96px;
-    margin: 0 8px;
   }
 
-  .profile-name { font-size: 1.32rem; }
-  .stat-num { font-size: 1.10rem; }
+  .profile-name {
+    font-size: 1.35rem;
+    letter-spacing: 0.04em;
+  }
+
+  .profile-subtitle {
+    font-size: 0.63rem;
+    letter-spacing: 0.09em;
+  }
+
+  .stats-row {
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .stat-num {
+    font-size: 1.08rem;
+  }
+
+  .stat-label {
+    font-size: 0.53rem;
+    letter-spacing: 0.08em;
+  }
+
+  .divider {
+    margin: 14px 0;
+  }
+
+  .social-row {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .social-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .action-row {
+    gap: 8px;
+  }
+
+  .btn {
+    height: 44px;
+    font-size: 0.82rem;
+  }
+
+  .section-label {
+    font-size: 0.88rem;
+    margin: 18px 0 10px;
+  }
+
+  .content-card {
+    padding: 12px 13px;
+    margin-bottom: 8px;
+  }
+
+  .service-card {
+    gap: 11px;
+  }
+
+  .card-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .card-title {
+    font-size: 0.84rem;
+  }
+
+  .offer-tag {
+    font-size: 0.52rem;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+  }
+
+  .gallery-scroll {
+    gap: 8px;
+  }
+
+  .gallery-item {
+    min-width: 96px;
+    width: 96px;
+    height: 118px;
+  }
+
+  .save-contact-btn {
+    padding: 16px 18px;
+    font-size: 0.82rem;
+    letter-spacing: 0.10em;
+    margin: 22px 0 4px;
+    gap: 10px;
+  }
+
+  .save-contact-btn i {
+    font-size: 16px;
+  }
+}
+
+/* ── Extra small: max 360px (iPhone SE, Galaxy A series) ── */
+@media (max-width: 360px) {
+
+  .app-wrapper {
+    padding: 12px 10px 70px;
+  }
+
+  .profile-card {
+    padding: 18px 12px 20px;
+  }
+
+  .avatar-wrap {
+    width: 86px;
+    height: 86px;
+  }
+
+  .profile-name {
+    font-size: 1.15rem;
+  }
+
+  .profile-subtitle {
+    font-size: 0.58rem;
+  }
+
+  .stat-num  { font-size: 0.96rem; }
+  .stat-label { font-size: 0.48rem; }
 
   .social-btn {
     width: 40px;
@@ -759,42 +902,30 @@ body::before {
     font-size: 14px;
   }
 
-  .social-row {
-    grid-template-columns: repeat(2, 40px);
-    grid-template-rows: repeat(2, 40px);
-  }
-}
-
-/* ============================================================
-   FULL SCREEN MOBILE CARD
-   ============================================================ */
-
-@media (max-width: 768px) {
-
-  body {
-    background: var(--bg-scene);
-    background-image: none;
+  .btn {
+    height: 40px;
+    font-size: 0.78rem;
   }
 
-  body::before {
-    display: none;
+  .card-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
   }
 
-.app-wrapper {
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-}
+  .card-title {
+    font-size: 0.80rem;
+  }
 
-  .profile-card {
-  width: 100%;
-  min-height: 100vh;
-  border-radius: 0;
-  margin: 0;
-  border: none;
-  box-shadow: none;
-  padding: 30px 20px 60px;
-}
+  .gallery-item {
+    min-width: 84px;
+    width: 84px;
+    height: 104px;
+  }
 
+  .save-contact-btn {
+    padding: 14px 14px;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+  }
 }
