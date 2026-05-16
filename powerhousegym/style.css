@@ -769,3 +769,34 @@ body::before {
     grid-template-rows: repeat(2, 40px);
   }
 }
+
+/* ============================================================
+   FULL SCREEN MOBILE CARD
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  body {
+    background: var(--bg-scene);
+    background-image: none;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .app-wrapper {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .profile-card {
+    min-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+}
