@@ -50,10 +50,10 @@ if (type === "google") {
 
   actionBtn.onclick = () => {
 
-    const reviewUrl =
-      `https://search.google.com/local/writereview?placeid=${placeId}`;
-
-    window.open(reviewUrl, "_blank");
+    window.open(
+      `https://search.google.com/local/writereview?placeid=${placeId}`,
+      "_blank"
+    );
 
   };
 
@@ -73,8 +73,10 @@ else if (type === "instagram") {
 
   actionBtn.onclick = () => {
 
-    window.location.href =
-      `https://instagram.com/${instagram}`;
+    window.open(
+      `https://instagram.com/${instagram}`,
+      "_blank"
+    );
 
   };
 
@@ -94,8 +96,10 @@ else if (type === "youtube") {
 
   actionBtn.onclick = () => {
 
-    window.location.href =
-      `https://youtube.com/@${youtube}`;
+    window.open(
+      `https://youtube.com/@${youtube}`,
+      "_blank"
+    );
 
   };
 
@@ -115,8 +119,10 @@ else if (type === "telegram") {
 
   actionBtn.onclick = () => {
 
-    window.location.href =
-      `https://t.me/${telegram}`;
+    window.open(
+      `https://t.me/${telegram}`,
+      "_blank"
+    );
 
   };
 
@@ -136,8 +142,10 @@ else if (type === "whatsapp") {
 
   actionBtn.onclick = () => {
 
-    window.location.href =
-      `https://wa.me/${whatsapp}`;
+    window.open(
+      `https://wa.me/${whatsapp}`,
+      "_blank"
+    );
 
   };
 
