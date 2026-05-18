@@ -111,7 +111,7 @@ async function updateSocialStatus() {
     else if (type === "instagram") {
 
       query =
-        `instagram=1`;
+        `insta=1`;
 
     }
 
