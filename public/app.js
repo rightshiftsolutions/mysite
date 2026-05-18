@@ -47,7 +47,7 @@ async function loadGymDetails() {
   try {
 
     const res = await fetch(
-      `https://www.api.gymgurus.in/gym/profile?gymId=${gymId}`
+      `https://www.api.gymgurus.in/gym/public-profile?gymId=${gymId}`
     );
 
     const data = await res.json();
