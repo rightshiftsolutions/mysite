@@ -2,203 +2,152 @@
 
 const params = new URLSearchParams(window.location.search);
 
-const type = params.get("type") || "google";
+const type = params.get("type") || "";
 
-const token = params.get("token") || "";
+// SOCIAL VALUES
 
-// TOKEN DECODE
+const placeId =
+  params.get("placeId") || "";
 
-let gymId = 0;
+const instagram =
+  params.get("instagram") || "";
 
-let memberId = 0;
+const youtube =
+  params.get("youtube") || "";
 
-try {
+const telegram =
+  params.get("telegram") || "";
 
-  const decoded = atob(token);
-
-  const tokenParams = new URLSearchParams(decoded);
-
-  gymId = tokenParams.get("gymId");
-
-  memberId = tokenParams.get("memberId");
-
-} catch (e) {
-
-  console.log("Invalid token");
-
-}
+const whatsapp =
+  params.get("whatsapp") || "";
 
 // ELEMENTS
 
-const gymNameEl = document.getElementById("gymName");
+const gymNameEl =
+  document.getElementById("gymName");
 
-const messageEl = document.getElementById("message");
+const messageEl =
+  document.getElementById("message");
 
-const actionBtn = document.getElementById("actionBtn");
+const actionBtn =
+  document.getElementById("actionBtn");
 
-// GLOBAL DATA
+// STATIC TITLE
 
-let gymData = {};
+gymNameEl.innerText = "Gym Gurus";
 
-// LOAD GYM DETAILS
+// GOOGLE REVIEW
 
-async function loadGymDetails() {
+if (type === "google") {
 
-  try {
+  messageEl.innerText =
+    "Please give your valuable Google review ❤️";
 
-    const res = await fetch(
-      `https://www.api.gymgurus.in/gym/public-profile?gymId=${gymId}`
-    );
+  actionBtn.innerText =
+    "OPEN GOOGLE REVIEW";
 
-    const data = await res.json();
+  actionBtn.style.display = "block";
 
-    gymData = data;
+  actionBtn.onclick = () => {
 
-    gymNameEl.innerText = data.name || "Gym";
+    const reviewUrl =
+      `https://search.google.com/local/writereview?placeid=${placeId}`;
 
-    setupPage();
+    window.open(reviewUrl, "_blank");
 
-  } catch (e) {
-
-    console.log(e);
-
-    messageEl.innerText = "Unable to load gym details";
-
-  }
+  };
 
 }
 
-// SETUP PAGE
+// INSTAGRAM
 
-function setupPage() {
+else if (type === "instagram") {
 
-  const social = gymData.socialMediaLinks || {};
+  messageEl.innerText =
+    "Follow us on Instagram 🔥";
 
-  // GOOGLE REVIEW
+  actionBtn.innerText =
+    "OPEN INSTAGRAM";
 
-  if (type === "google") {
+  actionBtn.style.display = "block";
 
-    messageEl.innerText =
-      "Please give your valuable Google review ❤️";
+  actionBtn.onclick = () => {
 
-    actionBtn.innerText = "OPEN GOOGLE REVIEW";
+    window.location.href =
+      `https://instagram.com/${instagram}`;
 
-    actionBtn.style.display = "block";
-
-    actionBtn.onclick = () => {
-
-      const placeId = social.googleReview;
-
-      const reviewUrl =
-        `https://search.google.com/local/writereview?placeid=${placeId}`;
-
-      window.open(reviewUrl, "_blank");
-
-      updateStatus(1);
-
-    };
-
-  }
-
-  // INSTAGRAM
-
-  else if (type === "instagram") {
-
-    messageEl.innerText =
-      "Follow us on Instagram 🔥";
-
-    actionBtn.innerText = "OPEN INSTAGRAM";
-
-    actionBtn.style.display = "block";
-
-    actionBtn.onclick = () => {
-
-      window.location.href = social.instagram;
-
-    };
-
-  }
-
-  // YOUTUBE
-
-  else if (type === "youtube") {
-
-    messageEl.innerText =
-      "Subscribe our YouTube channel 🎥";
-
-    actionBtn.innerText = "OPEN YOUTUBE";
-
-    actionBtn.style.display = "block";
-
-    actionBtn.onclick = () => {
-
-      window.location.href = social.youtube;
-
-    };
-
-  }
-
-  // TELEGRAM
-
-  else if (type === "telegram") {
-
-    messageEl.innerText =
-      "Join our Telegram community 🚀";
-
-    actionBtn.innerText = "OPEN TELEGRAM";
-
-    actionBtn.style.display = "block";
-
-    actionBtn.onclick = () => {
-
-      window.location.href = social.telegram;
-
-    };
-
-  }
-
-  // WHATSAPP
-
-  else if (type === "whatsapp") {
-
-    messageEl.innerText =
-      "Join our WhatsApp community 💬";
-
-    actionBtn.innerText = "OPEN WHATSAPP";
-
-    actionBtn.style.display = "block";
-
-    actionBtn.onclick = () => {
-
-      window.location.href = social.whatsapp;
-
-    };
-
-  }
+  };
 
 }
 
-// UPDATE STATUS
+// YOUTUBE
 
-async function updateStatus(status) {
+else if (type === "youtube") {
 
-  try {
+  messageEl.innerText =
+    "Subscribe our YouTube channel 🎥";
 
-    await fetch(
-      `https://www.api.gymgurus.in/member/update-social-status?memberId=${memberId}&gymId=${gymId}&googleReview=${status}`,
-      {
-        method: "PUT"
-      }
-    );
+  actionBtn.innerText =
+    "OPEN YOUTUBE";
 
-  } catch (e) {
+  actionBtn.style.display = "block";
 
-    console.log(e);
+  actionBtn.onclick = () => {
 
-  }
+    window.location.href =
+      `https://youtube.com/@${youtube}`;
+
+  };
 
 }
 
-// START
+// TELEGRAM
 
-loadGymDetails();
+else if (type === "telegram") {
+
+  messageEl.innerText =
+    "Join our Telegram community 🚀";
+
+  actionBtn.innerText =
+    "OPEN TELEGRAM";
+
+  actionBtn.style.display = "block";
+
+  actionBtn.onclick = () => {
+
+    window.location.href =
+      `https://t.me/${telegram}`;
+
+  };
+
+}
+
+// WHATSAPP
+
+else if (type === "whatsapp") {
+
+  messageEl.innerText =
+    "Chat with us on WhatsApp 💬";
+
+  actionBtn.innerText =
+    "OPEN WHATSAPP";
+
+  actionBtn.style.display = "block";
+
+  actionBtn.onclick = () => {
+
+    window.location.href =
+      `https://wa.me/${whatsapp}`;
+
+  };
+
+}
+
+// INVALID TYPE
+
+else {
+
+  messageEl.innerText =
+    "Invalid social type";
+
+}
