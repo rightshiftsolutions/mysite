@@ -89,6 +89,77 @@ const reviewText =
 const successMsg =
   document.getElementById("successMsg");
 
+// ─── STATUS UPDATE ─────────────────────────────────────
+
+async function updateSocialStatus() {
+
+  try {
+
+    let query = "";
+
+    // GOOGLE
+
+    if (type === "google") {
+
+      query =
+        `googleReview=1`;
+
+    }
+
+    // INSTAGRAM
+
+    else if (type === "instagram") {
+
+      query =
+        `instagram=1`;
+
+    }
+
+    // YOUTUBE
+
+    else if (type === "youtube") {
+
+      query =
+        `youtube=1`;
+
+    }
+
+    // TELEGRAM
+
+    else if (type === "telegram") {
+
+      query =
+        `telegram=1`;
+
+    }
+
+    // WHATSAPP
+
+    else if (type === "whatsapp") {
+
+      query =
+        `whatsapp=1`;
+
+    }
+
+    await fetch(
+
+      `https://www.api.gymgurus.in/member/update-social-status?memberId=${memberId}&gymId=${gymId}&${query}`,
+
+      {
+        method: "PUT"
+      }
+
+    );
+
+  } catch (e) {
+
+    console.log(e);
+
+  }
+
+}
+
 // ─── GOOGLE REVIEW FLOW ─────────────────────────────────
 
 if (type === "google") {
@@ -211,22 +282,9 @@ if (type === "google") {
 
       }
 
-      // STATUS UPDATE API
+      // STATUS UPDATE
 
-      try {
-
-        await fetch(
-          `https://www.api.gymgurus.in/member/update-social-status?memberId=${memberId}&gymId=${gymId}&googleReview=1`,
-          {
-            method: "PUT"
-          }
-        );
-
-      } catch (e) {
-
-        console.log(e);
-
-      }
+      await updateSocialStatus();
 
       // SHOW GOOGLE BUTTON
 
@@ -270,7 +328,9 @@ else if (type === "instagram") {
 
   actionBtn.style.display = "block";
 
-  actionBtn.onclick = () => {
+  actionBtn.onclick = async () => {
+
+    await updateSocialStatus();
 
     window.open(
       `https://instagram.com/${instagram}`,
@@ -295,7 +355,9 @@ else if (type === "youtube") {
 
   actionBtn.style.display = "block";
 
-  actionBtn.onclick = () => {
+  actionBtn.onclick = async () => {
+
+    await updateSocialStatus();
 
     window.open(
       `https://youtube.com/@${youtube}`,
@@ -320,7 +382,9 @@ else if (type === "telegram") {
 
   actionBtn.style.display = "block";
 
-  actionBtn.onclick = () => {
+  actionBtn.onclick = async () => {
+
+    await updateSocialStatus();
 
     window.open(
       `https://t.me/${telegram}`,
@@ -345,7 +409,9 @@ else if (type === "whatsapp") {
 
   actionBtn.style.display = "block";
 
-  actionBtn.onclick = () => {
+  actionBtn.onclick = async () => {
+
+    await updateSocialStatus();
 
     window.open(
       `https://wa.me/${whatsapp}`,
