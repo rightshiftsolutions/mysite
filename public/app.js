@@ -80,6 +80,15 @@ const messageEl =
 const actionBtn =
   document.getElementById("actionBtn");
 
+const reviewBox =
+  document.getElementById("reviewBox");
+
+const reviewText =
+  document.getElementById("reviewText");
+
+const successMsg =
+  document.getElementById("successMsg");
+
 // ─── GOOGLE REVIEW FLOW ─────────────────────────────────
 
 if (type === "google") {
@@ -87,79 +96,163 @@ if (type === "google") {
   gymNameEl.innerText = gymName;
 
   messageEl.innerText =
-    "Please give your valuable Google review ❤️";
+    "How was your experience?";
 
-  actionBtn.innerText =
-    "START REVIEW";
+  // HIDE BUTTON INITIALLY
 
-  actionBtn.style.display = "block";
+  actionBtn.style.display = "none";
 
-  actionBtn.onclick = async () => {
+  // CREATE STARS CONTAINER
 
-    // RANDOM REVIEW
+  const starsContainer =
+    document.createElement("div");
 
-    const reviews = [
+  starsContainer.style.display = "flex";
+  starsContainer.style.justifyContent = "center";
+  starsContainer.style.gap = "10px";
+  starsContainer.style.marginTop = "20px";
+  starsContainer.style.marginBottom = "20px";
 
-      `Best gym experience ever. Trainer ${trainerName} sir is very supportive and motivating.`,
+  // CREATE STARS
 
-      `Amazing atmosphere and excellent training by ${trainerName} sir.`,
+  for (let i = 1; i <= 5; i++) {
 
-      `Very clean gym with quality equipment. Highly recommended.`,
+    const star =
+      document.createElement("span");
 
-      `Great gym with positive vibes and knowledgeable trainers.`,
+    star.innerHTML = "⭐";
 
-      `One of the best fitness clubs. Really enjoying workouts here.`
+    star.style.fontSize = "40px";
 
-    ];
+    star.style.cursor = "pointer";
 
-    const review =
-      reviews[
-        Math.floor(Math.random() * reviews.length)
-      ];
+    star.style.opacity = "0.3";
 
-    // COPY REVIEW
+    star.onclick = async () => {
 
-    try {
+      // HIGHLIGHT STARS
 
-      await navigator.clipboard.writeText(
-        review
-      );
+      [...starsContainer.children]
+        .forEach((s, index) => {
 
-      alert(
-        "Review copied successfully!"
-      );
+          s.style.opacity =
+            index < i ? "1" : "0.3";
 
-    } catch (e) {
+        });
 
-      console.log(e);
+      // GENERATE REVIEW
 
-    }
+      let review = "";
 
-    // STATUS UPDATE API
+      // 5 STAR
 
-    try {
+      if (i === 5) {
 
-      await fetch(
-        `https://www.api.gymgurus.in/member/update-social-status?memberId=${memberId}&gymId=${gymId}&googleReview=1`,
-        {
-          method: "PUT"
-        }
-      );
+        review =
+          `Amazing gym experience. Trainer ${trainerName} sir is extremely supportive and motivating. Highly recommended!`;
 
-    } catch (e) {
+      }
 
-      console.log(e);
+      // 4 STAR
 
-    }
+      else if (i === 4) {
 
-    // OPEN GOOGLE REVIEW
+        review =
+          `Very good gym with excellent atmosphere and helpful trainer ${trainerName} sir.`;
 
-    window.open(
-      googleReviewUrl,
-      "_blank"
-    );
+      }
 
-  };
+      // 3 STAR
+
+      else if (i === 3) {
+
+        review =
+          `Gym is decent and trainer ${trainerName} sir is helpful overall.`;
+
+      }
+
+      // 2 STAR
+
+      else if (i === 2) {
+
+        review =
+          `Gym needs some improvements but overall experience was okay.`;
+
+      }
+
+      // 1 STAR
+
+      else {
+
+        review =
+          `Gym experience was not very satisfying and improvements are needed.`;
+
+      }
+
+      // SHOW REVIEW BOX
+
+      reviewBox.style.display = "block";
+
+      reviewText.value = review;
+
+      // COPY REVIEW
+
+      try {
+
+        await navigator.clipboard.writeText(
+          review
+        );
+
+        successMsg.style.display = "block";
+
+      } catch (e) {
+
+        console.log(e);
+
+      }
+
+      // STATUS UPDATE API
+
+      try {
+
+        await fetch(
+          `https://www.api.gymgurus.in/member/update-social-status?memberId=${memberId}&gymId=${gymId}&googleReview=1`,
+          {
+            method: "PUT"
+          }
+        );
+
+      } catch (e) {
+
+        console.log(e);
+
+      }
+
+      // SHOW GOOGLE BUTTON
+
+      actionBtn.innerText =
+        "OPEN GOOGLE REVIEW";
+
+      actionBtn.style.display = "block";
+
+      actionBtn.onclick = () => {
+
+        window.open(
+          googleReviewUrl,
+          "_blank"
+        );
+
+      };
+
+    };
+
+    starsContainer.appendChild(star);
+
+  }
+
+  // APPEND STARS
+
+  messageEl.after(starsContainer);
 
 }
 
