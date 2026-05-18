@@ -5,7 +5,8 @@
 
   <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
 
   <title>Gym Social Connect</title>
 
@@ -21,15 +22,49 @@
 
       <div class="logo">🏋️</div>
 
-      <h1 id="gymName">Loading...</h1>
+      <!-- GYM NAME -->
+
+      <h1 id="gymName">
+        Loading...
+      </h1>
+
+      <!-- MESSAGE -->
 
       <p id="message">
         Connecting...
       </p>
 
-      <button id="actionBtn" class="btn" style="display:none;">
+      <!-- REVIEW PREVIEW -->
+
+      <div id="reviewBox"
+           style="display:none;">
+
+        <textarea
+          id="reviewText"
+          readonly></textarea>
+
+      </div>
+
+      <!-- ACTION BUTTON -->
+
+      <button
+        id="actionBtn"
+        class="btn"
+        style="display:none;">
+
         OPEN
+
       </button>
+
+      <!-- SUCCESS -->
+
+      <div
+        id="successMsg"
+        style="display:none;">
+
+        ✅ Review copied successfully
+
+      </div>
 
     </div>
 
