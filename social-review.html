@@ -619,14 +619,31 @@ const starHints = ['', 'Terrible 😞', 'Bad 😕', 'Okay 😐', 'Good 😊', 'E
 
 /** Opens Google review tab in background, shows rating UI */
 function startGoogleReview() {
-  googleTab = window.open(googleReviewUrl, '_blank');
+
+  // Open blank tab first (better mobile support)
+  googleTab = window.open('', '_blank');
+
+  // Then redirect it
+  if (googleTab) {
+    googleTab.location.href = googleReviewUrl;
+    googleTab.blur();
+  } else {
+    // fallback
+    window.location.href = googleReviewUrl;
+  }
+
   window.focus();
-  if (googleTab) googleTab.blur();
 
   document.getElementById('step-main').style.display = 'none';
+
   const sr = document.getElementById('step-rating');
   sr.style.display = 'flex';
-  setTimeout(() => sr.scrollIntoView({ behavior: 'smooth' }), 100);
+
+  setTimeout(() => {
+    sr.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }, 100);
 }
 
 function setRating(type, val) {
