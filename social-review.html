@@ -620,19 +620,7 @@ const starHints = ['', 'Terrible 😞', 'Bad 😕', 'Okay 😐', 'Good 😊', 'E
 /** Opens Google review tab in background, shows rating UI */
 function startGoogleReview() {
 
-  // Open blank tab first (better mobile support)
-  googleTab = window.open('', '_blank');
-
-  // Then redirect it
-  if (googleTab) {
-    googleTab.location.href = googleReviewUrl;
-    googleTab.blur();
-  } else {
-    // fallback
-    window.location.href = googleReviewUrl;
-  }
-
-  window.focus();
+  // REMOVE AUTO OPEN OF GOOGLE REVIEW PAGE
 
   document.getElementById('step-main').style.display = 'none';
 
