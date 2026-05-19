@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Rate Your Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c14;
+    --surface: rgba(255,255,255,0.04);
+    --surface-2: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.08);
+    --border-glow: rgba(99,179,237,0.3);
+    --accent: #63b3ed;
+    --accent-2: #9f7aea;
+    --gold: #f6c90e;
+    --gold-dim: rgba(246,201,14,0.18);
+    --success: #48bb78;
+    --danger: #fc8181;
+    --text: #f0f4ff;
+    --text-dim: rgba(240,244,255,0.45);
+    --text-mid: rgba(240,244,255,0.7);
+    --radius: 20px;
+    --radius-sm: 12px;
+
+    /* ── Instagram theme overrides (applied when type=insta) ── */
+    --insta-a: #f58529;
+    --insta-b: #dd2a7b;
+    --insta-c: #8134af;
+    --insta-d: #515bd4;
+  }
+
+  /* ── Instagram theme class applied to <body> ── */
+  body.insta-theme {
+    --accent: #dd2a7b;
+    --accent-2: #f58529;
+    --border-glow: rgba(221,42,123,0.3);
+  }
+  body.insta-theme::before {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(221,42,123,0.14) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(245,133,41,0.1) 0%, transparent 60%);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(99,179,237,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(159,122,234,0.1) 0%, transparent 60%);
+    pointer-events:none; z-index:0;
+    transition: background 0.5s ease;
+  }
+
+  .noise {
+    position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  .container {
+    position:relative; z-index:1;
+    max-width: 480px; margin:0 auto;
+    padding: 0 0 60px;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center;
+  }
+
+  /* ── Header ── */
+  .header {
+    width: 100%; padding: 36px 24px 28px;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .logo-wrap {
+    width: 80px; height: 80px; border-radius: 22px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 36px;
+    box-shadow: 0 0 40px rgba(99,179,237,0.15), 0 8px 32px rgba(0,0,0,0.4);
+    backdrop-filter: blur(12px);
+    position: relative; overflow: hidden;
+  }
+  .logo-wrap::after {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(135deg, rgba(99,179,237,0.12), transparent);
+  }
+
+  /* Instagram logo glow */
+  body.insta-theme .logo-wrap {
+    box-shadow: 0 0 40px rgba(221,42,123,0.2), 0 8px 32px rgba(0,0,0,0.4);
+  }
+  body.insta-theme .logo-wrap::after {
+    background: linear-gradient(135deg, rgba(221,42,123,0.15), transparent);
+  }
+
+  .gym-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px; font-weight: 800;
+    letter-spacing: -0.3px;
+    text-align: center;
+    background: linear-gradient(135deg, #fff 40%, var(--accent));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .greeting {
+    font-size: 13px; color: var(--text-dim); letter-spacing: 0.5px;
+  }
+
+  /* ── Instagram badge ── */
+  .insta-badge {
+    display: none;
+    align-items: center; gap: 8px;
+    background: linear-gradient(135deg, rgba(245,133,41,0.12), rgba(221,42,123,0.12), rgba(129,52,175,0.12));
+    border: 1px solid rgba(221,42,123,0.25);
+    border-radius: 50px; padding: 8px 16px;
+    font-size: 13px; font-weight: 600; color: var(--text-mid);
+    animation: fadeUp 0.5s 0.2s ease both;
+    opacity: 0;
+    animation-fill-mode: both;
+  }
+  body.insta-theme .insta-badge { display: flex; }
+
+  .insta-badge-icon {
+    width: 20px; height: 20px; border-radius: 5px;
+    background: linear-gradient(135deg, var(--insta-a), var(--insta-b), var(--insta-c));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: #fff; font-weight: 800;
+  }
+
+  /* ── Glass Card ── */
+  .card {
+    width: calc(100% - 32px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 22px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+    margin-bottom: 14px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .card-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .card-question {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px; font-weight: 700;
+    line-height: 1.4; margin-bottom: 20px;
+    color: var(--text);
+  }
+
+  /* ── Stars ── */
+  .stars {
+    display: flex; gap: 10px; justify-content: center;
+    margin-bottom: 4px;
+  }
+  .star {
+    font-size: 38px; cursor: pointer;
+    transition: transform 0.18s cubic-bezier(.34,1.56,.64,1), filter 0.18s ease;
+    filter: grayscale(1) brightness(0.5);
+    user-select: none;
+  }
+  .star.active { filter: none; }
+  .star:hover { transform: scale(1.15); }
+  .star.pop { animation: starPop 0.3s cubic-bezier(.34,1.56,.64,1) both; }
+
+  .star-hint {
+    text-align: center; font-size: 12px; color: var(--text-dim);
+    min-height: 18px; margin-top: 6px;
+    transition: opacity 0.2s;
+  }
+
+  /* ── Main Buttons ── */
+  .main-btns {
+    width: calc(100% - 32px);
+    display: flex; flex-direction: column; gap: 12px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .btn {
+    width: 100%; border: none; cursor: pointer;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 15px;
+    letter-spacing: 0.3px;
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    position: relative; overflow: hidden;
+    transition: transform 0.12s ease, box-shadow 0.15s ease;
+    -webkit-appearance: none;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn::after {
+    content:''; position:absolute; inset:0; border-radius:inherit;
+    background: radial-gradient(circle at var(--rx,50%) var(--ry,50%), rgba(255,255,255,0.18) 0%, transparent 60%);
+    opacity:0; transition: opacity 0.3s;
+    pointer-events:none;
+  }
+  .btn.ripple::after { opacity:1; animation: rippleFade 0.5s ease forwards; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(99,102,241,0.45), 0 1px 0 rgba(255,255,255,0.12) inset;
+  }
+  .btn-primary:hover { box-shadow: 0 6px 32px rgba(99,102,241,0.6); }
+
+  /* Instagram primary button */
+  .btn-insta-primary {
+    background: linear-gradient(135deg, var(--insta-a), var(--insta-b), var(--insta-c));
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(221,42,123,0.45), 0 1px 0 rgba(255,255,255,0.12) inset;
+  }
+  .btn-insta-primary:hover { box-shadow: 0 6px 32px rgba(221,42,123,0.6); }
+
+  .btn-ghost {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-mid);
+    font-size: 14px; font-weight: 600;
+    backdrop-filter: blur(8px);
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.15); color: var(--text); }
+
+  .btn-danger {
+    background: rgba(252,129,129,0.08);
+    border: 1px solid rgba(252,129,129,0.2);
+    color: var(--danger);
+    font-size: 14px; font-weight: 600;
+    backdrop-filter: blur(8px);
+  }
+
+  /* ── Steps ── */
+  #step-rating {
+    display: none; width: 100%;
+    flex-direction: column; align-items: center;
+    padding: 0 0 20px;
+    gap: 0;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  /* ── Review copy section (Google only) ── */
+  #step-copy {
+    display: none; width: calc(100% - 32px);
+    animation: fadeUp 0.4s ease both;
+  }
+
+  .review-box {
+    background: var(--surface-2);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    font-size: 15px; line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .review-box .review-line { display: block; }
+  .review-box .review-line + .review-line { margin-top: 6px; }
+
+  .copy-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(72,187,120,0.12);
+    border: 1px solid rgba(72,187,120,0.3);
+    border-radius: 10px; padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 14px; color: var(--success); font-weight: 600;
+  }
+
+  .btn-success {
+    background: linear-gradient(135deg, #38a169, #48bb78);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(72,187,120,0.4);
+  }
+
+  /* ── Spinner / Overlay ── */
+  .spinner-wrap {
+    display: none; flex-direction: column; align-items: center;
+    gap: 12px; padding: 24px;
+  }
+  .spinner {
+    width: 36px; height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  .spinner-text { font-size: 13px; color: var(--text-dim); }
+
+  /* ── Toast ── */
+  .toast {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: rgba(30,40,60,0.95); border: 1px solid var(--border-glow);
+    border-radius: 50px; padding: 12px 22px;
+    font-size: 14px; font-weight: 500; color: var(--text);
+    white-space: nowrap;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    z-index: 1000; opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── Tick animation ── */
+  .tick-anim {
+    display: none; flex-direction: column; align-items: center; gap: 8px;
+    padding: 12px 0 0;
+  }
+  .tick-circle {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, #38a169, #68d391);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 0 30px rgba(72,187,120,0.5);
+    animation: tickPop 0.4s cubic-bezier(.34,1.56,.64,1) both;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    width: calc(100% - 32px);
+    height: 1px; background: var(--border);
+    margin: 6px 0 14px;
+  }
+
+  /* ── Overlay ── */
+  .overlay {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    background: rgba(8,12,20,0.7); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center;
+    flex-direction: column; gap: 14px;
+  }
+  .overlay.show { display: flex; }
+  .overlay .spinner { width: 48px; height: 48px; border-width: 4px; }
+  .overlay-text { font-size: 15px; color: var(--text-mid); }
+
+  /* ── Disabled ── */
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; }
+
+  /* ── Done state ── */
+  .done-state {
+    text-align: center; padding: 32px 16px;
+    animation: fadeUp 0.4s ease both;
+  }
+  .done-state .done-icon { font-size: 52px; margin-bottom: 12px; }
+  .done-state h3 { font-family:'Syne',sans-serif; font-size:20px; font-weight:800; margin-bottom:6px; }
+  .done-state p { font-size:14px; color:var(--text-dim); }
+
+  .section-gap { height: 8px; }
+
+  /* ── Keyframes ── */
+  @keyframes fadeDown {
+    from { opacity:0; transform: translateY(-20px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(24px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+  @keyframes starPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.35); }
+    100% { transform: scale(1); }
+  }
+  @keyframes rippleFade {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes tickPop {
+    0% { transform: scale(0); opacity:0; }
+    100% { transform: scale(1); opacity:1; }
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+
+<div class="overlay" id="overlay">
+  <div class="spinner"></div>
+  <div class="overlay-text" id="overlay-text">Updating...</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-wrap" id="logoIcon">🏋️</div>
+    <div class="gym-name" id="gymNameDisplay">Gym Name</div>
+    <div class="greeting" id="greetingText">Hello, Member!</div>
+    <!-- Shown only for Instagram flow -->
+    <div class="insta-badge" id="instaBadge">
+      <div class="insta-badge-icon">IG</div>
+      <span id="instaHandle">@handle</span>
+    </div>
+  </div>
+
+  <!-- MAIN BUTTONS (Step 0) — text/class injected by JS based on type -->
+  <div class="main-btns" id="step-main">
+    <button class="btn btn-primary" id="btnPrimary">⭐ PLEASE PROVIDE REVIEW</button>
+    <button class="btn btn-ghost"   id="btnAlready">✅ I HAVE ALREADY GIVEN</button>
+    <button class="btn btn-danger"  id="btnNotInterested">✕ NOT INTERESTED</button>
+  </div>
+
+  <div class="section-gap"></div>
+
+  <!-- STEP: RATING (Google only) -->
+  <div id="step-rating">
+
+    <div class="card" id="card-gym-rating">
+      <div class="card-label">Step 1 of 2</div>
+      <div class="card-question" id="q1">How do you feel about the gym?</div>
+      <div class="stars" id="stars-gym">
+        <span class="star" data-val="1" onclick="setRating('gym',1)">⭐</span>
+        <span class="star" data-val="2" onclick="setRating('gym',2)">⭐</span>
+        <span class="star" data-val="3" onclick="setRating('gym',3)">⭐</span>
+        <span class="star" data-val="4" onclick="setRating('gym',4)">⭐</span>
+        <span class="star" data-val="5" onclick="setRating('gym',5)">⭐</span>
+      </div>
+      <div class="star-hint" id="hint-gym">Tap to rate</div>
+    </div>
+
+    <div class="card" id="card-trainer-rating" style="opacity:0.4;pointer-events:none;transition:opacity 0.3s">
+      <div class="card-label">Step 2 of 2</div>
+      <div class="card-question" id="q2">Rate your trainer</div>
+      <div class="stars" id="stars-trainer">
+        <span class="star" data-val="1" onclick="setRating('trainer',1)">⭐</span>
+        <span class="star" data-val="2" onclick="setRating('trainer',2)">⭐</span>
+        <span class="star" data-val="3" onclick="setRating('trainer',3)">⭐</span>
+        <span class="star" data-val="4" onclick="setRating('trainer',4)">⭐</span>
+        <span class="star" data-val="5" onclick="setRating('trainer',5)">⭐</span>
+      </div>
+      <div class="star-hint" id="hint-trainer">Tap to rate</div>
+    </div>
+
+  </div>
+
+  <!-- STEP: COPY REVIEW (Google only) -->
+  <div id="step-copy">
+    <div class="card">
+      <div class="card-label">Your Review is Ready ✨</div>
+      <div class="review-box" id="review-box">
+        <span class="review-line" id="review-line1"></span>
+        <span class="review-line" id="review-line2"></span>
+      </div>
+      <div class="copy-badge">
+        <span>📋</span>
+        <span>Review copied! Just paste in Google</span>
+      </div>
+      <div class="tick-anim" id="tick-anim" style="display:flex">
+        <div class="tick-circle">✓</div>
+      </div>
+    </div>
+    <button class="btn btn-success" style="width:calc(100%);margin:0 0 12px" onclick="openGoogleReview()">
+      🌟 OPEN GOOGLE REVIEW &amp; PASTE
+    </button>
+  </div>
+
+  <!-- DONE STATE -->
+  <div id="step-done" style="display:none;width:100%">
+    <div class="done-state">
+      <div class="done-icon">🎉</div>
+      <h3>Thank You!</h3>
+      <p id="doneMsg">Your feedback means the world to us.</p>
+    </div>
+  </div>
+
+</div><!-- .container -->
+
+<script>
+// ════════════════════════════════════════════════════════════════
+//  CONFIG — Social type drives all UI/API branching
+// ════════════════════════════════════════════════════════════════
+
+/**
+ * socialConfig[type] defines:
+ *   - btnPrimary   : label for the main CTA button
+ *   - btnAlready   : label for "already done" button
+ *   - logoIcon     : emoji for header
+ *   - apiParam     : query param key used in status API
+ *   - onPrimary    : function to call when primary button clicked
+ *   - bodyClass    : CSS class to add to <body> for theming
+ */
+const socialConfig = {
+  google: {
+    btnPrimary : '⭐ PLEASE PROVIDE REVIEW',
+    btnAlready : '✅ I HAVE ALREADY GIVEN GOOGLE REVIEW',
+    logoIcon   : '🏋️',
+    apiParam   : 'googleReview',
+    onPrimary  : startGoogleReview,
+    bodyClass  : '',
+  },
+  insta: {
+    btnPrimary : '📸 PLEASE FOLLOW ON INSTAGRAM',
+    btnAlready : '✅ I HAVE ALREADY FOLLOWED',
+    logoIcon   : '🏋️',
+    apiParam   : 'instagramFollow',
+    onPrimary  : startInstaFollow,
+    bodyClass  : 'insta-theme',
+  },
+};
+
+// ════════════════════════════════════════════════════════════════
+//  PARSE TOKEN & URL PARAMS
+// ════════════════════════════════════════════════════════════════
+
+const urlParams = new URLSearchParams(window.location.search);
+
+let gymId = '0', memberId = '0';
+let socialType = 'google'; // default
+
+try {
+  const token = urlParams.get('token') || '';
+  if (token) {
+    const decoded = atob(token);
+    const tp = new URLSearchParams(decoded);
+
+    gymId    = tp.get('gymId')    || '0';
+    memberId = tp.get('memberId') || '0';
+    socialType = tp.get('type')   || 'google';
+
+    // Google-specific fields
+    if (socialType === 'google') {
+      window._googlePlaceId  = tp.get('googlePlaceId') || '';
+      window._trainerNameTok = tp.get('trainerName')   || '';
+      window._gymNameTok     = tp.get('gymName')        || '';
+    }
+
+    // Instagram-specific fields
+    if (socialType === 'insta') {
+      window._instaUsername = tp.get('instaUsername') || '';
+    }
+  }
+} catch(e) {
+  console.warn('Invalid or missing token');
+}
+
+// Fallback to plain query params for development/testing
+const gymName     = window._gymNameTok     || urlParams.get('gymName')     || 'FitZone Gym';
+const trainerName = window._trainerNameTok || urlParams.get('trainerName') || 'Rahul';
+const memberName  = urlParams.get('memberName') || 'Member';
+const googleReviewUrl = window._googlePlaceId
+  ? `https://search.google.com/local/writereview?placeid=${window._googlePlaceId}`
+  : (urlParams.get('googleReviewUrl') || 'https://search.google.com/local/writereview');
+const instaUsername = window._instaUsername || urlParams.get('instaUsername') || 'gymgurus';
+const instaUrl = `https://instagram.com/${instaUsername}`;
+
+// Validate type
+if (!socialConfig[socialType]) socialType = 'google';
+
+// ════════════════════════════════════════════════════════════════
+//  INITIALISE UI BASED ON SOCIAL TYPE
+// ════════════════════════════════════════════════════════════════
+
+const cfg = socialConfig[socialType];
+
+(function initUI() {
+  // Apply theme class to body
+  if (cfg.bodyClass) document.body.classList.add(cfg.bodyClass);
+
+  // Header
+  document.getElementById('logoIcon').textContent       = cfg.logoIcon;
+  document.getElementById('gymNameDisplay').textContent = gymName;
+  document.getElementById('greetingText').textContent   = `Hello, ${memberName}! 👋`;
+
+  // Instagram badge
+  if (socialType === 'insta') {
+    document.getElementById('instaHandle').textContent = `@${instaUsername}`;
+  }
+
+  // Main buttons — text
+  document.getElementById('btnPrimary').textContent      = cfg.btnPrimary;
+  document.getElementById('btnAlready').textContent      = cfg.btnAlready;
+
+  // Main button click handlers
+  document.getElementById('btnPrimary').onclick      = () => { ripple(event); cfg.onPrimary(); };
+  document.getElementById('btnAlready').onclick      = () => statusUpdate(1, document.getElementById('btnAlready'));
+  document.getElementById('btnNotInterested').onclick = () => statusUpdate(2, document.getElementById('btnNotInterested'));
+
+  // Apply Instagram style to primary button
+  if (socialType === 'insta') {
+    document.getElementById('btnPrimary').classList.replace('btn-primary', 'btn-insta-primary');
+  }
+
+  // Google rating questions
+  if (socialType === 'google') {
+    document.getElementById('q1').textContent = `How do you feel about ${gymName}, ${memberName}?`;
+    document.getElementById('q2').textContent = `${memberName}, rate trainer "${trainerName}" sir`;
+  }
+})();
+
+// ════════════════════════════════════════════════════════════════
+//  GOOGLE REVIEW FLOW
+// ════════════════════════════════════════════════════════════════
+
+let gymRating = 0, trainerRating = 0;
+let googleTab = null;
+const starHints = ['', 'Terrible 😞', 'Bad 😕', 'Okay 😐', 'Good 😊', 'Excellent 🔥'];
+
+/** Opens Google review tab in background, shows rating UI */
+function startGoogleReview() {
+  googleTab = window.open(googleReviewUrl, '_blank');
+  window.focus();
+  if (googleTab) googleTab.blur();
+
+  document.getElementById('step-main').style.display = 'none';
+  const sr = document.getElementById('step-rating');
+  sr.style.display = 'flex';
+  setTimeout(() => sr.scrollIntoView({ behavior: 'smooth' }), 100);
+}
+
+function setRating(type, val) {
+  if (type === 'gym') {
+    gymRating = val;
+    updateStars('stars-gym', val);
+    document.getElementById('hint-gym').textContent = starHints[val];
+    const tc = document.getElementById('card-trainer-rating');
+    tc.style.opacity = '1'; tc.style.pointerEvents = 'auto';
+    setTimeout(() => tc.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+  } else {
+    trainerRating = val;
+    updateStars('stars-trainer', val);
+    document.getElementById('hint-trainer').textContent = starHints[val];
+    if (gymRating > 0) setTimeout(showCopyStep, 600);
+  }
+}
+
+function updateStars(containerId, val) {
+  document.querySelectorAll(`#${containerId} .star`).forEach((s, i) => {
+    s.classList.toggle('active', i < val);
+    if (i === val - 1) {
+      s.classList.add('pop');
+      setTimeout(() => s.classList.remove('pop'), 350);
+    }
+  });
+}
+
+async function showCopyStep() {
+  const [line1, line2] = getReview(gymRating, trainerRating);
+  document.getElementById('review-line1').textContent = line1;
+  document.getElementById('review-line2').textContent = line2;
+
+  document.getElementById('step-rating').style.display = 'none';
+  document.getElementById('step-copy').style.display   = 'block';
+
+  // Copy to clipboard
+  try {
+    await navigator.clipboard.writeText(`${line1}\n${line2}`);
+  } catch(e) {
+    const ta = document.createElement('textarea');
+    ta.value = `${line1}\n${line2}`;
+    ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+  }
+  showToast('📋 Review copied to clipboard!');
+  await callStatusApi(1);
+}
+
+function openGoogleReview() {
+  ripple(event);
+  if (googleTab && !googleTab.closed) googleTab.focus();
+  else window.open(googleReviewUrl, '_blank');
+  setTimeout(showDone, 1200);
+}
+
+// ════════════════════════════════════════════════════════════════
+//  INSTAGRAM FOLLOW FLOW
+// ════════════════════════════════════════════════════════════════
+
+/**
+ * Opens Instagram profile, immediately updates API, shows done.
+ * No rating flow — no review copy.
+ */
+async function startInstaFollow() {
+  window.open(instaUrl, '_blank');
+  await callStatusApi(1);
+  showDone();
+}
+
+// ════════════════════════════════════════════════════════════════
+//  SHARED: STATUS UPDATE & API
+// ════════════════════════════════════════════════════════════════
+
+async function statusUpdate(status, el) {
+  if (el) ripple({ currentTarget: el, clientX: 0, clientY: 0 });
+  document.querySelectorAll('.btn').forEach(b => b.disabled = true);
+  await callStatusApi(status);
+  showDone();
+}
+
+/**
+ * PUT /member/update-social-status
+ * Uses cfg.apiParam dynamically:
+ *   Google:    &googleReview=1|2
+ *   Instagram: &instagramFollow=1|2
+ */
+async function callStatusApi(status) {
+  const overlay     = document.getElementById('overlay');
+  const overlayText = document.getElementById('overlay-text');
+  overlayText.textContent = status === 1 ? 'Saving your response...' : 'Updating status...';
+  overlay.classList.add('show');
+
+  try {
+    const apiParam = socialConfig[socialType].apiParam;
+    const url = `https://www.api.gymgurus.in/member/update-social-status`
+              + `?memberId=${memberId}&gymId=${gymId}&${apiParam}=${status}`;
+
+    const res = await fetch(url, { method: 'PUT' });
+    if (!res.ok) {
+      const txt = await res.text();
+      throw new Error(`${res.status}: ${txt}`);
+    }
+
+    if (status === 1) showToast(socialType === 'insta' ? '✅ Thanks for following!' : '✅ Thank you for your review!');
+    if (status === 2) showToast('Noted! Maybe next time 😊');
+
+  } catch(e) {
+    showToast('⚠️ ' + e.message);
+    document.querySelectorAll('.btn').forEach(b => b.disabled = false);
+  }
+
+  overlay.classList.remove('show');
+}
+
+// ════════════════════════════════════════════════════════════════
+//  DONE STATE
+// ════════════════════════════════════════════════════════════════
+
+function showDone() {
+  ['step-main','step-rating','step-copy'].forEach(id => {
+    document.getElementById(id).style.display = 'none';
+  });
+  document.getElementById('step-done').style.display = 'block';
+  if (socialType === 'insta') {
+    document.getElementById('doneMsg').textContent = `Thanks for following @${instaUsername}! 💪`;
+  }
+}
+
+// ════════════════════════════════════════════════════════════════
+//  REVIEW TEMPLATES  (Google only)
+//  Both {g} = gymName and {t} = trainerName are injected
+// ════════════════════════════════════════════════════════════════
+
+const reviewPool = {
+  5: [
+    ["Best gym I have ever been to — {g} is very clean and well maintained.", "Trainer {t} sir is amazing, very dedicated and motivating."],
+    ["Love the atmosphere at {g}, great equipment and positive energy.", "Trainer {t} sir gives personal attention and real results."],
+    ["Excellent facilities at {g} and very hygienic environment.", "{t} sir is the best trainer, always encouraging and helpful."],
+    ["{g} has changed my life, highly recommended to everyone.", "Trainer {t} sir guides perfectly and pushes you to your limits."],
+    ["Top class gym — {g} has all modern equipment and great vibes.", "{t} sir is extremely knowledgeable and supportive as a trainer."],
+    ["Very happy with {g}, clean washrooms and great machines.", "Trainer {t} sir is always on time and gives full attention."],
+    ["{g} is the best place for fitness, welcoming staff and great ambience.", "{t} sir is a fantastic trainer who truly cares about progress."],
+    ["Five star experience at {g}, always clean and well organized.", "Trainer {t} sir customizes workout plans perfectly for everyone."],
+    ["Superb gym — {g} has amazing energy and a motivated community.", "{t} sir has great knowledge and pushes you in the right way."],
+    ["Outstanding facilities at {g} with no waiting time ever.", "Trainer {t} sir is very disciplined and result oriented."],
+    ["{g} is the gym everyone should join, truly world class.", "{t} sir teaches perfect form and always keeps you motivated."],
+    ["Very professional setup at {g}, great equipment and helpful staff.", "Trainer {t} sir is patient and explains exercises very clearly."],
+    ["{g} is very spacious and always clean, loving every session.", "{t} sir keeps the energy high and makes workouts enjoyable."],
+    ["Best decision I made was joining {g}, totally worth it.", "Trainer {t} sir follows up regularly and tracks progress well."],
+    ["{g} offers a premium feel at an affordable price, absolutely fantastic.", "{t} sir is a gem of a trainer, very hardworking and caring."],
+    ["Every visit to {g} feels refreshing, great machines and good crowd.", "Trainer {t} sir corrects posture and prevents injuries well."],
+    ["My transformation journey started at {g}, love this place.", "{t} sir is supportive, skilled and truly passionate about fitness."],
+    ["{g} has everything you need and more, great experience always.", "Trainer {t} sir gives 100 percent in every session, truly great."],
+    ["Very impressed with {g}'s setup and cleanliness always.", "{t} sir motivates you even on tough days, very reliable trainer."],
+    ["Fantastic environment at {g}, helpful staff and great trainers.", "Trainer {t} sir makes you feel confident and keeps you going."],
+    ["{g} is the best gym in the area without any doubt, highly recommended.", "{t} sir has transformed many members and will do the same for you."],
+    ["{g} has very good equipment with modern machines and proper ventilation.", "Trainer {t} sir is always available and gives correct guidance."],
+    ["Joined {g} recently but already seeing results, great place.", "{t} sir pushes you just right and explains nutrition tips too."],
+    ["The energy at {g} is unmatched, truly feels like a second home.", "Trainer {t} sir is friendly, professional and very motivating."],
+    ["{g} is clean, well-equipped and affordable, what more could you want.", "{t} sir is an exceptional trainer who leads by example always."],
+    ["The crowd at {g} is very supportive and atmosphere is always positive.", "Trainer {t} sir shows personal interest in every member's progress."],
+    ["{g} regularly updates equipment and maintains a hygienic environment.", "{t} sir plans workouts smartly and explains every exercise well."],
+    ["Very punctual staff at {g}, always a smooth experience.", "Trainer {t} sir has a great personality and keeps gym fun."],
+    ["{g} has superb facilities and very reasonable rates.", "{t} sir is always present and guides with complete knowledge."],
+    ["{g} truly deserves five stars for everything they offer.", "Trainer {t} sir is experienced, friendly and genuinely helpful."],
+  ],
+  4: [
+    ["Good gym overall — {g} has decent equipment and a clean environment.", "Trainer {t} sir is very helpful and gives proper guidance."],
+    ["Nice gym — {g} has good facilities and supportive staff.", "{t} sir is knowledgeable and always motivates during workouts."],
+    ["Happy with {g}, good equipment and friendly atmosphere.", "Trainer {t} sir attends to all members and gives good tips."],
+    ["Pretty good experience at {g}, clean and well maintained.", "{t} sir is a good trainer who corrects form and guides well."],
+    ["{g} maintains regular equipment maintenance and hygiene.", "Trainer {t} sir is approachable and explains things clearly."],
+    ["Enjoying my workout sessions at {g}, good environment overall.", "{t} sir is sincere and motivating in every training session."],
+    ["{g} offers good value for money with all the basic equipment.", "Trainer {t} sir is punctual and gives useful fitness advice."],
+    ["Satisfied with {g}, positive crowd and clean spaces.", "{t} sir is always ready to help and gives real workout tips."],
+    ["Good experience so far at {g}, equipment is in good working condition.", "Trainer {t} sir is dedicated and keeps track of your progress."],
+    ["Nice environment at {g} with good machines and helpful staff.", "{t} sir is patient and teaches exercises properly to everyone."],
+    ["Overall good gym — {g} has decent facilities and nice people.", "Trainer {t} sir maintains discipline and keeps energy high."],
+    ["Good gym to workout in — {g} is clean and well organized.", "{t} sir gives personal attention when needed, very reliable."],
+    ["Happy with {g}'s facilities, would recommend to friends.", "Trainer {t} sir is a good mentor with practical fitness knowledge."],
+    ["{g} is good for daily workouts with all necessary equipment.", "{t} sir motivates well and keeps workouts interesting always."],
+    ["Positive experience at {g}, staff is helpful and friendly too.", "Trainer {t} sir is responsible and follows a proper workout plan."],
+  ],
+  3: [
+    ["{g} is an average gym with basic equipment, could use more machines.", "Trainer {t} sir is okay, gives general guidance when available."],
+    ["Decent gym — {g} is usable for regular workouts, some improvements needed.", "{t} sir is helpful sometimes, could give more personal attention."],
+    ["{g} is okay, basic facilities and reasonable pricing.", "Trainer {t} sir is available most of the time and guides okay."],
+    ["Not bad overall — {g}'s equipment is functional and clean enough.", "{t} sir explains exercises but could be more consistent daily."],
+    ["Average experience at {g}, meets basic needs for daily workout.", "Trainer {t} sir is decent, would appreciate more interaction."],
+    ["Okay gym for beginners — {g} has the necessary basic equipment.", "{t} sir guides when asked, could be more proactive overall."],
+    ["{g} is decent, nothing extra but does the job for daily use.", "Trainer {t} sir is okay and assists when members need help."],
+    ["Normal gym experience at {g}, could improve on cleanliness a bit.", "{t} sir is average as a trainer, needs to be more attentive."],
+    ["{g} is alright, standard equipment and basic environment.", "Trainer {t} sir shows up regularly and helps with basic queries."],
+    ["Moderate experience overall at {g}, scope for improvement.", "{t} sir is friendly but should give more structured plans."],
+  ],
+  2: [
+    ["{g} has limited equipment and needs more maintenance overall.", "Trainer {t} sir could give more attention to individual members."],
+    ["{g} is a basic gym with some issues, hoping things improve soon.", "{t} sir is sometimes unavailable, needs more regular presence."],
+    ["{g}'s facilities are below average and need improvement soon.", "Trainer {t} sir is polite but needs to be more consistent."],
+    ["Not fully satisfied with {g}, needs upgrades and better upkeep.", "{t} sir is learning and could improve with more experience."],
+    ["{g} is average at best, some equipment needs replacement.", "Trainer {t} sir gives basic guidance but lacks detailed plans."],
+  ],
+  1: [
+    ["{g} has many issues and needs serious improvement urgently.", "Trainer {t} sir should focus more on member fitness needs."],
+    ["Not happy with current conditions at {g}, expects better service.", "{t} sir needs to spend more time with each member properly."],
+    ["Gym experience at {g} was disappointing, many things to improve.", "Trainer {t} sir should be more consistent and available."],
+    ["{g} has a very basic setup with several problems in daily operation.", "{t} sir guidance is minimal and needs more dedication shown."],
+    ["{g} needs urgent attention on maintenance and cleanliness.", "Trainer {t} sir should be more proactive with member support."],
+  ],
+};
+
+const lastUsed = {};
+
+function getReview(gymR, trainerR) {
+  const avgR  = Math.max(1, Math.min(5, Math.round((gymR + trainerR) / 2)));
+  const pool  = reviewPool[avgR];
+  const key   = `r${avgR}`;
+  let idx;
+  do { idx = Math.floor(Math.random() * pool.length); }
+  while (idx === lastUsed[key] && pool.length > 1);
+  lastUsed[key] = idx;
+  const [l1, l2] = pool[idx];
+  // Inject both gymName and trainerName
+  return [
+    l1.replace(/\{g\}/g, gymName).replace(/\{t\}/g, trainerName),
+    l2.replace(/\{g\}/g, gymName).replace(/\{t\}/g, trainerName),
+  ];
+}
+
+// ════════════════════════════════════════════════════════════════
+//  UTILITIES
+// ════════════════════════════════════════════════════════════════
+
+function showToast(msg, dur = 3000) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), dur);
+}
+
+function ripple(e) {
+  if (!e || !e.currentTarget) return;
+  const btn  = e.currentTarget;
+  const rect = btn.getBoundingClientRect();
+  const x = ((e.clientX || rect.left + rect.width  / 2) - rect.left) / rect.width  * 100;
+  const y = ((e.clientY || rect.top  + rect.height / 2) - rect.top)  / rect.height * 100;
+  btn.style.setProperty('--rx', x + '%');
+  btn.style.setProperty('--ry', y + '%');
+  btn.classList.remove('ripple');
+  void btn.offsetWidth;
+  btn.classList.add('ripple');
+}
+
+// Attach ripple to all buttons
+document.querySelectorAll('.btn').forEach(b => {
+  b.addEventListener('click', e => ripple({ currentTarget: b, clientX: e.clientX, clientY: e.clientY }));
+});
+</script>
+</body>
+</html>
