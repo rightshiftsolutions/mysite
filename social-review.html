@@ -29,6 +29,11 @@
     --insta-b: #dd2a7b;
     --insta-c: #8134af;
     --insta-d: #515bd4;
+
+    /* ── WhatsApp theme overrides (applied when type=whatsapp) ── */
+    --wa-a: #25D366;
+    --wa-b: #128C7E;
+    --wa-c: #075E54;
   }
 
   /* ── Instagram theme class applied to <body> ── */
@@ -41,6 +46,18 @@
     background:
       radial-gradient(ellipse 80% 60% at 50% -10%, rgba(221,42,123,0.14) 0%, transparent 70%),
       radial-gradient(ellipse 60% 40% at 80% 100%, rgba(245,133,41,0.1) 0%, transparent 60%);
+  }
+
+  /* ── WhatsApp theme class applied to <body> ── */
+  body.wa-theme {
+    --accent: #25D366;
+    --accent-2: #128C7E;
+    --border-glow: rgba(37,211,102,0.3);
+  }
+  body.wa-theme::before {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37,211,102,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(18,140,126,0.1) 0%, transparent 60%);
   }
 
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -229,6 +246,14 @@
   }
   .btn-insta-primary:hover { box-shadow: 0 6px 32px rgba(221,42,123,0.6); }
 
+  /* WhatsApp primary button */
+  .btn-wa-primary {
+    background: linear-gradient(135deg, var(--wa-a), var(--wa-b));
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.4), 0 1px 0 rgba(255,255,255,0.12) inset;
+  }
+  .btn-wa-primary:hover { box-shadow: 0 6px 32px rgba(37,211,102,0.55); }
+
   .btn-ghost {
     background: var(--surface-2);
     border: 1px solid var(--border);
@@ -413,6 +438,11 @@
       <div class="insta-badge-icon">IG</div>
       <span id="instaHandle">@handle</span>
     </div>
+    <!-- Shown only for WhatsApp flow -->
+    <div class="insta-badge" id="waBadge" style="display:none;background:linear-gradient(135deg,rgba(37,211,102,0.12),rgba(18,140,126,0.12));border-color:rgba(37,211,102,0.25);">
+      <div class="insta-badge-icon" style="background:linear-gradient(135deg,var(--wa-a),var(--wa-b));">WA</div>
+      <span id="waGroupName">Group</span>
+    </div>
   </div>
 
   <!-- MAIN BUTTONS (Step 0) — text/class injected by JS based on type -->
@@ -514,9 +544,18 @@ const socialConfig = {
     btnPrimary : '📸 PLEASE FOLLOW ON INSTAGRAM',
     btnAlready : '✅ I HAVE ALREADY FOLLOWED',
     logoIcon   : '🏋️',
-    apiParam   : 'insta',
+    apiParam   : 'instagramFollow',
     onPrimary  : startInstaFollow,
     bodyClass  : 'insta-theme',
+  },
+  // ── WhatsApp flow ──
+  whatsapp: {
+    btnPrimary : '💬 PLEASE JOIN WHATSAPP GROUP',
+    btnAlready : '✅ I HAVE ALREADY JOINED',
+    logoIcon   : '🏋️',
+    apiParam   : 'whatsapp',
+    onPrimary  : startWhatsappJoin,
+    bodyClass  : 'wa-theme',
   },
 };
 
@@ -550,6 +589,12 @@ try {
     if (socialType === 'insta') {
       window._instaUsername = tp.get('instaUsername') || '';
     }
+
+    // WhatsApp-specific fields
+    if (socialType === 'whatsapp') {
+      window._waGroupUrl  = tp.get('whatsappGroupUrl') || '';
+      window._waGroupName = tp.get('whatsappGroupName') || 'our WhatsApp Group';
+    }
   }
 } catch(e) {
   console.warn('Invalid or missing token');
@@ -564,6 +609,8 @@ const googleReviewUrl = window._googlePlaceId
   : (urlParams.get('googleReviewUrl') || 'https://search.google.com/local/writereview');
 const instaUsername = window._instaUsername || urlParams.get('instaUsername') || 'gymgurus';
 const instaUrl = `https://instagram.com/${instaUsername}`;
+const waGroupUrl  = window._waGroupUrl  || urlParams.get('whatsappGroupUrl')  || '';
+const waGroupName = window._waGroupName || urlParams.get('whatsappGroupName') || 'our WhatsApp Group';
 
 // Validate type
 if (!socialConfig[socialType]) socialType = 'google';
@@ -588,6 +635,12 @@ const cfg = socialConfig[socialType];
     document.getElementById('instaHandle').textContent = `@${instaUsername}`;
   }
 
+  // WhatsApp badge
+  if (socialType === 'whatsapp') {
+    document.getElementById('waBadge').style.display = 'flex';
+    document.getElementById('waGroupName').textContent = waGroupName;
+  }
+
   // Main buttons — text
   document.getElementById('btnPrimary').textContent      = cfg.btnPrimary;
   document.getElementById('btnAlready').textContent      = cfg.btnAlready;
@@ -600,6 +653,11 @@ const cfg = socialConfig[socialType];
   // Apply Instagram style to primary button
   if (socialType === 'insta') {
     document.getElementById('btnPrimary').classList.replace('btn-primary', 'btn-insta-primary');
+  }
+
+  // Apply WhatsApp style to primary button
+  if (socialType === 'whatsapp') {
+    document.getElementById('btnPrimary').classList.replace('btn-primary', 'btn-wa-primary');
   }
 
   // Google rating questions
@@ -619,19 +677,14 @@ const starHints = ['', 'Terrible 😞', 'Bad 😕', 'Okay 😐', 'Good 😊', 'E
 
 /** Opens Google review tab in background, shows rating UI */
 function startGoogleReview() {
-
-  // REMOVE AUTO OPEN OF GOOGLE REVIEW PAGE
+  googleTab = window.open(googleReviewUrl, '_blank');
+  window.focus();
+  if (googleTab) googleTab.blur();
 
   document.getElementById('step-main').style.display = 'none';
-
   const sr = document.getElementById('step-rating');
   sr.style.display = 'flex';
-
-  setTimeout(() => {
-    sr.scrollIntoView({
-      behavior: 'smooth'
-    });
-  }, 100);
+  setTimeout(() => sr.scrollIntoView({ behavior: 'smooth' }), 100);
 }
 
 function setRating(type, val) {
@@ -704,6 +757,20 @@ async function startInstaFollow() {
 }
 
 // ════════════════════════════════════════════════════════════════
+//  WHATSAPP JOIN FLOW
+// ════════════════════════════════════════════════════════════════
+
+/**
+ * Opens WhatsApp group invite link, updates API, shows done.
+ * No rating flow — no review copy.
+ */
+async function startWhatsappJoin() {
+  if (waGroupUrl) window.open(waGroupUrl, '_blank');
+  await callStatusApi(1);
+  showDone();
+}
+
+// ════════════════════════════════════════════════════════════════
 //  SHARED: STATUS UPDATE & API
 // ════════════════════════════════════════════════════════════════
 
@@ -737,7 +804,11 @@ async function callStatusApi(status) {
       throw new Error(`${res.status}: ${txt}`);
     }
 
-    if (status === 1) showToast(socialType === 'insta' ? '✅ Thanks for following!' : '✅ Thank you for your review!');
+    if (status === 1) showToast(
+      socialType === 'insta'     ? '✅ Thanks for following!' :
+      socialType === 'whatsapp'  ? '✅ Thanks for joining!' :
+                                   '✅ Thank you for your review!'
+    );
     if (status === 2) showToast('Noted! Maybe next time 😊');
 
   } catch(e) {
@@ -759,6 +830,9 @@ function showDone() {
   document.getElementById('step-done').style.display = 'block';
   if (socialType === 'insta') {
     document.getElementById('doneMsg').textContent = `Thanks for following @${instaUsername}! 💪`;
+  }
+  if (socialType === 'whatsapp') {
+    document.getElementById('doneMsg').textContent = `Thanks for joining ${waGroupName}! 💬`;
   }
 }
 
