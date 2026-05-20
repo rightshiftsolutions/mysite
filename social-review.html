@@ -531,6 +531,16 @@
  *   - onPrimary    : function to call when primary button clicked
  *   - bodyClass    : CSS class to add to <body> for theming
  */
+
+  // Prevent reopening after back navigation
+if (sessionStorage.getItem('reviewOpened') === '1') {
+
+  document.getElementById('step-main').style.display = 'none';
+  document.getElementById('step-rating').style.display = 'none';
+  document.getElementById('step-copy').style.display = 'none';
+
+  document.getElementById('step-done').style.display = 'block';
+}
 const socialConfig = {
   google: {
     btnPrimary : '⭐ PLEASE PROVIDE REVIEW',
@@ -742,12 +752,25 @@ async function showCopyStep() {
 }
 
 function openGoogleReview() {
-  ripple(event);
-  if (googleTab && !googleTab.closed) googleTab.focus();
-  else window.open(googleReviewUrl, '_blank');
-  setTimeout(showDone, 1200);
-}
 
+  ripple(event);
+
+  // prevent double click
+  const btn = event.currentTarget;
+  btn.disabled = true;
+
+  // mark review opened
+  sessionStorage.setItem('reviewOpened', '1');
+
+  // open review page
+  window.open(googleReviewUrl, '_blank');
+
+  // instantly hide current flow
+  document.getElementById('step-copy').style.display = 'none';
+
+  // optional thank you screen
+  document.getElementById('step-done').style.display = 'block';
+}
 // ════════════════════════════════════════════════════════════════
 //  INSTAGRAM FOLLOW FLOW
 // ════════════════════════════════════════════════════════════════
