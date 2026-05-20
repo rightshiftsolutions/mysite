@@ -533,7 +533,10 @@
  */
 
   // Prevent reopening after back navigation
-if (sessionStorage.getItem('reviewOpened') === '1') {
+if (
+  socialType === 'google' &&
+  sessionStorage.getItem('reviewOpened') === '1'
+)  {
 
   document.getElementById('step-main').style.display = 'none';
   document.getElementById('step-rating').style.display = 'none';
@@ -554,7 +557,7 @@ const socialConfig = {
     btnPrimary : '📸 PLEASE FOLLOW ON INSTAGRAM',
     btnAlready : '✅ I HAVE ALREADY FOLLOWED',
     logoIcon   : '🏋️',
-    apiParam   : 'instagramFollow',
+    apiParam   : 'insta',
     onPrimary  : startInstaFollow,
     bodyClass  : 'insta-theme',
   },
@@ -760,7 +763,9 @@ function openGoogleReview() {
   btn.disabled = true;
 
   // mark review opened
+if (socialType === 'google') {
   sessionStorage.setItem('reviewOpened', '1');
+}
 
   // open review page
   window.open(googleReviewUrl, '_blank');
