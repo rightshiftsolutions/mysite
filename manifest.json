@@ -2,15 +2,55 @@
     "name": "GymGurus AI",
     "short_name": "GymGurus",
     "id": "/",
-    "start_url": "/",
+    "start_url": "/?source=pwa",
     "scope": "/",
     "display": "standalone",
-    "background_color": "#0F0F1E",
-    "theme_color": "#0F0F1E",
+    "display_override": [
+        "standalone",
+        "fullscreen"
+    ],
+    "background_color": "#000000",
+    "theme_color": "#000000",
     "description": "API-powered gym management, member tracking, digital cards, social campaigns, and AI content tools.",
-    "orientation": "portrait-primary",
-    "categories": ["business", "productivity", "health"],
+    "orientation": "any",
+    "categories": [
+        "business",
+        "productivity",
+        "health",
+        "fitness"
+    ],
     "prefer_related_applications": false,
+    "launch_handler": {
+        "client_mode": "focus-existing"
+    },
+    "shortcuts": [
+        {
+            "name": "Dashboard",
+            "short_name": "Dashboard",
+            "description": "Open gym dashboard",
+            "url": "/dashboard",
+            "icons": [
+                {
+                    "src": "icons/Icon-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Members",
+            "short_name": "Members",
+            "description": "Open member management",
+            "url": "/members",
+            "icons": [
+                {
+                    "src": "icons/Icon-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ],
     "icons": [
         {
             "src": "icons/Icon-192.png",
