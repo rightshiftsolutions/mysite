@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+  <title>Student Signup - LMS Test Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <!-- ── PWA Meta Tags ── -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="LMS Arena">
+  <meta name="application-name" content="LMS Arena">
+  <meta name="theme-color" content="#0d0f1c">
+  <meta name="msapplication-TileColor" content="#0d0f1c">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <!-- PWA Styles -->
+  <link rel="stylesheet" href="/pwa.css">
+</head>
+<body class="auth-bg">
+  <main class="container py-5">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-md-8 col-lg-6">
+        <div class="card card-soft">
+          <div class="card-body p-4 p-lg-5">
+            <h2 class="fw-bold mb-2">Student signup</h2>
+            <p class="text-muted mb-4">Create your account and start playing tests.</p>
+            <div id="authMessage"></div>
+            <form id="signupForm">
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input id="name" type="text" class="form-control form-control-lg" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input id="email" type="email" class="form-control form-control-lg" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Mobile</label>
+                <input id="mobile" type="text" class="form-control form-control-lg">
+              </div>
+             
+<div class="mb-3">
+  <label class="form-label">Batch</label>
+  <select id="batch" class="form-select form-select-lg" required>
+    <option value="" disabled selected>— Select Batch —</option>
+    <option value="2026">2026</option>
+    <option value="2027">2027</option>
+    <option value="2028">2028</option>
+    <option value="2029">2029</option>
+    <option value="2030">2030</option>
+  </select>
+</div>
+<div class="mb-3">
+  <label class="form-label">Branch</label>
+  <input id="branch" type="text" class="form-control form-control-lg" required>
+</div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input id="password" type="password" class="form-control form-control-lg" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg w-100">Create Student Account</button>
+            </form>
+            <div class="text-center mt-4">
+              <span class="text-muted">Already registered?</span>
+              <a href="login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <!-- PWA Script -->
+  <script src="/pwa.js"></script>
+</body>
+</html>
