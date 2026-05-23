@@ -1,0 +1,121 @@
+{
+  "title": "Java OOP Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "Which of the following is a key feature of encapsulation in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Multiple Inheritance"
+        },
+        {
+          "id": "B",
+          "text": "Data Hiding"
+        },
+        {
+          "id": "C",
+          "text": "Abstraction"
+        },
+        {
+          "id": "D",
+          "text": "Polymorphism"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of the 'this' keyword in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new object"
+        },
+        {
+          "id": "B",
+          "text": "To access class variables and methods"
+        },
+        {
+          "id": "C",
+          "text": "To access static variables and methods"
+        },
+        {
+          "id": "D",
+          "text": "To implement inheritance"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "Which of the following is an example of a Java interface?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A class that implements multiple classes"
+        },
+        {
+          "id": "B",
+          "text": "A class that inherits from another class"
+        },
+        {
+          "id": "C",
+          "text": "A collection of abstract methods and variables"
+        },
+        {
+          "id": "D",
+          "text": "A class that extends another class"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "What is the order of initialization in a Java class?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Constructors, then field variables, then methods"
+        },
+        {
+          "id": "B",
+          "text": "Field variables, then constructors, then methods"
+        },
+        {
+          "id": "C",
+          "text": "Methods, then field variables, then constructors"
+        },
+        {
+          "id": "D",
+          "text": "Constructors, then methods, then field variables"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "Which of the following is a type of exception in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Error"
+        },
+        {
+          "id": "B",
+          "text": "RuntimeException"
+        },
+        {
+          "id": "C",
+          "text": "Checked Exception"
+        },
+        {
+          "id": "D",
+          "text": "All of the above"
+        }
+      ],
+      "correctAnswer": "D"
+    }
+  ],
+  "answerKeyString": "1B2B3C4B5D"
+}
