@@ -1,0 +1,144 @@
+{
+  "title": "nodejs Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of the event loop in Node.js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Handling multiple requests simultaneously"
+        },
+        {
+          "id": "B",
+          "text": "Managing memory allocation"
+        },
+        {
+          "id": "C",
+          "text": "Scheduling tasks for execution"
+        },
+        {
+          "id": "D",
+          "text": "Processing blocking I/O operations"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the term for the process of the event loop processing tasks?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Event handling"
+        },
+        {
+          "id": "B",
+          "text": "Task scheduling"
+        },
+        {
+          "id": "C",
+          "text": "Tick"
+        },
+        {
+          "id": "D",
+          "text": "Job queueing"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 3,
+      "question": "What happens when a task is added to the event queue in Node.js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is immediately executed"
+        },
+        {
+          "id": "B",
+          "text": "It is scheduled for execution"
+        },
+        {
+          "id": "C",
+          "text": "It is discarded"
+        },
+        {
+          "id": "D",
+          "text": "It is blocked"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the primary difference between the event loop in Node.js and other programming languages?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is single-threaded"
+        },
+        {
+          "id": "B",
+          "text": "It is multi-threaded"
+        },
+        {
+          "id": "C",
+          "text": "It uses a different processing model"
+        },
+        {
+          "id": "D",
+          "text": "It is not used at all"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "Why is the event loop in Node.js considered a single-threaded loop?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It can handle multiple requests simultaneously"
+        },
+        {
+          "id": "B",
+          "text": "It is designed to handle a single task at a time"
+        },
+        {
+          "id": "C",
+          "text": "It is not designed to handle multiple tasks"
+        },
+        {
+          "id": "D",
+          "text": "It is multi-threaded"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 6,
+      "question": "What is the primary benefit of the event loop in Node.js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Improved performance"
+        },
+        {
+          "id": "B",
+          "text": "Simplified development"
+        },
+        {
+          "id": "C",
+          "text": "Increased scalability"
+        },
+        {
+          "id": "D",
+          "text": "Better security"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1A2C3B4A5B6C"
+}
