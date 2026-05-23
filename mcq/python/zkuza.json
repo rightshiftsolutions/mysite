@@ -1,0 +1,121 @@
+{
+  "title": "python Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of the ZKUZA library in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data Analysis"
+        },
+        {
+          "id": "B",
+          "text": "Machine Learning"
+        },
+        {
+          "id": "C",
+          "text": "Data Visualization"
+        },
+        {
+          "id": "D",
+          "text": "Data Mining"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 2,
+      "question": "Which of the following is a feature of the ZKUZA library?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Supporting only Python 3"
+        },
+        {
+          "id": "B",
+          "text": "Supporting only NumPy"
+        },
+        {
+          "id": "C",
+          "text": "Supporting both NumPy and Pandas"
+        },
+        {
+          "id": "D",
+          "text": "Supporting only Pandas"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 3,
+      "question": "What is the main advantage of using the ZKUZA library?",
+      "options": [
+        {
+          "id": "A",
+          "text": "High computational speed"
+        },
+        {
+          "id": "B",
+          "text": "Easy data import"
+        },
+        {
+          "id": "C",
+          "text": "Efficient memory usage"
+        },
+        {
+          "id": "D",
+          "text": "All of the above"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 4,
+      "question": "Which of the following is a use case for the ZKUZA library?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Web Scraping"
+        },
+        {
+          "id": "B",
+          "text": "Data Visualization"
+        },
+        {
+          "id": "C",
+          "text": "Scientific Computing"
+        },
+        {
+          "id": "D",
+          "text": "Financial Analysis"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "What is the ZKUZA library primarily used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data Analysis"
+        },
+        {
+          "id": "B",
+          "text": "Machine Learning"
+        },
+        {
+          "id": "C",
+          "text": "Scientific Computing"
+        },
+        {
+          "id": "D",
+          "text": "Data Science"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1D2C3D4C5C"
+}
