@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leaderboard – LMS Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="assets/css/styles-additions.css" rel="stylesheet">
+</head>
+<body class="arena-bg">
+
+  <!-- ── NAVBAR ── -->
+  <nav class="game-navbar">
+    <div class="container d-flex align-items-center justify-content-between py-2">
+      <a class="navbar-brand-game" href="#" onclick="goDashboard(); return false;">🎮 Dashboard</a>
+
+      <div class="d-flex align-items-center gap-2">
+        <div class="nav-links d-none d-lg-flex gap-1">
+          <a href="#" onclick="goDashboard(); return false;" class="nav-pill">Dashboard</a>
+          <a href="leaderboard.html" class="nav-pill active">Leaderboard</a>
+        </div>
+        <span class="user-profile-badge d-none d-md-inline" data-current-user></span>
+        <button class="btn-outline-game" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4 py-lg-5">
+
+    <!-- ── HERO ── -->
+    <div class="lb-hero text-center mb-5">
+      <div class="lb-hero-badge">🏆 Cumulative Ranking</div>
+      <h1 class="lb-hero-title">Leaderboard</h1>
+      <p class="lb-hero-sub">Select a course and batch to see rankings.</p>
+    </div>
+
+    <div id="leaderboardMessage"></div>
+
+    <!-- ── FILTERS (Course + Batch) ── -->
+    <div class="glass-card p-4 mb-5">
+      <div class="d-flex flex-column flex-md-row align-items-md-end gap-3">
+
+        <!-- Course Filter -->
+        <div class="flex-grow-1">
+          <label class="arena-label mb-1 d-block" style="font-size:0.85rem;color:var(--text-muted);">
+            📚 Filter by Course
+          </label>
+          <select id="lbCourseFilter" class="form-select spinner-select">
+            <option value="">🌐 Select Course</option>
+          </select>
+        </div>
+
+        <!-- Batch Filter -->
+        <div class="flex-grow-1">
+          <label class="arena-label mb-1 d-block" style="font-size:0.85rem;color:var(--text-muted);">
+            👥 Filter by Batch
+          </label>
+          <select id="lbBatchFilter" class="form-select spinner-select">
+            <option value="">👥 All Batches</option>
+          </select>
+        </div>
+
+        <div id="lbStudentCount" class="arena-text-muted" style="font-size:0.85rem;white-space:nowrap;padding-bottom:6px;"></div>
+      </div>
+    </div>
+
+    <!-- ── TOP THREE PODIUM ── -->
+    <div class="row g-4 justify-content-center mb-5" id="topThreeHolder">
+      <div class="col-12 text-center arena-text-muted">
+        <div class="spinner-glow mx-auto mb-2"></div>
+        Loading top players...
+      </div>
+    </div>
+
+    <!-- ── FULL TABLE ── -->
+    <div class="glass-card custom-white-table overflow-hidden">
+      <div class="lb-table-header">
+        <h5 class="mb-0">📋 All Students</h5>
+      </div>
+      <div class="table-responsive">
+        <table class="table lb-table mb-0">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Student</th>
+              <th>Batch</th>
+              <th>Score</th>
+              <th>Tests</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardTableBody">
+            <tr>
+              <td colspan="6" class="text-center arena-text-muted py-4">
+                <div class="spinner-glow mx-auto mb-2"></div>
+                Loading...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/leaderboard.js"></script>
+</body>
+</html>
