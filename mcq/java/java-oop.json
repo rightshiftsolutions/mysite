@@ -3,119 +3,119 @@
   "questions": [
     {
       "no": 1,
-      "question": "What is the purpose of the 'final' keyword in Java?",
+      "question": "What is the purpose of the 'extends' keyword in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To declare a variable that cannot be modified"
+          "text": "To implement an interface"
         },
         {
           "id": "B",
-          "text": "To declare a method that cannot be overridden"
+          "text": "To inherit the properties and behavior of a parent class"
         },
         {
           "id": "C",
-          "text": "To declare a class that cannot be inherited"
+          "text": "To override a method"
         },
         {
           "id": "D",
-          "text": "To declare a constructor that cannot be called"
+          "text": "To hide a method"
         }
       ],
-      "correctAnswer": "A"
+      "correctAnswer": "B"
     },
     {
       "no": 2,
-      "question": "What is the difference between 'extends' and 'implements' in Java?",
+      "question": "What is encapsulation in Java?",
       "options": [
         {
           "id": "A",
-          "text": "Extends is used for inheritance, implements is used for interfaces"
+          "text": "Hiding the implementation details of an object from the outside world"
         },
         {
           "id": "B",
-          "text": "Extends is used for interfaces, implements is used for inheritance"
+          "text": "Exposing the implementation details of an object to the outside world"
         },
         {
           "id": "C",
-          "text": "Extends is used for abstract classes, implements is used for concrete classes"
+          "text": "Inheriting the properties of a parent class"
         },
         {
           "id": "D",
-          "text": "Extends is used for concrete classes, implements is used for abstract classes"
+          "text": "Overriding a method"
         }
       ],
       "correctAnswer": "A"
     },
     {
       "no": 3,
-      "question": "What is the purpose of the 'this' keyword in Java?",
+      "question": "What is the difference between 'this' and 'super' keywords in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To refer to a local variable"
+          "text": "This refers to the current object, while super refers to the parent object"
         },
         {
           "id": "B",
-          "text": "To refer to an instance variable"
+          "text": "This refers to the parent object, while super refers to the current object"
         },
         {
           "id": "C",
-          "text": "To refer to a static variable"
+          "text": "Both refer to the same object"
         },
         {
           "id": "D",
-          "text": "To refer to a method parameter"
+          "text": "There is no difference"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "A"
     },
     {
       "no": 4,
-      "question": "What is the main difference between 'static' and 'instance' variables in Java?",
+      "question": "What is the purpose of the 'abstract' keyword in Java?",
       "options": [
         {
           "id": "A",
-          "text": "Static variables are shared by all instances, instance variables are not"
+          "text": "To define a class that cannot be instantiated"
         },
         {
           "id": "B",
-          "text": "Static variables are instance variables, instance variables are static"
+          "text": "To define a method that can be overridden"
         },
         {
           "id": "C",
-          "text": "Static variables are thread-safe, instance variables are not"
+          "text": "To define a class that can be instantiated"
         },
         {
           "id": "D",
-          "text": "Static variables are not accessible from outside the class, instance variables are"
+          "text": "To define a method that cannot be overridden"
         }
       ],
       "correctAnswer": "A"
     },
     {
       "no": 5,
-      "question": "What is the purpose of the 'synchronized' keyword in Java?",
+      "question": "What is the purpose of the 'final' keyword in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To ensure thread safety"
+          "text": "To override a method"
         },
         {
           "id": "B",
-          "text": "To ensure data consistency"
+          "text": "To override a variable"
         },
         {
           "id": "C",
-          "text": "To improve performance"
+          "text": "To mark a method that cannot be overridden"
         },
         {
           "id": "D",
-          "text": "To reduce memory usage"
+          "text": "To mark a variable that cannot be changed"
         }
       ],
-      "correctAnswer": "A"
+      "correctAnswer": "C"
     }
   ],
-  "answerKeyString": "1A2A3B4A5A"
+  "answerKeyString": "1B2A3A4A5C"
 }
