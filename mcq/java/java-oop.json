@@ -1,0 +1,121 @@
+{
+  "title": "java Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of the 'final' keyword in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To declare a variable that cannot be modified"
+        },
+        {
+          "id": "B",
+          "text": "To declare a method that cannot be overridden"
+        },
+        {
+          "id": "C",
+          "text": "To declare a class that cannot be inherited"
+        },
+        {
+          "id": "D",
+          "text": "To declare a constructor that cannot be called"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the difference between 'extends' and 'implements' in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Extends is used for inheritance, implements is used for interfaces"
+        },
+        {
+          "id": "B",
+          "text": "Extends is used for interfaces, implements is used for inheritance"
+        },
+        {
+          "id": "C",
+          "text": "Extends is used for abstract classes, implements is used for concrete classes"
+        },
+        {
+          "id": "D",
+          "text": "Extends is used for concrete classes, implements is used for abstract classes"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of the 'this' keyword in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To refer to a local variable"
+        },
+        {
+          "id": "B",
+          "text": "To refer to an instance variable"
+        },
+        {
+          "id": "C",
+          "text": "To refer to a static variable"
+        },
+        {
+          "id": "D",
+          "text": "To refer to a method parameter"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the main difference between 'static' and 'instance' variables in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Static variables are shared by all instances, instance variables are not"
+        },
+        {
+          "id": "B",
+          "text": "Static variables are instance variables, instance variables are static"
+        },
+        {
+          "id": "C",
+          "text": "Static variables are thread-safe, instance variables are not"
+        },
+        {
+          "id": "D",
+          "text": "Static variables are not accessible from outside the class, instance variables are"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the 'synchronized' keyword in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To ensure thread safety"
+        },
+        {
+          "id": "B",
+          "text": "To ensure data consistency"
+        },
+        {
+          "id": "C",
+          "text": "To improve performance"
+        },
+        {
+          "id": "D",
+          "text": "To reduce memory usage"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1A2A3B4A5A"
+}
