@@ -1,121 +1,121 @@
 {
-  "title": "Java OOP Test",
+  "title": "java OOPS Test",
   "questions": [
     {
       "no": 1,
-      "question": "Which of the following is a key feature of encapsulation in Java?",
+      "question": "What is the purpose of the final keyword in a class declaration in Java?",
       "options": [
         {
           "id": "A",
-          "text": "Multiple Inheritance"
+          "text": "To specify that the class cannot be inherited"
         },
         {
           "id": "B",
-          "text": "Data Hiding"
+          "text": "To prevent the class from being instantiated"
         },
         {
           "id": "C",
-          "text": "Abstraction"
+          "text": "To specify that the class is abstract"
         },
         {
           "id": "D",
-          "text": "Polymorphism"
+          "text": "To specify that the class is final"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "A"
     },
     {
       "no": 2,
-      "question": "What is the purpose of the 'this' keyword in Java?",
+      "question": "What is polymorphism in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To create a new object"
+          "text": "The ability of an object to take the shape of another object"
         },
         {
           "id": "B",
-          "text": "To access class variables and methods"
+          "text": "The ability of a method to perform the same operation in different ways"
         },
         {
           "id": "C",
-          "text": "To access static variables and methods"
+          "text": "The ability of a class to inherit properties from another class"
         },
         {
           "id": "D",
-          "text": "To implement inheritance"
+          "text": "The ability of an object to hide its state"
         }
       ],
       "correctAnswer": "B"
     },
     {
       "no": 3,
-      "question": "Which of the following is an example of a Java interface?",
+      "question": "Which of the following is an example of encapsulation in Java?",
       "options": [
         {
           "id": "A",
-          "text": "A class that implements multiple classes"
+          "text": "Using public variables in a class"
         },
         {
           "id": "B",
-          "text": "A class that inherits from another class"
+          "text": "Using a private variable in a class and providing a public method to access it"
         },
         {
           "id": "C",
-          "text": "A collection of abstract methods and variables"
+          "text": "Using multiple inheritance in a class"
         },
         {
           "id": "D",
-          "text": "A class that extends another class"
-        }
-      ],
-      "correctAnswer": "C"
-    },
-    {
-      "no": 4,
-      "question": "What is the order of initialization in a Java class?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Constructors, then field variables, then methods"
-        },
-        {
-          "id": "B",
-          "text": "Field variables, then constructors, then methods"
-        },
-        {
-          "id": "C",
-          "text": "Methods, then field variables, then constructors"
-        },
-        {
-          "id": "D",
-          "text": "Constructors, then methods, then field variables"
+          "text": "Using public methods in a class"
         }
       ],
       "correctAnswer": "B"
     },
     {
-      "no": 5,
-      "question": "Which of the following is a type of exception in Java?",
+      "no": 4,
+      "question": "What is the purpose of the super() keyword in Java?",
       "options": [
         {
           "id": "A",
-          "text": "Error"
+          "text": "To call a constructor of the current class"
         },
         {
           "id": "B",
-          "text": "RuntimeException"
+          "text": "To call a method of the current class"
         },
         {
           "id": "C",
-          "text": "Checked Exception"
+          "text": "To call a constructor of the superclass"
         },
         {
           "id": "D",
-          "text": "All of the above"
+          "text": "To call a method of the superclass"
         }
       ],
-      "correctAnswer": "D"
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "Which of the following is an example of inheritance in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Creating a class that implements an interface"
+        },
+        {
+          "id": "B",
+          "text": "Creating a class that extends another class"
+        },
+        {
+          "id": "C",
+          "text": "Using a single class"
+        },
+        {
+          "id": "D",
+          "text": "Using a private class"
+        }
+      ],
+      "correctAnswer": "B"
     }
   ],
-  "answerKeyString": "1B2B3C4B5D"
+  "answerKeyString": "1A2B3B4C5B"
 }
