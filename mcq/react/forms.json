@@ -1,0 +1,121 @@
+{
+  "title": "React Forms Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of the 'onChange' event handler in React Form components?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To handle form submission"
+        },
+        {
+          "id": "B",
+          "text": "To get the current input value"
+        },
+        {
+          "id": "C",
+          "text": "To validate form data"
+        },
+        {
+          "id": "D",
+          "text": "To prevent default form submission"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the difference between 'controlled' and 'uncontrolled' components in React Forms?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Controlled components have a local state, while uncontrolled components have a DOM state"
+        },
+        {
+          "id": "B",
+          "text": "Controlled components have a DOM state, while uncontrolled components have a local state"
+        },
+        {
+          "id": "C",
+          "text": "Controlled components are faster than uncontrolled components"
+        },
+        {
+          "id": "D",
+          "text": "Uncontrolled components are more secure than controlled components"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "Which of the following is a built-in validation method in React Forms?",
+      "options": [
+        {
+          "id": "A",
+          "text": "validate()"
+        },
+        {
+          "id": "B",
+          "text": "setError()"
+        },
+        {
+          "id": "C",
+          "text": "isEmail()"
+        },
+        {
+          "id": "D",
+          "text": "allOf()"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the 'name' attribute in React Form components?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To identify the form field"
+        },
+        {
+          "id": "B",
+          "text": "To specify the form field type"
+        },
+        {
+          "id": "C",
+          "text": "To set the form field value"
+        },
+        {
+          "id": "D",
+          "text": "To validate the form field"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the difference between 'state' and 'props' in React Forms?",
+      "options": [
+        {
+          "id": "A",
+          "text": "State is used for storing form data, while props are used for passing data from parent to child"
+        },
+        {
+          "id": "B",
+          "text": "State is used for passing data from parent to child, while props are used for storing form data"
+        },
+        {
+          "id": "C",
+          "text": "State is faster than props"
+        },
+        {
+          "id": "D",
+          "text": "Props are more secure than state"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2A3A4A5A"
+}
