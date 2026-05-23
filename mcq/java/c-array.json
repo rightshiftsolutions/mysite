@@ -1,0 +1,121 @@
+{
+  "title": "java Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What will be the output of the following Java code: int arr[] = new int[5]; int sum = 0; for (int i = 0; i < 5; i++) { sum += arr[i]; } System.out.println(sum);",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "ArrayIndexOutOfBoundsException"
+        },
+        {
+          "id": "D",
+          "text": "NullPointerException"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the time complexity of the following Java code snippet: for (int i = 0; i < arr.length; i++) { System.out.println(arr[i]); }",
+      "options": [
+        {
+          "id": "A",
+          "text": "O(1)"
+        },
+        {
+          "id": "B",
+          "text": "O(n)"
+        },
+        {
+          "id": "C",
+          "text": "O(log n)"
+        },
+        {
+          "id": "D",
+          "text": "O(n^2)"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the output of the following Java code: int arr[] = {1, 2, 3, 4, 5}; int sum = 0; for (int i = 0; i < arr.length; i++) { sum += arr[arr.length - i - 1]; } System.out.println(sum);",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "What is the result of the following Java code: int arr[][] = {{1, 2}, {3, 4}}; int sum = arr[0][0] + arr[1][1]; System.out.println(sum);",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "-3"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "What will be the output of the following Java code: int arr[] = {1, 2, 3, 4, 5}; int sum = 0; for (int i = 0; i < arr.length; i++) { if (arr[i] % 2 == 0) { sum += arr[i]; } } System.out.println(sum);",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1A2B3C4C5B"
+}
