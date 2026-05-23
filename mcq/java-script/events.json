@@ -1,0 +1,144 @@
+{
+  "title": "java script Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of event listeners in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To handle user interactions"
+        },
+        {
+          "id": "B",
+          "text": "To send HTTP requests"
+        },
+        {
+          "id": "C",
+          "text": "To manipulate the DOM"
+        },
+        {
+          "id": "D",
+          "text": "To create animations"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "Which of the following events is triggered when a user clicks on an HTML element?",
+      "options": [
+        {
+          "id": "A",
+          "text": "load"
+        },
+        {
+          "id": "B",
+          "text": "unload"
+        },
+        {
+          "id": "C",
+          "text": "click"
+        },
+        {
+          "id": "D",
+          "text": "mouseover"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 3,
+      "question": "What is the event object in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A built-in JavaScript function"
+        },
+        {
+          "id": "B",
+          "text": "An object that contains information about the event"
+        },
+        {
+          "id": "C",
+          "text": "A type of event listener"
+        },
+        {
+          "id": "D",
+          "text": "A way to cancel an event"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "Which of the following methods is used to add an event listener to an element?",
+      "options": [
+        {
+          "id": "A",
+          "text": "addEventListener()"
+        },
+        {
+          "id": "B",
+          "text": "attachEvent()"
+        },
+        {
+          "id": "C",
+          "text": "bindEvent()"
+        },
+        {
+          "id": "D",
+          "text": "listenEvent()"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the event delegation technique in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To improve performance"
+        },
+        {
+          "id": "B",
+          "text": "To reduce code complexity"
+        },
+        {
+          "id": "C",
+          "text": "To handle multiple events"
+        },
+        {
+          "id": "D",
+          "text": "To create reusable code"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "Which of the following events is triggered when a user scrolls to the bottom of a page?",
+      "options": [
+        {
+          "id": "A",
+          "text": "scroll"
+        },
+        {
+          "id": "B",
+          "text": "resize"
+        },
+        {
+          "id": "C",
+          "text": "load"
+        },
+        {
+          "id": "D",
+          "text": "unload"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1A2C3B4A5A6A"
+}
