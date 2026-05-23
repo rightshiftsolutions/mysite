@@ -1,0 +1,121 @@
+{
+  "title": "c programming Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the extension of the C programming language?",
+      "options": [
+        {
+          "id": "A",
+          "text": "cpp"
+        },
+        {
+          "id": "B",
+          "text": "java"
+        },
+        {
+          "id": "C",
+          "text": "c"
+        },
+        {
+          "id": "D",
+          "text": "python"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 2,
+      "question": "Who is the developer of the C programming language?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dennis Ritchie"
+        },
+        {
+          "id": "B",
+          "text": "James Gosling"
+        },
+        {
+          "id": "C",
+          "text": "Bjarne Stroustrup"
+        },
+        {
+          "id": "D",
+          "text": "Guido van Rossum"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is the primary use of the #define directive in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To declare a variable"
+        },
+        {
+          "id": "B",
+          "text": "To assign a value to a variable"
+        },
+        {
+          "id": "C",
+          "text": "To define a macro"
+        },
+        {
+          "id": "D",
+          "text": "To include a header file"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the main() function in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To declare global variables"
+        },
+        {
+          "id": "B",
+          "text": "To define a function"
+        },
+        {
+          "id": "C",
+          "text": "To serve as the entry point of the program"
+        },
+        {
+          "id": "D",
+          "text": "To include external libraries"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "What is the data type of a character in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "int"
+        },
+        {
+          "id": "B",
+          "text": "char"
+        },
+        {
+          "id": "C",
+          "text": "float"
+        },
+        {
+          "id": "D",
+          "text": "double"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1C2A3C4C5B"
+}
