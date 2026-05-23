@@ -1,121 +1,121 @@
 {
-  "title": "java Test",
+  "title": "Kotlin Basics Test",
   "questions": [
     {
       "no": 1,
-      "question": "What will be the output of the following Java code: int arr[] = new int[5]; int sum = 0; for (int i = 0; i < 5; i++) { sum += arr[i]; } System.out.println(sum);",
+      "question": "What is the purpose of the 'var' keyword in Kotlin?",
       "options": [
         {
           "id": "A",
-          "text": "0"
+          "text": "To declare a variable with a specific data type"
         },
         {
           "id": "B",
-          "text": "5"
+          "text": "To declare a variable with an inferred data type"
         },
         {
           "id": "C",
-          "text": "ArrayIndexOutOfBoundsException"
+          "text": "To declare a constant value"
         },
         {
           "id": "D",
-          "text": "NullPointerException"
+          "text": "To declare a mutable variable"
         }
       ],
-      "correctAnswer": "A"
+      "correctAnswer": "B"
     },
     {
       "no": 2,
-      "question": "What is the time complexity of the following Java code snippet: for (int i = 0; i < arr.length; i++) { System.out.println(arr[i]); }",
+      "question": "What is the difference between 'val' and 'var' in Kotlin?",
       "options": [
         {
           "id": "A",
-          "text": "O(1)"
+          "text": "val is used for mutable variables, var is used for immutable"
         },
         {
           "id": "B",
-          "text": "O(n)"
+          "text": "val is used for immutable variables, var is used for mutable"
         },
         {
           "id": "C",
-          "text": "O(log n)"
+          "text": "val is used for constants, var is used for variables"
         },
         {
           "id": "D",
-          "text": "O(n^2)"
+          "text": "val is used for variables, var is used for constants"
         }
       ],
       "correctAnswer": "B"
     },
     {
       "no": 3,
-      "question": "What is the output of the following Java code: int arr[] = {1, 2, 3, 4, 5}; int sum = 0; for (int i = 0; i < arr.length; i++) { sum += arr[arr.length - i - 1]; } System.out.println(sum);",
+      "question": "What is the purpose of the 'lateinit' keyword in Kotlin?",
       "options": [
         {
           "id": "A",
-          "text": "15"
+          "text": "To declare a variable that must be initialized before use"
         },
         {
           "id": "B",
-          "text": "25"
+          "text": "To declare a variable that can be initialized later"
         },
         {
           "id": "C",
-          "text": "35"
+          "text": "To declare a constant variable"
         },
         {
           "id": "D",
-          "text": "45"
+          "text": "To declare a mutable variable"
         }
       ],
-      "correctAnswer": "C"
+      "correctAnswer": "B"
     },
     {
       "no": 4,
-      "question": "What is the result of the following Java code: int arr[][] = {{1, 2}, {3, 4}}; int sum = arr[0][0] + arr[1][1]; System.out.println(sum);",
+      "question": "What is the difference between 'for' and 'forEach' loops in Kotlin?",
       "options": [
         {
           "id": "A",
-          "text": "5"
+          "text": "for is used for iterating over a list, forEach is used for iterating over a set"
         },
         {
           "id": "B",
-          "text": "6"
+          "text": "for is used for iterating over a set, forEach is used for iterating over a list"
         },
         {
           "id": "C",
-          "text": "10"
+          "text": "for is used for iterating over a list, forEach is used for iterating over a map"
         },
         {
           "id": "D",
-          "text": "-3"
+          "text": "for is used for iterating over a map, forEach is used for iterating over a list"
         }
       ],
-      "correctAnswer": "C"
+      "correctAnswer": "A"
     },
     {
       "no": 5,
-      "question": "What will be the output of the following Java code: int arr[] = {1, 2, 3, 4, 5}; int sum = 0; for (int i = 0; i < arr.length; i++) { if (arr[i] % 2 == 0) { sum += arr[i]; } } System.out.println(sum);",
+      "question": "What is the purpose of the 'when' expression in Kotlin?",
       "options": [
         {
           "id": "A",
-          "text": "1"
+          "text": "To perform a conditional check"
         },
         {
           "id": "B",
-          "text": "3"
+          "text": "To perform a switch case statement"
         },
         {
           "id": "C",
-          "text": "5"
+          "text": "To perform a loop"
         },
         {
           "id": "D",
-          "text": "6"
+          "text": "To perform a conditional expression"
         }
       ],
       "correctAnswer": "B"
     }
   ],
-  "answerKeyString": "1A2B3C4C5B"
+  "answerKeyString": "1B2B3B4A5B"
 }
