@@ -1,9 +1,9 @@
 {
-  "title": "Java Array Test",
+  "title": "java Test",
   "questions": [
     {
       "no": 1,
-      "question": "What is the output of the following Java code snippet: int arr[] = {1, 2, 3, 4, 5}; System.out.println(arr[0]);",
+      "question": "What will be the output of the following Java code: int[] arr = {1, 2, 3, 4, 5}; System.out.println(arr[0]);",
       "options": [
         {
           "id": "A",
@@ -26,34 +26,80 @@
     },
     {
       "no": 2,
-      "question": "What is the purpose of the 'length' variable in an array in Java?",
+      "question": "What is the time complexity of accessing an array element in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To store the sum of all elements in the array"
+          "text": "O(1)"
         },
         {
           "id": "B",
-          "text": "To store the maximum value in the array"
+          "text": "O(n)"
         },
         {
           "id": "C",
-          "text": "To store the number of elements in the array"
+          "text": "O(log n)"
         },
         {
           "id": "D",
-          "text": "To store the minimum value in the array"
+          "text": "O(sqrt n)"
         }
       ],
-      "correctAnswer": "C"
+      "correctAnswer": "A"
     },
     {
       "no": 3,
-      "question": "What is the output of the following Java code snippet: int arr[] = {1, 2, 3, 4, 5}; System.out.println(arr[2] = 10);",
+      "question": "What is the purpose of Arrays.sort() method in Java?",
       "options": [
         {
           "id": "A",
-          "text": "10"
+          "text": "To find the maximum element in an array"
+        },
+        {
+          "id": "B",
+          "text": "To sort an array in ascending order"
+        },
+        {
+          "id": "C",
+          "text": "To find the minimum element in an array"
+        },
+        {
+          "id": "D",
+          "text": "All of the above"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the difference between int[] arr and int arr[] in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Syntax"
+        },
+        {
+          "id": "B",
+          "text": "Declaration"
+        },
+        {
+          "id": "C",
+          "text": "Both are same"
+        },
+        {
+          "id": "D",
+          "text": "None of the above"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What will be the output of the following Java code: int[] arr = {1, 2, 3, 4, 5}; System.out.println(arr.length);",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
         },
         {
           "id": "B",
@@ -61,61 +107,15 @@
         },
         {
           "id": "C",
-          "text": "3"
+          "text": "5"
         },
         {
           "id": "D",
           "text": "ArrayIndexOutOfBoundsException"
-        }
-      ],
-      "correctAnswer": "A"
-    },
-    {
-      "no": 4,
-      "question": "Which of the following is a valid way to create a multidimensional array in Java?",
-      "options": [
-        {
-          "id": "A",
-          "text": "int arr[][] = new int[5];"
-        },
-        {
-          "id": "B",
-          "text": "int arr[] = new int[5];"
-        },
-        {
-          "id": "C",
-          "text": "int arr[][] = new int[5][5];"
-        },
-        {
-          "id": "D",
-          "text": "int arr[][] = new int[5];"
         }
       ],
       "correctAnswer": "C"
-    },
-    {
-      "no": 5,
-      "question": "What is the output of the following Java code snippet: int arr[] = {1, 2, 3, 4, 5}; for(int i = 0; i < arr.length; i++) { System.out.println(arr[i]); }",
-      "options": [
-        {
-          "id": "A",
-          "text": "1 2 3 4 5"
-        },
-        {
-          "id": "B",
-          "text": "2 3 4 5"
-        },
-        {
-          "id": "C",
-          "text": "1 2 3 4"
-        },
-        {
-          "id": "D",
-          "text": "ArrayIndexOutOfBoundsException"
-        }
-      ],
-      "correctAnswer": "A"
     }
   ],
-  "answerKeyString": "1A2C3A4C5A"
+  "answerKeyString": "1A2A3B4B5C"
 }
