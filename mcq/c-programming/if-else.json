@@ -1,0 +1,466 @@
+{
+  "title": "C Programming Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of the if statement in C programming?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a loop"
+        },
+        {
+          "id": "B",
+          "text": "To make decisions based on conditions"
+        },
+        {
+          "id": "C",
+          "text": "To control the flow of a program"
+        },
+        {
+          "id": "D",
+          "text": "To input values from the user"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the syntax for an if statement in C programming?",
+      "options": [
+        {
+          "id": "A",
+          "text": "if (condition) { }"
+        },
+        {
+          "id": "B",
+          "text": "if (condition) then { }"
+        },
+        {
+          "id": "C",
+          "text": "if (condition) else { }"
+        },
+        {
+          "id": "D",
+          "text": "if (condition) { } else { }"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What happens when the condition in an if statement is false?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The program will terminate"
+        },
+        {
+          "id": "B",
+          "text": "The program will skip the code inside the if block"
+        },
+        {
+          "id": "C",
+          "text": "The program will throw an error"
+        },
+        {
+          "id": "D",
+          "text": "The program will go to the next line"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the else clause in an if statement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify an alternative action"
+        },
+        {
+          "id": "B",
+          "text": "To repeat a block of code"
+        },
+        {
+          "id": "C",
+          "text": "To create a loop"
+        },
+        {
+          "id": "D",
+          "text": "To read input from the user"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "How many conditions can be used in a single if statement in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "Any number of conditions"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 6,
+      "question": "What is the correct syntax for a nested if statement in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "if (condition) if (condition) { }"
+        },
+        {
+          "id": "B",
+          "text": "if (condition) { if (condition) { } }"
+        },
+        {
+          "id": "C",
+          "text": "if (condition) { if (condition) { } else { } }"
+        },
+        {
+          "id": "D",
+          "text": "if (condition) { } else if (condition) { }"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What happens when there is no condition in a if statement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The program will throw an error"
+        },
+        {
+          "id": "B",
+          "text": "The program will execute the code inside the if block"
+        },
+        {
+          "id": "C",
+          "text": "The program will skip the code inside the if block"
+        },
+        {
+          "id": "D",
+          "text": "The program will terminate"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 8,
+      "question": "Can an if statement be used within a switch statement in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes"
+        },
+        {
+          "id": "B",
+          "text": "No"
+        },
+        {
+          "id": "C",
+          "text": "It depends on the condition"
+        },
+        {
+          "id": "D",
+          "text": "It depends on the switch statement"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the if-else ladder in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To repeat a block of code"
+        },
+        {
+          "id": "B",
+          "text": "To create a loop"
+        },
+        {
+          "id": "C",
+          "text": "To make multiple decisions based on multiple conditions"
+        },
+        {
+          "id": "D",
+          "text": "To read input from the user"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 10,
+      "question": "Can an if statement be used within a for loop in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes"
+        },
+        {
+          "id": "B",
+          "text": "No"
+        },
+        {
+          "id": "C",
+          "text": "It depends on the loop"
+        },
+        {
+          "id": "D",
+          "text": "It depends on the if statement"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 11,
+      "question": "What is the correct syntax for a ternary operator in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "condition ? true : false"
+        },
+        {
+          "id": "B",
+          "text": "if (condition) true : false"
+        },
+        {
+          "id": "C",
+          "text": "condition ? true : false"
+        },
+        {
+          "id": "D",
+          "text": "condition ? false : true"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 12,
+      "question": "Can an if statement be used within a while loop in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes"
+        },
+        {
+          "id": "B",
+          "text": "No"
+        },
+        {
+          "id": "C",
+          "text": "It depends on the loop"
+        },
+        {
+          "id": "D",
+          "text": "It depends on the if statement"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 13,
+      "question": "What is the purpose of the if-elif ladder in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To repeat a block of code"
+        },
+        {
+          "id": "B",
+          "text": "To create a loop"
+        },
+        {
+          "id": "C",
+          "text": "To make multiple decisions based on multiple conditions"
+        },
+        {
+          "id": "D",
+          "text": "To read input from the user"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 14,
+      "question": "Can an if statement be used within a do-while loop in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes"
+        },
+        {
+          "id": "B",
+          "text": "No"
+        },
+        {
+          "id": "C",
+          "text": "It depends on the loop"
+        },
+        {
+          "id": "D",
+          "text": "It depends on the if statement"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 15,
+      "question": "What is the purpose of the if statement in a function in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a loop"
+        },
+        {
+          "id": "B",
+          "text": "To make decisions based on conditions"
+        },
+        {
+          "id": "C",
+          "text": "To control the flow of the function"
+        },
+        {
+          "id": "D",
+          "text": "To input values from the user"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 16,
+      "question": "Can an if statement be used within a switch statement in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes"
+        },
+        {
+          "id": "B",
+          "text": "No"
+        },
+        {
+          "id": "C",
+          "text": "It depends on the condition"
+        },
+        {
+          "id": "D",
+          "text": "It depends on the switch statement"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 17,
+      "question": "What is the purpose of the if-elif-else ladder in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To repeat a block of code"
+        },
+        {
+          "id": "B",
+          "text": "To create a loop"
+        },
+        {
+          "id": "C",
+          "text": "To make multiple decisions based on multiple conditions"
+        },
+        {
+          "id": "D",
+          "text": "To read input from the user"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 18,
+      "question": "Can an if statement be used within a goto statement in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes"
+        },
+        {
+          "id": "B",
+          "text": "No"
+        },
+        {
+          "id": "C",
+          "text": "It depends on the goto statement"
+        },
+        {
+          "id": "D",
+          "text": "It depends on the if statement"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 19,
+      "question": "What is the correct syntax for a nested if-else statement in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "if (condition) { if (condition) { } else { } }"
+        },
+        {
+          "id": "B",
+          "text": "if (condition) else if (condition) { }"
+        },
+        {
+          "id": "C",
+          "text": "if (condition) { } else if (condition) { }"
+        },
+        {
+          "id": "D",
+          "text": "if (condition) { if (condition) { } }"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 20,
+      "question": "Can an if statement be used within a header file in C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes"
+        },
+        {
+          "id": "B",
+          "text": "No"
+        },
+        {
+          "id": "C",
+          "text": "It depends on the if statement"
+        },
+        {
+          "id": "D",
+          "text": "It depends on the header file"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2A3B4A5B6B7C8A9C10A11A12A13C14A15B16A17C18B19A20A"
+}
