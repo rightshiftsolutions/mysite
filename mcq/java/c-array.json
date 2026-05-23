@@ -3,107 +3,84 @@
   "questions": [
     {
       "no": 1,
-      "question": "What will be the output of the following Java code: int[] arr = {1, 2, 3, 4, 5}; System.out.println(arr[0]);",
+      "question": "What is the output of the following Java code? int arr[] = new int[5];",
       "options": [
         {
           "id": "A",
-          "text": "1"
+          "text": "null"
         },
         {
           "id": "B",
-          "text": "2"
+          "text": "0"
         },
         {
           "id": "C",
-          "text": "3"
+          "text": "[I@15db9742"
         },
         {
           "id": "D",
-          "text": "ArrayIndexOutOfBoundsException"
+          "text": "5"
         }
       ],
       "correctAnswer": "A"
     },
     {
       "no": 2,
-      "question": "What is the time complexity of accessing an array element in Java?",
+      "question": "What is the purpose of the 'length' variable in Java arrays?",
       "options": [
         {
           "id": "A",
-          "text": "O(1)"
+          "text": "To store the sum of all elements in the array"
         },
         {
           "id": "B",
-          "text": "O(n)"
+          "text": "To store the number of elements in the array"
         },
         {
           "id": "C",
-          "text": "O(log n)"
+          "text": "To store the product of all elements in the array"
         },
         {
           "id": "D",
-          "text": "O(sqrt n)"
+          "text": "To store the average of all elements in the array"
         }
       ],
-      "correctAnswer": "A"
+      "correctAnswer": "B"
     },
     {
       "no": 3,
-      "question": "What is the purpose of Arrays.sort() method in Java?",
+      "question": "Which of the following is a valid way to initialize an array in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To find the maximum element in an array"
+          "text": "int arr[5] = new int[5]"
         },
         {
           "id": "B",
-          "text": "To sort an array in ascending order"
+          "text": "int arr = new int[5]"
         },
         {
           "id": "C",
-          "text": "To find the minimum element in an array"
+          "text": "int arr[] = {1, 2, 3, 4, 5}"
         },
         {
           "id": "D",
-          "text": "All of the above"
+          "text": "int arr[] = new int[5]"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "C"
     },
     {
       "no": 4,
-      "question": "What is the difference between int[] arr and int arr[] in Java?",
+      "question": "What is the output of the following Java code? int arr[] = {1, 2, 3, 4, 5};",
       "options": [
         {
           "id": "A",
-          "text": "Syntax"
+          "text": "[I@15db9742"
         },
         {
           "id": "B",
-          "text": "Declaration"
-        },
-        {
-          "id": "C",
-          "text": "Both are same"
-        },
-        {
-          "id": "D",
-          "text": "None of the above"
-        }
-      ],
-      "correctAnswer": "B"
-    },
-    {
-      "no": 5,
-      "question": "What will be the output of the following Java code: int[] arr = {1, 2, 3, 4, 5}; System.out.println(arr.length);",
-      "options": [
-        {
-          "id": "A",
-          "text": "1"
-        },
-        {
-          "id": "B",
-          "text": "2"
+          "text": "[1, 2, 3, 4, 5]"
         },
         {
           "id": "C",
@@ -111,11 +88,34 @@
         },
         {
           "id": "D",
-          "text": "ArrayIndexOutOfBoundsException"
+          "text": "null"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "Which of the following is a multi-dimensional array declaration in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "int arr[][] = new int[5]"
+        },
+        {
+          "id": "B",
+          "text": "int arr[] = new int[5]"
+        },
+        {
+          "id": "C",
+          "text": "int[][] arr = new int[5][5]"
+        },
+        {
+          "id": "D",
+          "text": "int arr[][] = new int[5]"
         }
       ],
       "correctAnswer": "C"
     }
   ],
-  "answerKeyString": "1A2A3B4B5C"
+  "answerKeyString": "1A2B3C4B5C"
 }
