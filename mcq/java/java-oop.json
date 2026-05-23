@@ -3,98 +3,52 @@
   "questions": [
     {
       "no": 1,
-      "question": "What is the purpose of the 'extends' keyword in Java?",
+      "question": "What is the purpose of the 'this' keyword in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To implement an interface"
+          "text": "To call a method in the same class"
         },
         {
           "id": "B",
-          "text": "To inherit the properties and behavior of a parent class"
+          "text": "To call a method in a different class"
         },
         {
           "id": "C",
-          "text": "To override a method"
+          "text": "To refer to the current object"
         },
         {
           "id": "D",
-          "text": "To hide a method"
+          "text": "To access a static variable"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 2,
+      "question": "What is the difference between 'extends' and 'implements' in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Extends is used for multiple inheritance, implements is for single inheritance"
+        },
+        {
+          "id": "B",
+          "text": "Extends is used for inheritance, implements is for interface implementation"
+        },
+        {
+          "id": "C",
+          "text": "Extends is used for interface implementation, implements is for inheritance"
+        },
+        {
+          "id": "D",
+          "text": "Extends is used for abstract classes, implements is for concrete classes"
         }
       ],
       "correctAnswer": "B"
     },
     {
-      "no": 2,
-      "question": "What is encapsulation in Java?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Hiding the implementation details of an object from the outside world"
-        },
-        {
-          "id": "B",
-          "text": "Exposing the implementation details of an object to the outside world"
-        },
-        {
-          "id": "C",
-          "text": "Inheriting the properties of a parent class"
-        },
-        {
-          "id": "D",
-          "text": "Overriding a method"
-        }
-      ],
-      "correctAnswer": "A"
-    },
-    {
       "no": 3,
-      "question": "What is the difference between 'this' and 'super' keywords in Java?",
-      "options": [
-        {
-          "id": "A",
-          "text": "This refers to the current object, while super refers to the parent object"
-        },
-        {
-          "id": "B",
-          "text": "This refers to the parent object, while super refers to the current object"
-        },
-        {
-          "id": "C",
-          "text": "Both refer to the same object"
-        },
-        {
-          "id": "D",
-          "text": "There is no difference"
-        }
-      ],
-      "correctAnswer": "A"
-    },
-    {
-      "no": 4,
-      "question": "What is the purpose of the 'abstract' keyword in Java?",
-      "options": [
-        {
-          "id": "A",
-          "text": "To define a class that cannot be instantiated"
-        },
-        {
-          "id": "B",
-          "text": "To define a method that can be overridden"
-        },
-        {
-          "id": "C",
-          "text": "To define a class that can be instantiated"
-        },
-        {
-          "id": "D",
-          "text": "To define a method that cannot be overridden"
-        }
-      ],
-      "correctAnswer": "A"
-    },
-    {
-      "no": 5,
       "question": "What is the purpose of the 'final' keyword in Java?",
       "options": [
         {
@@ -103,19 +57,65 @@
         },
         {
           "id": "B",
-          "text": "To override a variable"
+          "text": "To make a variable immutable"
         },
         {
           "id": "C",
-          "text": "To mark a method that cannot be overridden"
+          "text": "To make a class abstract"
         },
         {
           "id": "D",
-          "text": "To mark a variable that cannot be changed"
+          "text": "To make a method abstract"
         }
       ],
-      "correctAnswer": "C"
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is polymorphism in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The ability of an object to take on many forms"
+        },
+        {
+          "id": "B",
+          "text": "The ability of a method to perform different actions"
+        },
+        {
+          "id": "C",
+          "text": "The ability of an object to override a method"
+        },
+        {
+          "id": "D",
+          "text": "The ability of a class to inherit properties"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is encapsulation in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The bundling of data and methods that operate on that data"
+        },
+        {
+          "id": "B",
+          "text": "The hiding of internal details from the outside world"
+        },
+        {
+          "id": "C",
+          "text": "The inheritance of properties from a parent class"
+        },
+        {
+          "id": "D",
+          "text": "The ability of a class to override a method"
+        }
+      ],
+      "correctAnswer": "A"
     }
   ],
-  "answerKeyString": "1B2A3A4A5C"
+  "answerKeyString": "1C2B3B4A5A"
 }
