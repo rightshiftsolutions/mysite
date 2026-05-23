@@ -1,13 +1,36 @@
 {
-  "title": "java Test",
+  "title": "Java Array Test",
   "questions": [
     {
       "no": 1,
-      "question": "What is the default value of an integer array in Java?",
+      "question": "What is the output of the following code snippet?",
       "options": [
         {
           "id": "A",
-          "text": "null"
+          "text": "Compilation error"
+        },
+        {
+          "id": "B",
+          "text": "ArrayIndexOutOfBoundsException"
+        },
+        {
+          "id": "C",
+          "text": "1 2 3 4 5"
+        },
+        {
+          "id": "D",
+          "text": "1 2 3 4"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 2,
+      "question": "What is the default size of the array in Java?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
         },
         {
           "id": "B",
@@ -15,107 +38,84 @@
         },
         {
           "id": "C",
-          "text": "any integer value"
+          "text": "Dynamic"
         },
         {
           "id": "D",
-          "text": "an empty array"
+          "text": "5"
         }
       ],
       "correctAnswer": "B"
     },
     {
-      "no": 2,
-      "question": "What is the purpose of the equals() method in Java for arrays?",
-      "options": [
-        {
-          "id": "A",
-          "text": "to compare array contents"
-        },
-        {
-          "id": "B",
-          "text": "to compare array lengths"
-        },
-        {
-          "id": "C",
-          "text": "to compare array references"
-        },
-        {
-          "id": "D",
-          "text": "none of the above"
-        }
-      ],
-      "correctAnswer": "A"
-    },
-    {
       "no": 3,
-      "question": "What is the return type of the Arrays.toString() method in Java?",
+      "question": "How do you declare a multi-dimensional array in Java?",
       "options": [
         {
           "id": "A",
-          "text": "String"
+          "text": "int[][] arr = new int[5][5]"
         },
         {
           "id": "B",
-          "text": "Integer"
+          "text": "int arr[][] = new int[5][5]"
         },
         {
           "id": "C",
-          "text": "Object"
+          "text": "int arr = new int[5][5]"
         },
         {
           "id": "D",
-          "text": "Array"
+          "text": "int arr[5][5] = new int[5][5]"
         }
       ],
       "correctAnswer": "A"
     },
     {
       "no": 4,
-      "question": "What is the purpose of the Arrays.sort() method in Java?",
+      "question": "What is the output of the following code snippet?",
       "options": [
         {
           "id": "A",
-          "text": "to sort array contents"
+          "text": "1 2 3"
         },
         {
           "id": "B",
-          "text": "to sort array lengths"
+          "text": "2 3 4"
         },
         {
           "id": "C",
-          "text": "to sort array references"
+          "text": "NullPointerException"
         },
         {
           "id": "D",
-          "text": "none of the above"
+          "text": "ArrayIndexOutOfBoundsException"
         }
       ],
       "correctAnswer": "A"
     },
     {
       "no": 5,
-      "question": "What is the syntax to declare a multidimensional array in Java?",
+      "question": "How do you traverse an array in Java?",
       "options": [
         {
           "id": "A",
-          "text": "float[][] array = new float[2][3];"
+          "text": "for (int i = 0; i < arr.length; i++)"
         },
         {
           "id": "B",
-          "text": "int[][] array = new int[2][3];"
+          "text": "while (i < arr.length)"
         },
         {
           "id": "C",
-          "text": "double[][] array = new double[2][3];"
+          "text": "for (int i : arr)"
         },
         {
           "id": "D",
-          "text": "string[][] array = new string[2][3];"
+          "text": "foreach (int i : arr)"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "A"
     }
   ],
-  "answerKeyString": "1B2A3A4A5B"
+  "answerKeyString": "1C2B3A4A5A"
 }
