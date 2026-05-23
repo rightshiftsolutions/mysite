@@ -1,121 +1,121 @@
 {
-  "title": "Kotlin Basics Test",
+  "title": "java Test",
   "questions": [
     {
       "no": 1,
-      "question": "What is the purpose of the 'var' keyword in Kotlin?",
+      "question": "What is the default value of an integer array in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To declare a variable with a specific data type"
+          "text": "null"
         },
         {
           "id": "B",
-          "text": "To declare a variable with an inferred data type"
+          "text": "0"
         },
         {
           "id": "C",
-          "text": "To declare a constant value"
+          "text": "any integer value"
         },
         {
           "id": "D",
-          "text": "To declare a mutable variable"
+          "text": "an empty array"
         }
       ],
       "correctAnswer": "B"
     },
     {
       "no": 2,
-      "question": "What is the difference between 'val' and 'var' in Kotlin?",
+      "question": "What is the purpose of the equals() method in Java for arrays?",
       "options": [
         {
           "id": "A",
-          "text": "val is used for mutable variables, var is used for immutable"
+          "text": "to compare array contents"
         },
         {
           "id": "B",
-          "text": "val is used for immutable variables, var is used for mutable"
+          "text": "to compare array lengths"
         },
         {
           "id": "C",
-          "text": "val is used for constants, var is used for variables"
+          "text": "to compare array references"
         },
         {
           "id": "D",
-          "text": "val is used for variables, var is used for constants"
+          "text": "none of the above"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "A"
     },
     {
       "no": 3,
-      "question": "What is the purpose of the 'lateinit' keyword in Kotlin?",
+      "question": "What is the return type of the Arrays.toString() method in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To declare a variable that must be initialized before use"
+          "text": "String"
         },
         {
           "id": "B",
-          "text": "To declare a variable that can be initialized later"
+          "text": "Integer"
         },
         {
           "id": "C",
-          "text": "To declare a constant variable"
+          "text": "Object"
         },
         {
           "id": "D",
-          "text": "To declare a mutable variable"
+          "text": "Array"
         }
       ],
-      "correctAnswer": "B"
+      "correctAnswer": "A"
     },
     {
       "no": 4,
-      "question": "What is the difference between 'for' and 'forEach' loops in Kotlin?",
+      "question": "What is the purpose of the Arrays.sort() method in Java?",
       "options": [
         {
           "id": "A",
-          "text": "for is used for iterating over a list, forEach is used for iterating over a set"
+          "text": "to sort array contents"
         },
         {
           "id": "B",
-          "text": "for is used for iterating over a set, forEach is used for iterating over a list"
+          "text": "to sort array lengths"
         },
         {
           "id": "C",
-          "text": "for is used for iterating over a list, forEach is used for iterating over a map"
+          "text": "to sort array references"
         },
         {
           "id": "D",
-          "text": "for is used for iterating over a map, forEach is used for iterating over a list"
+          "text": "none of the above"
         }
       ],
       "correctAnswer": "A"
     },
     {
       "no": 5,
-      "question": "What is the purpose of the 'when' expression in Kotlin?",
+      "question": "What is the syntax to declare a multidimensional array in Java?",
       "options": [
         {
           "id": "A",
-          "text": "To perform a conditional check"
+          "text": "float[][] array = new float[2][3];"
         },
         {
           "id": "B",
-          "text": "To perform a switch case statement"
+          "text": "int[][] array = new int[2][3];"
         },
         {
           "id": "C",
-          "text": "To perform a loop"
+          "text": "double[][] array = new double[2][3];"
         },
         {
           "id": "D",
-          "text": "To perform a conditional expression"
+          "text": "string[][] array = new string[2][3];"
         }
       ],
       "correctAnswer": "B"
     }
   ],
-  "answerKeyString": "1B2B3B4A5B"
+  "answerKeyString": "1B2A3A4A5B"
 }
