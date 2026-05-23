@@ -1,0 +1,167 @@
+{
+  "title": "ui/ux design Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary goal of prototyping in UI/UX design?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a visually appealing design"
+        },
+        {
+          "id": "B",
+          "text": "To test and refine the design"
+        },
+        {
+          "id": "C",
+          "text": "To create a functional design"
+        },
+        {
+          "id": "D",
+          "text": "To create a design that is compatible with all devices"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the primary role of typography in UI/UX design?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To add visual appeal to the design"
+        },
+        {
+          "id": "B",
+          "text": "To facilitate clear communication and convey important information"
+        },
+        {
+          "id": "C",
+          "text": "To create a consistent visual language across the design"
+        },
+        {
+          "id": "D",
+          "text": "To add an element of surprise and whimsy to the design"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the primary advantage of using a digital prototyping tool?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It allows for the creation of a high-fidelity design"
+        },
+        {
+          "id": "B",
+          "text": "It enables rapid testing and iteration"
+        },
+        {
+          "id": "C",
+          "text": "It allows for the creation of a design that is compatible with all devices"
+        },
+        {
+          "id": "D",
+          "text": "It enables the creation of a design that is visually appealing"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the primary goal of typography in digital design?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To add visual appeal to the design"
+        },
+        {
+          "id": "B",
+          "text": "To facilitate clear communication and convey important information"
+        },
+        {
+          "id": "C",
+          "text": "To create a consistent visual language across the design"
+        },
+        {
+          "id": "D",
+          "text": "To add an element of surprise and whimsy to the design"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the primary disadvantage of using a low-fidelity prototyping method?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is time-consuming"
+        },
+        {
+          "id": "B",
+          "text": "It is not effective for testing and iteration"
+        },
+        {
+          "id": "C",
+          "text": "It is not effective for creating a high-fidelity design"
+        },
+        {
+          "id": "D",
+          "text": "It is not effective for creating a design that is compatible with all devices"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 6,
+      "question": "What is the primary benefit of using a legible font in digital design?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is aesthetically pleasing"
+        },
+        {
+          "id": "B",
+          "text": "It is easy to read"
+        },
+        {
+          "id": "C",
+          "text": "It is consistent with the brand's visual language"
+        },
+        {
+          "id": "D",
+          "text": "It is compatible with all devices"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the primary goal of using a sans-serif font in digital design?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a visually appealing design"
+        },
+        {
+          "id": "B",
+          "text": "To create a design that is easy to read"
+        },
+        {
+          "id": "C",
+          "text": "To create a design that is consistent with the brand's visual language"
+        },
+        {
+          "id": "D",
+          "text": "To create a design that is compatible with all devices"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B2B3B4B5B6B7B"
+}
