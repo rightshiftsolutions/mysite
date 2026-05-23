@@ -1,5 +1,5 @@
-// const API_BASE_URL = (window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL ? window.APP_CONFIG.API_BASE_URL : "http://localhost:5000").replace(/\/$/, "");
-const API_BASE_URL="http://localhost:5000";
+const API_BASE_URL = (window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL ? window.APP_CONFIG.API_BASE_URL : "http://localhost:5000").replace(/\/$/, "");
+// const API_BASE_URL="http://localhost:5000"
 
 const TOKEN_STORAGE_KEY = "lms_token";
 const USER_STORAGE_KEY = "lms_user";
