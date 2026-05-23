@@ -1,0 +1,144 @@
+{
+  "title": "html Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is HTML?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A programming language"
+        },
+        {
+          "id": "B",
+          "text": "A markup language"
+        },
+        {
+          "id": "C",
+          "text": "A database language"
+        },
+        {
+          "id": "D",
+          "text": "A scripting language"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "Who is credited with the invention of HTML?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tim Berners-Lee"
+        },
+        {
+          "id": "B",
+          "text": "Bill Gates"
+        },
+        {
+          "id": "C",
+          "text": "Steve Jobs"
+        },
+        {
+          "id": "D",
+          "text": "Netscape Navigator"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of the <html> tag?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a link"
+        },
+        {
+          "id": "B",
+          "text": "To define the structure of a web page"
+        },
+        {
+          "id": "C",
+          "text": "To insert a picture"
+        },
+        {
+          "id": "D",
+          "text": "To define a font"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the first version of HTML?",
+      "options": [
+        {
+          "id": "A",
+          "text": "HTML2"
+        },
+        {
+          "id": "B",
+          "text": "HTML1"
+        },
+        {
+          "id": "C",
+          "text": "HTML0"
+        },
+        {
+          "id": "D",
+          "text": "HTML3"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the <body> tag?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To define the structure of a web page"
+        },
+        {
+          "id": "B",
+          "text": "To define the content of a web page"
+        },
+        {
+          "id": "C",
+          "text": "To create a link"
+        },
+        {
+          "id": "D",
+          "text": "To insert a picture"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 6,
+      "question": "What is the most widely used version of HTML?",
+      "options": [
+        {
+          "id": "A",
+          "text": "HTML1"
+        },
+        {
+          "id": "B",
+          "text": "HTML5"
+        },
+        {
+          "id": "C",
+          "text": "HTML3"
+        },
+        {
+          "id": "D",
+          "text": "HTML2"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B2A3B4B5B6B"
+}
