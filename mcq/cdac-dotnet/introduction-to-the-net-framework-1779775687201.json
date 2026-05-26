@@ -1,0 +1,467 @@
+{
+  "success": true,
+  "title": "CDAC-Dotnet Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A programming language"
+        },
+        {
+          "id": "B",
+          "text": "A software framework"
+        },
+        {
+          "id": "C",
+          "text": "A database management system"
+        },
+        {
+          "id": "D",
+          "text": "A operating system"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of Intermediate Language (IL)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To execute .NET code directly"
+        },
+        {
+          "id": "B",
+          "text": "To compile .NET code to native code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To debug .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 3,
+      "question": "What is the extension for a .NET assembly?",
+      "options": [
+        {
+          "id": "A",
+          "text": ".exe"
+        },
+        {
+          "id": "B",
+          "text": ".dll"
+        },
+        {
+          "id": "C",
+          "text": ".net"
+        },
+        {
+          "id": "D",
+          "text": ".class"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the Global Assembly Cache (GAC)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store operating system files"
+        },
+        {
+          "id": "B",
+          "text": "To store .NET assemblies"
+        },
+        {
+          "id": "C",
+          "text": "To store database files"
+        },
+        {
+          "id": "D",
+          "text": "To store compiler files"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the base class for all .NET classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "System.Object"
+        },
+        {
+          "id": "B",
+          "text": "System.String"
+        },
+        {
+          "id": "C",
+          "text": "System.Int32"
+        },
+        {
+          "id": "D",
+          "text": "System.Boolean"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of the .NET runtime?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To debug .NET code"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the purpose of the Common Language Runtime (CLR)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To execute .NET code directly"
+        },
+        {
+          "id": "B",
+          "text": "To compile .NET code to native code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To debug .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 8,
+      "question": "What is the purpose of the Common Type System (CTS)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To execute .NET code directly"
+        },
+        {
+          "id": "B",
+          "text": "To compile .NET code to native code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To provide a common set of data types"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the Common Language Specification (CLS)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To provide a common set of data types"
+        },
+        {
+          "id": "C",
+          "text": "To provide a common set of programming features"
+        },
+        {
+          "id": "D",
+          "text": "To compile .NET code to native code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the .NET Framework Class Library?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To provide a common set of data types"
+        },
+        {
+          "id": "C",
+          "text": "To provide a common set of programming features"
+        },
+        {
+          "id": "D",
+          "text": "To store .NET assemblies"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 11,
+      "question": "What is the purpose of the .NET Framework Base Class Library?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To provide a common set of data types"
+        },
+        {
+          "id": "C",
+          "text": "To provide a common set of programming features"
+        },
+        {
+          "id": "D",
+          "text": "To store .NET assemblies"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of the .NET Framework Configuration Classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To debug .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 13,
+      "question": "What is the extension for a .NET executable?",
+      "options": [
+        {
+          "id": "A",
+          "text": ".exe"
+        },
+        {
+          "id": "B",
+          "text": ".dll"
+        },
+        {
+          "id": "C",
+          "text": ".net"
+        },
+        {
+          "id": "D",
+          "text": ".class"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 14,
+      "question": "What is the purpose of the .NET Framework Configuration File?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To debug .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 15,
+      "question": "What is the purpose of the .NET Framework Reflection Classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To reflect the state of .NET objects"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 16,
+      "question": "What is the purpose of the .NET Framework Encryption Classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To encrypt .NET data"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 17,
+      "question": "What is the purpose of the .NET Framework Security Classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To secure .NET code"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 18,
+      "question": "What is the purpose of the .NET Framework Serialization Classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To serialize .NET objects"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 19,
+      "question": "What is the purpose of the .NET Framework Regular Expressions Classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To match .NET regular expressions"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 20,
+      "question": "What is the purpose of the .NET Framework XML Classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To execute .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform-independent way of executing .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To work with .NET XML documents"
+        }
+      ],
+      "correctAnswer": "D"
+    }
+  ],
+  "answerKeyString": "1B2C3B4B5A6B7C8D9C10C11C12C13A14C15D16D17D18D19D20D"
+}
