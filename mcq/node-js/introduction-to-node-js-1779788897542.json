@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "title": "Node js Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is Node js",
+      "options": [
+        {
+          "id": "A",
+          "text": "A server side scripting language"
+        },
+        {
+          "id": "B",
+          "text": "An operating system"
+        },
+        {
+          "id": "C",
+          "text": "A client side framework"
+        },
+        {
+          "id": "D",
+          "text": "An open source project by Google"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What does Node js use as its engine",
+      "options": [
+        {
+          "id": "A",
+          "text": "V8 engine"
+        },
+        {
+          "id": "B",
+          "text": "Chrome engine"
+        },
+        {
+          "id": "C",
+          "text": "Firefox engine"
+        },
+        {
+          "id": "D",
+          "text": "IE engine"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is npm",
+      "options": [
+        {
+          "id": "A",
+          "text": "A Node js package manager"
+        },
+        {
+          "id": "B",
+          "text": "A client side framework"
+        },
+        {
+          "id": "C",
+          "text": "A server side scripting language"
+        },
+        {
+          "id": "D",
+          "text": "An operating system"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of require function in Node js",
+      "options": [
+        {
+          "id": "A",
+          "text": "To load modules"
+        },
+        {
+          "id": "B",
+          "text": "To create a server"
+        },
+        {
+          "id": "C",
+          "text": "To handle requests"
+        },
+        {
+          "id": "D",
+          "text": "To execute a function"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the extension of Node js files",
+      "options": [
+        {
+          "id": "A",
+          "text": "js"
+        },
+        {
+          "id": "B",
+          "text": "node"
+        },
+        {
+          "id": "C",
+          "text": "jsn"
+        },
+        {
+          "id": "D",
+          "text": "nod"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1A2A3A4A5A"
+}
