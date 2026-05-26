@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "title": "Data Structures Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of initializing an array with a fixed size?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a large amount of data"
+        },
+        {
+          "id": "B",
+          "text": "To ensure memory efficiency"
+        },
+        {
+          "id": "C",
+          "text": "To prevent array from being resized"
+        },
+        {
+          "id": "D",
+          "text": "To improve array performance"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 2,
+      "question": "Which of the following array operations is O(1)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Array pushing"
+        },
+        {
+          "id": "B",
+          "text": "Array popping"
+        },
+        {
+          "id": "C",
+          "text": "Array shifting"
+        },
+        {
+          "id": "D",
+          "text": "Array inserting"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the time complexity of searching an element in an array?",
+      "options": [
+        {
+          "id": "A",
+          "text": "O(n)"
+        },
+        {
+          "id": "B",
+          "text": "O(log n)"
+        },
+        {
+          "id": "C",
+          "text": "O(1)"
+        },
+        {
+          "id": "D",
+          "text": "O(m)"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of using a two-dimensional array?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a single row of data"
+        },
+        {
+          "id": "B",
+          "text": "To store multiple rows of data"
+        },
+        {
+          "id": "C",
+          "text": "To store a single column of data"
+        },
+        {
+          "id": "D",
+          "text": "To store multiple columns of data"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of using a jagged array?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a single row of data"
+        },
+        {
+          "id": "B",
+          "text": "To store multiple rows of data with varying lengths"
+        },
+        {
+          "id": "C",
+          "text": "To store a single column of data"
+        },
+        {
+          "id": "D",
+          "text": "To store multiple columns of data"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1C2B3A4B5B"
+}
