@@ -1,0 +1,467 @@
+{
+  "success": true,
+  "title": "CDAC-Dotnet Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A set of libraries for building web applications"
+        },
+        {
+          "id": "B",
+          "text": "A software framework for building Windows applications"
+        },
+        {
+          "id": "C",
+          "text": "A platform for building desktop and mobile applications"
+        },
+        {
+          "id": "D",
+          "text": "A programming language for building enterprise applications"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the Intermediate Language (IL) in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A low-level, platform-specific language"
+        },
+        {
+          "id": "B",
+          "text": "A platform-independent, binary format for .NET code"
+        },
+        {
+          "id": "C",
+          "text": "A high-level, object-oriented language"
+        },
+        {
+          "id": "D",
+          "text": "A set of libraries for building web services"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the main purpose of an assembly in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a set of related classes and resources"
+        },
+        {
+          "id": "B",
+          "text": "To provide a way to deploy .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To enable versioning and deployment of .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To improve performance of .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "What is the difference between an EXE and a DLL in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "EXE is used for executable files, while DLL is used for libraries"
+        },
+        {
+          "id": "B",
+          "text": "EXE is used for libraries, while DLL is used for executable files"
+        },
+        {
+          "id": "C",
+          "text": "EXE is used for console applications, while DLL is used for Windows Forms applications"
+        },
+        {
+          "id": "D",
+          "text": "EXE is used for web applications, while DLL is used for desktop applications"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is reflection in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The ability of .NET code to examine and modify its own structure"
+        },
+        {
+          "id": "B",
+          "text": "The ability of .NET code to examine and modify the structure of other assemblies"
+        },
+        {
+          "id": "C",
+          "text": "The process of converting IL to machine code"
+        },
+        {
+          "id": "D",
+          "text": "The process of deploying .NET code"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of the Global Assembly Cache (GAC) in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store assemblies that are shared across multiple applications"
+        },
+        {
+          "id": "B",
+          "text": "To store assemblies that are specific to a single application"
+        },
+        {
+          "id": "C",
+          "text": "To improve performance of .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To enable versioning and deployment of .NET code"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 7,
+      "question": "What is the difference between a strong name and a weak name in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A strong name is a unique identifier for an assembly, while a weak name is a random identifier"
+        },
+        {
+          "id": "B",
+          "text": "A strong name is a random identifier, while a weak name is a unique identifier for an assembly"
+        },
+        {
+          "id": "C",
+          "text": "A strong name is used for assemblies that are installed in the GAC, while a weak name is used for assemblies that are not installed in the GAC"
+        },
+        {
+          "id": "D",
+          "text": "A strong name is used for assemblies that are not installed in the GAC, while a weak name is used for assemblies that are installed in the GAC"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is the purpose of the manifest in an assembly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store metadata about the assembly"
+        },
+        {
+          "id": "B",
+          "text": "To store code for the assembly"
+        },
+        {
+          "id": "C",
+          "text": "To store resources for the assembly"
+        },
+        {
+          "id": "D",
+          "text": "To store configuration settings for the assembly"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 9,
+      "question": "What is the difference between a class and a struct in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A class is a reference type, while a struct is a value type"
+        },
+        {
+          "id": "B",
+          "text": "A class is a value type, while a struct is a reference type"
+        },
+        {
+          "id": "C",
+          "text": "A class is used for complex data types, while a struct is used for simple data types"
+        },
+        {
+          "id": "D",
+          "text": "A class is used for simple data types, while a struct is used for complex data types"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the JIT (Just-In-Time) compiler in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To convert IL to machine code at runtime"
+        },
+        {
+          "id": "B",
+          "text": "To convert machine code to IL at runtime"
+        },
+        {
+          "id": "C",
+          "text": "To improve performance of .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To enable versioning and deployment of .NET code"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 11,
+      "question": "What is the difference between a sealed class and an abstract class in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A sealed class cannot be inherited, while an abstract class can be inherited"
+        },
+        {
+          "id": "B",
+          "text": "A sealed class can be inherited, while an abstract class cannot be inherited"
+        },
+        {
+          "id": "C",
+          "text": "A sealed class is used for complex data types, while an abstract class is used for simple data types"
+        },
+        {
+          "id": "D",
+          "text": "A sealed class is used for simple data types, while an abstract class is used for complex data types"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of the AppDomain in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a way to deploy .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To enable versioning and deployment of .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To improve performance of .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To isolate the execution of .NET code"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 13,
+      "question": "What is the difference between a thread and a process in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A thread is a separate execution path, while a process is a separate program"
+        },
+        {
+          "id": "B",
+          "text": "A process is a separate execution path, while a thread is a separate program"
+        },
+        {
+          "id": "C",
+          "text": "A thread is used for console applications, while a process is used for Windows Forms applications"
+        },
+        {
+          "id": "D",
+          "text": "A thread is used for Windows Forms applications, while a process is used for console applications"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 14,
+      "question": "What is the purpose of the CLR (Common Language Runtime) in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To convert IL to machine code at runtime"
+        },
+        {
+          "id": "B",
+          "text": "To convert machine code to IL at runtime"
+        },
+        {
+          "id": "C",
+          "text": "To provide a runtime environment for .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To improve performance of .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 15,
+      "question": "What is the difference between a static method and an instance method in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A static method belongs to a class, while an instance method belongs to an instance"
+        },
+        {
+          "id": "B",
+          "text": "A static method belongs to an instance, while an instance method belongs to a class"
+        },
+        {
+          "id": "C",
+          "text": "A static method is used for complex data types, while an instance method is used for simple data types"
+        },
+        {
+          "id": "D",
+          "text": "A static method is used for simple data types, while an instance method is used for complex data types"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 16,
+      "question": "What is the purpose of the GAC (Global Assembly Cache) in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store assemblies that are shared across multiple applications"
+        },
+        {
+          "id": "B",
+          "text": "To store assemblies that are specific to a single application"
+        },
+        {
+          "id": "C",
+          "text": "To improve performance of .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To enable versioning and deployment of .NET code"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 17,
+      "question": "What is the difference between a weakly named assembly and a strongly named assembly in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A weakly named assembly is a unique identifier, while a strongly named assembly is a random identifier"
+        },
+        {
+          "id": "B",
+          "text": "A strongly named assembly is a unique identifier, while a weakly named assembly is a random identifier"
+        },
+        {
+          "id": "C",
+          "text": "A weakly named assembly is used for assemblies that are not installed in the GAC, while a strongly named assembly is used for assemblies that are installed in the GAC"
+        },
+        {
+          "id": "D",
+          "text": "A strongly named assembly is used for assemblies that are not installed in the GAC, while a weakly named assembly is used for assemblies that are installed in the GAC"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 18,
+      "question": "What is the purpose of the manifest in a Windows Forms application?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store metadata about the application"
+        },
+        {
+          "id": "B",
+          "text": "To store code for the application"
+        },
+        {
+          "id": "C",
+          "text": "To store resources for the application"
+        },
+        {
+          "id": "D",
+          "text": "To store configuration settings for the application"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 19,
+      "question": "What is the difference between a public class and a private class in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A public class is visible to all classes, while a private class is only visible to the current class"
+        },
+        {
+          "id": "B",
+          "text": "A private class is visible to all classes, while a public class is only visible to the current class"
+        },
+        {
+          "id": "C",
+          "text": "A public class is used for complex data types, while a private class is used for simple data types"
+        },
+        {
+          "id": "D",
+          "text": "A private class is used for complex data types, while a public class is used for simple data types"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 20,
+      "question": "What is the purpose of the CLR (Common Language Runtime) in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a runtime environment for .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To convert IL to machine code at runtime"
+        },
+        {
+          "id": "C",
+          "text": "To convert machine code to IL at runtime"
+        },
+        {
+          "id": "D",
+          "text": "To improve performance of .NET code"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2B3C4A5A6A7A8A9A10A11A12D13A14C15A16A17B18A19A20A"
+}

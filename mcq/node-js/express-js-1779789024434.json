@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "title": "Express Js Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is Express Js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A JavaScript framework for building desktop applications"
+        },
+        {
+          "id": "B",
+          "text": "A JavaScript framework for building web applications"
+        },
+        {
+          "id": "C",
+          "text": "A JavaScript library for building mobile applications"
+        },
+        {
+          "id": "D",
+          "text": "A JavaScript framework for building machine learning models"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of app.get() in Express Js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new route for the application"
+        },
+        {
+          "id": "B",
+          "text": "To start the server"
+        },
+        {
+          "id": "C",
+          "text": "To listen for incoming requests"
+        },
+        {
+          "id": "D",
+          "text": "To send a response to the client"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is Express Js middleware?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Functions that run before the request is handled"
+        },
+        {
+          "id": "B",
+          "text": "Functions that run after the request is handled"
+        },
+        {
+          "id": "C",
+          "text": "Functions that run at the same time as the request is handled"
+        },
+        {
+          "id": "D",
+          "text": "Functions that run before the response is sent"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is Express Js router?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A function that handles routes for the application"
+        },
+        {
+          "id": "B",
+          "text": "A middleware function that handles requests"
+        },
+        {
+          "id": "C",
+          "text": "A separate module that handles routes for the application"
+        },
+        {
+          "id": "D",
+          "text": "A function that handles errors for the application"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of res.render() in Express Js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To send a response to the client"
+        },
+        {
+          "id": "B",
+          "text": "To render a template engine"
+        },
+        {
+          "id": "C",
+          "text": "To listen for incoming requests"
+        },
+        {
+          "id": "D",
+          "text": "To create a new route for the application"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B2A3A4C5B"
+}

@@ -1,0 +1,467 @@
+{
+  "success": true,
+  "title": "CDAC-Dotnet Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of the .Net Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a set of class libraries for general-purpose computing"
+        },
+        {
+          "id": "B",
+          "text": "To provide a runtime environment for .Net applications"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform for building Windows desktop applications"
+        },
+        {
+          "id": "D",
+          "text": "To provide a web framework for building web applications"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is Intermediate Language (IL)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A low-level, platform-specific assembly code"
+        },
+        {
+          "id": "B",
+          "text": "A high-level, human-readable assembly code"
+        },
+        {
+          "id": "C",
+          "text": "A platform-agnostic, binary code"
+        },
+        {
+          "id": "D",
+          "text": "A high-level, platform-specific assembly code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of the Global Assembly Cache (GAC)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store private assemblies"
+        },
+        {
+          "id": "B",
+          "text": "To store shared assemblies"
+        },
+        {
+          "id": "C",
+          "text": "To store native code libraries"
+        },
+        {
+          "id": "D",
+          "text": "To store EXE files"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the difference between an EXE and a DLL?",
+      "options": [
+        {
+          "id": "A",
+          "text": "EXE is an executable file, DLL is a library file"
+        },
+        {
+          "id": "B",
+          "text": "EXE is a library file, DLL is an executable file"
+        },
+        {
+          "id": "C",
+          "text": "Both EXE and DLL are executable files"
+        },
+        {
+          "id": "D",
+          "text": "Both EXE and DLL are library files"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the manifest in a .Net assembly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide metadata about the assembly"
+        },
+        {
+          "id": "B",
+          "text": "To provide metadata about the application"
+        },
+        {
+          "id": "C",
+          "text": "To provide configuration information"
+        },
+        {
+          "id": "D",
+          "text": "To provide version information"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "What is the difference between a strong name and a version number?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Strong name is used for versioning, version number is used for strong naming"
+        },
+        {
+          "id": "B",
+          "text": "Strong name is used for strong naming, version number is used for versioning"
+        },
+        {
+          "id": "C",
+          "text": "Both are used for versioning"
+        },
+        {
+          "id": "D",
+          "text": "Both are used for strong naming"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the purpose of the .Net Framework configuration file?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To configure the .Net runtime environment"
+        },
+        {
+          "id": "B",
+          "text": "To configure the application"
+        },
+        {
+          "id": "C",
+          "text": "To configure the operating system"
+        },
+        {
+          "id": "D",
+          "text": "To configure the database"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is the difference between the .Net Framework and the .Net Core?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The .Net Framework is a subset of .Net Core"
+        },
+        {
+          "id": "B",
+          "text": "The .Net Core is a subset of the .Net Framework"
+        },
+        {
+          "id": "C",
+          "text": "The .Net Framework is a separate framework from .Net Core"
+        },
+        {
+          "id": "D",
+          "text": "The .Net Core is a separate framework from the .Net Framework"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the .Net Common Language Runtime (CLR)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a garbage collector"
+        },
+        {
+          "id": "B",
+          "text": "To provide a type system"
+        },
+        {
+          "id": "C",
+          "text": "To provide a memory manager"
+        },
+        {
+          "id": "D",
+          "text": "To provide a security manager"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 10,
+      "question": "What is the difference between a .Net assembly and a Win32 assembly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .Net assembly is a Win32 assembly"
+        },
+        {
+          "id": "B",
+          "text": "A Win32 assembly is a .Net assembly"
+        },
+        {
+          "id": "C",
+          "text": "A .Net assembly is a platform-agnostic assembly"
+        },
+        {
+          "id": "D",
+          "text": "A Win32 assembly is a platform-specific assembly"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 11,
+      "question": "What is the purpose of the .Net Framework's Common Type System (CTS)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a set of data types"
+        },
+        {
+          "id": "B",
+          "text": "To provide a set of classes"
+        },
+        {
+          "id": "C",
+          "text": "To provide a set of type conversions"
+        },
+        {
+          "id": "D",
+          "text": "To provide a set of type definitions"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 12,
+      "question": "What is the difference between a .Net namespace and a .Net class?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .Net namespace is a class"
+        },
+        {
+          "id": "B",
+          "text": "A .Net class is a namespace"
+        },
+        {
+          "id": "C",
+          "text": "A namespace is a group of classes"
+        },
+        {
+          "id": "D",
+          "text": "A class is a group of namespaces"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 13,
+      "question": "What is the purpose of the .Net Framework's Reflection API?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a way to access and modify metadata"
+        },
+        {
+          "id": "B",
+          "text": "To provide a way to access and modify code"
+        },
+        {
+          "id": "C",
+          "text": "To provide a way to access and modify resources"
+        },
+        {
+          "id": "D",
+          "text": "To provide a way to access and modify the file system"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 14,
+      "question": "What is the difference between a .Net assembly and a CIL file?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .Net assembly is a CIL file"
+        },
+        {
+          "id": "B",
+          "text": "A CIL file is a .Net assembly"
+        },
+        {
+          "id": "C",
+          "text": "A .Net assembly is a platform-agnostic assembly"
+        },
+        {
+          "id": "D",
+          "text": "A CIL file is a platform-specific assembly"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 15,
+      "question": "What is the purpose of the .Net Framework's Security Manager?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a way to access and modify code"
+        },
+        {
+          "id": "B",
+          "text": "To provide a way to access and modify metadata"
+        },
+        {
+          "id": "C",
+          "text": "To provide a way to access and modify resources"
+        },
+        {
+          "id": "D",
+          "text": "To provide a way to access and modify the file system"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 16,
+      "question": "What is the difference between a .Net assembly and a Win32 DLL?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .Net assembly is a Win32 DLL"
+        },
+        {
+          "id": "B",
+          "text": "A Win32 DLL is a .Net assembly"
+        },
+        {
+          "id": "C",
+          "text": "A .Net assembly is a platform-agnostic assembly"
+        },
+        {
+          "id": "D",
+          "text": "A Win32 DLL is a platform-specific assembly"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 17,
+      "question": "What is the purpose of the .Net Framework's Type System?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a set of data types"
+        },
+        {
+          "id": "B",
+          "text": "To provide a set of classes"
+        },
+        {
+          "id": "C",
+          "text": "To provide a set of type conversions"
+        },
+        {
+          "id": "D",
+          "text": "To provide a set of type definitions"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 18,
+      "question": "What is the difference between a .Net class and a .Net interface?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .Net class is an interface"
+        },
+        {
+          "id": "B",
+          "text": "A .Net interface is a class"
+        },
+        {
+          "id": "C",
+          "text": "A class is a group of interfaces"
+        },
+        {
+          "id": "D",
+          "text": "An interface is a group of classes"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 19,
+      "question": "What is the purpose of the .Net Framework's Garbage Collector?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a way to access and modify code"
+        },
+        {
+          "id": "B",
+          "text": "To provide a way to access and modify metadata"
+        },
+        {
+          "id": "C",
+          "text": "To automatically manage memory"
+        },
+        {
+          "id": "D",
+          "text": "To provide a way to access and modify resources"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 20,
+      "question": "What is the difference between a .Net assembly and a COM component?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .Net assembly is a COM component"
+        },
+        {
+          "id": "B",
+          "text": "A COM component is a .Net assembly"
+        },
+        {
+          "id": "C",
+          "text": "A .Net assembly is a platform-agnostic assembly"
+        },
+        {
+          "id": "D",
+          "text": "A COM component is a platform-specific assembly"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1A2C3B4A5A6B7A8C9B10C11D12C13A14B15A16C17D18B19C20B"
+}

@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "title": "Data Structures Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the time complexity of finding a character in a string using KMP algorithm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "O(1)"
+        },
+        {
+          "id": "B",
+          "text": "O(n)"
+        },
+        {
+          "id": "C",
+          "text": "O(log n)"
+        },
+        {
+          "id": "D",
+          "text": "O(m)"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of the Boyer-Moore algorithm in string searching?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To find all occurrences of a pattern in a text"
+        },
+        {
+          "id": "B",
+          "text": "To find the first occurrence of a pattern in a text"
+        },
+        {
+          "id": "C",
+          "text": "To verify whether a pattern is present in a text"
+        },
+        {
+          "id": "D",
+          "text": "To find the last occurrence of a pattern in a text"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the name of the data structure used to implement the Rabin-Karp algorithm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "HashMap"
+        },
+        {
+          "id": "B",
+          "text": "ArrayList"
+        },
+        {
+          "id": "C",
+          "text": "LinkedHashMap"
+        },
+        {
+          "id": "D",
+          "text": "LinkedList"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is the problem with using a naive approach to find all occurrences of a pattern in a text?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is too slow"
+        },
+        {
+          "id": "B",
+          "text": "It is too fast"
+        },
+        {
+          "id": "C",
+          "text": "It is not scalable"
+        },
+        {
+          "id": "D",
+          "text": "It is not accurate"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the time complexity of the Knuth-Morris-Pratt algorithm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "O(n+m)"
+        },
+        {
+          "id": "B",
+          "text": "O(n)"
+        },
+        {
+          "id": "C",
+          "text": "O(m)"
+        },
+        {
+          "id": "D",
+          "text": "O(n+m^2)"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2B3A4A5A"
+}
