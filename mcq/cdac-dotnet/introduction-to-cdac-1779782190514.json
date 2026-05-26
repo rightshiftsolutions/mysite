@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "title": "CDAC-Dotnet Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is CDAC?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Centre for Development of Advanced Computing"
+        },
+        {
+          "id": "B",
+          "text": "Centre for Data Analysis Computing"
+        },
+        {
+          "id": "C",
+          "text": "Centre for Digital Applications Computing"
+        },
+        {
+          "id": "D",
+          "text": "Centre for Data Analytics Computing"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the primary goal of CDAC?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To promote e-governance in India"
+        },
+        {
+          "id": "B",
+          "text": "To develop infrastructure for IT industry"
+        },
+        {
+          "id": "C",
+          "text": "To provide training to IT professionals"
+        },
+        {
+          "id": "D",
+          "text": "To promote research and development in IT"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1A2A"
+}
