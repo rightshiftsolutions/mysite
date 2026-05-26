@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "title": "Data Structures Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of a data structure?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To store a collection of data"
+        },
+        {
+          "id": "B",
+          "text": "To perform mathematical operations on data"
+        },
+        {
+          "id": "C",
+          "text": "To control the flow of a program"
+        },
+        {
+          "id": "D",
+          "text": "To display data on the screen"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the term for a group of items stored in a specific order?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Array"
+        },
+        {
+          "id": "B",
+          "text": "Linked List"
+        },
+        {
+          "id": "C",
+          "text": "Stack"
+        },
+        {
+          "id": "D",
+          "text": "Queue"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "Which data structure uses a last-in-first-out (LIFO) order?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stack"
+        },
+        {
+          "id": "B",
+          "text": "Queue"
+        },
+        {
+          "id": "C",
+          "text": "Linked List"
+        },
+        {
+          "id": "D",
+          "text": "Tree"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is a data structure that consists of nodes with links between them?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Graph"
+        },
+        {
+          "id": "B",
+          "text": "Tree"
+        },
+        {
+          "id": "C",
+          "text": "Linked List"
+        },
+        {
+          "id": "D",
+          "text": "Array"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "Which data structure is used for efficient sorting and searching?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hash Table"
+        },
+        {
+          "id": "B",
+          "text": "Stack"
+        },
+        {
+          "id": "C",
+          "text": "Queue"
+        },
+        {
+          "id": "D",
+          "text": "Tree"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1A2A3A4C5A"
+}
