@@ -15,6 +15,7 @@ let spinRAF         = null;       // requestAnimationFrame handle
 let actionLog       = [];         // session log entries
 
 let generatedData = null;
+let savedGameId   = null;   // Track if game was already saved (prevents duplicate creation)
 
 // Wheel colour palette (neon-arcade)
 const WHEEL_COLORS = [
@@ -125,7 +126,7 @@ function renderTeacherGames() {
   if (!teacherGames.length) {
     tbody.innerHTML = `
       <tr>
-        <td colspan="5" class="text-center py-4 arena-text-muted">No games created yet.</td>
+        <td colspan="4" class="text-center py-4 arena-text-muted">No games created yet.</td>
       </tr>`;
     return;
   }
@@ -135,8 +136,7 @@ function renderTeacherGames() {
     const action = getToggleButtonConfig(game.status);
 
     return `
-      <tr>
-        <td class="arena-text-muted">${escapeHtml(game.id)}</td>
+      <tr class="game-row" data-game-id="${game.id}" onclick="selectGameRow(this, ${game.id}, '${escapeJs(game.status)}', '${escapeJs(game.gameName)}')">
         <td>
           <div class="fw-bold">${escapeHtml(game.gameName)}</div>
           <div class="arena-text-muted" style="font-size:0.8rem">${escapeHtml(game.courseName)}</div>
@@ -147,19 +147,33 @@ function renderTeacherGames() {
           <button
             class="teacher-action-btn ${action.btnClass}"
             id="toggle-btn-${game.id}"
-            onclick="toggleGameState(${game.id}, '${escapeJs(game.status)}', this)"
+            onclick="event.stopPropagation(); toggleGameState(${game.id}, '${escapeJs(game.status)}', this)"
           >${action.label}</button>
           <button
-            class="teacher-action-btn btn-edit-game"
-            onclick="openEditGameModal(${game.id})"
+            class="teacher-action-btn btn-edit-game game-action-btn"
+            style="display:none;"
+            onclick="event.stopPropagation(); openEditGameModal(${game.id})"
           >&#9998; Edit</button>
           <button
-            class="teacher-action-btn btn-delete-game"
-            onclick="deleteGame(${game.id}, '${escapeJs(game.gameName)}')"
+            class="teacher-action-btn btn-delete-game game-action-btn"
+            style="display:none;"
+            onclick="event.stopPropagation(); deleteGame(${game.id}, '${escapeJs(game.gameName)}')"
           >&#128465; Delete</button>
         </td>
       </tr>`;
   }).join('');
+}
+
+// Show Edit/Delete only for the selected row
+function selectGameRow(row, gameId, status, gameName) {
+  // Deselect previously selected row
+  document.querySelectorAll('.game-row.row-selected').forEach(r => {
+    r.classList.remove('row-selected');
+    r.querySelectorAll('.game-action-btn').forEach(btn => btn.style.display = 'none');
+  });
+  // Select clicked row
+  row.classList.add('row-selected');
+  row.querySelectorAll('.game-action-btn').forEach(btn => btn.style.display = '');
 }
 
 function getToggleButtonConfig(status) {
@@ -239,68 +253,60 @@ async function openEditGameModal(gameId) {
     const game = res.game;
     if (!game) { showNeonToast('Game not found.', 'error'); return; }
 
-    // Build modal HTML
     const existingModal = document.getElementById('editGameModal');
     if (existingModal) existingModal.remove();
 
     const gameTypeOptions = [
-      { value: 'RAPID_FIRE',        label: 'Rapid Fire' },
-      { value: 'BONUS_POINTS',      label: 'Bonus Points' },
-      { value: 'NEGATIVE_MARKING',  label: 'Negative Marking' },
-      { value: 'NO_NEGATIVE_MARKING', label: 'No Negative Marking' },
-      { value: 'SHADOWMIND',        label: 'KBC' },
+      { value: 'RAPID_FIRE',          label: '🔥 Rapid Fire' },
+      { value: 'BONUS_POINTS',        label: '⭐ Bonus Points' },
+      { value: 'NEGATIVE_MARKING',    label: '⚡ Negative Marking' },
+      { value: 'NO_NEGATIVE_MARKING', label: '🛡️ No Negative Marking' },
+      { value: 'SHADOWMIND',          label: '🎓 KBC' },
     ].map(opt => `<option value="${opt.value}" ${opt.value === game.gameType ? 'selected' : ''}>${escapeHtml(opt.label)}</option>`).join('');
 
     const modal = document.createElement('div');
     modal.id = 'editGameModal';
-    modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;padding:16px;';
+    modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;padding:16px;';
     modal.innerHTML = `
-      <div style="background:#1a1a2e;border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:32px;width:100%;max-width:480px;">
-        <h4 style="color:#fff;margin-bottom:24px;">&#9998; Edit Game</h4>
-        <div class="mb-3">
-          <label style="color:#aaa;font-size:0.9rem;">Game Name</label>
-          <input id="editGameName" class="form-control mt-1" value="${escapeHtml(game.gameName)}" />
-        </div>
-        <div class="mb-3">
-          <label style="color:#aaa;font-size:0.9rem;">Game Type</label>
-          <select id="editGameType" class="form-select mt-1">${gameTypeOptions}</select>
+      <div style="background:#1a1a2e;border:1px solid rgba(255,255,255,0.15);border-radius:1.25rem;padding:2rem;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+        <h4 style="color:#ffe135;font-family:'Fredoka One',cursive;margin-bottom:0.4rem;">✏️ Edit Game Type</h4>
+        <p style="color:rgba(240,242,255,0.5);font-size:0.85rem;margin-bottom:1.6rem;">Only game type can be changed after creation.</p>
+        <div style="background:rgba(255,255,255,0.04);border-radius:0.75rem;padding:1rem;margin-bottom:1.4rem;font-size:0.88rem;color:rgba(240,242,255,0.6);">
+          <div><strong style="color:#f0f2ff;">Game:</strong> ${escapeHtml(game.gameName)}</div>
+          <div><strong style="color:#f0f2ff;">Course:</strong> ${escapeHtml(game.courseName)}</div>
         </div>
         <div class="mb-4">
-          <label style="color:#aaa;font-size:0.9rem;">Answer Key</label>
-          <input id="editAnswerKey" class="form-control mt-1" value="${escapeHtml(game.answerKeyString)}" placeholder="e.g. 1A2B3C"/>
+          <label style="color:#aaa;font-size:0.85rem;display:block;margin-bottom:0.5rem;">Game Type</label>
+          <select id="editGameType" class="form-select" style="background:#111;color:#f0f2ff;border-color:rgba(255,255,255,0.2);">${gameTypeOptions}</select>
         </div>
         <div class="d-flex gap-2 justify-content-end">
-          <button class="btn btn-secondary" onclick="document.getElementById('editGameModal').remove()">Cancel</button>
-          <button class="btn btn-primary" onclick="saveEditGame(${game.id})">Save Changes</button>
+          <button class="btn btn-secondary btn-sm" onclick="document.getElementById('editGameModal').remove()">Cancel</button>
+          <button class="btn btn-warning btn-sm" onclick="saveEditGame(${game.id})">💾 Save Changes</button>
         </div>
       </div>`;
 
     document.body.appendChild(modal);
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
   } catch (err) {
     showNeonToast('Failed to load game: ' + err.message, 'error');
   }
 }
 
 async function saveEditGame(gameId) {
-  const gameName      = document.getElementById('editGameName')?.value?.trim();
-  const gameType      = document.getElementById('editGameType')?.value;
-  const answerKeyString = document.getElementById('editAnswerKey')?.value?.trim();
-
-  if (!gameName || !gameType || !answerKeyString) {
-    showNeonToast('All fields are required.', 'warning');
-    return;
-  }
+  const gameType = document.getElementById('editGameType')?.value;
+  if (!gameType) { showNeonToast('Game type is required.', 'warning'); return; }
 
   try {
     await apiFetch(`/api/teacher/games/${gameId}`, {
       method: 'PUT',
-      body: { gameName, gameType, answerKeyString }
+      body: { gameType }
     });
     document.getElementById('editGameModal')?.remove();
-    showNeonToast('&#10003; Game updated successfully!', 'success');
+    showNeonToast('✅ Game type updated!', 'success');
     await loadTeacherGames();
   } catch (err) {
-    showNeonToast('&#10007; Update failed: ' + err.message, 'error');
+    showNeonToast('❌ Update failed: ' + err.message, 'error');
   }
 }
 
@@ -1036,48 +1042,112 @@ document.addEventListener('DOMContentLoaded', () => {
       const gameName   = document.getElementById('gameName').value;
       const gameType   = document.getElementById('gameType').value;
 
-      await apiRequest('/api/teacher/games', {
-        method: 'POST',
-        body: {
-          courseName,
-          gameName,
-          gameType,
-          jsonText: JSON.stringify(generatedData),
-          answerKeyString: generatedData.answerKeyString
-        }
-      });
+      // Validate course is selected
+      if (!courseName) {
+        showNeonToast('⚠️ Please select a course first!', 'warning');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = '🚀 Save Game'; }
+        return;
+      }
 
-      // Task 7: neon success toast at top center
-      showNeonToast('🎮 Game created successfully!', 'success');
+      if (savedGameId) {
+        // ── GAME ALREADY SAVED: update questions only (no new game, no duplicate) ──
+        if (submitBtn) submitBtn.textContent = '⏳ Updating Questions…';
 
-      // Reset preview after short delay
-      setTimeout(() => {
-        const preview = document.getElementById('questionsPreview');
-        if (preview) {
-          preview.innerHTML = `
-            <div class="text-center py-5" style="color:var(--text-muted);">
-              <div style="font-size:3.5rem;margin-bottom:1rem;">🎯</div>
-              <p style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text-primary);">
-                Questions will appear here
-              </p>
-              <p style="font-size:0.85rem;">Fill in the settings and click Generate Questions</p>
-            </div>`;
-        }
-        const previewActions = document.getElementById('previewActions');
-        if (previewActions) previewActions.style.display = 'none';
-        generatedData = null;
-      }, 1800);
+        await apiRequest(`/api/teacher/games/${savedGameId}/questions`, {
+          method: 'PUT',
+          body: {
+            jsonText: JSON.stringify(generatedData),
+            answerKeyString: generatedData.answerKeyString
+          }
+        });
+
+        showNeonToast('🔄 Questions updated successfully!', 'success');
+
+        // Reset UI state (same as after initial save)
+        setTimeout(() => resetAfterSave(), 1800);
+
+      } else {
+        // ── NEW GAME: create it ──
+        const result = await apiRequest('/api/teacher/games', {
+          method: 'POST',
+          body: {
+            courseName,
+            gameName,
+            gameType,
+            jsonText: JSON.stringify(generatedData),
+            answerKeyString: generatedData.answerKeyString
+          }
+        });
+
+        // Store the saved game ID so future "Change Questions" + Save updates it
+        savedGameId = (result.game && result.game.id) || null;
+
+        showNeonToast('🎮 Game created successfully!', 'success');
+
+        // Update button text to signal update mode
+        updateSaveButtonState();
+
+        // Reset UI after delay
+        setTimeout(() => resetAfterSave(), 3000);
+      }
 
     } catch (err) {
       showNeonToast('❌ ' + err.message, 'error');
     } finally {
-      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = '🚀 Save Game'; }
+      if (submitBtn) { submitBtn.disabled = false; }
+      updateSaveButtonState();
     }
   });
 });
 
+// Keep Save button label in sync with state
+function updateSaveButtonState() {
+  const form = document.getElementById('createGameForm');
+  if (!form) return;
+  const submitBtn = form.querySelector('[type="submit"]');
+  if (!submitBtn) return;
+  if (savedGameId) {
+    submitBtn.textContent = '🔄 Update Questions';
+  } else {
+    submitBtn.textContent = '🚀 Save Game';
+  }
+}
+
+// Reset all UI state after a successful save or update
+function resetAfterSave() {
+  generatedData = null;
+  savedGameId   = null;
+
+  // Show generate button again
+  const genBtn = document.getElementById('generateBtn');
+  if (genBtn) genBtn.style.display = '';
+
+  // Remove reset wrap
+  const resetWrap = document.getElementById('generateResetWrap');
+  if (resetWrap) resetWrap.remove();
+
+  // Clear questions preview
+  const preview = document.getElementById('questionsPreview');
+  if (preview) {
+    preview.innerHTML = `
+      <div class="text-center py-5" style="color:var(--text-muted);">
+        <div style="font-size:3.5rem;margin-bottom:1rem;">🎯</div>
+        <p style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text-primary);">
+          Questions will appear here
+        </p>
+        <p style="font-size:0.85rem;">Fill in the settings and click Generate Questions</p>
+      </div>`;
+  }
+
+  const previewActions = document.getElementById('previewActions');
+  if (previewActions) previewActions.style.display = 'none';
+
+  updateSaveButtonState();
+}
+
 
 async function generateQuestions() {
+  if (!checkCourseBeforeGenerate()) return;
   const btn = document.getElementById('generateBtn');
 
   if (btn) {
@@ -1126,7 +1196,30 @@ async function generateQuestions() {
       btn.disabled = false;
       btn.textContent = '⚡ Generate Questions';
     }
+    // After generating: hide Generate button, show Reset option, update Save button label
+    if (generatedData && btn) {
+      btn.style.display = 'none';
+      let resetWrap = document.getElementById('generateResetWrap');
+      if (!resetWrap) {
+        resetWrap = document.createElement('div');
+        resetWrap.id = 'generateResetWrap';
+        resetWrap.style.cssText = 'display:flex;gap:0.75rem;align-items:center;margin-top:0.5rem;';
+        resetWrap.innerHTML = `
+          <span style="font-size:0.82rem;color:rgba(240,242,255,0.55);">✅ Questions ready</span>
+          <button type="button" class="teacher-action-btn btn-restart-game" onclick="resetGeneration()" style="font-size:0.8rem;padding:0.3rem 0.8rem;">
+            🔄 Reset &amp; Re-generate
+          </button>`;
+        btn.parentNode.appendChild(resetWrap);
+      }
+      // Keep Save button label current
+      updateSaveButtonState();
+    }
   }
+}
+
+// Reset question generation state (delegates to resetAfterSave for DRY)
+function resetGeneration() {
+  resetAfterSave();
 }
 
 function renderQuestions(questions) {
@@ -1143,7 +1236,7 @@ function renderQuestions(questions) {
         <span class="question-preview-number">Q${q.no}</span>
         <button
           class="teacher-action-btn btn-restart-game"
-          onclick="regenerateQuestion(${q.no})"
+          onclick="regenerateQuestion(${q.no}, this)"
         >🔄 Change Questions</button>
       </div>
 
@@ -1174,28 +1267,50 @@ function renderQuestions(questions) {
   `).join('');
 }
 
-async function regenerateQuestion(questionNo) {
-  const courseName = document.getElementById('courseName').value;
-  // const topic = document.getElementById('topic').value;
+async function regenerateQuestion(questionNo, btn) {
+  // This only regenerates a question in memory (generatedData).
+  // On "Save Game" / "Update Questions", the full updated set is sent to the backend.
+  // No new game is created here.
+  const courseName = document.getElementById('courseName') ? document.getElementById('courseName').value : '';
+  const gameName   = document.getElementById('gameName')   ? document.getElementById('gameName').value   : '';
+
+  if (!generatedData) {
+    showNeonToast('⚠️ No questions to regenerate. Generate questions first.', 'warning');
+    return;
+  }
+
+  const origText = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = '⏳'; }
 
   try {
     const res = await apiRequest('/api/teacher/regenerate-question', {
       method: 'POST',
-      body: {
-  courseName,
-  gameName: document.getElementById('gameName').value,
-  questionNo
-}
+      body: { courseName, gameName, questionNo }
     });
 
+    // Replace the question in memory — no DB / GitHub call yet
     const index = generatedData.questions.findIndex(q => q.no === questionNo);
+    if (index === -1) {
+      showNeonToast('⚠️ Question not found in current set.', 'warning');
+      return;
+    }
     generatedData.questions[index] = res;
-
     updateAnswerKey();
     renderQuestions(generatedData.questions);
 
+    // If a game was already saved, remind teacher to hit "Update Questions"
+    if (savedGameId) {
+      showNeonToast('✏️ Question changed. Click "🔄 Update Questions" to save to this game.', 'warning', 4000);
+    } else {
+      showNeonToast('✅ Question replaced. Click "🚀 Save Game" to save.', 'success', 3000);
+    }
+
+    updateSaveButtonState();
+
   } catch (err) {
-    alert(err.message);
+    showNeonToast('❌ ' + err.message, 'error');
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = origText || '🔄 Change Question'; }
   }
 }
 
@@ -1209,6 +1324,46 @@ function updateAnswerKey() {
   generatedData.answerKeyString = key;
 }
 
+
+// ── First-time teacher popup when no course exists ─────────────
+function showNoCourseTeacherPopup() {
+  const existingPopup = document.getElementById('noCourseTeacherModal');
+  if (existingPopup) return;
+
+  const modal = document.createElement('div');
+  modal.id = 'noCourseTeacherModal';
+  modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;padding:16px;';
+  modal.innerHTML = `
+    <div style="background:#1a1a2e;border:1px solid rgba(255,225,53,0.35);border-radius:1.25rem;padding:2.2rem;width:100%;max-width:420px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
+      <div style="font-size:3rem;margin-bottom:1rem;">📚</div>
+      <h4 style="color:#ffe135;font-family:'Fredoka One',cursive;margin-bottom:0.75rem;">No Course Selected!</h4>
+      <p style="color:rgba(240,242,255,0.65);font-size:0.95rem;margin-bottom:1.8rem;line-height:1.6;">
+        You have to select your course first before creating a game.
+      </p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <button
+          class="btn btn-outline-secondary btn-sm"
+          onclick="document.getElementById('noCourseTeacherModal').remove()"
+        >Dismiss</button>
+        <button
+          class="btn btn-warning"
+          onclick="document.getElementById('noCourseTeacherModal').remove(); window.location.href='manage-courses.html'"
+        >📚 Go to Manage Course</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+}
+
+// Also show popup when generate is clicked without a course
+function checkCourseBeforeGenerate() {
+  const courseName = document.getElementById('courseName');
+  if (!courseName || !courseName.value) {
+    showNoCourseTeacherPopup();
+    return false;
+  }
+  return true;
+}
+
 async function loadCourseDropdown() {
   try {
     const courses = await apiRequest('/api/courses/');
@@ -1216,6 +1371,11 @@ async function loadCourseDropdown() {
     const dropdown = document.getElementById('courseName');
 
     if (!dropdown) return;
+
+    if (!courses || courses.length === 0) {
+      // First-time teacher: no courses — show popup
+      showNoCourseTeacherPopup();
+    }
 
     dropdown.innerHTML = `
       <option value="">Select Course</option>

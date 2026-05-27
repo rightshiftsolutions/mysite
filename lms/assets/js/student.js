@@ -18,6 +18,77 @@ async function loadStudentDashboard() {
   ]);
   // Mini leaderboard loads after courses are known
   await loadMiniLeaderboard();
+
+  // Check if first-time student (no courses assigned yet)
+  checkFirstTimeCoursePopup();
+}
+
+// ── First-time student popup ────────────────────────────────
+async function checkFirstTimeCoursePopup() {
+  try {
+    const courses = await apiFetch("/api/student/my-courses");
+    if (!courses || courses.length === 0) {
+      showCourseAssignmentPopup();
+    }
+  } catch (err) {
+    // Fail silently
+  }
+}
+
+function showCourseAssignmentPopup() {
+  const existingModal = document.getElementById('firstTimeCourseModal');
+  if (existingModal) return;
+
+  const modal = document.createElement('div');
+  modal.id = 'firstTimeCourseModal';
+  modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;padding:16px;';
+  modal.innerHTML = `
+    <div style="background:#0d0f1c;border:1px solid rgba(0,229,255,0.35);border-radius:1.25rem;padding:2.2rem;width:100%;max-width:440px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.7);">
+      <div style="font-size:3rem;margin-bottom:1rem;">🎓</div>
+      <h4 style="color:#00e5ff;font-family:'Fredoka One',cursive;margin-bottom:0.75rem;">Welcome to the Arena!</h4>
+      <p style="color:rgba(240,242,255,0.65);font-size:0.95rem;margin-bottom:1.8rem;line-height:1.6;">
+        To get started, you need to select and enroll in a course first.<br>
+        <strong style="color:#ffe135;">Pick your course below to begin!</strong>
+      </p>
+      <div id="popupCourseSelect" style="margin-bottom:1.4rem;">
+        <select id="popupCourseDropdown" class="form-select" style="background:#111;color:#f0f2ff;border-color:rgba(255,255,255,0.2);text-align:center;">
+          <option value="">— Select a Course —</option>
+        </select>
+      </div>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <button class="btn btn-outline-secondary btn-sm" onclick="document.getElementById('firstTimeCourseModal').remove()">Skip for now</button>
+        <button class="btn btn-info" onclick="assignCourseFromPopup()">➕ Enroll in Course</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  // Populate the popup dropdown
+  const mainDropdown = document.getElementById('courseDropdown');
+  const popupDropdown = document.getElementById('popupCourseDropdown');
+  if (mainDropdown && popupDropdown) {
+    popupDropdown.innerHTML = mainDropdown.innerHTML;
+  }
+}
+
+async function assignCourseFromPopup() {
+  const dropdown = document.getElementById('popupCourseDropdown');
+  const courseId = dropdown && dropdown.value;
+
+  if (!courseId) {
+    dropdown && dropdown.style.setProperty('border-color', '#ff4455');
+    setTimeout(() => dropdown && dropdown.style.removeProperty('border-color'), 1500);
+    return;
+  }
+
+  try {
+    const result = await apiFetch(`/api/student/assign-course/${courseId}`, { method: "POST" });
+    showAlert("studentMessage", result.message, "success");
+    document.getElementById('firstTimeCourseModal')?.remove();
+    await loadAssignedCourses();
+    await loadMiniLeaderboard();
+  } catch (error) {
+    showAlert("studentMessage", error.message, "danger");
+  }
 }
 
 // ── Enrollment dropdown: ALL available courses ─────────────────

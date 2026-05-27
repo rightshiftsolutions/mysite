@@ -26,10 +26,12 @@
           <a href="leaderboard.html"       class="nav-pill">Leaderboard</a>
         </div>
         <span class="user-profile-badge d-none d-md-inline" data-current-user></span>
-        <button class="btn-outline-game" onclick="logout()">Logout</button>
+        <button class="btn-outline-game d-none d-lg-inline" onclick="logout()">Logout</button>
+        <button class="d-lg-none btn btn-sm" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:#f0f2ff;border-radius:0.5rem;padding:0.4rem 0.7rem;" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNavCreateGame" aria-expanded="false">☰</button>
       </div>
     </div>
   </nav>
+  <div class="collapse d-lg-none" id="mobileNavCreateGame" style="background:rgba(13,15,28,0.97);border-bottom:1px solid rgba(255,255,255,0.1);"><div class="container py-3 d-flex flex-column gap-2"><a href="teacher-dashboard.html" class="nav-pill">Dashboard</a><a href="create-game.html" class="nav-pill active">Create Game</a><a href="manage-courses.html" class="nav-pill">Manage Courses</a><a href="leaderboard.html" class="nav-pill">Leaderboard</a><button class="btn-outline-game mt-2" onclick="logout()">Logout</button></div></div>
 
   <main class="container py-4 py-lg-5">
 
