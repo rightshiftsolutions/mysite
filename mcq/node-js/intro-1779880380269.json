@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "title": "Node js Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is Node js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A script engine for Chrome"
+        },
+        {
+          "id": "B",
+          "text": "A server-side JavaScript runtime environment"
+        },
+        {
+          "id": "C",
+          "text": "A front-end framework"
+        },
+        {
+          "id": "D",
+          "text": "A back-end framework"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B"
+}
