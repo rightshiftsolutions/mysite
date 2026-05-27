@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "title": "Node js Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is Node js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A framework for building web applications"
+        },
+        {
+          "id": "B",
+          "text": "A JavaScript runtime environment"
+        },
+        {
+          "id": "C",
+          "text": "A library for data analysis"
+        },
+        {
+          "id": "D",
+          "text": "A programming language"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What does Node js use for file system operations?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Python"
+        },
+        {
+          "id": "B",
+          "text": "Node js built-in functions"
+        },
+        {
+          "id": "C",
+          "text": "Java"
+        },
+        {
+          "id": "D",
+          "text": "C++"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is npm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A version control system"
+        },
+        {
+          "id": "B",
+          "text": "A package manager for Node js"
+        },
+        {
+          "id": "C",
+          "text": "A framework for building web applications"
+        },
+        {
+          "id": "D",
+          "text": "A library for data analysis"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What does Node js use for WebSockets?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Socket.IO"
+        },
+        {
+          "id": "B",
+          "text": "Node js built-in HTTP module"
+        },
+        {
+          "id": "C",
+          "text": "Express.js"
+        },
+        {
+          "id": "D",
+          "text": "A custom implementation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the main purpose of the require function in Node js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Importing modules"
+        },
+        {
+          "id": "B",
+          "text": "Exporting modules"
+        },
+        {
+          "id": "C",
+          "text": "Creating instances of classes"
+        },
+        {
+          "id": "D",
+          "text": "Defining functions"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2B3B4A5A"
+}
