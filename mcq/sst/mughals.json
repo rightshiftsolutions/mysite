@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "title": "SST Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "Which of the following Mughal Emperor built the Red Fort in Delhi?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Akbar"
+        },
+        {
+          "id": "B",
+          "text": "Jahangir"
+        },
+        {
+          "id": "C",
+          "text": "Shah Jahan"
+        },
+        {
+          "id": "D",
+          "text": "Aurangzeb"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1C"
+}
