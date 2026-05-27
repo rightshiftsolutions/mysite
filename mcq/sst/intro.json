@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "title": "sst Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the main subject of social studies?",
+      "options": [
+        {
+          "id": "A",
+          "text": "History"
+        },
+        {
+          "id": "B",
+          "text": "Geography"
+        },
+        {
+          "id": "C",
+          "text": "Civics"
+        },
+        {
+          "id": "D",
+          "text": "All of the above"
+        }
+      ],
+      "correctAnswer": "D"
+    }
+  ],
+  "answerKeyString": "1D"
+}
