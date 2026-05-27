@@ -3,24 +3,498 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LMS Test Portal</title>
+  <title>LMS Arena – Gamified Learning</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
   <link href="assets/css/styles.css" rel="stylesheet">
+  <style>
+    /* ── Homepage-specific overrides ── */
+    .home-bg {
+      min-height: 100vh;
+      background: #0d0f1c;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .home-bg::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse at 10% 15%,  rgba(0,229,255,0.13)  0%, transparent 50%),
+        radial-gradient(ellipse at 90% 80%,  rgba(255,79,203,0.13)  0%, transparent 50%),
+        radial-gradient(ellipse at 55% 50%,  rgba(57,255,119,0.06)  0%, transparent 55%),
+        #0d0f1c;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* Floating particles */
+    .particle {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.18;
+      animation: floatUp linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(110vh) scale(1); opacity: 0; }
+      10%  { opacity: 0.18; }
+      90%  { opacity: 0.18; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    /* Navbar */
+    .home-nav {
+      position: relative; z-index: 10;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      background: rgba(13,15,28,0.75);
+      backdrop-filter: blur(16px);
+    }
+    .home-brand {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.6rem;
+      color: #ffe135;
+      text-decoration: none;
+      text-shadow: 0 0 18px rgba(255,225,53,0.6);
+      letter-spacing: 0.02em;
+    }
+    .home-brand span { color: #00e5ff; }
+
+    /* Hero */
+    .hero-section {
+      position: relative; z-index: 1;
+      min-height: calc(100vh - 72px);
+      display: flex; align-items: center;
+      padding: 4rem 0;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,225,53,0.1);
+      border: 1px solid rgba(255,225,53,0.35);
+      color: #ffe135;
+      font-family: 'Fredoka One', cursive;
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      padding: 0.35rem 1rem; border-radius: 3rem;
+      margin-bottom: 1.6rem;
+      text-transform: uppercase;
+    }
+    .hero-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.12;
+      color: #f0f2ff;
+      margin-bottom: 1.4rem;
+    }
+    .hero-title .highlight-cyan  { color: #00e5ff; text-shadow: 0 0 24px rgba(0,229,255,0.55); }
+    .hero-title .highlight-pink  { color: #ff4fcb; text-shadow: 0 0 24px rgba(255,79,203,0.55); }
+    .hero-title .highlight-green { color: #39ff77; text-shadow: 0 0 22px rgba(57,255,119,0.55); }
+    .hero-desc {
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      color: rgba(240,242,255,0.65);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 2.4rem;
+    }
+    .hero-cta-wrap { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .btn-hero-primary {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.05rem;
+      background: linear-gradient(135deg, #ffe135, #ff8c00);
+      color: #0d0f1c;
+      border: none;
+      padding: 0.85rem 2.2rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      box-shadow: 0 0 28px rgba(255,225,53,0.4);
+      transition: all 0.22s;
+      display: inline-block;
+    }
+    .btn-hero-primary:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 42px rgba(255,225,53,0.6);
+      color: #0d0f1c;
+    }
+    .btn-hero-ghost {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.05rem;
+      background: transparent;
+      color: #f0f2ff;
+      border: 2px solid rgba(255,255,255,0.25);
+      padding: 0.83rem 2.2rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      transition: all 0.22s;
+      display: inline-block;
+    }
+    .btn-hero-ghost:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.45);
+      color: #f0f2ff;
+      transform: translateY(-2px);
+    }
+
+    /* Stat badges row */
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 1.2rem;
+      margin-top: 3rem;
+    }
+    .hero-stat {
+      display: flex; align-items: center; gap: 0.55rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 0.55rem 1.1rem;
+    }
+    .hero-stat-icon { font-size: 1.3rem; }
+    .hero-stat-val  { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: #ffe135; }
+    .hero-stat-lbl  { font-size: 0.78rem; color: rgba(240,242,255,0.5); }
+
+    /* Feature cards */
+    .features-section {
+      position: relative; z-index: 1;
+      padding: 5rem 0;
+    }
+    .section-badge {
+      font-family: 'Fredoka One', cursive;
+      font-size: 0.82rem; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #00e5ff;
+      background: rgba(0,229,255,0.1);
+      border: 1px solid rgba(0,229,255,0.3);
+      padding: 0.3rem 1rem; border-radius: 3rem;
+      display: inline-block; margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #f0f2ff;
+      margin-bottom: 0.6rem;
+    }
+    .section-sub {
+      color: rgba(240,242,255,0.55);
+      font-size: 1rem; max-width: 500px;
+    }
+    .feat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1.4rem;
+      padding: 2rem 1.8rem;
+      height: 100%;
+      transition: all 0.28s cubic-bezier(0.34,1.56,0.64,1);
+      position: relative; overflow: hidden;
+    }
+    .feat-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--feat-color-a,transparent) 0%, transparent 70%);
+      opacity: 0; transition: opacity 0.28s;
+      border-radius: inherit;
+    }
+    .feat-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
+    .feat-card:hover::before { opacity: 1; }
+    .feat-icon {
+      width: 3rem; height: 3rem;
+      background: var(--feat-icon-bg, rgba(255,225,53,0.15));
+      border-radius: 0.8rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.1rem;
+    }
+    .feat-title { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: #f0f2ff; margin-bottom: 0.4rem; }
+    .feat-desc  { font-size: 0.9rem; color: rgba(240,242,255,0.55); line-height: 1.6; }
+
+    /* Steps / How it works */
+    .steps-section {
+      position: relative; z-index: 1;
+      padding: 4rem 0 5rem;
+    }
+    .step-card {
+      display: flex; align-items: flex-start; gap: 1.2rem;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 2.8rem; height: 2.8rem;
+      background: linear-gradient(135deg, #ffe135, #ff8c00);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fredoka One', cursive; font-size: 1.1rem;
+      color: #0d0f1c; box-shadow: 0 0 18px rgba(255,225,53,0.4);
+    }
+    .step-body h5 { font-family: 'Fredoka One', cursive; color: #f0f2ff; margin-bottom: 0.3rem; }
+    .step-body p  { color: rgba(240,242,255,0.55); font-size: 0.9rem; margin: 0; }
+
+    /* CTA bottom section */
+    .cta-section {
+      position: relative; z-index: 1;
+      padding: 5rem 0;
+    }
+    .cta-card {
+      background: linear-gradient(135deg, rgba(255,225,53,0.08) 0%, rgba(0,229,255,0.06) 100%);
+      border: 1px solid rgba(255,225,53,0.25);
+      border-radius: 2rem;
+      padding: 4rem 2.5rem;
+      text-align: center;
+    }
+    .cta-title { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem,4vw,2.8rem); color: #f0f2ff; margin-bottom: 1rem; }
+    .cta-sub   { color: rgba(240,242,255,0.6); max-width: 480px; margin: 0 auto 2rem; }
+
+    /* Hero right visual */
+    .hero-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-screen {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 1.8rem;
+      padding: 2rem;
+      width: 100%; max-width: 380px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .mock-bar { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.4rem; }
+    .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mock-q { background: rgba(255,255,255,0.06); border-radius: 0.8rem; padding: 1rem; margin-bottom: 0.8rem; }
+    .mock-q-label { font-size: 0.72rem; color: #00e5ff; font-family: 'Fredoka One',cursive; margin-bottom: 0.4rem; }
+    .mock-q-text  { font-size: 0.9rem; color: #f0f2ff; line-height: 1.45; }
+    .mock-opts { display: flex; flex-direction: column; gap: 0.5rem; }
+    .mock-opt {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.6rem;
+      padding: 0.55rem 0.9rem;
+      font-size: 0.82rem; color: rgba(240,242,255,0.8);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .mock-opt.correct { background: rgba(57,255,119,0.12); border-color: rgba(57,255,119,0.4); color: #39ff77; }
+    .mock-opt-key { font-family: 'Fredoka One',cursive; font-size: 0.8rem; min-width: 1.1rem; }
+    .mock-timer { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; }
+    .mock-timer-bar-wrap { flex: 1; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin: 0 0.8rem; overflow: hidden; }
+    .mock-timer-bar { height: 100%; width: 60%; background: linear-gradient(90deg,#ffe135,#ff8c00); border-radius: 3px; }
+    .mock-score-row { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .mock-score-lbl { font-size: 0.75rem; color: rgba(240,242,255,0.5); }
+    .mock-score-val { font-family: 'Fredoka One',cursive; font-size: 1.1rem; color: #ffe135; }
+
+    /* Footer */
+    .home-footer {
+      position: relative; z-index: 1;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+      color: rgba(240,242,255,0.35);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section { padding: 2.5rem 0; min-height: auto; }
+      .hero-visual   { margin-top: 3rem; }
+      .hero-screen   { max-width: 100%; }
+    }
+  </style>
 </head>
-<body class="auth-bg">
-  <main class="container py-5">
-    <div class="row align-items-center min-vh-100">
-      <div class="col-lg-7">
-        <span class="badge text-bg-primary pill mb-3">Bootstrap MCQ Game Portal</span>
-        <h1 class="display-4 fw-bold mb-3">Learn with test games, scores, and leaderboard.</h1>
-        <p class="lead text-muted mb-4">A simple static Bootstrap frontend for students and teacher. MCQ files load from GitHub Pages, while Node.js handles login, attempts, scoring, and leaderboard.</p>
-        <div class="d-flex flex-wrap gap-2">
-          <a href="login.html" class="btn btn-primary btn-lg px-4">Login</a>
-          <a href="signup.html" class="btn btn-outline-primary btn-lg px-4">Student Signup</a>
+<body class="home-bg">
+
+  <!-- Floating particles -->
+  <div class="particle" style="width:8px;height:8px;background:#ffe135;left:12%;animation-duration:18s;animation-delay:0s;"></div>
+  <div class="particle" style="width:5px;height:5px;background:#00e5ff;left:35%;animation-duration:22s;animation-delay:3s;"></div>
+  <div class="particle" style="width:7px;height:7px;background:#ff4fcb;left:65%;animation-duration:20s;animation-delay:6s;"></div>
+  <div class="particle" style="width:4px;height:4px;background:#39ff77;left:80%;animation-duration:25s;animation-delay:1s;"></div>
+  <div class="particle" style="width:6px;height:6px;background:#b44fff;left:50%;animation-duration:16s;animation-delay:9s;"></div>
+
+  <!-- Navbar -->
+  <nav class="home-nav">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="home-brand" href="index.html">🎮 LMS<span>Arena</span></a>
+      <div class="d-flex gap-2">
+        <a href="login.html"  class="btn-hero-ghost"   style="padding:0.5rem 1.4rem;font-size:0.92rem;">Login</a>
+        <a href="signup.html" class="btn-hero-primary"  style="padding:0.5rem 1.4rem;font-size:0.92rem;">Sign Up Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Left copy -->
+        <div class="col-lg-6">
+          <div class="hero-eyebrow">⚡ Gamified Learning Platform</div>
+          <h1 class="hero-title">
+            Learn. Compete.<br>
+            <span class="highlight-cyan">Level Up</span> Every<br>
+            <span class="highlight-pink">Day</span>.
+          </h1>
+          <p class="hero-desc">
+            AI-powered MCQ battles, live leaderboards, and real-time scoring —
+            the most engaging way to test knowledge and climb the ranks.
+          </p>
+          <div class="hero-cta-wrap">
+            <a href="signup.html" class="btn-hero-primary">🚀 Start Playing Free</a>
+            <a href="login.html"  class="btn-hero-ghost">Login →</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-icon">🎮</span>
+              <div>
+                <div class="hero-stat-val">Live</div>
+                <div class="hero-stat-lbl">Game Battles</div>
+              </div>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-icon">🏆</span>
+              <div>
+                <div class="hero-stat-val">Real-time</div>
+                <div class="hero-stat-lbl">Leaderboard</div>
+              </div>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-icon">🤖</span>
+              <div>
+                <div class="hero-stat-val">AI-Powered</div>
+                <div class="hero-stat-lbl">MCQ Generator</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right visual mockup -->
+        <div class="col-lg-6">
+          <div class="hero-visual">
+            <div class="hero-screen">
+              <div class="mock-bar">
+                <div class="mock-dot" style="background:#ff4455;"></div>
+                <div class="mock-dot" style="background:#ffe135;"></div>
+                <div class="mock-dot" style="background:#39ff77;"></div>
+                <span style="margin-left:auto;font-family:'Fredoka One',cursive;font-size:0.78rem;color:#ffe135;">🔥 Rapid Fire Mode</span>
+              </div>
+              <div class="mock-q">
+                <div class="mock-q-label">Q1 of 10</div>
+                <div class="mock-q-text">Which sorting algorithm has O(n log n) average time complexity?</div>
+              </div>
+              <div class="mock-opts">
+                <div class="mock-opt"><span class="mock-opt-key">A.</span> Bubble Sort</div>
+                <div class="mock-opt correct"><span class="mock-opt-key">B.</span> Merge Sort ✅</div>
+                <div class="mock-opt"><span class="mock-opt-key">C.</span> Selection Sort</div>
+                <div class="mock-opt"><span class="mock-opt-key">D.</span> Insertion Sort</div>
+              </div>
+              <div class="mock-timer">
+                <span style="font-family:'Fredoka One',cursive;font-size:0.85rem;color:#ffe135;">⏱ 42s</span>
+                <div class="mock-timer-bar-wrap"><div class="mock-timer-bar"></div></div>
+                <span style="font-size:0.75rem;color:rgba(240,242,255,0.5);">90s</span>
+              </div>
+              <div class="mock-score-row">
+                <div><div class="mock-score-lbl">Your Score</div><div class="mock-score-val">240 pts</div></div>
+                <div style="text-align:right;"><div class="mock-score-lbl">Rank</div><div class="mock-score-val">#2 🏅</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-badge">Why LMS Arena?</span>
+        <h2 class="section-title">Everything you need to<br>make learning addictive</h2>
+        <p class="section-sub mx-auto">Built for teachers who want engagement and students who want to win.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="feat-card" style="--feat-color-a:rgba(255,225,53,0.06);--feat-icon-bg:rgba(255,225,53,0.15);">
+            <div class="feat-icon">⚡</div>
+            <div class="feat-title">Rapid Fire Mode</div>
+            <div class="feat-desc">Speed-based rounds with countdown timers that keep players on the edge.</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="feat-card" style="--feat-color-a:rgba(0,229,255,0.06);--feat-icon-bg:rgba(0,229,255,0.15);">
+            <div class="feat-icon">🤖</div>
+            <div class="feat-title">AI Question Generator</div>
+            <div class="feat-desc">Generate topic-specific MCQs instantly using AI. No manual effort needed.</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="feat-card" style="--feat-color-a:rgba(57,255,119,0.06);--feat-icon-bg:rgba(57,255,119,0.15);">
+            <div class="feat-icon">🏆</div>
+            <div class="feat-title">Live Leaderboards</div>
+            <div class="feat-desc">Real-time rankings across courses. Students compete, teachers track progress.</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="feat-card" style="--feat-color-a:rgba(180,79,255,0.06);--feat-icon-bg:rgba(180,79,255,0.15);">
+            <div class="feat-icon">🎡</div>
+            <div class="feat-title">Student Spinner</div>
+            <div class="feat-desc">Interactive classroom wheel to pick students randomly and award live points.</div>
+          </div>
         </div>
       </div>
     </div>
-  </main>
+  </section>
+
+  <!-- How it works -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <span class="section-badge">How It Works</span>
+          <h2 class="section-title mt-2">Three steps to<br>battle-ready quizzes</h2>
+          <p class="section-sub mt-2">Teachers set it up in minutes. Students jump in instantly.</p>
+        </div>
+        <div class="col-lg-7">
+          <div class="d-flex flex-column gap-4">
+            <div class="step-card">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h5>Teacher creates a course & game</h5>
+                <p>Set up a course, let AI generate MCQs on any topic, and publish the game live.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h5>Students enroll and compete</h5>
+                <p>Students join the course, see the active game, and answer under pressure.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h5>Scores update, ranks shift</h5>
+                <p>Results are instant, leaderboards update in real-time, and the grind continues.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <h2 class="cta-title">Ready to enter the Arena?</h2>
+        <p class="cta-sub">Join students and teachers already competing on LMS Arena.</p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center">
+          <a href="signup.html" class="btn-hero-primary">🚀 Student Sign Up</a>
+          <a href="login.html"  class="btn-hero-ghost">Login as Teacher →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="home-footer">
+    <div class="container">
+      <span>© 2025 LMS Arena · Powered by AI · Built for learners</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/api.js"></script>
 </body>

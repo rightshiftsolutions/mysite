@@ -1539,3 +1539,109 @@ button:focus-visible, a:focus-visible {
   .neon-toast-container { width: 92vw; max-width: 92vw; }
   .neon-toast { white-space: normal; text-align: center; border-radius: 1rem; padding: 0.75rem 1.25rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE ADDITIONS & BUG FIXES
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Game row selection (edit/delete reveal) ── */
+.game-row { cursor: pointer; transition: background 0.18s; }
+.game-row:hover { background: rgba(255,255,255,0.04); }
+.game-row.row-selected { background: rgba(255,225,53,0.07); outline: 1px solid rgba(255,225,53,0.22); }
+
+/* ── Responsive table wrapper ── */
+.table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* ── Auth pages ── */
+.auth-bg {
+  min-height: 100vh;
+  background: #0d0f1c;
+  position: relative;
+}
+.auth-bg::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(0,229,255,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(255,79,203,0.10) 0%, transparent 50%),
+    #0d0f1c;
+  pointer-events: none; z-index: 0;
+}
+.auth-bg main { position: relative; z-index: 1; }
+.card-soft {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(12px);
+}
+.card-soft .form-control,
+.card-soft .form-select {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.15);
+  color: #f0f2ff;
+  border-radius: 0.75rem;
+}
+.card-soft .form-control::placeholder { color: rgba(240,242,255,0.35); }
+.card-soft .form-control:focus,
+.card-soft .form-select:focus {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(0,229,255,0.5);
+  box-shadow: 0 0 0 3px rgba(0,229,255,0.15);
+  color: #f0f2ff;
+}
+.card-soft label { color: rgba(240,242,255,0.7); font-size: 0.9rem; margin-bottom: 0.35rem; }
+.card-soft h2 { color: #f0f2ff; font-family: 'Fredoka One', cursive; }
+.card-soft p.text-muted { color: rgba(240,242,255,0.5) !important; }
+.card-soft a { color: #00e5ff; }
+.card-soft .btn-primary {
+  background: linear-gradient(135deg, #ffe135, #ff8c00);
+  border: none; color: #0d0f1c;
+  font-family: 'Fredoka One', cursive;
+  border-radius: 3rem;
+  box-shadow: 0 0 20px rgba(255,225,53,0.3);
+}
+.card-soft .btn-primary:hover { box-shadow: 0 0 30px rgba(255,225,53,0.5); transform: translateY(-1px); }
+
+/* ── Mobile Nav Pills ── */
+.nav-pill { display: block; }
+
+/* ── Responsive stats strip ── */
+.stats-strip {
+  display: flex; flex-wrap: wrap; gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.stat-chip {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.9rem;
+  padding: 0.65rem 1rem;
+  flex: 1; min-width: 120px;
+}
+
+/* ── Responsive tables on mobile ── */
+@media (max-width: 576px) {
+  .teacher-table th:nth-child(3),
+  .teacher-table td:nth-child(3) { display: none; }
+
+  .stat-chip { min-width: 100px; }
+}
+
+/* ── Responsive cards ── */
+@media (max-width: 768px) {
+  .glass-card { border-radius: 1rem; }
+  .welcome-hero { padding: 1.5rem; }
+  .projector-stage { flex-direction: column; }
+  .projector-wheel-zone, .projector-controls-zone { width: 100%; }
+}
+
+/* ── Prevent horizontal overflow ── */
+html, body { overflow-x: hidden; }
+.container { padding-left: 1rem; padding-right: 1rem; }
+
+/* ── Responsive modal ── */
+@media (max-width: 480px) {
+  #editGameModal > div,
+  #noCourseTeacherModal > div,
+  #firstTimeCourseModal > div { padding: 1.4rem !important; }
+}
