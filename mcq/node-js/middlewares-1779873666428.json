@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "title": "Node js Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What does Express.js middleware function do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It handles HTTP requests and responses"
+        },
+        {
+          "id": "B",
+          "text": "It is a function that executes for each request"
+        },
+        {
+          "id": "C",
+          "text": "It is a function that executes once on server startup"
+        },
+        {
+          "id": "D",
+          "text": "It is a function that can modify the request or response object"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of the body-parser middleware in Express.js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It parses the request body to JSON"
+        },
+        {
+          "id": "B",
+          "text": "It parses the request header"
+        },
+        {
+          "id": "C",
+          "text": "It parses the request query string"
+        },
+        {
+          "id": "D",
+          "text": "It parses the request URL"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of the morgan middleware in Express.js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It logs HTTP requests and responses to the console"
+        },
+        {
+          "id": "B",
+          "text": "It parses the request header"
+        },
+        {
+          "id": "C",
+          "text": "It handles HTTP requests and responses"
+        },
+        {
+          "id": "D",
+          "text": "It is a function that executes for each request"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the cors middleware in Express.js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It handles HTTP requests and responses"
+        },
+        {
+          "id": "B",
+          "text": "It allows CORS requests"
+        },
+        {
+          "id": "C",
+          "text": "It parses the request body to JSON"
+        },
+        {
+          "id": "D",
+          "text": "It parses the request header"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the helmet middleware in Express.js?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It allows CORS requests"
+        },
+        {
+          "id": "B",
+          "text": "It handles HTTP requests and responses"
+        },
+        {
+          "id": "C",
+          "text": "It sets HTTP headers to improve security"
+        },
+        {
+          "id": "D",
+          "text": "It parses the request body to JSON"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1D2A3A4B5C"
+}
