@@ -1,32 +1,18 @@
-const CACHE_VERSION = 'gymgurus-static-v1';
-const STATIC_CACHE = CACHE_VERSION;
-const APP_SHELL = [
-  './',
-  './index.html',
-  './manifest.json',
-  './favicon.png',
-  './flutter_bootstrap.js',
-  './flutter.js',
-  './main.dart.js',
-  './pwa.js',
-  './icons/Icon-192.png',
-  './icons/Icon-512.png',
-  './icons/Icon-maskable-192.png',
-  './icons/Icon-maskable-512.png',
+// Migration worker for older GymGurus AI PWA installs.
+//
+// Current builds use Flutter's generated flutter_service_worker.js. This file
+// remains only so browsers that previously registered pwa_service_worker.js can
+// install one final update, clear old custom caches, and reload into the
+// Flutter-managed service worker.
+
+const MIGRATION_CACHE_PREFIXES = [
+  'gymgurus-static',
+  'gymgurus-runtime',
+  'gymgurus-pwa',
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(STATIC_CACHE).then((cache) =>
-      Promise.all(
-        APP_SHELL.map((asset) =>
-          cache.add(asset).catch(() => {
-            // Flutter dev and release servers expose slightly different files.
-          }),
-        ),
-      ),
-    ),
-  );
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
@@ -36,7 +22,9 @@ self.addEventListener('activate', (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter((key) => key !== STATIC_CACHE)
+            .filter((key) =>
+              MIGRATION_CACHE_PREFIXES.some((prefix) => key.startsWith(prefix)),
+            )
             .map((key) => caches.delete(key)),
         ),
       )
@@ -52,36 +40,14 @@ self.addEventListener('message', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const request = event.request;
-  const url = new URL(request.url);
-
   if (request.method !== 'GET') return;
-  if (url.origin !== self.location.origin) return;
-  if (url.pathname.includes('/api/') || url.pathname.includes('/gym/')) return;
-
-  if (request.mode === 'navigate') {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(STATIC_CACHE).then((cache) => cache.put('./index.html', copy));
-          return response;
-        })
-        .catch(() => caches.match('./index.html')),
-    );
-    return;
-  }
 
   event.respondWith(
-    caches.match(request).then((cached) => {
-      if (cached) return cached;
-      return fetch(request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
-        const copy = response.clone();
-        caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
-        return response;
-      });
+    fetch(request).catch(() => {
+      if (request.mode === 'navigate') {
+        return caches.match('./index.html');
+      }
+      return caches.match(request);
     }),
   );
 });

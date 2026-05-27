@@ -1,9 +1,18 @@
 (function () {
   'use strict';
 
-  var customWorkerRegistration;
+  var APP_VERSION = window.__APP_VERSION__ || 'dev';
+  var VERSION_URL = 'version.json';
+  var VERSION_STORAGE_KEY = 'gymgurus:pwa-version';
+  var CHECK_INTERVAL_MS = 5 * 60 * 1000;
+  var AUTO_REFRESH_DELAY_MS = 8000;
+
   var deferredInstallPrompt;
-  var updateWorker;
+  var flutterRegistration;
+  var pendingWorker;
+  var refreshTimer;
+  var isRefreshing = false;
+  var updateToastShown = false;
 
   function isStandalone() {
     return (
@@ -24,9 +33,36 @@
     toast.classList.remove('show');
   }
 
+  function refreshNow() {
+    hideToast('pwa-update-toast');
+
+    if (pendingWorker) {
+      pendingWorker.postMessage({ type: 'SKIP_WAITING' });
+      return;
+    }
+
+    window.location.reload();
+  }
+
+  function scheduleRefresh() {
+    window.clearTimeout(refreshTimer);
+    refreshTimer = window.setTimeout(refreshNow, AUTO_REFRESH_DELAY_MS);
+  }
+
+  function showUpdatePrompt(worker) {
+    if (worker) pendingWorker = worker;
+    if (updateToastShown) return;
+
+    updateToastShown = true;
+    showToast('pwa-update-toast');
+    scheduleRefresh();
+  }
+
   function hideSplashWhenFlutterPaints() {
     var hasFlutterPainted = function () {
-      return document.querySelector('flt-glass-pane, flutter-view, flt-scene-host');
+      return document.querySelector(
+        'flt-glass-pane, flutter-view, flt-scene-host',
+      );
     };
 
     var hide = function () {
@@ -50,6 +86,102 @@
     });
     observer.observe(document.body, { childList: true, subtree: true });
     window.setTimeout(hide, 8000);
+  }
+
+  function versionUrl() {
+    return VERSION_URL + '?v=' + encodeURIComponent(Date.now().toString());
+  }
+
+  function readStoredVersion() {
+    try {
+      return window.localStorage.getItem(VERSION_STORAGE_KEY);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function storeVersion(version) {
+    try {
+      window.localStorage.setItem(VERSION_STORAGE_KEY, version);
+    } catch (_) {
+      // Storage can be unavailable in private browsing. The SW update path still works.
+    }
+  }
+
+  function checkVersion() {
+    return fetch(versionUrl(), {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' },
+    })
+      .then(function (response) {
+        if (!response.ok) return null;
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || !data.version) return;
+
+        var latestVersion = String(data.version);
+        var storedVersion = readStoredVersion();
+        if (!storedVersion) {
+          storeVersion(latestVersion);
+          return;
+        }
+
+        if (storedVersion !== latestVersion || APP_VERSION !== latestVersion) {
+          storeVersion(latestVersion);
+          if (flutterRegistration) flutterRegistration.update();
+          showUpdatePrompt();
+        }
+      })
+      .catch(function () {
+        // Offline or GitHub Pages propagation delay. Try again on the next tick.
+      });
+  }
+
+  function watchRegistration(registration) {
+    flutterRegistration = registration;
+
+    if (registration.waiting && navigator.serviceWorker.controller) {
+      showUpdatePrompt(registration.waiting);
+    }
+
+    registration.addEventListener('updatefound', function () {
+      var installing = registration.installing;
+      if (!installing) return;
+
+      installing.addEventListener('statechange', function () {
+        if (
+          installing.state === 'installed' &&
+          navigator.serviceWorker.controller
+        ) {
+          showUpdatePrompt(installing);
+        }
+      });
+    });
+  }
+
+  function attachFlutterServiceWorkerWatcher() {
+    if (!('serviceWorker' in navigator)) return;
+
+    navigator.serviceWorker.ready
+      .then(function (registration) {
+        watchRegistration(registration);
+        registration.update();
+        checkVersion();
+        window.setInterval(function () {
+          registration.update();
+          checkVersion();
+        }, CHECK_INTERVAL_MS);
+      })
+      .catch(function (error) {
+        console.warn('PWA service worker watcher failed:', error);
+      });
+
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (isRefreshing) return;
+      isRefreshing = true;
+      window.location.reload();
+    });
   }
 
   window.addEventListener('beforeinstallprompt', function (event) {
@@ -84,57 +216,16 @@
 
     var updateButton = document.getElementById('pwa-update-button');
     if (updateButton) {
-      updateButton.addEventListener('click', function () {
-        hideToast('pwa-update-toast');
-        if (updateWorker) {
-          updateWorker.postMessage({ type: 'SKIP_WAITING' });
-        } else {
-          window.location.reload();
-        }
-      });
+      updateButton.addEventListener('click', refreshNow);
     }
 
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('pwa_service_worker.js')
-        .then(function (registration) {
-          customWorkerRegistration = registration;
-
-          registration.addEventListener('updatefound', function () {
-            var installing = registration.installing;
-            if (!installing) return;
-
-            installing.addEventListener('statechange', function () {
-              if (
-                installing.state === 'installed' &&
-                navigator.serviceWorker.controller
-              ) {
-                updateWorker = installing;
-                showToast('pwa-update-toast');
-              }
-            });
-          });
-
-          window.setInterval(function () {
-            registration.update();
-          }, 60 * 60 * 1000);
-        })
-        .catch(function (error) {
-          console.warn('PWA service worker registration failed:', error);
-        });
-
-      var refreshing = false;
-      navigator.serviceWorker.addEventListener('controllerchange', function () {
-        if (refreshing) return;
-        refreshing = true;
-        window.location.reload();
-      });
-    }
+    attachFlutterServiceWorkerWatcher();
   });
 
   document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'visible' && customWorkerRegistration) {
-      customWorkerRegistration.update();
+    if (document.visibilityState === 'visible') {
+      if (flutterRegistration) flutterRegistration.update();
+      checkVersion();
     }
   });
 })();

@@ -1,1 +1,4 @@
-{"app_name":"gymproject","version":"1.0.0","build_number":"1","package_name":"gymproject"}
+{
+  "version": "dev",
+  "buildTime": "local"
+}

@@ -25,6 +25,7 @@
   <meta name="color-scheme" content="dark">
   <meta name="format-detection" content="telephone=no">
   <meta name="application-name" content="GymGurus AI">
+  <meta name="app-version" content="dev">
   <meta name="msapplication-TileColor" content="#000000">
   <meta name="msapplication-tap-highlight" content="no">
 
@@ -41,7 +42,7 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>GymGurus AI</title>
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json?v=dev">
   <style>
     html,
     body {
@@ -159,10 +160,13 @@
     <button id="pwa-install-button" type="button">Install</button>
   </div>
   <div id="pwa-update-toast" class="pwa-toast" role="status" aria-live="polite">
-    <div class="pwa-toast__text">A new version is ready.</div>
-    <button id="pwa-update-button" type="button">Update</button>
+    <div class="pwa-toast__text">New version available. Refresh now?</div>
+    <button id="pwa-update-button" type="button">Refresh</button>
   </div>
-  <script src="pwa.js" defer></script>
-  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    window.__APP_VERSION__ = 'dev';
+  </script>
+  <script src="pwa.js?v=dev" defer></script>
+  <script src="flutter_bootstrap.js?v=dev" async></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 {
     "name": "GymGurus AI",
     "short_name": "GymGurus",
-    "id": "/",
-    "start_url": "/?source=pwa",
-    "scope": "/",
+    "id": "./",
+    "start_url": "./?source=pwa",
+    "scope": "./",
     "display": "standalone",
     "display_override": [
         "standalone",
@@ -28,7 +28,7 @@
             "name": "Dashboard",
             "short_name": "Dashboard",
             "description": "Open gym dashboard",
-            "url": "/dashboard",
+            "url": "./?shortcut=dashboard",
             "icons": [
                 {
                     "src": "icons/Icon-192.png",
@@ -41,7 +41,7 @@
             "name": "Members",
             "short_name": "Members",
             "description": "Open member management",
-            "url": "/members",
+            "url": "./?shortcut=members",
             "icons": [
                 {
                     "src": "icons/Icon-192.png",
