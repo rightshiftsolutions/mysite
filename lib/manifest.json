@@ -2,7 +2,7 @@
     "name": "LibraryManager AI",
     "short_name": "LibraryManager",
     "id": "./",
-    "start_url": "./?source=pwa&v=20260529141633",
+    "start_url": "./?source=pwa&v=20260529143920",
     "scope": "./",
     "display": "standalone",
     "display_override": [
