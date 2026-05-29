@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/lib/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="LibraryManager AI helps study library owners manage students, seat plans, fee payments, social campaigns, and AI-powered content from any device.">
+  <meta name="theme-color" content="#071827" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#071827">
+  <meta name="color-scheme" content="dark">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="application-name" content="LibraryManager AI">
+  <meta name="app-version" content="20260529141633">
+  <meta name="msapplication-TileColor" content="#071827">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="LibraryManager AI">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="icons/Icon-512.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>LibraryManager AI</title>
+  <link rel="manifest" href="manifest.json?v=20260529141633">
+  <style>
+    html,
+    body {
+      background: #071827;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overscroll-behavior: none;
+    }
+
+    body {
+      min-height: 100%;
+    }
+
+    flt-glass-pane {
+      background: #071827;
+    }
+
+    #pwa-splash {
+      align-items: center;
+      background: #071827;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, Helvetica, sans-serif;
+      gap: 14px;
+      inset: 0;
+      justify-content: center;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right)
+        env(safe-area-inset-bottom) env(safe-area-inset-left);
+      position: fixed;
+      z-index: 9999;
+    }
+
+    #pwa-splash img {
+      border-radius: 28px;
+      height: 96px;
+      width: 96px;
+    }
+
+    #pwa-splash strong {
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    #pwa-splash span {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 12px;
+    }
+
+    .flutter-loaded #pwa-splash {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 220ms ease;
+    }
+
+    .pwa-toast {
+      align-items: center;
+      background: rgba(30, 30, 50, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      bottom: calc(18px + env(safe-area-inset-bottom));
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      color: #FFFFFF;
+      display: none;
+      font-family: Arial, Helvetica, sans-serif;
+      gap: 12px;
+      left: 16px;
+      max-width: 420px;
+      padding: 12px 14px;
+      position: fixed;
+      right: 16px;
+      z-index: 10000;
+    }
+
+    .pwa-toast.show {
+      display: flex;
+    }
+
+    .pwa-toast__text {
+      flex: 1;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .pwa-toast button {
+      background: #20C7B5;
+      border: 0;
+      border-radius: 12px;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 12px;
+    }
+
+    @media (display-mode: standalone) {
+      body {
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="pwa-splash" aria-hidden="true">
+    <img src="icons/Icon-192.png" alt="">
+    <strong>LibraryManager AI</strong>
+    <span>Loading your study library workspace...</span>
+  </div>
+  <div id="pwa-install-toast" class="pwa-toast" role="status" aria-live="polite">
+    <div class="pwa-toast__text">Install LibraryManager AI for a fullscreen app experience.</div>
+    <button id="pwa-install-button" type="button">Install</button>
+  </div>
+  <div id="pwa-update-toast" class="pwa-toast" role="status" aria-live="polite">
+    <div class="pwa-toast__text">New version available. Refresh now?</div>
+    <button id="pwa-update-button" type="button">Refresh</button>
+  </div>
+  <script>
+    window.__APP_VERSION__ = '20260529141633';
+  </script>
+  <script src="pwa.js?v=20260529141633" defer></script>
+  <script src="flutter_bootstrap.js?v=20260529141633" async></script>
+</body>
+</html>
