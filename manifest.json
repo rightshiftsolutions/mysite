@@ -2,7 +2,7 @@
     "name": "GymGurus AI",
     "short_name": "GymGurus",
     "id": "./",
-    "start_url": "./?source=pwa&v=20260529112902",
+    "start_url": "./?source=pwa&v=20260529115826",
     "scope": "./",
     "display": "standalone",
     "display_override": [
