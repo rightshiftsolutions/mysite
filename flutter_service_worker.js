@@ -1,6 +1,6 @@
 'use strict';
 
-const BUILD_VERSION = '20260529121656';
+const BUILD_VERSION = '20260529124039';
 const APP_CACHE = 'gymgurus-flutter-app-' + BUILD_VERSION;
 const RUNTIME_CACHE = 'gymgurus-runtime-' + BUILD_VERSION;
 const CACHE_PREFIXES = [
@@ -30,8 +30,8 @@ const ASSETS = [
     "./assets/assets/images/templates_offers/ganesh%20chaturthi.png",
     "./assets/assets/images/templates_offers/gen-1.png",
     "./assets/assets/images/templates_offers/gen-2.png",
-    "./assets/assets/images/templates_offers/gen3.png",
     "./assets/assets/images/templates_offers/gen-3.png",
+    "./assets/assets/images/templates_offers/gen-4.png",
     "./assets/assets/images/templates_offers/holi.png",
     "./assets/assets/images/templates_offers/independence.png",
     "./assets/assets/images/templates_offers/janmashtami.png",
