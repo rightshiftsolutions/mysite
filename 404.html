@@ -16,6 +16,16 @@
   -->
   <base href="/">
 
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      if (path === '/dance' || path.indexOf('/dance/') === 0) {
+        var target = '/dance/' + window.location.search + window.location.hash;
+        window.location.replace(target);
+      }
+    })();
+  </script>
+
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
