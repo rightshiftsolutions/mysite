@@ -98,7 +98,7 @@ const DATA_HI = {
     fields: {
       fullName: { label: "पूरा नाम", placeholder: "अपना पूरा नाम दर्ज करें" },
       phone: { label: "फ़ोन नंबर", prefix: "+91 " },
-      email: { label: "ईमेल पता", placeholder: "mail@example.com" },
+      email: { label: "ईमेल पता", placeholder: "mail@rightshiftsolutions.com" },
       message: { label: "अपना मामला बताएं", placeholder: "अपनी कानूनी आवश्यकता संक्षेप में बताएं..." },
     },
     consentText: "मैं <strong>गोपनीयता नीति</strong> के अनुसार WhatsApp और ईमेल के माध्यम से संचार प्राप्त करने के लिए सहमत हूँ।",

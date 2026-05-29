@@ -171,7 +171,7 @@ const DATA = {
     fields: {
       fullName: { label: "Full Name", placeholder: "Enter your full name" },
       phone: { label: "Phone Number", prefix: "+91 " },
-      email: { label: "Email Address", placeholder: "mail@example.com" },
+      email: { label: "Email Address", placeholder: "mail@rightshiftsolutions.com" },
       message: {
         label: "Describe Your Case",
         placeholder: "Briefly describe your legal requirement...",
