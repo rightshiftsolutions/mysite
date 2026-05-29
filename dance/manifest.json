@@ -2,7 +2,7 @@
     "name": "DanceManager AI",
     "short_name": "DanceManager AI",
     "id": "./",
-    "start_url": "./?source=pwa&v=20260529171309",
+    "start_url": "./?source=pwa&v=20260529180327",
     "scope": "./",
     "display": "standalone",
     "display_override": [
