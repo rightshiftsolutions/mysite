@@ -1,6 +1,6 @@
 'use strict';
 
-const BUILD_VERSION = '20260529110229';
+const BUILD_VERSION = '20260529112902';
 const APP_CACHE = 'gymgurus-flutter-app-' + BUILD_VERSION;
 const RUNTIME_CACHE = 'gymgurus-runtime-' + BUILD_VERSION;
 const CACHE_PREFIXES = [
