@@ -1,8 +1,8 @@
 {
     "name": "GymGurus AI",
-    "short_name": "GymGurus",
+    "short_name": "GymGurus AI",
     "id": "./",
-    "start_url": "./?source=pwa&v=20260529131528",
+    "start_url": "./?source=pwa&v=20260602123611",
     "scope": "./",
     "display": "standalone",
     "display_override": [
@@ -11,7 +11,7 @@
     ],
     "background_color": "#000000",
     "theme_color": "#000000",
-    "description": "API-powered gym management, member tracking, digital cards, social campaigns, and AI content tools.",
+    "description": "GymGurus AI helps gyms manage members, batches, fee tracking, events, social campaigns, and AI content tools.",
     "orientation": "any",
     "categories": [
         "business",
@@ -53,8 +53,43 @@
     ],
     "icons": [
         {
+            "src": "favicon-16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon-32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-167.png",
+            "sizes": "167x167",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-384.png",
+            "sizes": "384x384",
             "type": "image/png"
         },
         {

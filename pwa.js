@@ -5,11 +5,13 @@
   var VERSION_URL = 'version.json';
   var VERSION_STORAGE_KEY = 'gymgurus:pwa-version';
   var CHECK_INTERVAL_MS = 5 * 60 * 1000;
+  var AUTO_REFRESH_DELAY_MS = 8000;
+
   var deferredInstallPrompt;
   var flutterRegistration;
   var pendingWorker;
+  var refreshTimer;
   var isRefreshing = false;
-  var userRequestedRefresh = false;
   var updateToastShown = false;
 
   function isStandalone() {
@@ -33,7 +35,6 @@
 
   function refreshNow() {
     hideToast('pwa-update-toast');
-    userRequestedRefresh = true;
 
     if (pendingWorker) {
       pendingWorker.postMessage({ type: 'SKIP_WAITING' });
@@ -43,12 +44,18 @@
     window.location.reload();
   }
 
+  function scheduleRefresh() {
+    window.clearTimeout(refreshTimer);
+    refreshTimer = window.setTimeout(refreshNow, AUTO_REFRESH_DELAY_MS);
+  }
+
   function showUpdatePrompt(worker) {
     if (worker) pendingWorker = worker;
     if (updateToastShown) return;
 
     updateToastShown = true;
     showToast('pwa-update-toast');
+    scheduleRefresh();
   }
 
   function hideSplashWhenFlutterPaints() {
@@ -172,7 +179,6 @@
 
     navigator.serviceWorker.addEventListener('controllerchange', function () {
       if (isRefreshing) return;
-      if (!userRequestedRefresh) return;
       isRefreshing = true;
       window.location.reload();
     });

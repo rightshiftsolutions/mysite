@@ -18,13 +18,14 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="GymGurus AI helps gym owners manage members, plans, payments, social campaigns, and AI-powered content from any device.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="description" content="GymGurus AI helps gyms manage members, batches, fees, events, social campaigns, and AI-powered content from any device.">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
   <meta name="format-detection" content="telephone=no">
   <meta name="application-name" content="GymGurus AI">
-  <meta name="app-version" content="20260529131528">
+  <meta name="app-version" content="20260602123611">
   <meta name="msapplication-TileColor" content="#000000">
   <meta name="msapplication-tap-highlight" content="no">
 
@@ -33,15 +34,19 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="GymGurus AI">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" href="icons/Icon-180.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/Icon-152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="icons/Icon-167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/Icon-180.png">
   <link rel="apple-touch-icon" sizes="192x192" href="icons/Icon-192.png">
-  <link rel="apple-touch-icon" sizes="512x512" href="icons/Icon-512.png">
 
   <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>GymGurus AI</title>
-  <link rel="manifest" href="manifest.json?v=20260529131528">
+  <link rel="manifest" href="manifest.json?v=20260602123611">
   <style>
     html,
     body {
@@ -58,45 +63,6 @@
 
     flt-glass-pane {
       background: #000000;
-    }
-
-    #pwa-splash {
-      align-items: center;
-      background: #000000;
-      color: #FFFFFF;
-      display: flex;
-      flex-direction: column;
-      font-family: Arial, Helvetica, sans-serif;
-      gap: 14px;
-      inset: 0;
-      justify-content: center;
-      padding: env(safe-area-inset-top) env(safe-area-inset-right)
-        env(safe-area-inset-bottom) env(safe-area-inset-left);
-      position: fixed;
-      z-index: 9999;
-    }
-
-    #pwa-splash img {
-      border-radius: 28px;
-      height: 96px;
-      width: 96px;
-    }
-
-    #pwa-splash strong {
-      font-size: 18px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    #pwa-splash span {
-      color: rgba(255, 255, 255, 0.55);
-      font-size: 12px;
-    }
-
-    .flutter-loaded #pwa-splash {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 220ms ease;
     }
 
     .pwa-toast {
@@ -149,11 +115,6 @@
   </style>
 </head>
 <body>
-  <div id="pwa-splash" aria-hidden="true">
-    <img src="icons/Icon-192.png" alt="">
-    <strong>GymGurus AI</strong>
-    <span>Loading your gym workspace...</span>
-  </div>
   <div id="pwa-install-toast" class="pwa-toast" role="status" aria-live="polite">
     <div class="pwa-toast__text">Install GymGurus AI for a fullscreen app experience.</div>
     <button id="pwa-install-button" type="button">Install</button>
@@ -163,9 +124,9 @@
     <button id="pwa-update-button" type="button">Refresh</button>
   </div>
   <script>
-    window.__APP_VERSION__ = '20260529131528';
+    window.__APP_VERSION__ = '20260602123611';
   </script>
-  <script src="pwa.js?v=20260529131528" defer></script>
-  <script src="flutter_bootstrap.js?v=20260529131528" async></script>
+  <script src="pwa.js?v=20260602123611" defer></script>
+  <script src="flutter_bootstrap.js?v=20260602123611" async></script>
 </body>
 </html>
