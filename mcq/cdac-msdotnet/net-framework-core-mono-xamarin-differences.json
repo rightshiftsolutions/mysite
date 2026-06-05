@@ -1,0 +1,468 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "success": true,
+      "no": 1,
+      "question": "What is the primary purpose of Mono?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To develop web applications"
+        },
+        {
+          "id": "B",
+          "text": "To run .NET Framework on Linux and macOS"
+        },
+        {
+          "id": "C",
+          "text": "To build mobile apps for Android and iOS"
+        },
+        {
+          "id": "D",
+          "text": "To create a new .NET Framework Core"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "success": true,
+      "no": 2,
+      "question": "Which of the following framework is an open source implementation of .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Xamarin"
+        },
+        {
+          "id": "B",
+          "text": "Mono"
+        },
+        {
+          "id": "C",
+          "text": ".NET Framework"
+        },
+        {
+          "id": "D",
+          "text": "ASP.NET"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is Mono?",
+      "options": [
+        {
+          "id": "A",
+          "text": ".NET Framework for Linux and macOS"
+        },
+        {
+          "id": "B",
+          "text": ".NET Core for cross-platform development"
+        },
+        {
+          "id": "C",
+          "text": "Open-source implementation of .NET"
+        },
+        {
+          "id": "D",
+          "text": "Cross-platform development framework"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "What is Xamarin?",
+      "options": [
+        {
+          "id": "A",
+          "text": ".NET Framework for mobile development"
+        },
+        {
+          "id": "B",
+          "text": ".NET Core for cross-platform development"
+        },
+        {
+          "id": "C",
+          "text": "Cross-platform mobile app development framework"
+        },
+        {
+          "id": "D",
+          "text": "Open-source implementation of .NET"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "Which of the following is true about .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is open-source"
+        },
+        {
+          "id": "B",
+          "text": "It is cross-platform"
+        },
+        {
+          "id": "C",
+          "text": "It is a managed code framework"
+        },
+        {
+          "id": "D",
+          "text": "It is a cross-platform mobile development framework"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 6,
+      "question": "Which of the following is true about .NET Core?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is a desktop-only framework"
+        },
+        {
+          "id": "B",
+          "text": "It is a cross-platform framework"
+        },
+        {
+          "id": "C",
+          "text": "It is a server-side framework"
+        },
+        {
+          "text": "It is a mobile-only framework"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the primary difference between Mono and .NET Core?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mono is open-source while .NET Core is not"
+        },
+        {
+          "id": "B",
+          "text": "Mono is a cross-platform framework while .NET Core is not"
+        },
+        {
+          "id": "C",
+          "text": "Mono is a .NET Framework implementation for Linux and macOS"
+        },
+        {
+          "id": "D",
+          "text": "Mono is a mobile development framework while .NET Core is not"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 8,
+      "question": "Which of the following is a benefit of using Xamarin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It allows for cross-platform development with C++"
+        },
+        {
+          "id": "B",
+          "text": "It allows for mobile app development with native performance"
+        },
+        {
+          "id": "C",
+          "text": "It allows for cross-platform development with .NET"
+        },
+        {
+          "id": "D",
+          "text": "It allows for web development only"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 9,
+      "question": "What is the primary use of .NET Core CLI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Building Windows desktop and mobile applications"
+        },
+        {
+          "id": "B",
+          "text": "Building cross-platform applications"
+        },
+        {
+          "id": "C",
+          "text": "Creating and managing .NET Core projects"
+        },
+        {
+          "id": "D",
+          "text": "Building desktop applications only"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 10,
+      "question": "Which of the following is true about Mono?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is a .NET Framework for Windows only"
+        },
+        {
+          "id": "B",
+          "text": "It is a .NET implementation for Linux and macOS"
+        },
+        {
+          "id": "C",
+          "text": "It is a cross-platform development framework"
+        },
+        {
+          "id": "D",
+          "text": "It is a mobile development framework"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 11,
+      "question": "What is the relationship between .NET Core and Xamarin?",
+      "options": [
+        {
+          "id": "A",
+          "text": ".NET Core is a subset of Xamarin"
+        },
+        {
+          "id": "B",
+          "text": ".NET Core and Xamarin are separate frameworks"
+        },
+        {
+          "id": "C",
+          "text": ".NET Core is used for Xamarin development"
+        },
+        {
+          "id": "D",
+          "text": "Xamarin is used for .NET Core development"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 12,
+      "question": "Which of the following is a feature of Mono?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It supports only Windows development"
+        },
+        {
+          "id": "B",
+          "text": "It is a .NET implementation for Linux and macOS"
+        },
+        {
+          "id": "C",
+          "text": "It allows for cross-platform development"
+        },
+        {
+          "id": "D",
+          "text": "It is a mobile development framework"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 13,
+      "question": "What is the primary difference between .NET Framework and .NET Core?",
+      "options": [
+        {
+          "id": "A",
+          "text": ".NET Framework is open-source while .NET Core is not"
+        },
+        {
+          "id": "B",
+          "text": ".NET Framework is a server-side framework while .NET Core is not"
+        },
+        {
+          "id": "C",
+          "text": ".NET Framework is a cross-platform framework while .NET Core is not"
+        },
+        {
+          "id": "D",
+          "text": ".NET Framework is a desktop-only framework while .NET Core is not"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 14,
+      "question": "Which of the following is a benefit of using .NET Core?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It allows for cross-platform development with C++"
+        },
+        {
+          "id": "B",
+          "text": "It allows for mobile app development with native performance"
+        },
+        {
+          "id": "C",
+          "text": "It allows for cross-platform development with .NET"
+        },
+        {
+          "id": "D",
+          "text": "It allows for web development only"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 15,
+      "question": "What is the purpose of the .NET Core SDK?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To build Windows desktop and mobile applications"
+        },
+        {
+          "id": "B",
+          "text": "To create and manage .NET Core projects"
+        },
+        {
+          "id": "C",
+          "text": "To build cross-platform applications"
+        },
+        {
+          "id": "D",
+          "text": "To build desktop applications only"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 16,
+      "question": "Which of the following is true about Xamarin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is a .NET Framework for Windows only"
+        },
+        {
+          "id": "B",
+          "text": "It is a cross-platform mobile app development framework"
+        },
+        {
+          "id": "C",
+          "text": "It is a desktop-only framework"
+        },
+        {
+          "id": "D",
+          "text": "It is a server-side framework"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 17,
+      "question": "What is the relationship between .NET Core and Mono?",
+      "options": [
+        {
+          "id": "A",
+          "text": ".NET Core is a subset of Mono"
+        },
+        {
+          "id": "B",
+          "text": ".NET Core and Mono are separate frameworks"
+        },
+        {
+          "id": "C",
+          "text": ".NET Core is used for Mono development"
+        },
+        {
+          "id": "D",
+          "text": "Mono is used for .NET Core development"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 18,
+      "question": "Which of the following is a feature of .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It supports only cross-platform development"
+        },
+        {
+          "id": "B",
+          "text": "It is a managed code framework"
+        },
+        {
+          "id": "C",
+          "text": "It is a desktop-only framework"
+        },
+        {
+          "id": "D",
+          "text": "It is a server-side framework"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 19,
+      "question": "What is the primary use of the .NET Standard?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Building Windows desktop and mobile applications"
+        },
+        {
+          "id": "B",
+          "text": "Building cross-platform applications"
+        },
+        {
+          "id": "C",
+          "text": "Providing a common API for .NET Core and .NET Framework"
+        },
+        {
+          "id": "D",
+          "text": "Building desktop applications only"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 20,
+      "question": "Which of the following is a benefit of using Xamarin.Forms?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It allows for cross-platform development with C++"
+        },
+        {
+          "id": "B",
+          "text": "It allows for mobile app development with native performance"
+        },
+        {
+          "id": "C",
+          "text": "It allows for cross-platform development with XAML"
+        },
+        {
+          "id": "D",
+          "text": "It allows for web development only"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1B2B3C4C5C6B7C8C9C10B11B12B13C14C15B16B17B18B19C20C"
+}
