@@ -1,0 +1,467 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of the .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a platform for building Windows applications"
+        },
+        {
+          "id": "B",
+          "text": "To provide a platform for building web applications"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform for building cross-platform applications"
+        },
+        {
+          "id": "D",
+          "text": "To provide a platform for building console applications"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the Intermediate Language (IL) also known as?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bytecode"
+        },
+        {
+          "id": "B",
+          "text": "Platform Independent Code"
+        },
+        {
+          "id": "C",
+          "text": "Common Intermediate Language"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Intermediate Language"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of an Assembly in the .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a container for deploying multiple classes"
+        },
+        {
+          "id": "B",
+          "text": "To provide a container for deploying a single class"
+        },
+        {
+          "id": "C",
+          "text": "To provide a container for deploying a set of classes and resources"
+        },
+        {
+          "id": "D",
+          "text": "To provide a container for deploying a set of classes and types"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "What is the difference between an EXE and a DLL file in the .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An EXE file is a library, while a DLL file is an application"
+        },
+        {
+          "id": "B",
+          "text": "An EXE file is an application, while a DLL file is a library"
+        },
+        {
+          "id": "C",
+          "text": "An EXE file contains only code, while a DLL file contains code and data"
+        },
+        {
+          "id": "D",
+          "text": "An EXE file contains code and data, while a DLL file contains only code"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 5,
+      "question": "What is the .NET Framework's garbage collection mechanism called?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Manual Memory Management"
+        },
+        {
+          "id": "B",
+          "text": "Automatic Memory Management"
+        },
+        {
+          "id": "C",
+          "text": "Garbage Truncation"
+        },
+        {
+          "id": "D",
+          "text": "Memory Recycling"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of the Global Assembly Cache (GAC) in the .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To cache frequently used assemblies"
+        },
+        {
+          "id": "B",
+          "text": "To cache assemblies for a specific application"
+        },
+        {
+          "id": "C",
+          "text": "To cache assemblies for all applications on the system"
+        },
+        {
+          "id": "D",
+          "text": "To cache assemblies for a specific user"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 7,
+      "question": "What is the .NET Framework's Common Type System (CTS) responsible for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Defining a standard set of data types"
+        },
+        {
+          "id": "B",
+          "text": "Defining a standard set of classes"
+        },
+        {
+          "id": "C",
+          "text": "Defining a standard set of exceptions"
+        },
+        {
+          "id": "D",
+          "text": "Defining a standard set of events"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is the .NET Framework's Common Language Runtime (CLR) responsible for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Providing memory management"
+        },
+        {
+          "id": "B",
+          "text": "Providing type safety"
+        },
+        {
+          "id": "C",
+          "text": "Providing exception handling"
+        },
+        {
+          "id": "D",
+          "text": "Providing all of the above"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the Manifest in an assembly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the assembly's dependencies"
+        },
+        {
+          "id": "B",
+          "text": "To specify the assembly's metadata"
+        },
+        {
+          "id": "C",
+          "text": "To specify the assembly's culture"
+        },
+        {
+          "id": "D",
+          "text": "To specify the assembly's name"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 10,
+      "question": "What is the difference between a strong-named assembly and a weakly-named assembly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A strongly-named assembly has a public key, while a weakly-named assembly does not"
+        },
+        {
+          "id": "B",
+          "text": "A weakly-named assembly has a public key, while a strongly-named assembly does not"
+        },
+        {
+          "id": "C",
+          "text": "A strongly-named assembly is verified by the CLR, while a weakly-named assembly is not"
+        },
+        {
+          "id": "D",
+          "text": "A weakly-named assembly is verified by the CLR, while a strongly-named assembly is not"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 11,
+      "question": "What is the purpose of the .NET Framework's versioning system?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To track changes to an assembly over time"
+        },
+        {
+          "id": "B",
+          "text": "To identify the assembly's culture"
+        },
+        {
+          "id": "C",
+          "text": "To identify the assembly's public key"
+        },
+        {
+          "id": "D",
+          "text": "To identify the assembly's name"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of the .NET Framework's metadata?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide information about an assembly's code"
+        },
+        {
+          "id": "B",
+          "text": "To provide information about an assembly's resources"
+        },
+        {
+          "id": "C",
+          "text": "To provide information about an assembly's dependencies"
+        },
+        {
+          "id": "D",
+          "text": "To provide information about an assembly's culture"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 13,
+      "question": "What is the .NET Framework's CAS (Code Access Security) used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To verify the identity of an assembly"
+        },
+        {
+          "id": "B",
+          "text": "To verify the integrity of an assembly"
+        },
+        {
+          "id": "C",
+          "text": "To verify the permissions of an assembly"
+        },
+        {
+          "id": "D",
+          "text": "To verify all of the above"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 14,
+      "question": "What is the purpose of the .NET Framework's ClickOnce deployment?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To deploy assemblies to a user's computer"
+        },
+        {
+          "id": "B",
+          "text": "To deploy assemblies to a server"
+        },
+        {
+          "id": "C",
+          "text": "To deploy assemblies to a specific user"
+        },
+        {
+          "id": "D",
+          "text": "To deploy assemblies to all users"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 15,
+      "question": "What is the .NET Framework's COM Interop used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To integrate .NET code with native code"
+        },
+        {
+          "id": "B",
+          "text": "To integrate .NET code with web services"
+        },
+        {
+          "id": "C",
+          "text": "To integrate .NET code with databases"
+        },
+        {
+          "id": "D",
+          "text": "To integrate .NET code with other .NET applications"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 16,
+      "question": "What is the .NET Framework's ADO.NET used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To access databases"
+        },
+        {
+          "id": "B",
+          "text": "To access files"
+        },
+        {
+          "id": "C",
+          "text": "To access the file system"
+        },
+        {
+          "id": "D",
+          "text": "To access the registry"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 17,
+      "question": "What is the .NET Framework's WCF (Windows Communication Foundation) used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To build web services"
+        },
+        {
+          "id": "B",
+          "text": "To build web applications"
+        },
+        {
+          "id": "C",
+          "text": "To build desktop applications"
+        },
+        {
+          "id": "D",
+          "text": "To build mobile applications"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 18,
+      "question": "What is the .NET Framework's WF (Windows Workflow Foundation) used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To build workflows"
+        },
+        {
+          "id": "B",
+          "text": "To build web services"
+        },
+        {
+          "id": "C",
+          "text": "To build web applications"
+        },
+        {
+          "id": "D",
+          "text": "To build desktop applications"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 19,
+      "question": "What is the .NET Framework's WPF (Windows Presentation Foundation) used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To build user interfaces"
+        },
+        {
+          "id": "B",
+          "text": "To build web services"
+        },
+        {
+          "id": "C",
+          "text": "To build web applications"
+        },
+        {
+          "id": "D",
+          "text": "To build desktop applications"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 20,
+      "question": "What is the .NET Framework's WCF RIA (Windows Communication Foundation RIA) used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To build rich internet applications"
+        },
+        {
+          "id": "B",
+          "text": "To build web services"
+        },
+        {
+          "id": "C",
+          "text": "To build web applications"
+        },
+        {
+          "id": "D",
+          "text": "To build desktop applications"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1A2C3C4B5B6C7A8D9A10A11A12A13D14A15A16A17A18A19A20A"
+}
