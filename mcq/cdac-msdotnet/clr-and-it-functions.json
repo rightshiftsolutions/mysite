@@ -1,0 +1,467 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the primary purpose of the Common Language Runtime (CLR)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To provide a platform for C# and other .NET languages"
+        },
+        {
+          "id": "B",
+          "text": "To provide a platform for Java and other Java languages"
+        },
+        {
+          "id": "C",
+          "text": "To provide a platform for C and other C-based languages"
+        },
+        {
+          "id": "D",
+          "text": "To provide a platform for Python and other Python-based languages"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the process of converting the .NET code into native machine code called?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Just-In-Time (JIT) Compilation"
+        },
+        {
+          "id": "B",
+          "text": "Ahead-of-Time (AOT) Compilation"
+        },
+        {
+          "id": "C",
+          "text": "Dynamic Compilation"
+        },
+        {
+          "id": "D",
+          "text": "Static Compilation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "Which of the following is a function of the CLR?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memory Management"
+        },
+        {
+          "id": "B",
+          "text": "Thread Management"
+        },
+        {
+          "id": "C",
+          "text": "Security"
+        },
+        {
+          "id": "D",
+          "text": "All of the above"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 4,
+      "question": "What is the term for the process of automatically freeing memory occupied by .NET objects?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Garbage Collection"
+        },
+        {
+          "id": "B",
+          "text": "Memory Reclamation"
+        },
+        {
+          "id": "C",
+          "text": "Object Deletion"
+        },
+        {
+          "id": "D",
+          "text": "Memory Allocation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "Which of the following is a type of .NET AppDomain?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Private AppDomain"
+        },
+        {
+          "id": "B",
+          "text": "Shared AppDomain"
+        },
+        {
+          "id": "C",
+          "text": "Global AppDomain"
+        },
+        {
+          "id": "D",
+          "text": "Local AppDomain"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 6,
+      "question": "What is the term for the process of checking for any invalid or malicious data?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data Validation"
+        },
+        {
+          "id": "B",
+          "text": "Data Verification"
+        },
+        {
+          "id": "C",
+          "text": "Data Authentication"
+        },
+        {
+          "id": "D",
+          "text": "Data Authorization"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 7,
+      "question": "What is the term for the process of controlling access to an object or resource?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data Authorization"
+        },
+        {
+          "id": "B",
+          "text": "Data Validation"
+        },
+        {
+          "id": "C",
+          "text": "Data Verification"
+        },
+        {
+          "id": "D",
+          "text": "Access Control"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is the term for the concept of writing code that is independent of the .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Platform-Independent"
+        },
+        {
+          "id": "B",
+          "text": "Platform-Dependent"
+        },
+        {
+          "id": "C",
+          "text": "Language-Independent"
+        },
+        {
+          "id": "D",
+          "text": "Language-Dependent"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 9,
+      "question": "What is the term for the concept of providing a common language runtime for multiple .NET languages?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Common Language Specification (CLS)"
+        },
+        {
+          "id": "B",
+          "text": "Common Type System (CTS)"
+        },
+        {
+          "id": "C",
+          "text": "Common Language Runtime (CLR)"
+        },
+        {
+          "id": "D",
+          "text": "Common Framework"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 10,
+      "question": "What is the term for the concept of providing a common type system for multiple .NET languages?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Common Language Specification (CLS)"
+        },
+        {
+          "id": "B",
+          "text": "Common Type System (CTS)"
+        },
+        {
+          "id": "C",
+          "text": "Common Language Runtime (CLR)"
+        },
+        {
+          "id": "D",
+          "text": "Common Framework"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 11,
+      "question": "What is the term for the concept of providing a strict enforcement of the rules defined in the CLS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "CLS Compliance"
+        },
+        {
+          "id": "B",
+          "text": "CLS Enforcement"
+        },
+        {
+          "id": "C",
+          "text": "CLS Implementation"
+        },
+        {
+          "id": "D",
+          "text": "CLS Violation"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 12,
+      "question": "What is the term for the concept of providing a flexible approach to the rules defined in the CLS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "CLS Compliance"
+        },
+        {
+          "id": "B",
+          "text": "CLS Enforcement"
+        },
+        {
+          "id": "C",
+          "text": "CLS Implementation"
+        },
+        {
+          "id": "D",
+          "text": "CLS Violation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 13,
+      "question": "What is the term for the concept of providing a way to improve the security of .NET applications?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Code Access Security (CAS)"
+        },
+        {
+          "id": "B",
+          "text": "Code Protection"
+        },
+        {
+          "id": "C",
+          "text": "Code Obfuscation"
+        },
+        {
+          "id": "D",
+          "text": "Code Encryption"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 14,
+      "question": "What is the term for the process of converting the .NET code into native machine code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Just-In-Time (JIT) Compilation"
+        },
+        {
+          "id": "B",
+          "text": "Ahead-of-Time (AOT) Compilation"
+        },
+        {
+          "id": "C",
+          "text": "Dynamic Compilation"
+        },
+        {
+          "id": "D",
+          "text": "Static Compilation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 15,
+      "question": "What is the term for the process of automatically freeing memory occupied by .NET objects?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Garbage Collection"
+        },
+        {
+          "id": "B",
+          "text": "Memory Reclamation"
+        },
+        {
+          "id": "C",
+          "text": "Object Deletion"
+        },
+        {
+          "id": "D",
+          "text": "Memory Allocation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 16,
+      "question": "What is the term for the concept of providing a way to partition .NET applications?",
+      "options": [
+        {
+          "id": "A",
+          "text": "AppDomain"
+        },
+        {
+          "id": "B",
+          "text": "Assembly"
+        },
+        {
+          "id": "C",
+          "text": "Module"
+        },
+        {
+          "id": "D",
+          "text": "Resource"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 17,
+      "question": "What is the term for the concept of providing a way to improve the performance of .NET applications?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Just-In-Time (JIT) Compilation"
+        },
+        {
+          "id": "B",
+          "text": "Ahead-of-Time (AOT) Compilation"
+        },
+        {
+          "id": "C",
+          "text": "Dynamic Compilation"
+        },
+        {
+          "id": "D",
+          "text": "Static Compilation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 18,
+      "question": "What is the term for the concept of providing a way to improve the security of .NET applications?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Code Access Security (CAS)"
+        },
+        {
+          "id": "B",
+          "text": "Code Protection"
+        },
+        {
+          "id": "C",
+          "text": "Code Obfuscation"
+        },
+        {
+          "id": "D",
+          "text": "Code Encryption"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 19,
+      "question": "What is the term for the process of converting the .NET code into native machine code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Just-In-Time (JIT) Compilation"
+        },
+        {
+          "id": "B",
+          "text": "Ahead-of-Time (AOT) Compilation"
+        },
+        {
+          "id": "C",
+          "text": "Dynamic Compilation"
+        },
+        {
+          "id": "D",
+          "text": "Static Compilation"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 20,
+      "question": "What is the term for the concept of providing a way to improve the performance of .NET applications?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Just-In-Time (JIT) Compilation"
+        },
+        {
+          "id": "B",
+          "text": "Ahead-of-Time (AOT) Compilation"
+        },
+        {
+          "id": "C",
+          "text": "Dynamic Compilation"
+        },
+        {
+          "id": "D",
+          "text": "Static Compilation"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1A2A3D4A5B6A7A8A9B10A11B12A13A14A15A16A17A18A19A20A"
+}
