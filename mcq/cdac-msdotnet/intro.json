@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is CDAC?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Central Delhi Administrative Center"
+        },
+        {
+          "id": "B",
+          "text": "Centre for Development of Advanced Computing"
+        },
+        {
+          "id": "C",
+          "text": "Computer Department of Administrative Center"
+        },
+        {
+          "id": "D",
+          "text": "Central Data Analysis Center"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is MS-DOTNET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Microsoft Dot Net Framework"
+        },
+        {
+          "id": "B",
+          "text": "Micro System Data Output Terminal"
+        },
+        {
+          "id": "C",
+          "text": "Microsoft Server Database Operating System"
+        },
+        {
+          "id": "D",
+          "text": "Microsoft Solution Development Operating Terminal"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2A"
+}
