@@ -1,0 +1,237 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of an interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To implement multiple inheritance"
+        },
+        {
+          "id": "B",
+          "text": "To provide a blueprint for classes to follow"
+        },
+        {
+          "id": "C",
+          "text": "To create abstract classes"
+        },
+        {
+          "id": "D",
+          "text": "To create a base class"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "Which of the following is a characteristic of an interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It can have constructors"
+        },
+        {
+          "id": "B",
+          "text": "It is abstract"
+        },
+        {
+          "id": "C",
+          "text": "It can be instantiated"
+        },
+        {
+          "id": "D",
+          "text": "It can be inherited"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the keyword used to implement an interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IN"
+        },
+        {
+          "id": "B",
+          "text": "IMPLMENTS"
+        },
+        {
+          "id": "C",
+          "text": "USES"
+        },
+        {
+          "id": "D",
+          "text": "INHERITS"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "Which of the following is a benefit of using interfaces in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It increases the complexity of the code"
+        },
+        {
+          "id": "B",
+          "text": "It allows for multiple inheritance"
+        },
+        {
+          "id": "C",
+          "text": "It provides a way to implement polymorphism"
+        },
+        {
+          "id": "D",
+          "text": "It reduces the flexibility of the code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "An interface in C# can contain",
+      "options": [
+        {
+          "id": "A",
+          "text": "Constructors only"
+        },
+        {
+          "id": "B",
+          "text": "Methods and properties only"
+        },
+        {
+          "id": "C",
+          "text": "Fields only"
+        },
+        {
+          "id": "D",
+          "text": "A combination of methods, properties, and events"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 6,
+      "question": "Which of the following is a limitation of using interfaces in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It can be instantiated directly"
+        },
+        {
+          "id": "B",
+          "text": "It can be inherited by multiple classes"
+        },
+        {
+          "id": "C",
+          "text": "It can be used to implement multiple inheritance"
+        },
+        {
+          "id": "D",
+          "text": "It is abstract"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 7,
+      "question": "Which of the following is a use case for interfaces in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a base class"
+        },
+        {
+          "id": "B",
+          "text": "To implement multiple inheritance"
+        },
+        {
+          "id": "C",
+          "text": "To create a blueprint for classes to follow"
+        },
+        {
+          "id": "D",
+          "text": "To create a concrete class"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 8,
+      "question": "Which of the following is a characteristic of an interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is sealed"
+        },
+        {
+          "id": "B",
+          "text": "It is abstract"
+        },
+        {
+          "id": "C",
+          "text": "It is sealed and abstract"
+        },
+        {
+          "id": "D",
+          "text": "It is none of the above"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 9,
+      "question": "What is the keyword used to declare an interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "CLASS"
+        },
+        {
+          "id": "B",
+          "text": "INTERFACE"
+        },
+        {
+          "id": "C",
+          "text": "STRUCT"
+        },
+        {
+          "id": "D",
+          "text": "ENUM"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 10,
+      "question": "Which of the following is a best practice for using interfaces in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use interfaces to implement multiple inheritance"
+        },
+        {
+          "id": "B",
+          "text": "Use interfaces to provide a blueprint for classes to follow"
+        },
+        {
+          "id": "C",
+          "text": "Use interfaces to create abstract classes"
+        },
+        {
+          "id": "D",
+          "text": "Use interfaces to create concrete classes"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B2B3B4C5D6A7C8B9B10B"
+}
