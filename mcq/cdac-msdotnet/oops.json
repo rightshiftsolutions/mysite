@@ -1,0 +1,467 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is a class in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A method"
+        },
+        {
+          "id": "B",
+          "text": "A variable"
+        },
+        {
+          "id": "C",
+          "text": "A block of code that is used to define an object"
+        },
+        {
+          "id": "D",
+          "text": "A type of inheritance"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 2,
+      "question": "What is an object in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A class"
+        },
+        {
+          "id": "B",
+          "text": "An instance of a class"
+        },
+        {
+          "id": "C",
+          "text": "A method"
+        },
+        {
+          "id": "D",
+          "text": "A variable"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is encapsulation in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hiding internal state from the outside"
+        },
+        {
+          "id": "B",
+          "text": "Exposing internal state to the outside"
+        },
+        {
+          "id": "C",
+          "text": "Coupling objects together"
+        },
+        {
+          "id": "D",
+          "text": "Decoupling objects together"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is abstraction in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Showing only the necessary information"
+        },
+        {
+          "id": "B",
+          "text": "Hiding internal state from the outside"
+        },
+        {
+          "id": "C",
+          "text": "Exposing internal state to the outside"
+        },
+        {
+          "id": "D",
+          "text": "Coupling objects together"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is inheritance in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Creating a new class from an existing class"
+        },
+        {
+          "id": "B",
+          "text": "Creating a new object from an existing object"
+        },
+        {
+          "id": "C",
+          "text": "Creating a new method from an existing method"
+        },
+        {
+          "id": "D",
+          "text": "Creating a new variable from an existing variable"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "What is polymorphism in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The ability of an object to take on multiple forms"
+        },
+        {
+          "id": "B",
+          "text": "The ability of a class to take on multiple forms"
+        },
+        {
+          "id": "C",
+          "text": "The ability of a method to take on multiple forms"
+        },
+        {
+          "id": "D",
+          "text": "The ability of a variable to take on multiple forms"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 7,
+      "question": "What is method overloading in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Allowing multiple methods with the same name but different parameters"
+        },
+        {
+          "id": "B",
+          "text": "Allowing multiple methods with the same name but different return types"
+        },
+        {
+          "id": "C",
+          "text": "Allowing multiple methods with the same name but different access modifiers"
+        },
+        {
+          "id": "D",
+          "text": "Allowing multiple methods with the same name but different visibility"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is method overriding in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Replacing a method from a parent class in a child class"
+        },
+        {
+          "id": "B",
+          "text": "Overwriting a method from a parent class in a child class"
+        },
+        {
+          "id": "C",
+          "text": "Extending a method from a parent class in a child class"
+        },
+        {
+          "id": "D",
+          "text": "Modifying a method from a parent class in a child class"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 9,
+      "question": "What is a constructor in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A method that is called when an object is created"
+        },
+        {
+          "id": "B",
+          "text": "A method that is called when an object is destroyed"
+        },
+        {
+          "id": "C",
+          "text": "A method that is called when an object is updated"
+        },
+        {
+          "id": "D",
+          "text": "A method that is called when an object is deleted"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 10,
+      "question": "What is a destructor in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A method that is called when an object is created"
+        },
+        {
+          "id": "B",
+          "text": "A method that is called when an object is destroyed"
+        },
+        {
+          "id": "C",
+          "text": "A method that is called when an object is updated"
+        },
+        {
+          "id": "D",
+          "text": "A method that is called when an object is deleted"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 11,
+      "question": "What is the purpose of encapsulation in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "B",
+          "text": "To hide internal state from the outside"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of abstraction in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "B",
+          "text": "To show only the necessary information"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 13,
+      "question": "What is the purpose of inheritance in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "B",
+          "text": "To create a new class from an existing class"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 14,
+      "question": "What is the purpose of polymorphism in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "B",
+          "text": "To show only the necessary information"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 15,
+      "question": "What is the purpose of method overloading in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "B",
+          "text": "To allow multiple methods with the same name but different parameters"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 16,
+      "question": "What is the purpose of method overriding in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "B",
+          "text": "To replace a method from a parent class in a child class"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 17,
+      "question": "What is the purpose of constructor in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "B",
+          "text": "To create an object"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 18,
+      "question": "What is the purpose of destructor in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "B",
+          "text": "To destroy an object"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 19,
+      "question": "What is the purpose of encapsulation in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To hide internal state from the outside"
+        },
+        {
+          "id": "B",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 20,
+      "question": "What is the purpose of abstraction in OOPS?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To show only the necessary information"
+        },
+        {
+          "id": "B",
+          "text": "To make code easier to read"
+        },
+        {
+          "id": "C",
+          "text": "To make code easier to write"
+        },
+        {
+          "id": "D",
+          "text": "To make code easier to debug"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1C2B3A4A5A6A7A8B9A10B11B12B13B14A15B16B17B18B19A20A"
+}
