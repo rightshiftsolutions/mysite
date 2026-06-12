@@ -1,0 +1,353 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "success": true,
+      "no": 1,
+      "question": "What is the primary purpose of the Main method in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a User Interface"
+        },
+        {
+          "id": "B",
+          "text": "To execute the application"
+        },
+        {
+          "id": "C",
+          "text": "To declare a variable"
+        },
+        {
+          "id": "D",
+          "text": "To create a function"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is ILDASM?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .NET compiler"
+        },
+        {
+          "id": "B",
+          "text": "A .NET disassembler"
+        },
+        {
+          "id": "C",
+          "text": "A .NET runtime"
+        },
+        {
+          "id": "D",
+          "text": "A .NET IDE"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the difference between .NET Core and .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "One is for Windows and the other for Linux"
+        },
+        {
+          "id": "B",
+          "text": "One is open-source and the other is proprietary"
+        },
+        {
+          "id": "C",
+          "text": "One is for development and the other for deployment"
+        },
+        {
+          "id": "D",
+          "text": "One is for desktop and the other for mobile"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the CLR?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To manage memory allocation in .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To run .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To compress .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "What is the Common Language Specification (CLS)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .NET compiler"
+        },
+        {
+          "id": "B",
+          "text": "A .NET disassembler"
+        },
+        {
+          "id": "C",
+          "text": "A set of rules for .NET compatibility"
+        },
+        {
+          "id": "D",
+          "text": "A .NET runtime"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 6,
+      "question": "What is the Common Type System (CTS)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .NET compiler"
+        },
+        {
+          "id": "B",
+          "text": "A .NET disassembler"
+        },
+        {
+          "id": "C",
+          "text": "A set of rules for .NET data types"
+        },
+        {
+          "id": "D",
+          "text": "A .NET runtime"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 7,
+      "question": "What is the .NET Common Language Infrastructure (CLI)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .NET compiler"
+        },
+        {
+          "id": "B",
+          "text": "A .NET disassembler"
+        },
+        {
+          "id": "C",
+          "text": "A set of rules for .NET compatibility"
+        },
+        {
+          "id": "D",
+          "text": "A .NET runtime"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 8,
+      "question": "What is MSIL?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A .NET compiler"
+        },
+        {
+          "id": "B",
+          "text": "A .NET disassembler"
+        },
+        {
+          "id": "C",
+          "text": "A .NET intermediate language"
+        },
+        {
+          "id": "D",
+          "text": "A .NET runtime"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 9,
+      "question": "What is the difference between managed and unmanaged code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Managed code is for Windows and unmanaged code is for Linux"
+        },
+        {
+          "id": "B",
+          "text": "Managed code is for development and unmanaged code is for deployment"
+        },
+        {
+          "id": "C",
+          "text": "Managed code is for .NET and unmanaged code is for non-.NET"
+        },
+        {
+          "id": "D",
+          "text": "Managed code is for memory allocation and unmanaged code is for CPU usage"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the .NET Garbage Collector (GC) in relation to managed code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To manage memory allocation in .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To prevent memory leaks"
+        },
+        {
+          "id": "C",
+          "text": "To compress .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To run .NET code"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 11,
+      "question": "What is the role of the .NET Common Language Specification (CLS) in relation to managed code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To manage memory allocation in .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To ensure .NET compatibility"
+        },
+        {
+          "id": "D",
+          "text": "To run .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of the .NET Common Type System (CTS) in relation to managed code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To manage memory allocation in .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To ensure .NET data type compatibility"
+        },
+        {
+          "id": "D",
+          "text": "To run .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 13,
+      "question": "What is the role of the .NET Common Language Infrastructure (CLI) in relation to managed code?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To manage memory allocation in .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To ensure .NET compatibility"
+        },
+        {
+          "id": "D",
+          "text": "To run .NET code"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 14,
+      "question": "What is MSIL used for?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compile .NET code"
+        },
+        {
+          "id": "B",
+          "text": "To disassemble .NET code"
+        },
+        {
+          "id": "C",
+          "text": "To run .NET code"
+        },
+        {
+          "id": "D",
+          "text": "To optimize .NET code"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 15,
+      "question": "What is the main difference between .NET Core and .NET Framework?",
+      "options": [
+        {
+          "id": "A",
+          "text": "One is for Windows and the other for Linux"
+        },
+        {
+          "id": "B",
+          "text": "One is open-source and the other is proprietary"
+        },
+        {
+          "id": "C",
+          "text": "One is for development and the other for deployment"
+        },
+        {
+          "id": "D",
+          "text": "One is for desktop and the other for mobile"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1B2B3B4C5C6C7C8C9C10A11C12C13C14B15B"
+}
