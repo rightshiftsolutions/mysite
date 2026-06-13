@@ -1,0 +1,467 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the main use of Generic classes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "For memory management"
+        },
+        {
+          "id": "B",
+          "text": "For type safety"
+        },
+        {
+          "id": "C",
+          "text": "For performance improvement"
+        },
+        {
+          "id": "D",
+          "text": "For exception handling"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of the where clause in a generic method?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify constraints on the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify the method's name"
+        },
+        {
+          "id": "D",
+          "text": "To specify the method's namespace"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "Which of the following is a type of delegate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Multicast delegate"
+        },
+        {
+          "id": "B",
+          "text": "Single-cast delegate"
+        },
+        {
+          "id": "C",
+          "text": "Delegate"
+        },
+        {
+          "id": "D",
+          "text": "Callback"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the delegate keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify a reference to a method"
+        },
+        {
+          "id": "D",
+          "text": "To specify a reference to a property"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "What is the use of the Multicast delegate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify multiple methods to invoke"
+        },
+        {
+          "id": "B",
+          "text": "To specify a single method to invoke"
+        },
+        {
+          "id": "C",
+          "text": "To specify a null method to invoke"
+        },
+        {
+          "id": "D",
+          "text": "To specify a default method to invoke"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of the Output parameter in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To return a value from a method"
+        },
+        {
+          "id": "B",
+          "text": "To pass a value to a method"
+        },
+        {
+          "id": "C",
+          "text": "To output a value to the console"
+        },
+        {
+          "id": "D",
+          "text": "To input a value from the console"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the purpose of the 'out' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify the 'out' parameter"
+        },
+        {
+          "id": "D",
+          "text": "To specify the 'in' parameter"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 8,
+      "question": "What is the purpose of the 'ref' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify the 'ref' parameter"
+        },
+        {
+          "id": "D",
+          "text": "To specify the 'out' parameter"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the 'in' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify the 'in' parameter"
+        },
+        {
+          "id": "D",
+          "text": "To specify the 'out' parameter"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the 'in out' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify the 'in out' parameter"
+        },
+        {
+          "id": "D",
+          "text": "To specify the 'out' parameter"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 11,
+      "question": "What is the purpose of the 'in ref' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify the 'in ref' parameter"
+        },
+        {
+          "id": "D",
+          "text": "To specify the 'out' parameter"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of the 'ref out' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify the 'ref out' parameter"
+        },
+        {
+          "id": "D",
+          "text": "To specify the 'out' parameter"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 13,
+      "question": "What is the purpose of the 'event' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify an event handler"
+        },
+        {
+          "id": "B",
+          "text": "To specify an event"
+        },
+        {
+          "id": "C",
+          "text": "To specify a delegate"
+        },
+        {
+          "id": "D",
+          "text": "To specify a property"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 14,
+      "question": "What is the purpose of the 'delegate' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify an event handler"
+        },
+        {
+          "id": "B",
+          "text": "To specify an event"
+        },
+        {
+          "id": "C",
+          "text": "To specify a delegate"
+        },
+        {
+          "id": "D",
+          "text": "To specify a property"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 15,
+      "question": "What is the purpose of the 'MulticastDelegate' class in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify a single-cast delegate"
+        },
+        {
+          "id": "B",
+          "text": "To specify a multicast delegate"
+        },
+        {
+          "id": "C",
+          "text": "To specify an event handler"
+        },
+        {
+          "id": "D",
+          "text": "To specify an event"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 16,
+      "question": "What is the purpose of the 'Generic' class in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify a generic class"
+        },
+        {
+          "id": "B",
+          "text": "To specify a non-generic class"
+        },
+        {
+          "id": "C",
+          "text": "To specify a generic method"
+        },
+        {
+          "id": "D",
+          "text": "To specify a non-generic method"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 17,
+      "question": "What is the purpose of the 'where' clause in a generic method?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify the method's return type"
+        },
+        {
+          "id": "B",
+          "text": "To specify constraints on the method's parameters"
+        },
+        {
+          "id": "C",
+          "text": "To specify the method's name"
+        },
+        {
+          "id": "D",
+          "text": "To specify the method's namespace"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 18,
+      "question": "What is the purpose of the 'IN' interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify a generic class"
+        },
+        {
+          "id": "B",
+          "text": "To specify a non-generic class"
+        },
+        {
+          "id": "C",
+          "text": "To specify a generic method"
+        },
+        {
+          "id": "D",
+          "text": "To specify a non-generic method"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 19,
+      "question": "What is the purpose of the 'IComparable' interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify a generic class"
+        },
+        {
+          "id": "B",
+          "text": "To specify a non-generic class"
+        },
+        {
+          "id": "C",
+          "text": "To specify a generic method"
+        },
+        {
+          "id": "D",
+          "text": "To specify a non-generic method"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 20,
+      "question": "What is the purpose of the 'IComparer' interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To specify a generic class"
+        },
+        {
+          "id": "B",
+          "text": "To specify a non-generic class"
+        },
+        {
+          "id": "C",
+          "text": "To specify a generic method"
+        },
+        {
+          "id": "D",
+          "text": "To specify a non-generic method"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1B2B3A4C5A6B7C8C9C10C11C12C13B14C15B16A17B18A19A20A"
+}
