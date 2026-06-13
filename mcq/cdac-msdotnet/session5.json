@@ -1,0 +1,467 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of the IDisposable interface?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To handle exceptions"
+        },
+        {
+          "id": "B",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "C",
+          "text": "To free up resources"
+        },
+        {
+          "id": "D",
+          "text": "To seal a class"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 2,
+      "question": "What is the difference between a value type and a reference type?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Value types are stored on the stack, while reference types are stored on the heap"
+        },
+        {
+          "id": "B",
+          "text": "Reference types are stored on the stack, while value types are stored on the heap"
+        },
+        {
+          "id": "C",
+          "text": "Both are stored on the heap"
+        },
+        {
+          "id": "D",
+          "text": "Both are stored on the stack"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of the IComparable interface?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To compare objects"
+        },
+        {
+          "id": "B",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "C",
+          "text": "To free up resources"
+        },
+        {
+          "id": "D",
+          "text": "To seal a class"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the new keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new object"
+        },
+        {
+          "id": "B",
+          "text": "To override a method"
+        },
+        {
+          "id": "C",
+          "text": "To free up resources"
+        },
+        {
+          "id": "D",
+          "text": "To seal a class"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the override keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To override a method"
+        },
+        {
+          "id": "B",
+          "text": "To seal a class"
+        },
+        {
+          "id": "C",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "D",
+          "text": "To free up resources"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "What is the purpose of the sealed keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To override a method"
+        },
+        {
+          "id": "B",
+          "text": "To seal a class"
+        },
+        {
+          "id": "C",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "D",
+          "text": "To free up resources"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is the purpose of the abstract class in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new object"
+        },
+        {
+          "id": "B",
+          "text": "To override a method"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To implement a destructor"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 8,
+      "question": "What is the purpose of the abstract method in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To override a method"
+        },
+        {
+          "id": "B",
+          "text": "To seal a class"
+        },
+        {
+          "id": "C",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "D",
+          "text": "To free up resources"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the sealed class in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To override a method"
+        },
+        {
+          "id": "B",
+          "text": "To seal a class"
+        },
+        {
+          "id": "C",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "D",
+          "text": "To free up resources"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 10,
+      "question": "How can you explicitly implement an interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "By using the new keyword"
+        },
+        {
+          "id": "B",
+          "text": "By using the override keyword"
+        },
+        {
+          "id": "C",
+          "text": "By creating a new class"
+        },
+        {
+          "id": "D",
+          "text": "By using the interface keyword"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 11,
+      "question": "What is the purpose of the destructor in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To free up resources"
+        },
+        {
+          "id": "B",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "C",
+          "text": "To override a method"
+        },
+        {
+          "id": "D",
+          "text": "To seal a class"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of the IDispose interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To free up resources"
+        },
+        {
+          "id": "B",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To override a method"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 13,
+      "question": "What is the purpose of the using statement in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To free up resources"
+        },
+        {
+          "id": "B",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To override a method"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 14,
+      "question": "What is the purpose of the finally block in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To free up resources"
+        },
+        {
+          "id": "B",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To override a method"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 15,
+      "question": "What is the purpose of the hide keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To hide a method"
+        },
+        {
+          "id": "B",
+          "text": "To seal a class"
+        },
+        {
+          "id": "C",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "D",
+          "text": "To free up resources"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 16,
+      "question": "What is the purpose of the using new statement in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new object"
+        },
+        {
+          "id": "B",
+          "text": "To hide a method"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To implement a destructor"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 17,
+      "question": "What is the purpose of the abstract class in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new object"
+        },
+        {
+          "id": "B",
+          "text": "To hide a method"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To implement a destructor"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 18,
+      "question": "What is the purpose of the sealed class in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new object"
+        },
+        {
+          "id": "B",
+          "text": "To hide a method"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To implement a destructor"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 19,
+      "question": "What is the purpose of the IDispose interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To free up resources"
+        },
+        {
+          "id": "B",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To override a method"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 20,
+      "question": "What is the purpose of the finally block in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To free up resources"
+        },
+        {
+          "id": "B",
+          "text": "To implement a destructor"
+        },
+        {
+          "id": "C",
+          "text": "To seal a class"
+        },
+        {
+          "id": "D",
+          "text": "To override a method"
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ],
+  "answerKeyString": "1C2A3A4A5A6B7C8A9B10A11A12A13A14A15A16A17C18B19A20A"
+}
