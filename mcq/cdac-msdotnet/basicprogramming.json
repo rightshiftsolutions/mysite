@@ -1,0 +1,470 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the default behavior of the garbage collector in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It always collects all garbage"
+        },
+        {
+          "id": "B",
+          "text": "It never collects garbage"
+        },
+        {
+          "id": "C",
+          "text": "It collects garbage when the system is low on memory"
+        },
+        {
+          "id": "D",
+          "text": "It collects garbage when the application is idle"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of boxing in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It allows for the direct use of value types in generic code"
+        },
+        {
+          "id": "B",
+          "text": "It allows for the direct use of reference types in generic code"
+        },
+        {
+          "id": "C",
+          "text": "It converts a value type to a reference type"
+        },
+        {
+          "id": "D",
+          "text": "It converts a reference type to a value type"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of unboxing in .NET?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It allows for the direct use of reference types in generic code"
+        },
+        {
+          "id": "B",
+          "text": "It allows for the direct use of value types in generic code"
+        },
+        {
+          "id": "C",
+          "text": "It converts a reference type to a value type"
+        },
+        {
+          "id": "D",
+          "text": "It converts a value type to a reference type"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 4,
+      "question": "What is a nullable type in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A type that can hold a null value"
+        },
+        {
+          "id": "B",
+          "text": "A type that can hold a value, but not null"
+        },
+        {
+          "id": "C",
+          "text": "A type that can hold a value, and also null"
+        },
+        {
+          "id": "D",
+          "text": "A type that can hold only null"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 5,
+      "question": "What is encapsulation in object-oriented programming?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hiding internal state of an object from the outside world"
+        },
+        {
+          "id": "B",
+          "text": "Exposing internal state of an object to the outside world"
+        },
+        {
+          "id": "C",
+          "text": "Combining multiple objects into one"
+        },
+        {
+          "id": "D",
+          "text": "Inheriting properties from one object to another"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 6,
+      "question": "What is inheritance in object-oriented programming?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Creating a new object based on an existing one"
+        },
+        {
+          "id": "B",
+          "text": "Extending the properties of an existing object"
+        },
+        {
+          "id": "C",
+          "text": "Combining multiple objects into one"
+        },
+        {
+          "id": "D",
+          "text": "Exposing internal state of an object to the outside world"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 7,
+      "question": "What is polymorphism in object-oriented programming?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The ability of an object to take on multiple forms"
+        },
+        {
+          "id": "B",
+          "text": "The ability of an object to take on only one form"
+        },
+        {
+          "id": "C",
+          "text": "The ability of an object to combine with another object"
+        },
+        {
+          "id": "D",
+          "text": "The ability of an object to hide its internal state"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 8,
+      "question": "What is abstraction in object-oriented programming?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The ability of an object to take on multiple forms"
+        },
+        {
+          "id": "B",
+          "text": "The ability of an object to hide its internal state"
+        },
+        {
+          "id": "C",
+          "text": "The ability of an object to combine with another object"
+        },
+        {
+          "id": "D",
+          "text": "The ability of an object to expose its internal state"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 9,
+      "question": "What is the default access modifier in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Public"
+        },
+        {
+          "id": "B",
+          "text": "Private"
+        },
+        {
+          "id": "C",
+          "text": "Internal"
+        },
+        {
+          "id": "D",
+          "text": "Protected"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 10,
+      "question": "What is the purpose of the sealed keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To seal a class from being inherited by another class"
+        },
+        {
+          "id": "B",
+          "text": "To seal a class from being instantiated"
+        },
+        {
+          "id": "C",
+          "text": "To seal a method from being overridden"
+        },
+        {
+          "id": "D",
+          "text": "To seal a property from being set"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 11,
+      "question": "What is the purpose of the override keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To seal a class from being inherited by another class"
+        },
+        {
+          "id": "B",
+          "text": "To seal a class from being instantiated"
+        },
+        {
+          "id": "C",
+          "text": "To override a method in a base class"
+        },
+        {
+          "id": "D",
+          "text": "To seal a method from being overridden"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of the abstract keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To seal a class from being inherited by another class"
+        },
+        {
+          "id": "B",
+          "text": "To seal a class from being instantiated"
+        },
+        {
+          "id": "C",
+          "text": "To define an abstract class"
+        },
+        {
+          "id": "D",
+          "text": "To define an interface"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "success": true,
+      "no": 13,
+      "question": "What is the purpose of the using statement in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To declare a variable"
+        },
+        {
+          "id": "B",
+          "text": "To import a namespace"
+        },
+        {
+          "id": "C",
+          "text": "To prevent garbage collection"
+        },
+        {
+          "id": "D",
+          "text": "To namespace a class"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "success": true,
+      "no": 14,
+      "question": "What is the purpose of a using statement in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To avoid memory leaks"
+        },
+        {
+          "id": "B",
+          "text": "To include a namespace"
+        },
+        {
+          "id": "C",
+          "text": "To avoid version conflicts"
+        },
+        {
+          "id": "D",
+          "text": "To include a library"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "success": true,
+      "no": 15,
+      "question": "What is the purpose of using 'Console.WriteLine' statement in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To read the input from the user"
+        },
+        {
+          "id": "B",
+          "text": "To display the output on the console"
+        },
+        {
+          "id": "C",
+          "text": "To store the data in a file"
+        },
+        {
+          "id": "D",
+          "text": "To send the data over the network"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 16,
+      "question": "What is the purpose of the virtual keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To seal a method from being overridden"
+        },
+        {
+          "id": "B",
+          "text": "To override a method in a base class"
+        },
+        {
+          "id": "C",
+          "text": "To define a virtual method"
+        },
+        {
+          "id": "D",
+          "text": "To seal a class from being inherited by another class"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 17,
+      "question": "What is the purpose of the using keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To define a namespace"
+        },
+        {
+          "id": "B",
+          "text": "To import a namespace"
+        },
+        {
+          "id": "C",
+          "text": "To define a class"
+        },
+        {
+          "id": "D",
+          "text": "To define a method"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 18,
+      "question": "What is the purpose of the namespace keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To define a class"
+        },
+        {
+          "id": "B",
+          "text": "To define a method"
+        },
+        {
+          "id": "C",
+          "text": "To define a namespace"
+        },
+        {
+          "id": "D",
+          "text": "To import a namespace"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 19,
+      "question": "What is the purpose of the async keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To define an async method"
+        },
+        {
+          "id": "B",
+          "text": "To define a synchronous method"
+        },
+        {
+          "id": "C",
+          "text": "To define a class"
+        },
+        {
+          "id": "D",
+          "text": "To define a method"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 20,
+      "question": "What is the purpose of the await keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To define an async method"
+        },
+        {
+          "id": "B",
+          "text": "To define a synchronous method"
+        },
+        {
+          "id": "C",
+          "text": "To await the completion of an asynchronous operation"
+        },
+        {
+          "id": "D",
+          "text": "To start an asynchronous operation"
+        }
+      ],
+      "correctAnswer": "C"
+    }
+  ],
+  "answerKeyString": "1C2C3C4A5A6B7A8B9C10A11C12C13B14B15B16C17B18C19A20C"
+}
