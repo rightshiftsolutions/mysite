@@ -1,0 +1,360 @@
+{
+  "success": true,
+  "title": "CDAC-MSDOTNET Test",
+  "questions": [
+    {
+      "no": 1,
+      "question": "What is the purpose of the Dependency Injection in ASP.NET MVC Core?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To reduce coupling between components"
+        },
+        {
+          "id": "B",
+          "text": "To increase performance"
+        },
+        {
+          "id": "C",
+          "text": "To improve security"
+        },
+        {
+          "id": "D",
+          "text": "To make code more complex"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 2,
+      "question": "What is the purpose of the Dispose method in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To free memory"
+        },
+        {
+          "id": "B",
+          "text": "To release resources"
+        },
+        {
+          "id": "C",
+          "text": "To commit changes"
+        },
+        {
+          "id": "D",
+          "text": "To rollback changes"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "no": 3,
+      "question": "What is the purpose of the using statement in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new instance of an object"
+        },
+        {
+          "id": "B",
+          "text": "To free memory"
+        },
+        {
+          "id": "C",
+          "text": "To create a new file"
+        },
+        {
+          "id": "D",
+          "text": "To dispose an object"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 4,
+      "question": "What is the purpose of the SOLID principles in object-oriented programming?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To improve security"
+        },
+        {
+          "id": "B",
+          "text": "To improve performance"
+        },
+        {
+          "id": "C",
+          "text": "To improve maintainability"
+        },
+        {
+          "id": "D",
+          "text": "To improve scalability"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "no": 5,
+      "question": "What is the purpose of the IDisposable interface in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To ensure thread safety"
+        },
+        {
+          "id": "B",
+          "text": "To ensure resource disposal"
+        },
+        {
+          "id": "C",
+          "text": "To ensure security"
+        },
+        {
+          "id": "D",
+          "text": "To ensure performance"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "success": true,
+      "no": 6,
+      "question": "What is the purpose of using 'as' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To cast an object to a specific type"
+        },
+        {
+          "id": "B",
+          "text": "To check if an object is of a specific type"
+        },
+        {
+          "id": "C",
+          "text": "To check if an object is null"
+        },
+        {
+          "id": "D",
+          "text": "To cast an object to a specific type and if it's null"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "success": true,
+      "no": 7,
+      "question": "What is the default value of the 'Checked' property of a CheckBox control in Windows Forms?",
+      "options": [
+        {
+          "id": "A",
+          "text": "True"
+        },
+        {
+          "id": "B",
+          "text": "False"
+        },
+        {
+          "id": "C",
+          "text": "Null"
+        },
+        {
+          "id": "D",
+          "text": "Not Set"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "success": true,
+      "no": 8,
+      "question": "What is the purpose of the using statement in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To import a namespace"
+        },
+        {
+          "id": "B",
+          "text": "To declare a variable"
+        },
+        {
+          "id": "C",
+          "text": "To create a method"
+        },
+        {
+          "id": "D",
+          "text": "To define a class"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "no": 9,
+      "question": "What is the purpose of the ASP.NET Web API in ASP.NET MVC Core?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create web forms"
+        },
+        {
+          "id": "B",
+          "text": "To create web services"
+        },
+        {
+          "id": "C",
+          "text": "To create web sockets"
+        },
+        {
+          "id": "D",
+          "text": "To create web workers"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "success": true,
+      "no": 10,
+      "question": "What is the purpose of the Serialize() method in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To deserialize JSON data"
+        },
+        {
+          "id": "B",
+          "text": "To serialize .NET objects to XML"
+        },
+        {
+          "id": "C",
+          "text": "To serialize .NET objects to JSON"
+        },
+        {
+          "id": "D",
+          "text": "To deserialize XML data"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "success": true,
+      "no": 11,
+      "question": "What is the purpose of using the async and await keywords in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new thread"
+        },
+        {
+          "id": "B",
+          "text": "To delay the execution of a method"
+        },
+        {
+          "id": "C",
+          "text": "To handle exceptions in a separate thread"
+        },
+        {
+          "id": "D",
+          "text": "To make a method asynchronous"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "no": 12,
+      "question": "What is the purpose of the Dependency Injection in ASP.NET Core Web API?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To reduce coupling between components"
+        },
+        {
+          "id": "B",
+          "text": "To increase performance"
+        },
+        {
+          "id": "C",
+          "text": "To improve security"
+        },
+        {
+          "id": "D",
+          "text": "To make code more complex"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "success": true,
+      "no": 13,
+      "question": "What is the purpose of using 'finally' block in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To handle exceptions"
+        },
+        {
+          "id": "B",
+          "text": "To release resources"
+        },
+        {
+          "id": "C",
+          "text": "To start a new thread"
+        },
+        {
+          "id": "D",
+          "text": "To stop a timer"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "success": true,
+      "no": 14,
+      "question": "What is the default type of the variable in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "String"
+        },
+        {
+          "id": "B",
+          "text": "Int"
+        },
+        {
+          "id": "C",
+          "text": "Object"
+        },
+        {
+          "id": "D",
+          "text": "Dynamic"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "success": true,
+      "no": 15,
+      "question": "What is the purpose of the 'this' keyword in C#?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create a new instance of a class"
+        },
+        {
+          "id": "B",
+          "text": "To access the properties and methods of the current object"
+        },
+        {
+          "id": "C",
+          "text": "To create a delegate"
+        },
+        {
+          "id": "D",
+          "text": "To create a singleton"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+  "answerKeyString": "1A2B3D4C5B6B7B8A9B10C11D12A13B14C15B"
+}
