@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Responsive rules — Desktop → Tablet → Mobile
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar { position: fixed; left: -100%; top: 0; height: 100vh; z-index: 1050; transition: left .25s ease; width: 280px !important; }
+  .sidebar.mobile-open { left: 0; box-shadow: 30px 0 60px rgba(0,0,0,.5); }
+  .sidebar-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 1040; display: none; }
+  .sidebar-backdrop.show { display: block; }
+  .sidebar-toggle-mobile { display: inline-flex !important; }
+  .search-pill { display: none; }
+  .summary-card { position: static; }
+}
+
+@media (min-width: 992px) {
+  .sidebar-toggle-mobile { display: none !important; }
+}
+
+@media (max-width: 767.98px) {
+  .stat-grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .main-content { padding: 1.1rem; }
+  .navbar-top { padding: 0 1rem; gap: .6rem; }
+  .table-toolbar { padding: .9rem; }
+  .wizard-steps { gap: .35rem; }
+  .wizard-step span.lbl { display: none; }
+}
+
+@media (max-width: 575.98px) {
+  .stat-grid { grid-template-columns: 1fr; }
+  .auth-card { max-width: 100%; }
+  .action-btns { flex-wrap: wrap; }
+}
+
+/* ------------------------------------------------------------------
+   Additional mobile improvements: make tables scrollable, buttons
+   and form controls full-width, tighten paddings and ensure sidebar
+   overlays behave well on small screens.
+   ------------------------------------------------------------------ */
+@media (max-width: 767.98px) {
+  .table-responsive, .main-content table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .main-content table { display: block; width: 100%; }
+  .main-content table thead, .main-content table tbody, .main-content table tr { display: table; width: 100%; }
+
+  .action-btns { display: flex; gap: .5rem; }
+  .action-btns .btn { flex: 1 1 auto; min-width: 0; }
+
+  .form-row, .form-grid { display: flex; flex-direction: column; gap: .6rem; }
+  input.form-control, select.form-control, textarea.form-control { width: 100%; }
+
+  .navbar-top h5 { display: none; }
+  .search-pill { display: none; }
+
+  .sidebar { width: 78% !important; }
+  .sidebar.mobile-open { left: 0; }
+
+  .card { padding: .9rem; border-radius: 12px; }
+  .main-content { padding: .9rem; }
+
+  .toast-stack { right: .5rem; left: auto; top: auto; bottom: 1rem; width: calc(100% - 1rem); max-width: 480px; }
+}
+
+@media (max-width: 420px) {
+  .icon-btn, .btn-icon-only { width: 36px; height: 36px; }
+  .navbar-top { padding: 0 .6rem; }
+  .sidebar { width: 86% !important; }
+}
