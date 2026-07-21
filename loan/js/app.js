@@ -6,7 +6,7 @@
 
 const LoanFlow = (() => {
 
-  const API_BASE = window.LOANFLOW_API_BASE || 'http://localhost:5000';
+  const API_BASE = "https://loan.gymgurus.in";
 
   /* ---------------------------------------------------------------------
      Auth storage
