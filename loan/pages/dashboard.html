@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Dashboard · LoanFlow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="../css/tables.css" rel="stylesheet">
+<link href="../css/dashboard.css" rel="stylesheet">
+<link href="../css/responsive.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0B1220">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LoanFlow">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../assets/icons/icon-152x152.png">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+<link rel="apple-touch-startup-image" href="../assets/splash/apple-splash-2796-1290.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="../assets/splash/apple-splash-2556-1179.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="../assets/splash/apple-splash-2532-1170.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="../assets/splash/apple-splash-1334-750.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192x192.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/icon.svg">
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-mount"></div>
+
+  <div class="main-col">
+    <div id="navbar-mount"></div>
+
+    <main class="main-content page-enter">
+      <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+        <div>
+          <h3 class="fw-semibold mb-1">Good to see you 👋</h3>
+          <p class="section-sub mb-0">Here's what's happening across your loan book today.</p>
+        </div>
+        <a href="create-loan.html" class="btn btn-gradient"><i class="bi bi-plus-lg me-1"></i>New Loan</a>
+      </div>
+
+      <div class="stat-grid mb-4" id="statGrid">
+        <!-- injected by dashboard.js -->
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <div class="card p-4 h-100 animate-slide-up">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div>
+                <div class="section-title">Lending Activity</div>
+                <div class="section-sub">Disbursed vs. collected over recent months</div>
+              </div>
+              <select class="form-select form-select-sm w-auto">
+                <option>Last 6 months</option>
+                <option>Last 12 months</option>
+              </select>
+            </div>
+            <div class="chart-placeholder">
+              <i class="bi bi-bar-chart-line"></i>
+              <span class="small">Chart renders once monthly analytics endpoints are connected</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card p-4 h-100 d-flex flex-column align-items-center justify-content-center animate-slide-up stagger-1">
+            <div class="section-title align-self-start mb-1">Repayment Health</div>
+            <div class="section-sub align-self-start mb-3">Received against total lent</div>
+            <div class="ring-wrap">
+              <svg viewBox="0 0 100 100">
+                <defs>
+                  <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3B82F6"/>
+                    <stop offset="100%" stop-color="#8B5CF6"/>
+                  </linearGradient>
+                </defs>
+                <circle class="ring-track" cx="50" cy="50" r="42"></circle>
+                <circle class="ring-value" id="ringValue" cx="50" cy="50" r="42"></circle>
+              </svg>
+              <div class="ring-label"><span class="pct" id="ringPct">0%</span><span class="cap">Recovered</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card table-card animate-slide-up stagger-2">
+            <div class="table-toolbar">
+              <div>
+                <div class="section-title">Recent Loans</div>
+                <div class="section-sub">Latest 5 loans you've created</div>
+              </div>
+              <a href="loan-list.html" class="btn btn-outline-soft btn-sm ms-auto">View all</a>
+            </div>
+            <div class="table-scroll">
+              <table class="tbl">
+                <thead><tr><th>ID</th><th>Borrower</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
+                <tbody id="recentLoansBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card p-3 h-100 animate-slide-up stagger-3">
+            <div class="section-title mb-1">Upcoming Installments</div>
+            <div class="section-sub mb-2">Next 10 due, soonest first</div>
+            <div id="upcomingList" style="max-height:340px;overflow-y:auto;"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card p-3 h-100 animate-slide-up stagger-4">
+            <div class="section-title mb-1">Overdue Loans</div>
+            <div class="section-sub mb-2">Needs your attention</div>
+            <div id="overdueList" style="max-height:340px;overflow-y:auto;"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer d-flex justify-content-between flex-wrap gap-2">
+      <span>© 2026 LoanFlow. All rights reserved.</span>
+      <span>v2.0 · API synced Jul 17, 2026</span>
+    </footer>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/dashboard.js"></script>
+<script src="../js/pwa.js"></script>
+</body>
+</html>
