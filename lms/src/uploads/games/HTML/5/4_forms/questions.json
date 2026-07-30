@@ -1,0 +1,202 @@
+[
+  {
+    "question_id": 1,
+    "question": "Which HTML tag is used to create an interactive control for submitting user information?",
+    "options": [
+      "<input>",
+      "<form>",
+      "<button>",
+      "<label>"
+    ]
+  },
+  {
+    "question_id": 2,
+    "question": "Which attribute of the <form> element specifies where to send the form-data when submitted?",
+    "options": [
+      "method",
+      "action",
+      "target",
+      "enctype"
+    ]
+  },
+  {
+    "question_id": 3,
+    "question": "Which HTTP method should be used when form data contains sensitive information like passwords?",
+    "options": [
+      "GET",
+      "POST",
+      "SEND",
+      "SUBMIT"
+    ]
+  },
+  {
+    "question_id": 4,
+    "question": "Which input type is best suited for entering a secure password where characters are masked?",
+    "options": [
+      "text",
+      "hidden",
+      "password",
+      "secure"
+    ]
+  },
+  {
+    "question_id": 5,
+    "question": "Which HTML element is used to define a multi-line text input control?",
+    "options": [
+      "<textarea>",
+      "<input type=\"textarea\">",
+      "<textbox>",
+      "<text>"
+    ]
+  },
+  {
+    "question_id": 6,
+    "question": "Which attribute associates a <label> element explicitly with a form control?",
+    "options": [
+      "name",
+      "id",
+      "for",
+      "class"
+    ]
+  },
+  {
+    "question_id": 7,
+    "question": "Which input type allows a user to select only one option from a group of predefined choices?",
+    "options": [
+      "checkbox",
+      "radio",
+      "select",
+      "option"
+    ]
+  },
+  {
+    "question_id": 8,
+    "question": "Which input type allows a user to select zero or more options from a group of choices?",
+    "options": [
+      "radio",
+      "checkbox",
+      "select",
+      "multiselect"
+    ]
+  },
+  {
+    "question_id": 9,
+    "question": "Which tag is used to create a drop-down list in an HTML form?",
+    "options": [
+      "<select>",
+      "<dropdown>",
+      "<list>",
+      "<input type=\"dropdown\">"
+    ]
+  },
+  {
+    "question_id": 10,
+    "question": "Which element is used to group related elements within a form?",
+    "options": [
+      "<fieldset>",
+      "<group>",
+      "<section>",
+      "<optgroup>"
+    ]
+  },
+  {
+    "question_id": 11,
+    "question": "Which element provides a caption for the <fieldset> element?",
+    "options": [
+      "<legend>",
+      "<label>",
+      "<caption>",
+      "<title>"
+    ]
+  },
+  {
+    "question_id": 12,
+    "question": "Which attribute is required for input elements so that their values are submitted with the form?",
+    "options": [
+      "id",
+      "class",
+      "name",
+      "value"
+    ]
+  },
+  {
+    "question_id": 13,
+    "question": "Which attribute makes an input field mandatory to fill before submitting the form?",
+    "options": [
+      "validate",
+      "mandatory",
+      "required",
+      "locked"
+    ]
+  },
+  {
+    "question_id": 14,
+    "question": "Which input type is specifically designed for entering email addresses, enabling basic validation on modern browsers?",
+    "options": [
+      "text",
+      "mail",
+      "email",
+      "address"
+    ]
+  },
+  {
+    "question_id": 15,
+    "question": "Which input type is used to upload files from the user's device to the server?",
+    "options": [
+      "upload",
+      "file",
+      "media",
+      "document"
+    ]
+  },
+  {
+    "question_id": 16,
+    "question": "Which form attribute is necessary when uploading files using a form?",
+    "options": [
+      "enctype=\"multipart/form-data\"",
+      "method=\"FILE\"",
+      "encoding=\"binary\"",
+      "target=\"_file\""
+    ]
+  },
+  {
+    "question_id": 17,
+    "question": "Which input type creates a button that resets all form controls to their initial values?",
+    "options": [
+      "clear",
+      "default",
+      "reset",
+      "restart"
+    ]
+  },
+  {
+    "question_id": 18,
+    "question": "Which attribute specifies a short hint that describes the expected value of an input field?",
+    "options": [
+      "placeholder",
+      "tooltip",
+      "hint",
+      "value"
+    ]
+  },
+  {
+    "question_id": 19,
+    "question": "Which attribute prevents the user from modifying the value of an input field while still allowing it to be submitted?",
+    "options": [
+      "disabled",
+      "readonly",
+      "static",
+      "fixed"
+    ]
+  },
+  {
+    "question_id": 20,
+    "question": "Which input type displays a slider control for selecting a number within a specific range?",
+    "options": [
+      "slider",
+      "range",
+      "number",
+      "scroll"
+    ]
+  }
+]

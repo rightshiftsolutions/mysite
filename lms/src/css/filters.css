@@ -1,0 +1,34 @@
+/* Filter Panels Custom Layouts */
+
+.filters-card-wrapper {
+  background: rgba(16, 19, 38, 0.45) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-sm) !important;
+  padding: 1.5rem;
+}
+
+.filters-label-custom {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.export-btn-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* =========================================================
+   PREMIUM ENHANCEMENTS — Aurum Arena pass
+   ========================================================= */
+.filters-card-wrapper:focus-within {
+  border-color: rgba(34, 211, 238, 0.3) !important;
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.15) !important;
+}

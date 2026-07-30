@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Requests - LMS Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/table.css">
+</head>
+<body>
+
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <!-- Top Navbar -->
+      <div id="header-container"></div>
+
+      <!-- Page Content -->
+      <div class="p-4 container-fluid">
+        <div class="mb-4">
+          <h1 class="h3 fw-bold text-slate-800 mb-1">Teacher Signup Requests</h1>
+          <p class="text-secondary small mb-0">Approve or decline registration forms submitted by educators.</p>
+        </div>
+
+        <!-- Filters and Controls Card -->
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-3 mb-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="search-box-custom w-100">
+              <i class="bi bi-search search-icon"></i>
+              <input type="text" class="form-control" id="requests-search-input" placeholder="Search by name, email, or mobile...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Requests Table -->
+        <div class="table-responsive-custom">
+          <table class="table table-custom align-middle">
+            <thead>
+              <tr>
+                <th>Teacher Name</th>
+                <th>Email Address</th>
+                <th>Mobile</th>
+                <th>Request Date</th>
+                <th>Approval Status</th>
+                <th style="width: 220px;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="teacher-requests-body">
+              <tr>
+                <td colspan="6" class="text-center py-5 text-muted">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="mt-2 small">Loading teacher requests...</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script triggers and guard filters -->
+  <script type="module" src="../js/authGuard.js"></script>
+  <script type="module" src="../js/teacherRequest.js"></script>
+</body>
+</html>
