@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Stream - LMS Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <!-- Top Navbar -->
+      <div id="header-container"></div>
+
+      <!-- Page Content -->
+      <div class="p-4 container-fluid">
+        <div class="mb-4">
+          <a href="./streams.html" class="text-secondary small fw-semibold text-decoration-none">
+            <i class="bi bi-arrow-left"></i> Back to Streams List
+          </a>
+          <h1 class="h3 fw-bold text-slate-800 mt-2 mb-1">Create Stream</h1>
+          <p class="text-secondary small mb-0">Define a new academic classification stream.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="card form-card-custom">
+              <div class="form-card-header">
+                <h5 class="fw-bold mb-0">New Stream Configuration</h5>
+              </div>
+              <div class="form-card-body">
+                <form id="stream-create-form" novalidate>
+                  
+                  <!-- Stream Name Input -->
+                  <div class="mb-4">
+                    <label for="stream-name" class="form-label fw-semibold">Stream Name</label>
+                    <input type="text" class="form-control form-input-custom" id="stream-name" placeholder="e.g. Science, Commerce, Humanities" required>
+                    <div class="invalid-feedback-custom">Stream name is required.</div>
+                  </div>
+
+                  <!-- Form Control Buttons -->
+                  <div class="d-flex gap-2 justify-content-end">
+                    <a href="./streams.html" class="btn btn-light rounded-3 px-4 border">Cancel</a>
+                    <button type="submit" class="btn btn-submit-custom px-4" id="submit-btn">Create Stream</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script triggers and guard filters -->
+  <script type="module" src="../js/authGuard.js"></script>
+  <script type="module" src="../js/stream.js"></script>
+</body>
+</html>

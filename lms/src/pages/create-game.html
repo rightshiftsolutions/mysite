@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Game - LMS Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/teacher.css">
+  <link rel="stylesheet" href="../css/games.css">
+  <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+
+  <div class="teacher-container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Workspace -->
+    <main class="teacher-main">
+      <!-- Navbar Header -->
+      <div id="header-container"></div>
+
+      <!-- Page Content -->
+      <div class="p-4 container-fluid">
+        <div class="mb-4">
+          <a href="./games.html" class="text-secondary small fw-semibold text-decoration-none">
+            <i class="bi bi-arrow-left"></i> Back to Games List
+          </a>
+          <h1 class="h3 fw-bold text-slate-800 mt-2 mb-1">Create Game</h1>
+          <p class="text-secondary small mb-0">Build a dynamic quiz game using the dynamic builder or by uploading JSON data files.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <!-- Multi-step Form Card wrapper -->
+            <div class="card form-card-custom">
+              <div class="form-card-header">
+                <!-- Step Indicator Header -->
+                <div class="builder-step-header">
+                  <div class="builder-step-dot active" id="step-dot-1">1</div>
+                  <div class="builder-step-dot" id="step-dot-2">2</div>
+                  <div class="builder-step-dot" id="step-dot-3">3</div>
+                </div>
+              </div>
+              
+              <div class="form-card-body bg-white rounded-bottom-4">
+                <form id="game-create-form" novalidate>
+
+                  <!-- ========================================== -->
+                  <!-- STEP 1: GENERAL SPECIFICATIONS -->
+                  <!-- ========================================== -->
+                  <div id="step-pane-1">
+                    <h5 class="fw-bold mb-3 text-slate-800">Step 1: General Parameters</h5>
+                    <div class="row g-3">
+                      <!-- Course Select -->
+                      <div class="col-md-6">
+                        <label for="course-id" class="form-label fw-semibold text-secondary small">Associated Course</label>
+                        <select class="form-select form-input-custom" id="course-id" required>
+                          <option value="" disabled selected>Loading courses...</option>
+                        </select>
+                        <div class="invalid-feedback-custom">Course selection is required.</div>
+                      </div>
+
+                      <!-- Stream Select -->
+                      <div class="col-md-6">
+                        <label for="stream-id" class="form-label fw-semibold text-secondary small">Academic Stream</label>
+                        <select class="form-select form-input-custom" id="stream-id" required>
+                          <option value="" disabled selected>Select Course first...</option>
+                        </select>
+                        <div class="invalid-feedback-custom">Stream is required.</div>
+                        <div class="form-text">Automatically detected from the course, but you can select if multiple streams exist.</div>
+                      </div>
+
+                      <!-- Game Name -->
+                      <div class="col-md-6">
+                        <label for="game-name" class="form-label fw-semibold text-secondary small">Unit Name</label>
+                        <input type="text" class="form-control form-input-custom" id="game-name" placeholder="e.g. Physics Motion Quiz" required>
+                        <div class="invalid-feedback-custom">Unit name is required.</div>
+                      </div>
+
+                      <!-- Unit Name -->
+                      <div class="col-md-6">
+                        <label for="unit-name" class="form-label fw-semibold text-secondary small">Unit Number</label>
+                        <input type="number" class="form-control form-input-custom" id="unit-name" placeholder="e.g. 1" min="1" required>
+                        <div class="invalid-feedback-custom">Unit number is required.</div>
+                      </div>
+
+                      <!-- Game Type -->
+                      <div class="col-md-6">
+                        <label for="game-type" class="form-label fw-semibold text-secondary small">Game Type</label>
+                        <select class="form-select form-input-custom" id="game-type" required>
+                          <option value="" disabled selected>Select Game Type</option>
+                          <option value="Rapid_fire">Rapid Fire</option>
+                          <option value="Bonus_Points">Bonus Points</option>
+                          <option value="Negative_Marking">Negative Marking</option>
+                          <option value="No_negative_marking">No Negative Marking</option>
+                          <option value="Kbc">KBC</option>
+                        </select>
+                        <div class="invalid-feedback-custom">Game type is required.</div>
+                      </div>
+
+                      <!-- Game Description (auto-filled, fixed per Game Type — not editable) -->
+                      <div class="col-12">
+                        <label for="description" class="form-label fw-semibold text-secondary small">Description <span class="text-muted fw-normal">(auto-filled from Game Type, cannot be edited)</span></label>
+                        <textarea class="form-control form-input-custom" id="description" rows="3" readonly placeholder="Select a Game Type above to see its fixed description..." style="background-color: #111a2e; color: var(--text-secondary); border-color: #2b3a54; cursor: not-allowed;"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ========================================== -->
+                  <!-- STEP 2: LIMIT PARAMETERS (auto-fixed by game type) -->
+                  <!-- ========================================== -->
+                  <div id="step-pane-2" style="display: none;">
+                    <h5 class="fw-bold mb-3 text-slate-800">Step 2: Questions & Limits</h5>
+                    <p class="text-secondary small mb-3">
+                      These values are fixed automatically based on the Game Type you selected in Step 1 — they cannot be edited.
+                    </p>
+                    <div id="game-config-summary" class="row g-3">
+                      <!-- Populated dynamically by JS -->
+                    </div>
+                    <!-- Hidden fields kept for internal state / backward compatibility -->
+                    <input type="hidden" id="total-questions">
+                    <input type="hidden" id="time-limit">
+                  </div>
+
+                  <!-- ========================================== -->
+                  <!-- STEP 3: QUESTION BUILDER OR UPLOAD -->
+                  <!-- ========================================== -->
+                  <div id="step-pane-3" style="display: none;">
+                    <h5 class="fw-bold mb-3 text-slate-800">Step 3: Generate & Add Questions</h5>
+
+                    <!-- ChatGPT Prompt Boxes (Questions + Answer Key, generated separately) -->
+                    <div class="row g-3 mb-4">
+                      <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 bg-light p-4 h-100">
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="fw-bold mb-0 text-slate-800">
+                              <i class="bi bi-stars text-primary me-1"></i>Questions Prompt
+                            </h6>
+                            <button type="button" class="btn btn-sm btn-primary rounded-pill px-3" id="btn-copy-questions-prompt">
+                              <i class="bi bi-clipboard me-1"></i>Copy
+                            </button>
+                          </div>
+                          <p class="text-secondary small mb-2">
+                            Copy this prompt into ChatGPT to generate only the Questions JSON.
+                          </p>
+                          <textarea class="form-control form-input-custom" id="chatgpt-questions-prompt-box" rows="10" readonly style="font-family: monospace; font-size: 0.8rem;"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 bg-light p-4 h-100">
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="fw-bold mb-0 text-slate-800">
+                              <i class="bi bi-key-fill text-success me-1"></i>Answer Key Prompt
+                            </h6>
+                            <button type="button" class="btn btn-sm btn-success rounded-pill px-3" id="btn-copy-answers-prompt">
+                              <i class="bi bi-clipboard me-1"></i>Copy
+                            </button>
+                          </div>
+                          <p class="text-secondary small mb-2">
+                            Copy this prompt into ChatGPT (in a new message) to generate only the Answer Key JSON.
+                          </p>
+                          <textarea class="form-control form-input-custom" id="chatgpt-answers-prompt-box" rows="10" readonly style="font-family: monospace; font-size: 0.8rem;"></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tab controls -->
+                    <ul class="nav nav-tabs mb-4 border-0 bg-light p-1 rounded-pill" style="max-width: 400px;">
+                      <li class="nav-item flex-fill text-center">
+                        <button type="button" class="nav-link rounded-pill py-2 w-100 fw-medium active" id="tab-builder">
+                          Paste JSON
+                        </button>
+                      </li>
+                      <li class="nav-item flex-fill text-center">
+                        <button type="button" class="nav-link rounded-pill py-2 w-100 fw-medium" id="tab-json">
+                          Upload JSON Files
+                        </button>
+                      </li>
+                    </ul>
+
+                    <!-- Panel A: Paste JSON -->
+                    <div id="builder-editor-pane">
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label for="paste-questions-json" class="form-label fw-semibold small text-secondary">
+                            Paste Questions JSON (from ChatGPT)
+                          </label>
+                          <textarea class="form-control form-input-custom" id="paste-questions-json" rows="10" placeholder='[ { "question_id": 1, "question": "...", "options": ["...","...","...","..."] } ]' style="font-family: monospace; font-size: 0.8rem;"></textarea>
+                          <div class="form-text" id="paste-questions-status"></div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="paste-answers-json" class="form-label fw-semibold small text-secondary">
+                            Paste Answer Key JSON (from ChatGPT)
+                          </label>
+                          <textarea class="form-control form-input-custom" id="paste-answers-json" rows="10" placeholder='[ { "question_id": 1, "correct_answer": "A" } ]' style="font-family: monospace; font-size: 0.8rem;"></textarea>
+                          <div class="form-text" id="paste-answers-status"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Panel B: JSON File Uploader -->
+                    <div id="uploader-editor-pane" style="display: none;">
+                      <div class="row g-3">
+                        <!-- Questions JSON File -->
+                        <div class="col-md-6">
+                          <div class="border border-dashed p-4 text-center rounded-3 bg-light">
+                            <i class="bi bi-file-earmark-code fs-1 text-primary mb-2 d-block"></i>
+                            <label for="upload-file-questions" class="form-label fw-semibold mb-1 cursor-pointer text-primary">Upload Questions JSON</label>
+                            <input class="form-control form-control-sm d-none" type="file" id="upload-file-questions" accept=".json">
+                            <p class="text-muted small mb-0">Format: Array of {question_id, question, options}</p>
+                          </div>
+                        </div>
+
+                        <!-- Answer Key JSON File -->
+                        <div class="col-md-6">
+                          <div class="border border-dashed p-4 text-center rounded-3 bg-light">
+                            <i class="bi bi-key-fill fs-1 text-success mb-2 d-block"></i>
+                            <label for="upload-file-answers" class="form-label fw-semibold mb-1 cursor-pointer text-success">Upload Answer Key JSON</label>
+                            <input class="form-control form-control-sm d-none" type="file" id="upload-file-answers" accept=".json">
+                            <p class="text-muted small mb-0">Format: Array of {question_id, correct_answer}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ========================================== -->
+                  <!-- STEP CONTROL BUTTONS -->
+                  <!-- ========================================== -->
+                  <div class="d-flex justify-content-between mt-4 border-top pt-3">
+                    <button type="button" class="btn btn-light border rounded-pill px-4" id="btn-prev-step" style="display: none;">
+                      <i class="bi bi-arrow-left me-1"></i>Previous Step
+                    </button>
+                    <div class="ms-auto">
+                      <button type="button" class="btn btn-primary rounded-pill px-4" id="btn-next-step">
+                        Next Step <i class="bi bi-arrow-right ms-1"></i>
+                      </button>
+                      <button type="submit" class="btn btn-submit-custom px-4" id="submit-btn" style="display: none;">
+                        Publish Game
+                      </button>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Route guards and controllers -->
+  <script type="module" src="../js/authGuard.js"></script>
+  <script type="module" src="../js/games.js"></script>
+</body>
+</html>
