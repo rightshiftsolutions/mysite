@@ -1,0 +1,175 @@
+/* Custom Table & Pagination Styles */
+
+.table-responsive-custom {
+  background: rgba(16, 19, 38, 0.45) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-sm) !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: 1.5rem;
+  padding: 8px !important;
+}
+
+.table-custom {
+  margin-bottom: 0;
+  background: transparent !important;
+}
+
+.table-custom th {
+  background-color: rgba(6, 7, 15, 0.4) !important;
+  color: #F7F8FC !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.table-custom td {
+  padding: 1rem 1.5rem;
+  vertical-align: middle;
+  color: #B6BEDA !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  transition: background-color var(--transition-fast) ease;
+}
+
+.table-custom tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Zebra striping */
+.table-custom tbody tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.01) !important;
+}
+
+/* Row hover highlight */
+.table-custom tbody tr {
+  transition: background-color var(--transition-fast) ease;
+}
+
+.table-custom tbody tr:hover td {
+  background-color: rgba(139, 92, 246, 0.06) !important;
+  color: #F7F8FC !important;
+}
+
+/* Badges styling */
+.badge-pill-custom {
+  padding: 0.35em 0.85em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 50rem;
+  letter-spacing: 0.01em;
+}
+
+/* Action button configurations */
+.action-btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-action {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #B6BEDA !important;
+  transition: all var(--transition-fast) ease;
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(34, 211, 238, 0.3) !important;
+  color: #F7F8FC !important;
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.2) !important;
+}
+
+/* Pagination container */
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+}
+
+.pagination-custom .page-link {
+  border-radius: 8px !important;
+  margin: 0 3px;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(6, 7, 15, 0.4) !important;
+  color: #B6BEDA !important;
+  padding: 0.5rem 0.85rem !important;
+  transition: all var(--transition-fast) ease;
+}
+
+.pagination-custom .page-item.active .page-link {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+  border-color: var(--primary-color) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25) !important;
+}
+
+.pagination-custom .page-link:hover:not(.disabled) {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(34, 211, 238, 0.3) !important;
+  color: #F7F8FC !important;
+  transform: translateY(-1px);
+}
+
+/* Search bar control */
+.search-box-custom {
+  max-width: 320px;
+  position: relative;
+}
+
+.search-box-custom .form-control {
+  padding-left: 2.5rem !important;
+  border-radius: 12px !important;
+}
+
+.search-box-custom .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Empty states illustration */
+.empty-state-box {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-state-icon {
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.08);
+  margin-bottom: 1rem;
+}
+
+/* =========================================================
+   PREMIUM ENHANCEMENTS — Aurum Arena pass
+   ========================================================= */
+.table-custom tbody tr:hover td {
+  background-color: rgba(139, 92, 246, 0.08) !important;
+  box-shadow: inset 3px 0 0 var(--gold-color, #FFB800);
+}
+.btn-action:hover {
+  border-color: rgba(255, 184, 0, 0.4) !important;
+  box-shadow: 0 0 14px rgba(255, 184, 0, 0.25) !important;
+}
