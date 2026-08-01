@@ -48,28 +48,8 @@
         <!-- Filter Card Panel -->
         <div class="filters-card-wrapper mb-4" id="games-filters-wrapper">
           <div class="row g-3">
-            <!-- Search Keyword -->
-            <div class="col-lg-3 col-md-6">
-              <label class="form-label filters-label-custom">Search keyword</label>
-              <div class="search-box-custom w-100">
-                <i class="bi bi-search search-icon"></i>
-                <input type="text" class="form-control" id="game-search-input" placeholder="Search game name...">
-              </div>
-            </div>
-
-            <!-- Status filter (Teacher Only) -->
-            <div class="col-lg-2 col-md-6" id="status-filter-wrapper">
-              <label class="form-label filters-label-custom">Status</label>
-              <select class="form-select form-input-custom" id="filter-status">
-                <option value="">All Statuses</option>
-                <option value="draft">Draft</option>
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
-              </select>
-            </div>
-
             <!-- Course filter -->
-            <div class="col-lg-2 col-md-6">
+            <div class="col-md-6">
               <label class="form-label filters-label-custom">Course</label>
               <select class="form-select form-input-custom" id="filter-course">
                 <option value="">All Courses</option>
@@ -77,7 +57,7 @@
             </div>
 
             <!-- Stream filter -->
-            <div class="col-lg-2 col-md-6" id="stream-filter-wrapper">
+            <div class="col-md-6" id="stream-filter-wrapper">
               <label class="form-label filters-label-custom">Stream</label>
               <select class="form-select form-input-custom" id="filter-stream">
                 <option value="">All Streams</option>
@@ -85,21 +65,9 @@
             </div>
 
             <!-- Unit filter -->
-            <div class="col-lg-2 col-md-6" id="unit-filter-wrapper" style="display: none;">
+            <div class="col-md-6" id="unit-filter-wrapper" style="display: none;">
               <label class="form-label filters-label-custom">Unit</label>
               <input type="text" class="form-control form-input-custom" id="filter-unit" placeholder="e.g. Unit 1">
-            </div>
-
-            <!-- Apply/Reset buttons -->
-            <div class="col-lg-3 col-md-12 d-flex align-items-end gap-2">
-              <button type="button" class="btn btn-primary w-100 rounded-3 py-2 fw-semibold"
-                id="btn-apply-game-filters">
-                Filter
-              </button>
-              <button type="button" class="btn btn-light border w-100 rounded-3 py-2 fw-semibold"
-                id="btn-reset-game-filters">
-                Reset
-              </button>
             </div>
           </div>
         </div>
@@ -181,7 +149,6 @@
         if (filtersWrapper) filtersWrapper.style.display = 'block';
 
         // Show/hide specific filters for teacher
-        document.getElementById('status-filter-wrapper').style.display = 'block';
         document.getElementById('stream-filter-wrapper').style.display = 'none';
         document.getElementById('unit-filter-wrapper').style.display = 'block';
 
@@ -199,7 +166,6 @@
         if (filtersWrapper) filtersWrapper.style.display = 'block';
 
         // Show/hide specific filters for student
-        document.getElementById('status-filter-wrapper').style.display = 'none';
         document.getElementById('stream-filter-wrapper').style.display = 'block';
         document.getElementById('unit-filter-wrapper').style.display = 'none';
 

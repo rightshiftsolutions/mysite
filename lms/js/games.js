@@ -472,44 +472,40 @@ export async function populateGameFilters() {
 }
 
 export function setupGameFilters() {
-  const searchInput = document.getElementById('game-search-input');
-  const statusSelect = document.getElementById('filter-status');
   const courseSelect = document.getElementById('filter-course');
   const streamSelect = document.getElementById('filter-stream');
   const unitInput = document.getElementById('filter-unit');
-  const applyBtn = document.getElementById('btn-apply-game-filters');
-  const resetBtn = document.getElementById('btn-reset-game-filters');
-
-  if (!applyBtn || !resetBtn) return;
 
   const getFilters = () => {
     const filters = {};
-    if (searchInput.value.trim()) filters.search = searchInput.value.trim();
-    if (statusSelect && statusSelect.value) filters.status = statusSelect.value;
     if (courseSelect && courseSelect.value) filters.course_id = courseSelect.value;
     if (streamSelect && streamSelect.value) filters.stream_id = streamSelect.value;
     if (unitInput && unitInput.value.trim()) filters.unit_name = unitInput.value.trim();
     return filters;
   };
 
-  applyBtn.addEventListener('click', () => {
+  const triggerFilterUpdate = () => {
     currentPage = 1;
     const role = storage.getRole();
     if (role === 'teacher') loadTeacherGamesTable(getFilters());
     else loadStudentGames(getFilters());
-  });
+  };
 
-  resetBtn.addEventListener('click', () => {
-    searchInput.value = '';
-    if (statusSelect) statusSelect.value = '';
-    if (courseSelect) courseSelect.value = '';
-    if (streamSelect) streamSelect.value = '';
-    if (unitInput) unitInput.value = '';
-    currentPage = 1;
-    const role = storage.getRole();
-    if (role === 'teacher') loadTeacherGamesTable();
-    else loadStudentGames();
-  });
+  if (courseSelect) {
+    courseSelect.addEventListener('change', triggerFilterUpdate);
+  }
+
+  if (streamSelect) {
+    streamSelect.addEventListener('change', triggerFilterUpdate);
+  }
+
+  let debounceTimeout;
+  if (unitInput) {
+    unitInput.addEventListener('input', () => {
+      clearTimeout(debounceTimeout);
+      debounceTimeout = setTimeout(triggerFilterUpdate, 350);
+    });
+  }
 }
 
 // ==========================================

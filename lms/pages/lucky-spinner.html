@@ -382,24 +382,7 @@
 
       try {
         loader.show('Loading students list...');
-        // Custom endpoint we added
-        const endpoint = `/api/course/${courseId}/students-by-batch?batch=${batchYear}`;
-        const token = sessionStorage.getItem('token') || localStorage.getItem('token');
-        
-        // Fetch custom JSON endpoint
-        const res = await fetch(`http://localhost:5000${endpoint}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          }
-        });
-
-        if (!res.ok) {
-          throw new Error('Failed to load students for selection.');
-        }
-
-        const result = await res.json();
+        const result = await api.getStudentsByCourseAndBatch(courseId, batchYear);
         loader.hide();
 
         if (result.success && result.data) {
@@ -583,19 +566,7 @@
         btn.disabled = true;
         btn.textContent = 'Awarding...';
 
-        const res = await fetch(`http://localhost:5000/api/course/${courseId}/award-points`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify({
-            student_id: selectedWinner.id,
-            points: points
-          })
-        });
-
-        const data = await res.json();
+        const data = await api.awardCoursePoints(courseId, selectedWinner.id, points);
         
         btn.disabled = false;
         btn.textContent = 'Award Points';

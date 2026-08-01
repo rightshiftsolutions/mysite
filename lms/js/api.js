@@ -450,6 +450,14 @@ export const api = {
     return request(`/api/course/${id}`, 'GET');
   },
 
+  getStudentsByCourseAndBatch(id, batch) {
+    return request(`/api/course/${id}/students-by-batch?batch=${batch}`, 'GET');
+  },
+
+  awardCoursePoints(id, studentId, points) {
+    return request(`/api/course/${id}/award-points`, 'POST', { student_id: studentId, points });
+  },
+
   updateCourse(id, data) {
     return request(`/api/course/${id}`, 'PUT', data);
   },
