@@ -76,15 +76,15 @@ export const GAME_TYPES = {
  * they pick, and stays consistent across every game created on the platform.
  */
 export const GAME_DESCRIPTIONS = {
-  Rapid_fire: '⚡ Rapid Fire: Answer as many questions as possible within the given time limit. Speed is the key—each correct answer earns marks, and there is no penalty for wrong answers. Try to answer quickly before the timer runs out.',
+  Rapid_fire: '⚡ Rapid Fire: Answer as many questions as possible within the given time limit. Speed is the key—each correct answer earns marks (+1 per correct answer, 0 for wrong). Try to answer quickly before the timer runs out.',
 
-  Kbc: '👑 KBC (Kaun Banega Crorepati Style): Experience the famous KBC-style quiz game. Questions become more challenging as you progress. Each question has four options, and you must choose the correct answer before the timer ends. Your score increases with every correct answer, just like the KBC format where difficulty and rewards increase as the game progresses.',
+  Kbc: '👑 KBC (Kaun Banega Crorepati Style): Experience the famous KBC-style quiz game. Questions become more challenging as you progress. Each question has four options, and you must choose the correct answer before the timer ends. Your score increases with every correct answer (Q1-7: +5, Q8-14: +10, Q15-20: +20, 0 for wrong), just like the KBC format where difficulty and rewards increase as the game progresses.',
 
-  Bonus_Points: '⭐ Bonus Points: Earn extra rewards by answering questions correctly. Every correct answer gives normal marks along with bonus points, allowing you to achieve a higher score than in a regular quiz.',
+  Bonus_Points: '⭐ Bonus Points: Earn extra rewards by answering questions correctly. Every correct answer gives normal marks along with bonus points (+2 per correct answer, 0 for wrong), allowing you to achieve a higher score than in a regular quiz.',
 
-  Negative_Marking: '❌ Negative Marking: Think carefully before answering. Correct answers earn marks, but every wrong answer deducts marks from your score. Skip a question if you are unsure to avoid losing points.',
+  Negative_Marking: '❌ Negative Marking: Think carefully before answering. Correct answers earn marks, but every wrong answer deducts marks from your score (+2 per correct answer, -1 for wrong). Skip a question if you are unsure to avoid losing points.',
 
-  No_negative_marking: '✅ No Negative Marking: Attempt every question without worrying about losing marks. Correct answers earn marks, while incorrect answers do not reduce your score. Since there is no penalty for wrong answers, it\'s beneficial to answer every question.'
+  No_negative_marking: '✅ No Negative Marking: Attempt every question without worrying about losing marks. Correct answers earn marks, while incorrect answers do not reduce your score (+1 per correct answer, 0 for wrong). Since there is no penalty for wrong answers, it\'s beneficial to answer every question.'
 };
 
 /**
