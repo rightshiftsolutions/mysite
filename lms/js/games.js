@@ -272,7 +272,7 @@ function renderStudentGames(list, containerId = 'student-games-container', optio
             <button class="btn btn-sm btn-outline-primary rounded-pill px-2 flex-fill view-student-game-btn" data-id="${game.game_id}" style="font-size: 0.75rem;">
               Details
             </button>
-            <button class="btn btn-sm btn-primary rounded-pill px-2 flex-fill start-student-game-btn" data-id="${game.game_id}" data-time="${game.time_limit}" style="font-size: 0.75rem;">
+            <button class="btn btn-sm btn-primary rounded-pill px-2 flex-fill start-student-game-btn" data-id="${game.game_id}" data-time="${game.time_limit}" data-game-type="${game.game_type}" style="font-size: 0.75rem;">
               Play Now
             </button>
           </div>
@@ -312,7 +312,7 @@ function renderStudentGames(list, containerId = 'student-games-container', optio
           <button class="btn btn-sm btn-outline-primary rounded-pill px-3 flex-fill view-student-game-btn" data-id="${game.game_id}">
             View Details
           </button>
-          <button class="btn btn-sm btn-primary rounded-pill px-3 flex-fill start-student-game-btn" data-id="${game.game_id}" data-time="${game.time_limit}">
+          <button class="btn btn-sm btn-primary rounded-pill px-3 flex-fill start-student-game-btn" data-id="${game.game_id}" data-time="${game.time_limit}" data-game-type="${game.game_type}">
             Start Game
           </button>
         </div>
@@ -335,7 +335,7 @@ function renderStudentGames(list, containerId = 'student-games-container', optio
             <span class="badge bg-light text-secondary border rounded-pill px-2.5 py-1">${game.stream_name}</span>
           </div>
 
-          <p class="text-secondary small mb-3 text-truncate-2">${game.description || 'No description provided.'}</p>
+          <p class="text-secondary small mb-3 text-truncate-2">${getGameDescription(game.game_type)}</p>
 
           <div class="d-flex justify-content-between text-muted small pt-2 border-top mb-4">
             <span>Questions: <strong>${game.total_questions}</strong></span>
@@ -362,16 +362,27 @@ function renderStudentGames(list, containerId = 'student-games-container', optio
     btn.addEventListener('click', (e) => {
       const id = e.currentTarget.getAttribute('data-id');
       const time = e.currentTarget.getAttribute('data-time');
-      confirmStartQuiz(id, time);
+      const type = e.currentTarget.getAttribute('data-game-type');
+      confirmStartQuiz(id, time, type);
     });
   });
 }
 
-function confirmStartQuiz(gameId, timeLimitSeconds) {
+function confirmStartQuiz(gameId, timeLimitSeconds, gameType) {
+  const desc = gameType ? getGameDescription(gameType) : '';
+  const descHtml = desc 
+    ? `<div class="alert alert-info border-0 rounded-4 text-start mb-3" style="font-size: 0.85rem; line-height: 1.4;">
+         <i class="bi bi-info-circle-fill me-2"></i><strong>Rules & Marking Scheme:</strong><br>${desc}
+       </div>`
+    : '';
+
   import('../components/modal.js').then(({ modal }) => {
     modal.show({
       title: 'Start Quiz Game',
-      body: `You are about to start this quiz. You will have exactly <strong>${formatSeconds(timeLimitSeconds)}</strong> to answer all questions. Click Start Game to begin!`,
+      body: `
+        ${descHtml}
+        <p class="mb-0 text-slate-700">You are about to start this quiz. You will have exactly <strong>${formatSeconds(timeLimitSeconds)}</strong> to answer all questions. Click Start Game to begin!</p>
+      `,
       confirmText: 'Start Game',
       cancelText: 'Cancel',
       onConfirm: async () => {
@@ -531,7 +542,7 @@ async function loadStudentGamePreview(id) {
  
               <div class="bg-light p-4 rounded-4 mb-4 text-start" style="border: 1px dashed #4a5b78;">
                 <h6 class="fw-bold text-slate-700 mb-2"><i class="bi bi-info-circle-fill text-secondary me-1.5"></i>Description</h6>
-                <p class="text-secondary small mb-0">${game.description || 'No description provided.'}</p>
+                <p class="text-secondary small mb-0">${getGameDescription(game.game_type)}</p>
               </div>
 
               <div class="row g-3 mb-5">
@@ -563,7 +574,7 @@ async function loadStudentGamePreview(id) {
       `;
 
       document.getElementById('btn-start-preview-quiz').addEventListener('click', () => {
-        confirmStartQuiz(game.game_id, game.time_limit);
+        confirmStartQuiz(game.game_id, game.time_limit, game.game_type);
       });
     }
   } catch (error) {
