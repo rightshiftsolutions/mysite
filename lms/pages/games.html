@@ -77,11 +77,17 @@
             </div>
 
             <!-- Stream filter -->
-            <div class="col-lg-2 col-md-6">
+            <div class="col-lg-2 col-md-6" id="stream-filter-wrapper">
               <label class="form-label filters-label-custom">Stream</label>
               <select class="form-select form-input-custom" id="filter-stream">
                 <option value="">All Streams</option>
               </select>
+            </div>
+
+            <!-- Unit filter -->
+            <div class="col-lg-2 col-md-6" id="unit-filter-wrapper" style="display: none;">
+              <label class="form-label filters-label-custom">Unit</label>
+              <input type="text" class="form-control form-input-custom" id="filter-unit" placeholder="e.g. Unit 1">
             </div>
 
             <!-- Apply/Reset buttons -->
@@ -170,9 +176,14 @@
         document.getElementById('teacher-actions-wrapper').style.display = 'block';
         document.getElementById('teacher-games-view').style.display = 'block';
 
-        // Filters removed from the teacher's Educational Games Console
+        // Keep filters wrapper visible for teachers
         const filtersWrapper = document.getElementById('games-filters-wrapper');
-        if (filtersWrapper) filtersWrapper.style.display = 'none';
+        if (filtersWrapper) filtersWrapper.style.display = 'block';
+
+        // Show/hide specific filters for teacher
+        document.getElementById('status-filter-wrapper').style.display = 'block';
+        document.getElementById('stream-filter-wrapper').style.display = 'none';
+        document.getElementById('unit-filter-wrapper').style.display = 'block';
 
         if (titleEl) titleEl.textContent = 'Educational Games Console';
         if (descEl) descEl.textContent = 'Create, configure, and monitor course quizzes.';
@@ -183,7 +194,15 @@
         if (containerClass) containerClass.className = 'student-container';
         if (contentPane) contentPane.className = 'student-main';
 
+        // Keep filters wrapper visible for students
+        const filtersWrapper = document.getElementById('games-filters-wrapper');
+        if (filtersWrapper) filtersWrapper.style.display = 'block';
+
+        // Show/hide specific filters for student
         document.getElementById('status-filter-wrapper').style.display = 'none';
+        document.getElementById('stream-filter-wrapper').style.display = 'block';
+        document.getElementById('unit-filter-wrapper').style.display = 'none';
+
         document.getElementById('student-games-view').style.display = 'block';
 
         if (titleEl) titleEl.textContent = 'Available Classroom Games';

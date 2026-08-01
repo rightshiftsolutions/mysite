@@ -392,6 +392,7 @@ export const api = {
     if (queryParams.status) params.append('status', queryParams.status);
     if (queryParams.course_id) params.append('course_id', queryParams.course_id);
     if (queryParams.stream_id) params.append('stream_id', queryParams.stream_id);
+    if (queryParams.unit_name) params.append('unit_name', queryParams.unit_name);
 
     const queryString = params.toString();
     return request(`/api/games/${queryString ? `?${queryString}` : ''}`, 'GET');

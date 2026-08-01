@@ -476,6 +476,7 @@ export function setupGameFilters() {
   const statusSelect = document.getElementById('filter-status');
   const courseSelect = document.getElementById('filter-course');
   const streamSelect = document.getElementById('filter-stream');
+  const unitInput = document.getElementById('filter-unit');
   const applyBtn = document.getElementById('btn-apply-game-filters');
   const resetBtn = document.getElementById('btn-reset-game-filters');
 
@@ -487,6 +488,7 @@ export function setupGameFilters() {
     if (statusSelect && statusSelect.value) filters.status = statusSelect.value;
     if (courseSelect && courseSelect.value) filters.course_id = courseSelect.value;
     if (streamSelect && streamSelect.value) filters.stream_id = streamSelect.value;
+    if (unitInput && unitInput.value.trim()) filters.unit_name = unitInput.value.trim();
     return filters;
   };
 
@@ -502,6 +504,7 @@ export function setupGameFilters() {
     if (statusSelect) statusSelect.value = '';
     if (courseSelect) courseSelect.value = '';
     if (streamSelect) streamSelect.value = '';
+    if (unitInput) unitInput.value = '';
     currentPage = 1;
     const role = storage.getRole();
     if (role === 'teacher') loadTeacherGamesTable();
@@ -1320,7 +1323,8 @@ function init() {
   const path = window.location.pathname.toLowerCase();
 
   if (document.getElementById('games-table-body') && role === 'teacher') {
-    // Filters panel removed from the teacher's Educational Games Console
+    populateGameFilters();
+    setupGameFilters();
     loadTeacherGamesTable();
   }
   
