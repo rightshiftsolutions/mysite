@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Assignment Details - LMS Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="bg-light">
+
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <!-- Top Navbar -->
+      <div id="header-container"></div>
+
+      <!-- Page Content -->
+      <div class="p-4 container-fluid">
+        <div class="mb-4">
+          <a href="./teacher-streams.html" class="text-secondary small fw-semibold text-decoration-none">
+            <i class="bi bi-arrow-left"></i> Back to Assignments List
+          </a>
+          <div class="d-flex align-items-center gap-3 mt-2">
+            <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white" style="width: 50px; height: 50px;">
+              <i class="bi bi-person-video3 fs-4"></i>
+            </div>
+            <div>
+              <h1 class="h3 fw-bold text-slate-800 mb-0" id="teacher-detail-name">Teacher Name</h1>
+              <p class="text-secondary small mb-0" id="teacher-detail-id">Teacher ID: --</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
+          <h5 class="fw-bold mb-4 border-bottom pb-2">Assigned Streams</h5>
+          
+          <div class="row g-4" id="teacher-details-streams-container">
+            <div class="col-12 text-center py-5 text-muted">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="mt-2 small">Loading stream configuration details...</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script triggers and guard filters -->
+  <script type="module" src="../js/authGuard.js"></script>
+  <script type="module" src="../js/teacherStream.js"></script>
+</body>
+</html>

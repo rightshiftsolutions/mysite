@@ -1,0 +1,66 @@
+/* Game Details Dashboard Custom Styles — Aurum Arena */
+
+.analytics-card-custom {
+  background: rgba(16, 19, 38, 0.55) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-radius: 14px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.25s var(--ease-premium, ease), box-shadow 0.25s var(--ease-premium, ease), border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.analytics-card-custom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.analytics-card-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(255, 184, 0, 0.25) !important;
+}
+
+.analytics-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+.json-link-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(34, 211, 238, 0.1) !important;
+  color: var(--secondary-color) !important;
+  border: 1px solid rgba(34, 211, 238, 0.25) !important;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.json-link-badge:hover {
+  background: rgba(34, 211, 238, 0.2) !important;
+  color: var(--secondary-hover) !important;
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.25);
+  transform: translateY(-2px);
+}

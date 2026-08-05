@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Runner - LMS Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font for the game-show feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/student.css">
+  <link rel="stylesheet" href="../css/quiz.css">
+</head>
+
+<body class="bg-light">
+
+  <div class="student-container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Workspace -->
+    <main class="student-main">
+      <!-- Navbar Top -->
+      <div id="header-container"></div>
+
+      <!-- Page Content -->
+      <div class="p-4 container-fluid quiz-arena" id="quiz-arena">
+
+        <!-- Top Section -->
+        <div class="row g-4 mb-4 align-items-center">
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <span class="quiz-type-icon" id="quiz-type-icon"><i class="bi bi-controller"></i></span>
+              <h1 class="h3 fw-bold quiz-heading mb-0" id="quiz-game-title">Class Quiz Session</h1>
+            </div>
+            <!-- Progress bar -->
+            <div class="progress progress-custom mt-2" style="max-width: 300px; height: 8px;">
+              <div class="progress-bar" id="quiz-progress-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Timer Display -->
+          <div class="col-sm-6 text-sm-end d-flex justify-content-sm-end gap-2 flex-wrap">
+            <div class="timer-box score-box" id="quiz-score-box" style="display: none !important;">
+              <i class="bi bi-star-fill"></i>
+              <span id="quiz-score-value">0</span>
+            </div>
+            <button type="button" class="btn-sound-toggle" id="btn-sound-toggle">
+              <i class="bi bi-volume-up-fill" id="sound-icon"></i>
+            </button>
+            <div class="timer-box question-timer-ring d-inline-flex align-items-center gap-2"
+              id="quiz-question-timer-box" style="display: none !important;">
+              <i class="bi bi-hourglass-split"></i>
+              <span id="quiz-question-timer-value">60</span>s
+            </div>
+            <div class="timer-box" id="quiz-timer-box">
+              <i class="bi bi-stopwatch"></i>
+              <span id="quiz-timer-value">00:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Center Section: Question Card -->
+          <div class="col-lg-8">
+            <!-- KBC Lifelines -->
+            <div class="card border-0 shadow-sm rounded-4 p-3 mb-4 bg-white" id="kbc-lifelines-card" style="display:none;">
+              <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <span class="fw-bold text-dark mb-0"><i class="bi bi-heart-pulse-fill text-danger me-2"></i>Lifelines:</span>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-outline-primary rounded-pill px-4 py-1.5 btn-sm fw-semibold" id="lifeline-50-50" title="Remove two incorrect options">
+                    50-50
+                  </button>
+                  <button type="button" class="btn btn-outline-primary rounded-pill px-4 py-1.5 btn-sm fw-semibold" id="lifeline-audience" title="Ask the Audience">
+                    Audience Poll
+                  </button>
+                  <button type="button" class="btn btn-outline-warning rounded-pill px-4 py-1.5 btn-sm fw-semibold" id="lifeline-skip" title="Skip this question without penalty">
+                    Skip Question
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="quiz-card rounded-4 p-4" id="quiz-card">
+              <!-- Question index header -->
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="quiz-q-count fw-semibold">QUESTION <span id="current-question-num">1</span> OF <span
+                    id="total-questions-num">-</span></span>
+                <span class="badge quiz-type-badge rounded-pill px-3 py-1" id="quiz-type-badge">Quiz Game</span>
+              </div>
+
+              <!-- Question details loaded dynamically -->
+              <div id="question-card-container">
+                <div class="text-center py-5">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="mt-2 small">Loading active question...</div>
+                </div>
+              </div>
+
+              <!-- Bottom controls buttons -->
+              <div class="d-flex justify-content-between align-items-center mt-5 pt-3 quiz-controls-bar">
+                <button type="button" class="btn btn-quiz-ghost rounded-pill px-4" id="btn-prev-q" disabled>
+                  <i class="bi bi-arrow-left me-1"></i>Previous
+                </button>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-outline-warning rounded-pill px-4" id="btn-skip-q">
+                    Skip
+                  </button>
+                  <button type="button" class="btn btn-quiz-lock rounded-pill px-4" id="btn-lock-answer"
+                    style="display:none;">
+                    <i class="bi bi-lock-fill me-1"></i>Lock Final Answer
+                  </button>
+                  <button type="button" class="btn btn-quiz-primary rounded-pill px-4" id="btn-next-q"
+                    style="display: none !important;">
+                    Next <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                  <button type="button" class="btn btn-success rounded-pill px-4" id="btn-submit-quiz"
+                    style="display: none;">
+                    Submit Quiz
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Palette Section -->
+          <div class="col-lg-4">
+            <!-- KBC Prize Ladder -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 kbc-ladder-card" id="kbc-ladder-card"
+              style="display:none;">
+              <h5 class="fw-bold border-bottom pb-2 mb-3 ladder-title"><i class="bi bi-trophy-fill me-1"></i>Prize
+                Ladder</h5>
+              <div id="kbc-ladder-list" class="kbc-ladder-list"></div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 p-4 nav-card">
+              <h5 class="fw-bold border-bottom pb-2 mb-3 nav-title">Question Navigation</h5>
+
+              <!-- Palette grid dots -->
+              <div class="palette-container mb-4" id="question-palette-grid">
+                <!-- Loaded dynamically -->
+              </div>
+
+              <!-- Palette legend descriptions -->
+              <div class="border-top pt-3 legend-block small">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="palette-btn current" style="width: 20px; height: 20px; font-size: 0.6rem;"></span>
+                  <span>Active Question</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="palette-btn answered" style="width: 20px; height: 20px; font-size: 0.6rem;"></span>
+                  <span>Answered Question</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="palette-btn skipped" style="width: 20px; height: 20px; font-size: 0.6rem;"></span>
+                  <span>Skipped/Review Question</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="palette-btn" style="width: 20px; height: 20px; font-size: 0.6rem;"></span>
+                  <span>Unvisited/Not Answered</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Full-screen reveal overlay: correct / wrong flash (KBC lock-in) -->
+  <div class="quiz-overlay" id="quiz-reveal-overlay">
+    <div class="quiz-overlay-inner" id="quiz-reveal-inner">
+      <div class="reveal-icon" id="reveal-icon"><i class="bi bi-check-circle-fill"></i></div>
+      <div class="reveal-text" id="reveal-text">Correct!</div>
+      <div class="reveal-sub" id="reveal-sub"></div>
+    </div>
+  </div>
+
+  <!-- Full-screen Game Over overlay (KBC elimination) -->
+  <div class="quiz-overlay quiz-overlay-gameover" id="quiz-gameover-overlay">
+    <div class="quiz-overlay-inner">
+      <div class="reveal-icon gameover-icon"><i class="bi bi-emoji-frown-fill"></i></div>
+      <div class="reveal-text gameover-text">GAME OVER</div>
+      <div class="reveal-sub" id="gameover-sub">Wrong answer, you are out of the game!</div>
+      <div class="mt-3 small text-white-50">Redirecting to your result...</div>
+    </div>
+  </div>
+
+  <!-- KBC Lifeline Modal (Audience Poll / Flip confirmation) -->
+  <div class="modal fade" id="lifelineModal" tabindex="-1" aria-labelledby="lifelineModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-premium">
+        <div class="modal-header border-bottom-0 pb-0">
+          <h5 class="modal-title fw-bold text-dark w-100 text-center" id="lifelineModalLabel">
+            Lifeline
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="lifeline-modal-body">
+          <!-- Loaded dynamically -->
+        </div>
+        <div class="modal-footer border-top-0 justify-content-center pt-0">
+          <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Route guards and controllers -->
+  <script type="module" src="../js/authGuard.js"></script>
+  <script type="module" src="../js/quiz.js"></script>
+</body>
+
+</html>
