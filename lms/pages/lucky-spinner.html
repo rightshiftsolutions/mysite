@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Picker - LMS Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/teacher.css">
+  <link rel="stylesheet" href="../css/filters.css">
+  <style>
+    .spinner-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .wheel-container {
+      position: relative;
+      width: 560px;
+      height: 560px;
+      max-width: 90vw;
+      max-height: 90vw;
+      border: 10px solid #12142A;
+      border-radius: 50%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 10px rgba(255, 184, 0, 0.18), 0 0 60px rgba(139, 92, 246, 0.25);
+      background-color: #12142A;
+      overflow: hidden;
+      animation: wheelRimPulse 3s ease-in-out infinite;
+    }
+
+    #wheel-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transition: transform 0.1s ease-out;
+    }
+
+    .wheel-pointer {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 26px solid transparent;
+      border-right: 26px solid transparent;
+      border-top: 38px solid #FFB800;
+      z-index: 10;
+      filter: drop-shadow(0 4px 10px rgba(255, 184, 0, 0.6));
+    }
+
+    @keyframes wheelRimPulse {
+      0%, 100% { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 10px rgba(255, 184, 0, 0.18), 0 0 60px rgba(139, 92, 246, 0.25); }
+      50% { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 12px rgba(34, 211, 238, 0.22), 0 0 80px rgba(255, 184, 0, 0.3); }
+    }
+
+    .wheel-center-pin {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #FFB800 0%, #8B5CF6 100%);
+      border: 5px solid #ffffff;
+      border-radius: 50%;
+      z-index: 5;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Arcade-machine style spin button */
+    .spin-btn-lg {
+      background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 55%, #FFB800 100%);
+      background-size: 220% 220%;
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      color: #08090F;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 1.1rem 3.2rem;
+      font-size: 1.3rem;
+      border-radius: 50rem;
+      box-shadow: 0 8px 26px rgba(139, 92, 246, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+      transition: all 0.2s ease, background-position 0.6s ease;
+      animation: spinBtnGlow 2.2s ease-in-out infinite;
+    }
+
+    @keyframes spinBtnGlow {
+      0%, 100% { box-shadow: 0 8px 26px rgba(139, 92, 246, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.3); background-position: 0% 50%; }
+      50% { box-shadow: 0 8px 34px rgba(255, 184, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.4); background-position: 100% 50%; }
+    }
+
+    .spin-btn-lg:hover:not(:disabled) {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(34, 211, 238, 0.55);
+    }
+
+    .spin-btn-lg:active:not(:disabled) {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .spin-btn-lg:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      box-shadow: none;
+      animation: none;
+    }
+
+    /* Confetti/Winner visual effect */
+    .winner-announcement {
+      animation: scalePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes scalePop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* ================= BOOM winner reveal overlay ================= */
+    .boom-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 4000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 8, 18, 0.88);
+      backdrop-filter: blur(3px);
+    }
+    .boom-overlay.show {
+      display: flex;
+      animation: boomFlash 0.35s ease;
+    }
+    @keyframes boomFlash {
+      0% { background: rgba(255, 255, 255, 0.9); }
+      100% { background: rgba(5, 8, 18, 0.88); }
+    }
+    .boom-overlay.shake { animation: boomFlash 0.35s ease, boomShake 0.5s ease 0.05s; }
+    @keyframes boomShake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-10px); }
+      40% { transform: translateX(10px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+    .boom-inner {
+      text-align: center;
+    }
+    .boom-label {
+      color: #ffd166;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      animation: boomLabelIn 0.4s ease 0.15s forwards;
+    }
+    @keyframes boomLabelIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .boom-name {
+      font-family: var(--font-heading, 'Poppins', sans-serif);
+      font-weight: 800;
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
+      color: #ffffff;
+      text-shadow: 0 0 30px rgba(255, 184, 0, 0.7), 0 0 60px rgba(139, 92, 246, 0.5);
+      transform: scale(0);
+      animation: boomNamePop 0.6s cubic-bezier(.22,1.5,.4,1) 0.1s forwards;
+    }
+    @keyframes boomNamePop {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .boom-meta {
+      margin-top: 0.75rem;
+      color: #cbd5f0;
+      font-size: 1.05rem;
+      opacity: 0;
+      animation: boomLabelIn 0.4s ease 0.3s forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="teacher-container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Workspace -->
+    <main class="teacher-main">
+      <!-- Navbar Header -->
+      <div id="header-container"></div>
+
+      <!-- Page Content -->
+      <div class="p-4 container-fluid">
+        
+        <div class="mb-4">
+          <h1 class="h3 fw-bold text-slate-800 mb-1">Student Picker (Lucky Spinner)</h1>
+          <p class="text-secondary small mb-0">Select a course and batch end year to spin the wheel and award points to students.</p>
+        </div>
+
+        <!-- Filter / Selection Card -->
+        <div class="filters-card-wrapper mb-4">
+          <div class="row g-3 align-items-end">
+            <!-- Select Course -->
+            <div class="col-md-5">
+              <label for="spinner-course-select" class="form-label filters-label-custom">Select Course</label>
+              <select class="form-select form-input-custom" id="spinner-course-select" required>
+                <option value="" disabled selected>Select Course</option>
+              </select>
+            </div>
+
+            <!-- Select Batch Year -->
+            <div class="col-md-4">
+              <label for="spinner-batch-select" class="form-label filters-label-custom">Batch End Year</label>
+              <select class="form-select form-input-custom" id="spinner-batch-select" required>
+                <option value="" disabled selected>Select Year</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+              </select>
+            </div>
+
+            <!-- Load button -->
+            <div class="col-md-3">
+              <button type="button" class="btn btn-primary w-100 py-2 fw-semibold" id="btn-load-spinner-students" style="border-radius: 10px;">
+                <i class="bi bi-people-fill me-1"></i>Load Wheel
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wheel Panel Area -->
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4 text-center" id="spinner-wheel-card" style="display: none;">
+          <div class="mb-3">
+            <h5 class="fw-bold text-dark mb-1" id="wheel-students-count">Students Mapped: 0</h5>
+            <p class="text-secondary small mb-0">Click the spin button below to select a random student.</p>
+          </div>
+
+          <!-- Spinner Graphics -->
+          <div class="spinner-wrapper">
+            <div class="wheel-pointer"></div>
+            <div class="wheel-container">
+              <canvas id="wheel-canvas" width="640" height="640"></canvas>
+              <div class="wheel-center-pin"></div>
+            </div>
+          </div>
+
+          <div class="mt-2">
+            <button type="button" class="btn spin-btn-lg px-5 py-2.5" id="btn-spin-wheel">
+              <i class="bi bi-play-circle-fill me-2"></i>SPIN NOW
+            </button>
+          </div>
+        </div>
+
+        <!-- No students state -->
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-5 text-center" id="spinner-empty-state">
+          <div class="text-muted fs-1 mb-2"><i class="bi bi-compass"></i></div>
+          <h5 class="fw-bold mb-2">No Wheel Loaded</h5>
+          <p class="text-secondary small mb-0">Choose a course and batch year above, and click "Load Wheel" to start picker.</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- BOOM winner reveal overlay -->
+  <div class="boom-overlay" id="boom-overlay">
+    <div class="boom-inner">
+      <div class="boom-label"><i class="bi bi-stars me-1"></i>Winner Selected!</div>
+      <div class="boom-name" id="boom-winner-name">Name</div>
+      <div class="boom-meta" id="boom-winner-meta"></div>
+    </div>
+  </div>
+
+  <!-- Award Points Modal -->
+  <div class="modal fade" id="awardPointsModal" tabindex="-1" aria-labelledby="awardPointsModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-premium">
+        <div class="modal-header border-bottom-0 pb-0">
+          <h5 class="modal-title fw-bold text-dark w-100 text-center" id="awardPointsModalLabel">
+            <i class="bi bi-trophy text-warning fs-3 d-block mb-1"></i>
+            Spinner Winner!
+          </h5>
+        </div>
+        <div class="modal-body p-4 text-center winner-announcement">
+          <h3 class="fw-extrabold text-primary mb-1" id="winner-student-name">Saloni Sharma</h3>
+          <p class="text-secondary small mb-4" id="winner-student-meta">Software Development (Roll No: 15)</p>
+
+          <form id="award-points-form" novalidate>
+            <div class="mb-4 text-start">
+              <label for="award-points-input" class="form-label fw-bold text-secondary small">Points to Award</label>
+              <input type="number" class="form-control form-input-custom text-center fs-4 fw-bold" id="award-points-input" placeholder="e.g. 10" min="1" required value="10">
+              <div class="invalid-feedback text-center mt-1">Please enter a valid points value (min 1).</div>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+              <button type="button" class="btn btn-light border rounded-pill flex-fill py-2" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary rounded-pill flex-fill py-2" id="btn-submit-points">
+                Award Points
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Route guards and controllers -->
+  <script type="module" src="../js/authGuard.js"></script>
+  <script type="module">
+    import { api } from '../js/api.js';
+    import { loader } from '../js/loader.js';
+    import { toast } from '../js/toast.js';
+    import { gameSound } from '../js/gameSound.js';
+    import { burstConfetti } from '../js/confetti.js';
+
+    let studentList = [];
+    let isSpinning = false;
+    let currentRotation = 0;
+    
+    // Canvas dimensions
+    const canvas = document.getElementById('wheel-canvas');
+    const ctx = canvas.getContext('2d');
+    const colors = [
+      '#8B5CF6', '#22D3EE', '#FFB800', '#16E0A0',
+      '#F43F9E', '#FF7A45', '#6366F1', '#14B8A6'
+    ];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      // 1. Populate courses select
+      const courseSelect = document.getElementById('spinner-course-select');
+      try {
+        const res = await api.getMyCourses();
+        if (res.success && res.data) {
+          courseSelect.innerHTML = '<option value="" disabled selected>Select Course</option>' +
+            res.data.map(c => `<option value="${c.course_id}">${c.course_name}</option>`).join('');
+        }
+      } catch (err) {
+        toast.error('Failed to load courses.');
+      }
+
+      // 2. Load Wheel button listener
+      document.getElementById('btn-load-spinner-students').addEventListener('click', loadWheelData);
+
+      // 3. Spin Wheel button listener
+      document.getElementById('btn-spin-wheel').addEventListener('click', spinWheel);
+
+      // 4. Submit award points form listener
+      document.getElementById('award-points-form').addEventListener('submit', submitAwardedPoints);
+    });
+
+    async function loadWheelData() {
+      const courseId = document.getElementById('spinner-course-select').value;
+      const batchYear = document.getElementById('spinner-batch-select').value;
+
+      if (!courseId) {
+        toast.warning('Please select a course.');
+        return;
+      }
+      if (!batchYear) {
+        toast.warning('Please select a batch end year.');
+        return;
+      }
+
+      try {
+        loader.show('Loading students list...');
+        const result = await api.getStudentsByCourseAndBatch(courseId, batchYear);
+        loader.hide();
+
+        if (result.success && result.data) {
+          studentList = result.data;
+          
+          if (studentList.length === 0) {
+            toast.warning('No approved students found in this course and batch end year.');
+            document.getElementById('spinner-wheel-card').style.display = 'none';
+            document.getElementById('spinner-empty-state').style.display = 'block';
+            return;
+          }
+
+          document.getElementById('wheel-students-count').textContent = `Students Mapped: ${studentList.length}`;
+          document.getElementById('spinner-empty-state').style.display = 'none';
+          document.getElementById('spinner-wheel-card').style.display = 'block';
+
+          // Initialize wheel graphics
+          currentRotation = 0;
+          drawWheel();
+          gameSound.fanfare();
+        }
+      } catch (err) {
+        loader.hide();
+        toast.error(err.message || 'Error loading course students.');
+      }
+    }
+
+    function drawWheel() {
+      const numSegments = studentList.length;
+      const arcSize = (2 * Math.PI) / numSegments;
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = canvas.width / 2 - 10;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < numSegments; i++) {
+        const angle = i * arcSize;
+        ctx.beginPath();
+        ctx.fillStyle = colors[i % colors.length];
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, angle, angle + arcSize);
+        ctx.lineTo(centerX, centerY);
+        ctx.fill();
+        ctx.stroke();
+
+        // Draw names on slices
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate(angle + arcSize / 2);
+        
+        ctx.fillStyle = '#ffffff';
+        ctx.font = studentList.length > 20 ? 'bold 10px sans-serif' : 'bold 14px sans-serif';
+        ctx.textAlign = 'right';
+        ctx.shadowColor = 'rgba(0,0,0,0.4)';
+        ctx.shadowBlur = 4;
+        
+        // Print student name inside slice
+        const displayName = studentList[i].name.length > 15 
+          ? studentList[i].name.substring(0, 13) + '..' 
+          : studentList[i].name;
+        
+        ctx.fillText(displayName, radius - 30, 5);
+        ctx.restore();
+      }
+    }
+
+    function spinWheel() {
+      if (isSpinning || studentList.length === 0) return;
+
+      isSpinning = true;
+      document.getElementById('btn-spin-wheel').disabled = true;
+
+      // Select random final winning index
+      const winIndex = Math.floor(Math.random() * studentList.length);
+      const numSegments = studentList.length;
+      const arcSize = 360 / numSegments;
+
+      // We want the winning slice to align with the pointer at the top (which is 270 degrees)
+      // Standard angle calculations start at 3 o'clock (0 degrees).
+      // Align slice 'winIndex' center to the top (270 degrees).
+      // Angle of slice i center = i * arcSize + arcSize / 2
+      // Desired angle at pointer = 270 degrees
+      // Rotations calculation:
+      const targetDegree = 270 - (winIndex * arcSize + arcSize / 2);
+      const extraRotations = (5 + Math.floor(Math.random() * 5)) * 360; // 5-10 full spins
+      const finalRotation = extraRotations + targetDegree;
+
+      let startTime = null;
+      const duration = 5000; // 5 seconds spin animation
+      let lastSegment = null;
+
+      function animate(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing out quadratic function
+        const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+        const currentRot = finalRotation * easeOut(progress);
+
+        canvas.style.transform = `rotate(${currentRot}deg)`;
+
+        // Wheel-of-fortune style tick as each segment passes the pointer
+        const segNow = Math.floor((currentRot % 360) / arcSize);
+        if (segNow !== lastSegment) {
+          lastSegment = segNow;
+          gameSound.spinTick();
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          isSpinning = false;
+          document.getElementById('btn-spin-wheel').disabled = false;
+          
+          // Keep rotation aligned
+          currentRotation = finalRotation % 360;
+          
+          // BOOM reveal, then open points award modal for winner
+          revealWinnerBoom(studentList[winIndex]);
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    let selectedWinner = null;
+
+    function revealWinnerBoom(student) {
+      const overlay = document.getElementById('boom-overlay');
+      const nameEl = document.getElementById('boom-winner-name');
+      const metaEl = document.getElementById('boom-winner-meta');
+
+      nameEl.textContent = student.name;
+      metaEl.textContent = `${student.stream_name || 'Mapped Stream'} (Roll No: ${student.roll_number || 'N/A'})`;
+
+      overlay.classList.remove('show', 'shake');
+      void overlay.offsetWidth;
+      overlay.classList.add('show', 'shake');
+
+      gameSound.celebration();
+      burstConfetti({ count: 110, originY: 35, spread: 120 });
+
+      setTimeout(() => {
+        overlay.classList.remove('show', 'shake');
+        openWinnerModal(student);
+      }, 2400);
+    }
+
+    function openWinnerModal(student) {
+      selectedWinner = student;
+      document.getElementById('winner-student-name').textContent = student.name;
+      document.getElementById('winner-student-meta').textContent = `${student.stream_name || 'Mapped Stream'} (Roll No: ${student.roll_number || 'N/A'})`;
+      document.getElementById('award-points-input').value = '10';
+
+      const modalEl = document.getElementById('awardPointsModal');
+      const modal = new bootstrap.Modal(modalEl);
+      modal.show();
+    }
+
+    async function submitAwardedPoints(e) {
+      e.preventDefault();
+      
+      const pointsInput = document.getElementById('award-points-input');
+      const points = parseInt(pointsInput.value);
+      const courseId = document.getElementById('spinner-course-select').value;
+
+      if (isNaN(points) || points < 1) {
+        pointsInput.classList.add('is-invalid');
+        return;
+      }
+      pointsInput.classList.remove('is-invalid');
+
+      if (!selectedWinner || !courseId) return;
+
+      try {
+        const btn = document.getElementById('btn-submit-points');
+        btn.disabled = true;
+        btn.textContent = 'Awarding...';
+
+        const data = await api.awardCoursePoints(courseId, selectedWinner.id, points);
+        
+        btn.disabled = false;
+        btn.textContent = 'Award Points';
+
+        if (data.success) {
+          toast.success(`Successfully awarded ${points} points to ${selectedWinner.name}!`);
+          
+          // Close modal
+          const modalEl = document.getElementById('awardPointsModal');
+          const modal = bootstrap.Modal.getInstance(modalEl);
+          if (modal) modal.hide();
+        } else {
+          toast.error(data.message || 'Failed to award points.');
+        }
+      } catch (err) {
+        toast.error(err.message || 'Error awarding points.');
+      }
+    }
+  </script>
+</body>
+</html>
