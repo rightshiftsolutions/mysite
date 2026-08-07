@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Course - LMS Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/teacher.css">
+  <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+
+  <div class="teacher-container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Workspace -->
+    <main class="teacher-main">
+      <!-- Navbar Header -->
+      <div id="header-container"></div>
+
+      <!-- Page Content -->
+      <div class="p-4 container-fluid">
+        <div class="mb-4">
+          <a href="./my-courses.html" class="text-secondary small fw-semibold text-decoration-none">
+            <i class="bi bi-arrow-left"></i> Back to Courses List
+          </a>
+          <h1 class="h3 fw-bold text-slate-800 mt-2 mb-1">Edit Course</h1>
+          <p class="text-secondary small mb-0">Modify configuration details of the course.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="card form-card-custom">
+              <div class="form-card-header">
+                <h5 class="fw-bold mb-0 text-slate-800">Update Course Details</h5>
+              </div>
+              <div class="form-card-body bg-white rounded-bottom-4">
+                <form id="course-edit-form" novalidate>
+                  
+                  <!-- Course Name -->
+                  <div class="mb-3">
+                    <label for="course-name" class="form-label fw-semibold">Course Name</label>
+                    <input type="text" class="form-control form-input-custom" id="course-name" required>
+                    <div class="invalid-feedback-custom">Course name is required.</div>
+                  </div>
+
+                  <!-- Streams checklist -->
+                  <div class="mb-3">
+                    <label class="form-label fw-semibold">Map to Academic Streams</label>
+                    <div class="card p-3" id="streams-checklist-container" style="max-height: 200px; overflow-y: auto; border-radius: 10px;">
+                      <div class="text-muted small">Loading checklist options...</div>
+                    </div>
+                    <div class="invalid-feedback-custom">You must map the course to at least one stream.</div>
+                  </div>
+
+                  <!-- Batch End Year -->
+                  <div class="mb-3">
+                    <label for="batch-end-year" class="form-label fw-semibold">Batch End Year</label>
+                    <select class="form-select form-input-custom" id="batch-end-year" required>
+                      <option value="" disabled selected>Select batch end year</option>
+                    </select>
+                    <div class="invalid-feedback-custom">Please select the batch end year for this course.</div>
+                    <div class="form-text">Only students whose batch end year matches this value will have access to this course.</div>
+                  </div>
+
+                  <!-- Timing -->
+                  <div class="mb-4">
+                    <label class="form-label fw-semibold mb-1">Timing Schedule</label>
+                    
+                    <!-- Start Time Row -->
+                    <div class="mb-3">
+                      <label class="form-label small text-secondary fw-semibold mb-1">Start Time</label>
+                      <div class="d-flex gap-2">
+                        <select class="form-select form-input-custom" id="start-hour" required>
+                          <option value="" disabled selected>Hour</option>
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <select class="form-select form-input-custom" id="start-minute" required>
+                          <option value="" disabled selected>Min</option>
+                          <option value="00">00</option>
+                          <option value="05">05</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">25</option>
+                          <option value="30">30</option>
+                          <option value="35">35</option>
+                          <option value="40">40</option>
+                          <option value="45">45</option>
+                          <option value="50">50</option>
+                          <option value="55">55</option>
+                        </select>
+                        <select class="form-select form-input-custom" id="start-period" required>
+                          <option value="" disabled selected>AM/PM</option>
+                          <option value="AM">AM</option>
+                          <option value="PM">PM</option>
+                        </select>
+                      </div>
+                      <div class="invalid-feedback-custom" id="start-time-error" style="display: none;">Please select start hour, minute, and AM/PM.</div>
+                    </div>
+
+                    <!-- End Time Row -->
+                    <div>
+                      <label class="form-label small text-secondary fw-semibold mb-1">End Time</label>
+                      <div class="d-flex gap-2">
+                        <select class="form-select form-input-custom" id="end-hour" required>
+                          <option value="" disabled selected>Hour</option>
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <select class="form-select form-input-custom" id="end-minute" required>
+                          <option value="" disabled selected>Min</option>
+                          <option value="00">00</option>
+                          <option value="05">05</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">25</option>
+                          <option value="30">30</option>
+                          <option value="35">35</option>
+                          <option value="40">40</option>
+                          <option value="45">45</option>
+                          <option value="50">50</option>
+                          <option value="55">55</option>
+                        </select>
+                        <select class="form-select form-input-custom" id="end-period" required>
+                          <option value="" disabled selected>AM/PM</option>
+                          <option value="AM">AM</option>
+                          <option value="PM">PM</option>
+                        </select>
+                      </div>
+                      <div class="invalid-feedback-custom" id="end-time-error" style="display: none;">Please select end hour, minute, and AM/PM.</div>
+                    </div>
+                  </div>
+
+                  <!-- Action Buttons -->
+                  <div class="d-flex gap-2 justify-content-end">
+                    <a href="./my-courses.html" class="btn btn-light rounded-3 px-4 border">Cancel</a>
+                    <button type="submit" class="btn btn-submit-custom px-4" id="submit-btn">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Route guards and controllers -->
+  <script type="module" src="../js/authGuard.js"></script>
+  <script type="module" src="../js/course.js"></script>
+</body>
+</html>

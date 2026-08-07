@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games Console - LMS Portal</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/teacher.css">
+  <link rel="stylesheet" href="../css/student.css">
+  <link rel="stylesheet" href="../css/table.css">
+  <link rel="stylesheet" href="../css/games.css">
+  <link rel="stylesheet" href="../css/filters.css">
+</head>
+
+<body>
+
+  <div id="main-container-class" class="teacher-container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Workspace -->
+    <main class="teacher-main" id="main-content-pane">
+      <!-- Navbar Header -->
+      <div id="header-container"></div>
+
+      <!-- Page Content -->
+      <div class="p-4 container-fluid">
+        <!-- Header Row -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+          <div>
+            <h1 class="h3 fw-bold text-slate-800 mb-1" id="games-page-title">Educational Games</h1>
+            <p class="text-secondary small mb-0" id="games-page-desc">Overview of your courses games.</p>
+          </div>
+          <!-- Teacher Actions Button -->
+          <div id="teacher-actions-wrapper" style="display: none;">
+            <a href="./create-game.html" class="btn btn-primary rounded-pill px-4 py-2 d-flex align-items-center gap-2">
+              <i class="bi bi-plus-circle-fill"></i> Create Game
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter Card Panel -->
+        <div class="filters-card-wrapper mb-4" id="games-filters-wrapper">
+          <div class="row g-3">
+            <!-- Course filter -->
+            <div class="col-md-6">
+              <label class="form-label filters-label-custom">Course</label>
+              <select class="form-select form-input-custom" id="filter-course">
+                <option value="">All Courses</option>
+              </select>
+            </div>
+
+            <!-- Unit filter -->
+            <div class="col-md-6">
+              <label class="form-label filters-label-custom">Unit Name</label>
+              <input type="text" class="form-control form-input-custom" id="filter-unit" placeholder="Filter by Unit Name/Number..." style="height: 38px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty state placeholder -->
+        <div id="empty-state-container" style="display: none;"></div>
+
+        <!-- ========================================== -->
+        <!-- TEACHER VIEW: TABLE LOGS -->
+        <!-- ========================================== -->
+        <div id="teacher-games-view" style="display: none;">
+          <div class="table-responsive-custom" id="table-wrapper-container">
+            <table class="table table-custom align-middle">
+              <thead>
+                <tr>
+                  <th>Game Type</th>
+                  <th>Course</th>
+                  <th>Unit Name</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="games-table-body">
+                <!-- Dynamically loaded via games.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- STUDENT VIEW: CARDS GRID -->
+        <!-- ========================================== -->
+        <div id="student-games-view" style="display: none;">
+          <div class="row g-4" id="student-games-container">
+            <div class="col-12 text-center py-5 text-muted">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="mt-2 small">Loading available games...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination navigation -->
+        <div class="d-flex justify-content-center mt-4">
+          <nav aria-label="Games pagination navigation">
+            <ul class="pagination pagination-sm" id="pagination-container"></ul>
+          </nav>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Route guards, storage checks, and conditional controllers -->
+  <script type="module" src="../js/authGuard.js"></script>
+
+  <script type="module">
+    import { storage } from '../js/storage.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const role = storage.getRole();
+      const containerClass = document.getElementById('main-container-class');
+      const contentPane = document.getElementById('main-content-pane');
+      const titleEl = document.getElementById('games-page-title');
+      const descEl = document.getElementById('games-page-desc');
+
+      if (role === 'teacher') {
+        if (containerClass) containerClass.className = 'teacher-container';
+        if (contentPane) contentPane.className = 'teacher-main';
+
+        document.getElementById('teacher-actions-wrapper').style.display = 'block';
+        document.getElementById('teacher-games-view').style.display = 'block';
+
+        if (titleEl) titleEl.textContent = 'Educational Games Console';
+        if (descEl) descEl.textContent = 'Create, configure, and monitor course quizzes.';
+
+        // Load controller
+        import('../js/games.js');
+      } else if (role === 'student') {
+        if (containerClass) containerClass.className = 'student-container';
+        if (contentPane) contentPane.className = 'student-main';
+
+        document.getElementById('student-games-view').style.display = 'block';
+
+        if (titleEl) titleEl.textContent = 'Available Classroom Games';
+        if (descEl) descEl.textContent = 'Participate in games and challenge yourself to improve scores.';
+
+        const filtersWrapper = document.getElementById('games-filters-wrapper');
+        if (filtersWrapper) filtersWrapper.style.display = 'none';
+
+        // Load controller
+        import('../js/games.js');
+      }
+    });
+  </script>
+</body>
+
+</html>

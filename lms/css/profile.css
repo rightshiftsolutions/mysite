@@ -1,0 +1,76 @@
+/* Teacher Profile Page Styles */
+
+.profile-avatar-box {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: var(--surface-alt);
+  border: 3px solid var(--surface);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.profile-avatar-icon {
+  font-size: 3.5rem;
+  color: var(--text-muted);
+}
+
+.profile-info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.profile-info-value {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Edit profile form card layouts */
+.profile-form-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-form-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--surface-alt);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.profile-form-body {
+  padding: 1.75rem 1.5rem;
+}
+
+/* =========================================================
+   PREMIUM ENHANCEMENTS — Aurum Arena pass
+   ========================================================= */
+.profile-avatar-box {
+  position: relative;
+}
+.profile-avatar-box::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color), var(--secondary-color), var(--gold-color, #FFB800), var(--primary-color));
+  animation: avatarSpin 5s linear infinite;
+  z-index: -1;
+}
+@keyframes avatarSpin {
+  to { transform: rotate(360deg); }
+}
+.profile-form-card:hover {
+  box-shadow: var(--shadow-lg);
+}
